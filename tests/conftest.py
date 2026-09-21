@@ -499,6 +499,12 @@ def _hermetic_environment(tmp_path, monkeypatch):
     (fake_hermes_home / "memories").mkdir()
     (fake_hermes_home / "skills").mkdir()
     monkeypatch.setenv("HERMES_HOME", str(fake_hermes_home))
+    # The host rendezvous dir (gateway/host_rendezvous.py, gateway.status._get_lock_dir) is
+    # HOME-anchored, and HOME is deliberately NOT redirected above — without this every test
+    # touching a host-scoped record would read and write the developer's live
+    # ~/.local/state/hermes/gateway-locks. Tests of the resolution rule itself override it.
+    monkeypatch.delenv("XDG_STATE_HOME", raising=False)
+    monkeypatch.setenv("HERMES_GATEWAY_LOCK_DIR", str(tmp_path / "gateway-locks"))
     # Keep the subprocess-surviving isolation marker pointed at THIS test's
     # home (#82770): children spawned by the test inherit it by default, so
     # hermes_state's live-DB guard stays armed in them even when the test
