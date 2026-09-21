@@ -38,6 +38,12 @@ export const LOCALE_OPTIONS = [
     configValue: 'ar'
   },
   {
+    id: 'fa',
+    name: LOCALE_ENDONYMS.fa,
+    englishName: 'Persian',
+    configValue: 'fa'
+  },
+  {
     id: 'ru',
     name: LOCALE_ENDONYMS.ru,
     englishName: 'Russian',
@@ -88,6 +94,12 @@ const LOCALE_ALIASES: Record<string, Locale> = {
   ar_eg: 'ar',
   arabic: 'ar',
   العربية: 'ar',
+  fa: 'fa',
+  'fa-ir': 'fa',
+  fa_ir: 'fa',
+  persian: 'fa',
+  farsi: 'fa',
+  فارسی: 'fa',
   ru: 'ru',
   'ru-ru': 'ru',
   ru_ru: 'ru',
