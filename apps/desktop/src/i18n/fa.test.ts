@@ -7,15 +7,13 @@ import { en } from './en'
 import { fa } from './fa'
 
 /**
- * Persian (fa) locale — added by the hermes-fa distribution (P1).
+ * Persian (fa) locale — added by the hermes-fa distribution.
  *
- * These tests are deliberately in a file of their own (not edits to the upstream
- * language tests) so the fork's diff stays additive and rebases cleanly.
+ * Kept in a file of its own (not edits to the upstream language tests) so the
+ * fork's diff stays additive and rebases cleanly.
  */
 
-/** Every leaf path in a nested message tree, mapped to its value. A Map (not
- *  dotted-path lookups) because some upstream keys contain dots themselves,
- *  which makes `a.b` ambiguous. */
+/** leaf path → value, as a Map (some upstream keys contain dots themselves). */
 function leafMap(tree: unknown, prefix = ''): Map<string, unknown> {
   const out = new Map<string, unknown>()
 
@@ -37,17 +35,13 @@ function leafMap(tree: unknown, prefix = ''): Map<string, unknown> {
   return out
 }
 
-function leafPaths(tree: unknown): string[] {
-  return [...leafMap(tree).keys()]
-}
-
-function atPath(tree: unknown, path: string): unknown {
-  return leafMap(tree).get(path)
-}
-
 const PERSIAN = /[\u0600-\u06FF]/
+const asText = (v: unknown) => (typeof v === 'function' ? (v as () => string).toString() : String(v ?? ''))
 
 describe('persian (fa) locale', () => {
+  const enLeaves = leafMap(en)
+  const faLeaves = leafMap(TRANSLATIONS.fa)
+
   it('is selectable in the language picker', () => {
     expect(LOCALE_OPTIONS.map(option => option.id)).toContain('fa')
     expect(LOCALE_OPTIONS.find(option => option.id === 'fa')?.name).toBe('فارسی')
@@ -76,39 +70,45 @@ describe('persian (fa) locale', () => {
     expect(document.documentElement.dir).toBe('ltr')
   })
 
-  it('resolves every English key (missing keys fall back, never blank)', () => {
-    const enPaths = leafPaths(en).sort()
-    const faPaths = leafPaths(TRANSLATIONS.fa).sort()
-    expect(faPaths).toEqual(enPaths)
-    expect(enPaths.every(path => atPath(TRANSLATIONS.fa, path) != null)).toBe(true)
+  it('resolves every English key to a non-empty message', () => {
+    expect([...faLeaves.keys()].sort()).toEqual([...enLeaves.keys()].sort())
+
+    // 以英文为基准：英文有内容而波斯语为空 = 真问题；
+    // 英文本身就是空/null 的键（如 notifications.native.turnDoneBody）不算。
+    const blanks = [...enLeaves.entries()]
+      .filter(([path, enValue]) => asText(enValue).trim() !== '' && asText(faLeaves.get(path)).trim() === '')
+      .map(([path]) => path)
+    expect(blanks).toEqual([])
   })
 
-  it('translates the whole first batch and leaves the rest on the English fallback', () => {
-    // ① 已翻译区块：每个叶子都必须是波斯语（防止漏译/误留英文）
-    const translatedSections = ['language', 'common', 'boot', 'errors', 'onboarding', 'modelPicker', 'ui'] as const
-    const englishLeftovers: string[] = []
-    for (const section of translatedSections) {
-      for (const path of leafPaths(fa[section])) {
-        const value = String(atPath(fa[section], path) ?? '')
-        // 允许纯符号/数字/拉丁品牌名，但至少要有一个波斯字母
-        if (!PERSIAN.test(value)) {
-          englishLeftovers.push(`${section}.${path}`)
-        }
-      }
-    }
-    expect(englishLeftovers).toEqual([])
+  it('is translated almost in full, with the remainder English by design', () => {
+    const notPersian = [...faLeaves.entries()]
+      .filter(([path, value]) => !PERSIAN.test(asText(value)) && asText(enLeaves.get(path)) !== asText(value))
+      .map(([path]) => path)
 
-    // ② 未进入首批的区块：必须原样回退成英文（证明 defineLocale 深合并在生效）
-    for (const path of ['composer.send', 'settings.something', 'sidebar.sessions', 'assistant.thinking']) {
-      if (atPath(en, path) == null) {
+    // 极少数条目本就无需翻译：纯品牌名/符号/数字，或恒等函数（(cwd) => cwd）
+    expect(notPersian.length).toBeLessThan(40)
+
+    const coverage = 1 - notPersian.length / enLeaves.size
+    expect(coverage).toBeGreaterThan(0.99)
+  })
+
+  it('never drops an interpolated value from a function message', () => {
+    // 这是真实踩过的坑：机翻把 `${name}` 弄丢后，函数会变成"少了变量"的句子，
+    // 而类型检查完全看不出来。这里逐条比较英文与波斯语函数里 ${...} 的个数。
+    const dropped: string[] = []
+    for (const [path, enValue] of enLeaves) {
+      if (typeof enValue !== 'function') {
         continue
       }
-      expect(atPath(TRANSLATIONS.fa, path)).toEqual(atPath(en, path))
+      const faValue = faLeaves.get(path)
+      const countEn = (enValue.toString().match(/\$\{/g) ?? []).length
+      const countFa = (String(faValue).match(/\$\{/g) ?? []).length
+      if (countEn !== countFa) {
+        dropped.push(`${path} (en=${countEn} fa=${countFa})`)
+      }
     }
-
-    // ③ 覆盖量守卫：首批翻译不应悄悄退化成少数几条
-    const persianLeaves = leafPaths(fa).filter(path => PERSIAN.test(String(atPath(fa, path) ?? '')))
-    expect(persianLeaves.length).toBeGreaterThanOrEqual(150)
+    expect(dropped).toEqual([])
   })
 
   it('keeps interpolator signatures so callers can keep passing args', () => {

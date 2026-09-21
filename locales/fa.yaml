@@ -1,0 +1,687 @@
+# Hermes static-message catalog -- Persian (fa)
+#
+# 由 hermes-fa 项目维护：scripts/translate-backend-fa.py 生成，请勿手工增删键。
+# 键集合与 {占位符} 必须与 en.yaml 完全一致（tests/agent/test_i18n.py 会断言）。
+# 未翻译项保留英文原文（而不是缺键），以保证对齐测试通过。
+approval:
+  dangerous_header: '⚠️  دستور خطرناک: {description}'
+  choose_long: '      [o] یک‌بار  |  [s] نشست  |  [a] همیشه  |  [d] رد'
+  choose_short: '      [o] یک‌بار  |  [s] نشست  |  [d] رد'
+  prompt_long: '      انتخاب [o/s/a/D]: '
+  prompt_short: '      انتخاب [o/s/D]: '
+  choose_smart_deny: '      [o] یک‌بار  |  [d] رد'
+  prompt_smart_deny: '      انتخاب [o/D]: '
+  smart_deny_once_inputs: o,once
+  smart_deny_deny_inputs: d,deny
+  timeout: '      ⏱ پاسخی در {waited} نیامد — دستور اجرا نشد. برای تلاش دوباره بپرسید، یا محدودیت را بالا ببرید: hermes config set approvals.timeout {suggested}'
+  allowed_once: '      ✓ یک‌بار مجاز شد'
+  allowed_session: '      ✓ برای این نشست مجاز شد'
+  allowed_always: '      ✓ به فهرست مجاز دائمی اضافه شد'
+  denied: '      ✗ رد شد'
+  cancelled: '      ✗ لغو شد'
+  blocklist_message: این دستور در فهرست مسدود بی‌قید و شرط است و نمی‌توان آن را تأیید کرد.
+gateway:
+  approval_expired: ⚠️ تأیید منقضی شد (عامل دیگر منتظر نیست). از عامل بخواهید دوباره تلاش کند.
+  draining: ⏳ در حال تخلیه {count} عامل فعال پیش از راه‌اندازی مجدد...
+  goal_cleared: ✓ هدف پاک شد.
+  no_active_goal: هدف فعالی وجود ندارد.
+  config_read_failed: '⚠️ خواندن config.yaml ممکن نشد: {error}'
+  config_save_failed: '⚠️ ذخیره‌سازی تنظیمات ممکن نشد: {error}'
+  model:
+    error_prefix: 'خطا: {error}'
+    switched: مدل به `{model}` تغییر کرد
+    provider_label: 'ارائه‌دهنده: {provider}'
+    context_label: 'زمینه: {tokens} توکن'
+    max_output_label: 'حداکثر خروجی: {tokens} توکن'
+    cost_label: 'هزینه: {cost}'
+    capabilities_label: 'قابلیت‌ها: {capabilities}'
+    prompt_caching_enabled: 'ذخیره‌سازی پرامپت: فعال'
+    warning_prefix: 'هشدار: {warning}'
+    saved_global: در config.yaml ذخیره شد (`--global`)
+    session_only_hint: _(فقط نشست — برای ماندگاری `--global` را اضافه کنید)_
+    current_label: 'فعلی: `{model}` روی {provider}'
+    current_tag: ' (فعلی)'
+    more_models_suffix: ' (+{count} بیشتر)'
+    usage_switch_model: '`/model <name>` — تغییر مدل'
+    usage_switch_provider: '`/model <name> --provider <slug>` — تغییر ارائه‌دهنده'
+    usage_persist: '`/model <name> --global` — ماندگاری'
+  agents:
+    header: 🤖 **عوامل و وظایف فعال**
+    active_agents: '**عامل‌های فعال:** {count}'
+    this_chat: ' · این گفت‌وگو'
+    more: '... و {count} مورد دیگر'
+    running_processes: '**فرایندهای پس‌زمینهٔ در حال اجرا:** {count}'
+    async_jobs: '**کارهای ناهمگام گیتوی:** {count}'
+    background_delegations: '**واگذاری‌های پس‌زمینه:** {count}'
+    none: هیچ عامل فعال یا وظیفه‌ای در حال اجرا نیست.
+    state_starting: در حال شروع
+    state_running: در حال اجرا
+  approve:
+    no_pending: هیچ دستوری در انتظار تأیید نیست.
+    once_singular: ✅ دستور تأیید شد. عامل در حال ادامه است...
+    once_plural: ✅ دستورها تأیید شدند ({count} دستور). عامل در حال ادامه است...
+    session_singular: ✅ دستور تأیید شد (الگو برای این نشست تأیید شد). عامل در حال ادامه است...
+    session_plural: ✅ دستورها تأیید شدند (الگو برای این نشست تأیید شد) ({count} دستور). عامل در حال ادامه است...
+    always_singular: ✅ دستور تأیید شد (الگو به‌طور دائمی تأیید شد). عامل در حال ادامه است...
+    always_plural: ✅ دستورها تأیید شدند (الگو به‌طور دائمی تأیید شد) ({count} دستور). عامل در حال ادامه است...
+  background:
+    usage: 'استفاده: /bg <prompt>
+
+      مثال: /bg خلاصه‌ای از داغ‌ترین مطالب HN امروز
+
+
+      این دستور درخواست را در یک نشست جداگانه اجرا می‌کند. می‌توانید به گفت‌وگو ادامه دهید — وقتی تمام شد، نتیجه اینجا ظاهر می‌شود.'
+    started: '🔄 وظیفهٔ پس‌زمینه شروع شد: «{preview}»
+
+      شناسهٔ وظیفه: {task_id}
+
+      می‌توانید به گفت‌وگو ادامه دهید — وقتی تمام شد نتایج ظاهر می‌شوند.'
+  btw:
+    usage: 'استفاده: /btw <question>
+
+      مثال: /btw خطا در کدام فایل بود؟
+
+
+      بدون اینکه آن را قطع کند، به یک سؤال جانبی سریع دربارهٔ این گفت‌وگو پاسخ می‌دهد. برای یک وظیفهٔ پس‌زمینهٔ مستقل، از /bg <prompt> استفاده کنید.'
+    no_history: هنوز گفت‌وگویی وجود ندارد — در عوض سؤال‌تان را به‌صورت یک پیام عادی ارسال کنید.
+    no_provider: '❌ امکان پاسخ به سؤال جانبی نیست: هیچ اعتبارنامه‌ای برای ارائه‌دهنده تنظیم نشده است.'
+    started: '💬 سؤال جانبی: «{preview}»
+
+      پاسخ از روی یک تصویر لحظه‌ای از این گفت‌وگو داده می‌شود — کار فعلی ادامه دارد.'
+    answer: '💬 /btw: «{preview}»
+
+
+      {answer}'
+    failed: '❌ /btw ناموفق بود: «{preview}»
+
+      {error}'
+  branch:
+    db_unavailable: پایگاه دادهٔ نشست در دسترس نیست.
+    no_conversation: گفت‌وگویی برای شاخه‌گرفتن وجود ندارد — ابتدا یک پیام ارسال کنید.
+    create_failed: 'ایجاد شاخه ناموفق بود: {error}'
+    switch_failed: شاخه ساخته شد اما تغییر به آن ممکن نشد.
+    branched_one: '⑂ شاخهٔ **{title}** ساخته شد ({count} پیام کپی شد)
+
+      اصلی: `{parent}`
+
+      شاخه: `{new}`
+
+      برای بازگشت به اصلی از `/resume` استفاده کنید.'
+    branched_many: '⑂ شاخهٔ **{title}** ساخته شد ({count} پیام کپی شدند)
+
+      اصلی: `{parent}`
+
+      شاخه: `{new}`
+
+      برای بازگشت به اصلی از `/resume` استفاده کنید.'
+    branched_thread_one: '⑂ شاخهٔ **{title}** در یک موضوع جدید ساخته شد ({count} پیام کپی شد)
+
+      موضوع: {thread}
+
+      اصلی: `{parent}` — این گفت‌وگو روی آن می‌ماند
+
+      شاخه: `{new}`
+
+      برای شاخه‌گرفتن در همین گفت‌وگو از `/branch --here` استفاده کنید.'
+    branched_thread_many: '⑂ شاخهٔ **{title}** در یک موضوع جدید ساخته شد ({count} پیام کپی شدند)
+
+      موضوع: {thread}
+
+      اصلی: `{parent}` — این گفت‌وگو روی آن می‌ماند
+
+      شاخه: `{new}`
+
+      برای شاخه‌گرفتن در همین گفت‌وگو از `/branch --here` استفاده کنید.'
+    thread_fallback: امکان ایجاد موضوع در اینجا نبود، بنابراین شاخه جایگزین نشست این گفت‌وگو شد.
+  commands:
+    usage: 'استفاده: `/commands [page]`'
+    skill_header: '⚡ **دستورهای مهارت**:'
+    default_desc: دستور مهارت
+    none: هیچ دستوری در دسترس نیست.
+    header: 📚 **دستورها** (در مجموع {total}، صفحهٔ {page}/{total_pages})
+    nav_prev: '`/commands {page}` ← قبلی'
+    nav_next: بعدی → `/commands {page}`
+    out_of_range: _(صفحهی درخواستی {requested} خارج از محدوده بود؛ صفحهی {page} نمایش داده میشود.)_
+  compress:
+    not_enough: مکالمه برای فشرده‌سازی کافی نیست (حداقل به ۴ پیام نیاز است).
+    no_provider: ارائه‌دهنده‌ای پیکربندی نشده است — امکان فشرده‌سازی نیست.
+    nothing_to_do: هنوز چیزی برای فشرده‌سازی نیست (کل متن گفت‌وگو همچنان زمینه‌ی محافظت‌شده است).
+    aggressive_unsupported: --aggressive پشتیبانی نمی‌شود؛ برای نگه داشتن فقط تبادلات اخیر از '/compress here [N]' استفاده کنید یا برای حذف نوبت‌ها از /undo استفاده کنید.
+    focus_line: 'تمرکز: «{topic}»'
+    summary_failed: ⚠️ تولید خلاصه ناموفق بود ({error}). {count} پیام تاریخی حذف و با یک متن جایگزین تعویض شد؛ زمینه‌ی قبلی دیگر قابل بازیابی نیست. لطفاً پیکربندی مدل auxiliary.compression را بررسی کنید.
+    aborted: ⚠️ فشرده‌سازی لغو شد ({error}). هیچ پیامی حذف نشد — گفت‌وگو بدون تغییر است. برای تلاش مجدد /compress را اجرا کنید، برای نشست تمیز از /reset استفاده کنید، یا پیکربندی مدل auxiliary.compression را بررسی کنید.
+    aux_failed: ℹ️ مدل فشرده‌سازی پیکربندی‌شده `{model}` ناموفق بود ({error}). با مدل اصلی شما بازیابی شد — زمینه سالم است — اما بهتر است `auxiliary.compression.model` را در config.yaml بررسی کنید.
+    turnhold_deferred: ℹ️ فشرده‌سازی زمینه به تعویق افتاد — خلاصه هنوز در حال پخش است. این نوبت بدون فشرده‌سازی ادامه می‌یابد.
+    failed: 'فشرده‌سازی ناموفق بود: {error}'
+  debug:
+    upload_failed: '✗ بارگذاری گزارش اشکال‌زدایی ناموفق بود: {error}'
+    header: '**گزارش اشکال‌زدایی بارگذاری شد:**'
+    auto_delete: ⏱ اشتراک‌گذاری‌ها پس از ۶ ساعت خودکار حذف می‌شوند.
+    full_logs_hint: برای بارگذاری کامل لاگ‌ها، از `hermes debug share` در CLI استفاده کنید.
+    share_hint: این پیوندها را برای پشتیبانی با تیم Hermes به اشتراک بگذارید.
+  deny:
+    stale: ❌ دستور رد شد (تأیید منقضی شده بود).
+    no_pending: هیچ دستور معلقی برای رد کردن وجود ندارد.
+    denied_singular: ❌ دستور رد شد.
+    denied_plural: ❌ دستورها رد شدند ({count} دستور).
+    denied_reason_singular: '❌ دستور رد شد. دلیل به عامل منتقل شد: «{reason}»'
+    denied_reason_plural: '❌ دستورها رد شدند ({count} دستور). دلیل به عامل منتقل شد: «{reason}»'
+  fast:
+    not_supported: ⚡ /fast فقط برای مدل‌های OpenAI که پردازش اولویت‌دار را پشتیبانی می‌کنند در دسترس است.
+    status: '⚡ پردازش اولویت‌دار
+
+
+      حالت فعلی: `{mode}`
+
+
+      _کاربرد:_ `/fast <normal|fast|auto|cold|status>`'
+    unknown_arg: '⚠️ آرگومان ناشناخته: `{arg}`
+
+
+      **گزینه‌های معتبر:** normal, fast, auto, cold, status'
+    saved: '⚡ ✓ پردازش اولویت‌دار: **{label}** (در تنظیمات ذخیره شد)
+
+      _(از پیام بعد اعمال می‌شود)_'
+    session_only: '⚡ ✓ پردازش اولویت‌دار: **{label}** (فقط این نشست)'
+    label_fast: سریع
+    label_normal: عادی
+    status_fast: سریع
+    status_normal: عادی
+    picker_title: '⚡ **پردازش اولویت‌دار**
+
+
+      حالت فعلی: `{mode}`
+
+
+      یک گزینه انتخاب کنید:'
+    choice_fast: fast — پردازش اولویت‌دار فعال
+    choice_normal: normal — پردازش استاندارد
+    choice_auto: auto — پردازش سریع برای چند ثانیه‌ی اول هر نوبت
+    choice_cold: cold — پردازش سریع فقط برای اولین نوبت نشست
+  footer:
+    status: '📎 پانوشت زمان اجرا: **{state}**
+
+      فیلدها: `{fields}`
+
+      پلتفرم: `{platform}`'
+    usage: 'کاربرد: `/footer [on|off|status]`'
+    saved: '📎 پانوشت زمان اجرا: **{state}**{example}
+
+      _(به‌صورت سراسری ذخیره شد — از پیام بعد اعمال می‌شود)_'
+    example_line: '
+
+      مثال: `{preview}`'
+    state_on: فعال
+    state_off: غیرفعال
+  goal:
+    unavailable: اهداف در این نشست در دسترس نیستند.
+    no_goal_set: هدفی تعیین نشده است.
+    paused: '⏸ هدف مکث شد: {goal}'
+    no_resume: هدفی برای ادامه وجود ندارد.
+    resumed: '▶ هدف از سر گرفته شد: {goal}
+
+      اکنون ادامه می‌دهم — بلافاصله قدم بعدی را برمی‌دارم.'
+    invalid: 'هدف نامعتبر: {error}'
+    set: '⊙ هدف تعیین شد (بودجه {budget} نوبتی): {goal}
+
+      تا زمانی که هدف انجام شود، شما آن را مکث/پاک کنید، یا بودجه تمام شود، به کار ادامه می‌دهم.
+
+      کنترل‌ها: /goal status · /goal pause · /goal resume · /goal clear'
+  help:
+    header: '📖 **دستورهای Hermes**
+
+      '
+    skill_header: '
+
+      ⚡ **دستورهای مهارت** ({count} فعال):'
+    more_use_commands: '
+
+      ... و {count} مورد دیگر. برای فهرست کامل صفحه‌بندی‌شده از `/commands` استفاده کنید.'
+  insights:
+    invalid_days: 'مقدار --days نامعتبر: {value}'
+    error: 'خطا در تولید تحلیل: {error}'
+  kanban:
+    error_prefix: '⚠ خطای kanban: {error}'
+    subscribed_suffix: (مشترک شدید — وقتی {task_id} کامل شود یا مسدود شود، مطلع خواهید شد)
+    truncated_suffix: … (کوتاه‌شده؛ برای خروجی کامل از `hermes kanban …` در ترمینال خود استفاده کنید)
+    no_output: (بدون خروجی)
+    wake:
+      completed: تکمیل شد
+      gave_up: تسلیم شد (تلاش‌های مجدد تمام شد)
+      crashed: از کار افتاد (worker خارج شد)؛ توزیع‌کننده دوباره تلاش می‌کند
+      timed_out: مهلت تمام شد؛ توزیع‌کننده دوباره تلاش می‌کند
+      blocked: مسدود شد؛ نیاز به توجه دارد
+      review_requested: برای بازبینی تحویل داده شد؛ پیاده‌سازی انجام شده است
+      changes_requested: بازبینی تغییراتی درخواست کرد (BLOCK)؛ پیاده‌سازی تأیید نشده است
+      block_loop_detected: پس از مسدودیتهای مکرر به تریاژ هدایت شد؛ نیاز به توجه ارکستراسیون
+      status_default: وضعیت تغییر کرد
+      status_joiner: '، '
+      message: '[kanban] وظیفه {task_id} {status}.
+
+        عنوان: {title}
+
+        مسئول: @{assignee}
+
+        برد: {board}
+
+
+        نتیجه را بررسی کنید یا گام بعدی را تعیین کنید.'
+      handoff: 'نتیجه: {summary}'
+      review_detail: 'بازخورد بازبینی: {reason}
+
+        کارت موجود و اجرای بازبینی فعلی آن را بررسی کنید؛ کار را به همان وظیفه پیادهسازی بازگردانید. این BLOCK را بهعنوان تأیید تلقی نکنید و وظیفه تکراری ایجاد نکنید.'
+      guidance: این یک اعلان خودکار وضعیت وظیفه است، نه درخواستی برای تجزیه مجدد وظیفه. قبل از ایجاد وظایف پیگیری، برد فعلی را بررسی کنید؛ وظایف یا نمودارهایی که از قبل وجود دارند را بازسازی نکنید.
+  personality:
+    none_configured: هیچ شخصیتی در `{path}/config.yaml` پیکربندی نشده است
+    header: '🎭 **شخصیتهای موجود**
+
+      '
+    none_option: • `none` — (بدون لایه شخصیت)
+    item: • `{name}` — {preview}
+    usage: '
+
+      استفاده: `/personality <name>`'
+    save_failed: '⚠️ ذخیره تغییر شخصیت ناموفق بود: {error}'
+    cleared: '🎭 شخصیت پاک شد — رفتار پایه عامل استفاده میشود.
+
+      _(از پیام بعدی اعمال میشود)_'
+    set_to: '🎭 شخصیت به **{name}** تنظیم شد
+
+      _(از پیام بعدی اعمال میشود)_'
+    unknown: 'شخصیت ناشناخته: `{name}`
+
+
+      موجود: {available}'
+  profile:
+    header: 👤 **پروفایل:** `{profile}`
+    home: 📂 **خانه:** `{home}`
+  reasoning:
+    level_default: متوسط (پیشفرض)
+    level_disabled: هیچ (غیرفعال)
+    scope_session: لغو نشست
+    scope_global: پیکربندی سراسری
+    status: '🧠 **تنظیمات استدلال**
+
+
+      **تلاش:** `{level}`
+
+      **دامنه:** {scope}
+
+      **نمایش:** {display}
+
+
+      _استفاده:_ `/reasoning <none|minimal|low|medium|high|xhigh|max|ultra|reset|show|hide> [--global]`'
+    display_on: روشن ✓
+    display_off: خاموش
+    display_set_on: '🧠 ✓ نمایش استدلال: **روشن**
+
+      تفکر مدل قبل از هر پاسخ در **{platform}** نمایش داده میشود.'
+    display_set_off: '🧠 ✓ نمایش استدلال: **خاموش** برای **{platform}**'
+    reset_global_unsupported: ⚠️ `/reasoning reset --global` پشتیبانی نمیشود. برای تغییر پیشفرض سراسری از `/reasoning <level> --global` استفاده کنید.
+    reset_done: 🧠 ✓ بازنشانی استدلال نشست انجام شد؛ بازگشت به تنظیمات سراسری.
+    unknown_arg: '⚠️ آرگومان ناشناخته: `{arg}`
+
+
+      **سطوح معتبر:** none, minimal, low, medium, high, xhigh, max, ultra
+
+      **نمایش:** show, hide
+
+      **ذخیرهسازی:** برای ذخیره فراتر از این نشست، `--global` اضافه کنید'
+    picker_title: '🧠 **تنظیمات استدلال**
+
+
+      **تلاش:** `{level}`
+
+      **محدوده:** {scope}
+
+      **نمایش:** {display}
+
+
+      یک گزینه انتخاب کنید:'
+    choice_none: none — غیرفعال کردن استدلال
+    choice_reset: reset — پاک کردن بازنشانی نشست
+    choice_show: نمایش استدلال در پاسخها
+    choice_hide: پنهان کردن استدلال از پاسخها
+    set_global: '🧠 ✓ تلاش استدلال به `{effort}` تنظیم شد (ذخیره در تنظیمات)
+
+      _(از پیام بعدی اعمال میشود)_'
+    set_global_save_failed: '🧠 ✓ تلاش استدلال به `{effort}` تنظیم شد (فقط نشست — ذخیره تنظیمات ناموفق بود)
+
+      _(از پیام بعدی اعمال میشود)_'
+    set_session: '🧠 ✓ تلاش استدلال به `{effort}` تنظیم شد (فقط نشست — برای ذخیره، `--global` اضافه کنید)
+
+      _(از پیام بعدی اعمال میشود)_'
+  reload_mcp:
+    cancelled: 🟡 /reload-mcp لغو شد. ابزارهای MCP تغییر نکردند.
+    always_followup: 'ℹ️ فراخوانیهای آینده `/reload-mcp` بدون تأیید اجرا میشوند. برای فعالسازی مجدد، `approvals.mcp_reload_confirm: true` را در config.yaml تنظیم کنید.'
+    confirm_prompt: '⚠️ **تأیید /reload-mcp**
+
+
+      بارگذاری مجدد سرورهای MCP مجموعه ابزار این نشست را بازسازی میکند و **کش پرامپت ارائهدهنده را باطل میکند** — پیام بعدی توکنهای ورودی کامل را دوباره ارسال میکند. در مدلهای با زمینه طولانی یا استدلال بالا، این میتواند پرهزینه باشد.
+
+
+      انتخاب کنید:
+
+      • **تأیید یکبار** — اکنون بارگذاری مجدد
+
+      • **تأیید همیشگی** — اکنون بارگذاری مجدد و خاموش کردن دائمی این پیام
+
+      • **لغو** — ابزارهای MCP را بدون تغییر بگذارید
+
+
+      _پاسخ متنی: `/approve`، `/always` یا `/cancel` بنویسید._'
+    header: '🔄 **سرورهای MCP بارگذاری مجدد شدند**
+
+      '
+    reconnected: '♻️ اتصال مجدد: {names}'
+    added: '➕ اضافه شد: {names}'
+    removed: '➖ حذف شد: {names}'
+    none_connected: هیچ سرور MCP متصل نیست.
+    tools_available: '
+
+      🔧 {tools} ابزار از {servers} سرور در دسترس است'
+    failed: '❌ بارگذاری مجدد MCP ناموفق بود: {error}'
+  reload_skills:
+    header: '🔄 **مهارتها بارگذاری مجدد شدند**
+
+      '
+    no_new: مهارت جدیدی شناسایی نشد.
+    total: '
+
+      📚 {count} مهارت در دسترس است'
+    added_header: ➕ **مهارتهای اضافهشده:**
+    removed_header: ➖ **مهارتهای حذفشده:**
+    item_with_desc: '    - {name}: {desc}'
+    item_no_desc: '    - {name}'
+    failed: '❌ بارگذاری مجدد مهارتها ناموفق بود: {error}'
+  reset:
+    header_default: ✨ نشست بازنشانی شد! شروع تازه.
+    header_new: ✨ نشست جدید شروع شد!
+    header_titled: '✨ نشست جدید شروع شد: {title}'
+    title_rejected: '
+
+      ⚠️ عنوان رد شد: {error}'
+    title_error_untitled: '
+
+      ⚠️ {error} — نشست بدون عنوان شروع شد.'
+    title_empty_untitled: '
+
+      ⚠️ عنوان پس از پاکسازی خالی است — نشست بدون عنوان شروع شد.'
+    tip: '
+
+      ✦ نکته: {tip}'
+  restart:
+    in_progress: ⏳ راهاندازی مجدد گیتوی در حال انجام است...
+    restarting: ♻ در حال راهاندازی مجدد گیتوی. اگر ظرف ۶۰ ثانیه اطلاع داده نشدید، از کنسول با `hermes gateway restart` راهاندازی مجدد کنید.
+  resume:
+    db_unavailable: پایگاه داده نشست در دسترس نیست.
+    parse_error: '⚠️ امکان تجزیه آرگومانهای `/resume` وجود ندارد: {error}.
+
+      برای عناوین با فاصله از نقلقول استفاده کنید، مثلاً: `/resume "Project A Plan"`.'
+    matrix_no_named_sessions: 'هیچ نشست نامگذاریشدهای برای این اتاق Matrix یافت نشد.
+
+      از `/title My Session` برای نامگذاری نشست فعلی اتاق، از `/resume --all` برای فهرست کردن همه نشستهای Matrix، یا از `/resume --cross-room <session name>` برای عبور صریح از مرز اتاق استفاده کنید.'
+    matrix_blocked_no_origin: '⚠️ Matrix /resume مسدود شد: این نشست نامگذاریشده مبدأ اتاق ثبتشدهای ندارد، بنابراین Hermes بهطور پیشفرض آن را در اتاق فعلی ادامه نمیدهد. اگر عمداً میخواهید از مرز اتاق عبور کنید، از `/resume --cross-room {name}` استفاده کنید.'
+    matrix_blocked_other_room: '⚠️ Matrix /resume مسدود شد: آن نشست متعلق به اتاق Matrix دیگری است ({room}). اگر عمداً میخواهید آن را اینجا ادامه دهید، از `/resume --cross-room {name}` استفاده کنید.'
+    matrix_cross_room_success: '⚠️ ادامه بین اتاقی: **{title}** در اتاق Matrix **{room}** ادامه یافت.
+
+      پیامهای آینده در این اتاق از آن رونوشت استفاده خواهند کرد تا `/reset` یا `/resume` دیگری.{msg_part}'
+    blocked_not_owner: '⚠️ /resume مسدود شد: ''**{name}**'' متعلق به کاربر یا گفتگوی دیگری است. فقط میتوانید نشستها را از این گفتگو ادامه دهید.'
+    no_named_sessions: 'هیچ نشست نامگذاریشدهای یافت نشد.
+
+      از `/title My Session` برای نامگذاری نشست فعلی استفاده کنید، سپس با `/resume My Session` بعداً به آن بازگردید.'
+    all_requires_admin: '_توجه: `--all` (فهرست بین گفتگوها) نیاز به مدیر پیکربندیشده دارد؛ فقط نشستهای این گفتگو نمایش داده میشود._'
+    list_header: '📋 **نشستهای نامگذاریشده**
+
+      '
+    list_item: • **{title}**{preview_part}
+    list_item_numbered: '{index}. **{title}**{preview_part}'
+    list_preview_suffix: ' — _{preview}_'
+    list_footer: '
+
+      استفاده: `/resume <نام نشست>`'
+    list_footer_numbered: '
+
+      استفاده: `/resume <نام نشست>` یا `/resume <شماره>` (مثلاً `/resume 1` برای جدیدترین)'
+    list_failed: 'نمیتوان نشستها را فهرست کرد: {error}'
+    out_of_range: 'شاخص بازیابی {index} خارج از محدوده است.
+
+      از `/resume` بدون آرگومان برای دیدن نشستهای موجود استفاده کنید.'
+    not_found: 'هیچ نشستی مطابق با ''**{name}**'' یافت نشد.
+
+      از `/resume` بدون آرگومان برای دیدن نشستهای موجود استفاده کنید.'
+    already_on: 📌 در حال حاضر روی نشست **{name}** هستید.
+    switch_failed: تغییر نشست ناموفق بود.
+    resumed_one: ↻ نشست **{title}** بازیابی شد ({count} پیام). گفتوگو بازگردانی شد.
+    resumed_many: ↻ نشست **{title}** بازیابی شد ({count} پیام). گفتوگو بازگردانی شد.
+    resumed_no_count: ↻ نشست **{title}** بازیابی شد. گفتوگو بازگردانی شد.
+  retry:
+    no_previous: پیام قبلی برای تلاش مجدد وجود ندارد.
+  rollback:
+    not_enabled: "نقاط بازرسی فعال نیستند.\nدر config.yaml فعال کنید:\n```\ncheckpoints:\n  enabled: true\n```"
+    none_found: هیچ نقطه بازرسی برای {cwd} یافت نشد
+    invalid_number: شماره نقطه بازرسی نامعتبر است. از 1-{max} استفاده کنید.
+    restored: '✅ به نقطه بازرسی {hash} بازگردانی شد: {reason}
+
+      یک نسخه پیش از بازگردانی بهطور خودکار ذخیره شد.'
+    kept_user_edits: '↷ ویرایشهای دستی شما حفظ شد: {files}
+
+      از /rollback <N> --all برای بازگردانی آنها نیز استفاده کنید.'
+    kept_oversize: '↷ حفظ شد (بسیار بزرگ برای نقاط بازرسی، نسخه ذخیرهشده برای بازگشت وجود ندارد): {files}'
+    failed_deletes: '⚠️ امکان حذف وجود نداشت (در جای خود باقی ماند): {files}'
+    restore_failed: ❌ {error}
+  diff:
+    not_enabled: "نقاط بازرسی فعال نیستند، بنابراین خط پایه نشست وجود ندارد.\nدر config.yaml فعال کنید:\n```\ncheckpoints:\n  enabled: true\n```\n/diff ساده همچنان کار میکند — مستقیماً از git استفاده میکند."
+    no_changes: تغییری وجود ندارد.
+    failed: '{error}'
+  set_home:
+    save_failed: 'ذخیره کانال خانه ناموفق بود: {error}'
+    success: '✅ کانال خانه به **{name}** (شناسه: {chat_id}) تنظیم شد.
+
+      کارهای زمانبندیشده و پیامهای بینپلتفرمی اینجا تحویل داده میشوند.'
+  context:
+    header: 🧠 **پنجره زمینه**
+    model: 'مدل: `{model}`'
+    window: 'پنجره: {total} توکن'
+    in_use: 'در حال استفاده: {used} / {total} ({pct}%)'
+    bar: '{bar}'
+    headroom: 'فضای باقیمانده تا حد: {headroom} توکن'
+    threshold: 'فشردهسازی خودکار در: {threshold} ({threshold_pct}%) — {to_go} مانده'
+    over_threshold: ⚠️ **فراتر از آستانه فشردهسازی خودکار ({threshold}, {threshold_pct}%)**
+    compressions: 'فشردهسازیهای این نشست: {count}'
+    last_savings: 'آخرین فشردهسازی آزاد کرد: {savings}% از زمینه'
+    totals_header: مجموع نشست (تجمعی در {calls} فراخوانی API)
+    totals_line: ورودی {input} · خروجی {output} · استدلال {reasoning}
+    total_billed: 'کل صورتحساب: {total}'
+    throughput_note: _توان عملیاتی، نه اندازه زمینه — هر فراخوانی پنجره بالا را دوباره ارسال میکند._
+    estimated: 'زمینه تخمینی: حدود {count} توکن در {messages} پیام'
+    detail_after_first: _(آمار کامل فشردهسازی و توان عملیاتی پس از اولین پاسخ عامل در دسترس است)_
+    no_data: هنوز داده زمینهای موجود نیست. برای شروع نشست پیامی ارسال کنید.
+  status:
+    header: 📊 **وضعیت گیتوی Hermes**
+    matrix_scope_header: '**محدوده Matrix:**'
+    matrix_scope_room: '  اتاق: {room}'
+    matrix_scope_room_id: '  شناسه اتاق: {room_id}'
+    matrix_scope_thread: '  شناسه موضوع: {thread_id}'
+    matrix_scope_mode: '  محدوده نشست: {scope}'
+    matrix_scope_key: '  کلید نشست: {session_key}'
+    session_id: '**شناسه نشست:** `{session_id}`'
+    title: '**عنوان:** {title}'
+    created: '**ایجاد شده:** {timestamp}'
+    last_activity: '**آخرین فعالیت:** {timestamp}'
+    model: '**مدل:** `{model}`'
+    model_provider: '**مدل:** `{model}` ({provider})'
+    free_tier: Nous · سطح رایگان · nous/welcome · /login برای ورود
+    context: '**زمینه:** {used} / {total} ({pct}%)'
+    context_used: '**زمینه:** ~{used} توکن'
+    tokens: '**توکنهای صورتحسابشده در طول عمر:** {tokens} _(نه اندازه زمینه فعلی شما؛ از `/context` استفاده کنید)_'
+    agent_running: '**عامل در حال اجرا:** {state}'
+    state_yes: بله ⚡
+    state_no: خیر
+    queued: '**پیگیریهای در صف:** {count}'
+    platforms: '**پلتفرمهای متصل:** {platforms}'
+  stop:
+    stopped_pending: ⚡ متوقف شد. عامل هنوز شروع نکرده بود — میتوانید این نشست را ادامه دهید.
+    stopped: ⚡ متوقف شد. میتوانید این نشست را ادامه دهید.
+    no_active: وظیفه فعالی برای توقف وجود ندارد.
+  title:
+    db_unavailable: پایگاه داده نشست در دسترس نیست.
+    warn_prefix: ⚠️ {error}
+    empty_after_clean: ⚠️ عنوان پس از پاکسازی خالی است. لطفاً از نویسههای قابل چاپ استفاده کنید.
+    set_to: '✏️ عنوان نشست تنظیم شد: **{title}**'
+    not_found: نشست در پایگاه داده یافت نشد.
+    current_with_title: '📌 نشست: `{session_id}`
+
+      عنوان: **{title}**'
+    current_no_title: '📌 نشست: `{session_id}`
+
+      عنوانی تنظیم نشده. استفاده: `/title My Session Name`'
+  topic:
+    not_telegram_dm: دستور /topic فقط در چت خصوصی تلگرام در دسترس است.
+    no_session_db: پایگاه داده نشست در دسترس نیست.
+    unauthorized: شما مجاز به استفاده از /topic روی این ربات نیستید.
+    restore_needs_topic: برای بازیابی نشست، ابتدا یک تاپیک تلگرام ایجاد یا باز کنید، سپس /topic <session-id> را در آن تاپیک ارسال کنید. برای ایجاد تاپیک جدید، All Messages را باز کرده و هر پیامی را آنجا ارسال کنید.
+    topics_disabled: 'تاپیکهای تلگرام هنوز برای این ربات فعال نشدهاند.
+
+
+      نحوه فعالسازی:
+
+      1. @BotFather را باز کنید.
+
+      2. ربات خود را انتخاب کنید.
+
+      3. Bot Settings → Threads Settings را باز کنید.
+
+      4. حالت Threaded Mode را روشن کنید و مطمئن شوید کاربران اجازه ایجاد تاپیک جدید دارند.
+
+
+      سپس دوباره /topic را ارسال کنید.'
+    topics_user_disallowed: 'تاپیکهای تلگرام فعال هستند، اما کاربران اجازه ایجاد تاپیک ندارند.
+
+
+      @BotFather را باز کنید → ربات خود را انتخاب کنید → Bot Settings → Threads Settings، سپس گزینه ''Disallow users to create new threads'' را خاموش کنید.
+
+
+      سپس دوباره /topic را ارسال کنید.'
+    enable_failed: 'فعالسازی حالت تاپیک تلگرام ناموفق بود: {error}'
+    bound_status: 'این تاپیک به موارد زیر متصل است:
+
+      نشست: {label}
+
+      شناسه: {session_id}
+
+
+      برای جایگزینی این تاپیک با نشست جدید از /new استفاده کنید.
+
+      برای کار موازی، All Messages را باز کرده و پیامی را آنجا ارسال کنید تا تاپیک دیگری ایجاد شود.'
+    thread_ready: 'تاپیکهای چندنشستی تلگرام فعال شدند.
+
+
+      این تاپیک به عنوان یک نشست مستقل Hermes استفاده خواهد شد. برای جایگزینی نشست فعلی این تاپیک از /new استفاده کنید. برای کار موازی، All Messages را باز کرده و پیامی را آنجا ارسال کنید تا تاپیک دیگری ایجاد شود.'
+    untitled_session: نشست بدون عنوان
+  undo:
+    nothing: چیزی برای بازگردانی وجود ندارد.
+    removed: '↩️ {turns} نوبت ({count} پیام) بازگردانی شد.
+
+      پشتیبانگیری در: "{preview}"
+
+      متن بالا را کپی/ویرایش کرده و ارسال کنید تا از اینجا دوباره درخواست دهید.'
+    invalid_count: تعداد نامعتبر "{arg}" — از /undo یا /undo N استفاده کنید.
+  update:
+    platform_not_messaging: ✗ /update فقط از پلتفرمهای پیامرسان در دسترس است. `hermes update` را از ترمینال اجرا کنید.
+    not_git_repo: ✗ مخزن git نیست — امکان بهروزرسانی وجود ندارد.
+    hermes_cmd_not_found: ✗ دستور `hermes` پیدا نشد. Hermes در حال اجراست، اما دستور بهروزرسانی نتوانست فایل اجرایی را در PATH یا از طریق مفسر پایتون فعلی پیدا کند. سعی کنید `hermes update` را به صورت دستی در ترمینال اجرا کنید.
+    start_failed: '✗ شروع بهروزرسانی ناموفق بود: {error}'
+    starting: ☤ شروع بهروزرسانی Hermes… پیشرفت را اینجا نمایش میدهم.
+  usage:
+    rate_limits: ⏱️ **محدودیتهای نرخ:** {state}
+    header_session: 📊 **مصرف توکن نشست**
+    label_model: 'مدل: `{model}`'
+    label_input_tokens: 'توکنهای ورودی: {count}'
+    label_cache_read: 'توکنهای خواندن کش: {count}'
+    label_cache_write: 'توکنهای نوشتن کش: {count}'
+    label_output_tokens: 'توکنهای خروجی: {count}'
+    label_total: 'مجموع: {count}'
+    label_api_calls: 'فراخوانیهای API: {count}'
+    label_cost: 'هزینه: {prefix}${amount}'
+    label_cost_included: 'هزینه: شامل'
+    label_context: 'زمینه: {used} / {total} ({pct}%)'
+    label_compressions: 'فشردهسازیها: {count}'
+    breakdown_header: 🧩 **تفکیک زمینه** _(تخمینی)_
+    breakdown_line: '• {label}: ~{count} ({pct}%)'
+    breakdown_cat_system_prompt: پیشفرض سیستم
+    breakdown_cat_tool_definitions: تعاریف ابزار
+    breakdown_cat_rules: قوانین
+    breakdown_cat_skills: مهارتها
+    breakdown_cat_mcp: MCP
+    breakdown_cat_subagent_definitions: تعاریف زیرعامل
+    breakdown_cat_memory: حافظه
+    breakdown_cat_conversation: گفتوگو
+    header_session_info: 📊 **اطلاعات نشست**
+    label_messages: 'پیامها: {count}'
+    label_estimated_context: 'زمینه تخمینی: ~{count} توکن'
+    detailed_after_first: _(استفاده دقیق پس از اولین پاسخ عامل در دسترس است)_
+    no_data: دادههای استفاده برای این نشست موجود نیست.
+    unknown_subcommand: 'زیردستور /usage ناشناخته: `{args}`. `/usage` یا `/usage reset [--force]` را امتحان کنید.'
+    reset_wrong_provider: بازنشانی استفاده انباشته فقط در ارائهدهنده openai-codex در دسترس است. ابتدا با `/model` تغییر دهید.
+  credits:
+    not_logged_in: وارد Nous Portal نشدهاید. برای مشاهده موجودی اعتبار و شارژ، وارد شوید.
+  verbose:
+    not_enabled: "دستور `/verbose` برای پلتفرمهای پیامرسان فعال نیست.\n\nآن را در `config.yaml` فعال کنید:\n```yaml\ndisplay:\n  tool_progress_command: true\n```"
+    mode_off: '⚙️ پیشرفت ابزار: **خاموش** — هیچ فعالیت ابزاری نمایش داده نمیشود.'
+    mode_new: '⚙️ پیشرفت ابزار: **جدید** — هنگام تغییر ابزار نمایش داده میشود (طول پیشنمایش: `display.tool_preview_length`، پیشفرض ۴۰).'
+    mode_all: '⚙️ پیشرفت ابزار: **همه** — هر فراخوانی ابزار نمایش داده میشود (طول پیشنمایش: `display.tool_preview_length`، پیشفرض ۴۰).'
+    mode_verbose: '⚙️ پیشرفت ابزار: **مفصل** — هر فراخوانی ابزار با آرگومانهای کامل.'
+    mode_log: '⚙️ پیشرفت ابزار: **گزارش** — بیصدا در گفتگو؛ فراخوانیهای ابزار در ~/.hermes/logs/tool_calls.log نوشته میشوند.'
+    saved_suffix: _(ذخیره شد برای **{platform}** — از پیام بعدی اعمال میشود)_
+    save_failed: '_(ذخیره در تنظیمات ممکن نشد: {error})_'
+  voice:
+    enabled_voice_only: 'حالت صوتی فعال شد.
+
+      وقتی پیام صوتی ارسال کنید، با صدا پاسخ میدهم.
+
+      از /voice tts برای دریافت پاسخ صوتی به همه پیامها استفاده کنید.'
+    disabled_text: حالت صوتی غیرفعال شد. فقط پاسخ متنی.
+    tts_enabled: 'TTS خودکار فعال شد.
+
+      همه پاسخها شامل پیام صوتی خواهند بود.'
+    status_mode: 'حالت صوتی: {label}'
+    status_channel: 'کانال صوتی: #{channel}'
+    status_participants: 'شرکتکنندگان: {count}'
+    status_member: '  - {name}{status}'
+    speaking: ' (در حال صحبت)'
+    enabled_short: حالت صوتی فعال شد.
+    disabled_short: حالت صوتی غیرفعال شد.
+    label_off: خاموش (فقط متن)
+    label_voice_only: روشن (پاسخ صوتی به پیامهای صوتی)
+    label_all: TTS (پاسخ صوتی به همه پیامها)
+    help: '{toggle}
+
+
+      **نحوه کار /voice**
+
+      • `/voice on` — پاسخ صوتی وقتی پیام صوتی ارسال میکنید
+
+      • `/voice tts` — پاسخ صوتی به *هر* پیام
+
+      • `/voice off` — بازگشت به پاسخهای متنی
+
+      • `/voice status` — نمایش حالت فعلی
+
+      • `/voice` (بدون آرگومان) — جابهجایی سریع بین روشن و خاموش{channels}'
+    help_channels: '
+
+
+      **کانالهای صوتی زنده (Discord)**
+
+      • ابتدا به یک کانال صوتی بپیوندید، سپس `/voice channel` — من میپیوندم، گوش میدهم و پاسخهایم را میگویم
+
+      • `/voice leave` — قطع اتصال از کانال صوتی'
+  yolo:
+    disabled: ⚠️ حالت YOLO **خاموش** برای این نشست — دستورات خطرناک نیاز به تأیید دارند.
+    enabled: ⚡ حالت YOLO **روشن** برای این نشست — همه دستورات خودکار تأیید میشوند. با احتیاط استفاده کنید.
+  shared:
+    session_db_unavailable: پایگاهداده نشست در دسترس نیست.
+    session_db_unavailable_prefix: پایگاهداده نشست در دسترس نیست
+    session_not_found: نشست در پایگاهداده یافت نشد.
+    warn_passthrough: ⚠️ {error}

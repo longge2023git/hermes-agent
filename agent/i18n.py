@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 
 SUPPORTED_LANGUAGES: tuple[str, ...] = (
     "en", "zh", "zh-hant", "ja", "de", "es", "fr", "tr", "uk",
-    "af", "ko", "it", "ga", "pt", "ru", "hu", "ar",
+    "af", "ko", "it", "ga", "pt", "ru", "hu", "ar", "fa",
 )
 DEFAULT_LANGUAGE = "en"
 
@@ -47,6 +47,9 @@ _LANGUAGE_ALIASES: dict[str, str] = {
     "hungarian": "hu", "magyar": "hu", "hu-hu": "hu",
     "arabic": "ar", "العربية": "ar",
     "ar-sa": "ar", "ar-eg": "ar", "ar-ae": "ar", "ar-ma": "ar", "ar-dz": "ar",
+    # Persian (Farsi) — fa is the BCP-47 code; fa-IR/fa-AF are the common regional tags.
+    "persian": "fa", "farsi": "fa", "فارسی": "fa", "پارسی": "fa",
+    "fa-ir": "fa", "fa-af": "fa",
 }
 
 _catalog_cache: dict[str, dict[str, str]] = {}
