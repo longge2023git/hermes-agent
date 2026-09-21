@@ -41,7 +41,8 @@ function leafMap(tree: unknown, prefix = ''): Map<string, unknown> {
 }
 
 const PERSIAN_CHAR = /[\u0600-\u06FF]/
-const asText = (v: unknown) => (typeof v === 'function' ? (v as (...a: unknown[]) => string).toString() : String(v ?? ''))
+const asText = (v: unknown) =>
+  typeof v === 'function' ? (v as (...a: unknown[]) => string).toString() : String(v ?? '')
 
 /** 散文 = 至少 3 个词，且其中 ≥2 个是普通的英文单词（像句子）。
  *  URL、标识符、缩写、两词以内的品牌名（"Hermes Cloud"）都不算散文。 */
@@ -138,8 +139,7 @@ function expressionSegments(src: string): string[] {
 }
 
 /** 一段文本里的字符串字面量（含引号内内容）。 */
-const quotedLiterals = (src: string) =>
-  [...src.matchAll(/(['"])((?:\\.|(?!\1)[^\\])*)\1/g)].map(m => m[2])
+const quotedLiterals = (src: string) => [...src.matchAll(/(['"])((?:\\.|(?!\1)[^\\])*)\1/g)].map(m => m[2])
 
 /** 表达式内部的字符串字面量。**必须**只看 `${...}` 里面：模板文本里成对的普通引号
  *  （如 `Re: "${question}"`）不是字面量，直接对整份源码跑引号正则会造出假阳性。 */
@@ -210,6 +210,16 @@ describe('persian (fa) locale', () => {
       .filter(([path, enValue]) => asText(enValue).trim() !== '' && asText(faLeaves.get(path)).trim() === '')
       .map(([path]) => path)
     expect(blanks).toEqual([])
+  })
+
+  it('contains no CJK characters', () => {
+    // 审查在 web 产物里实测到一个中文词混入；桌面这轮没有，但必须同样断言，
+    // 否则同类污染（模型偶发输出中文/日文）不会有任何测试拦住。
+    const cjk = /[\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\uac00-\ud7af]/
+    const bad = [...faLeaves.entries()]
+      .filter(([, value]) => cjk.test(String(value)))
+      .map(([path, value]) => `${path}: ${(String(value).match(cjk) ?? [''])[0]}`)
+    expect(bad).toEqual([])
   })
 
   it('never ships English prose where a translation belongs', () => {

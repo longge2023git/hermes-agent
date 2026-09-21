@@ -368,7 +368,7 @@ export const fa = defineLocale({
     describeFailed: 'تولید توضیحات ممکن نشد',
     distribution: 'توزیع',
     advancedOptions: 'گزینههای پیشرفته',
-    cloneAll: 'Clone everything (memories, sessions, skills, state)',
+    cloneAll: 'کلون کردن همهچیز (حافظهها، نشستها، مهارتها، وضعیت)',
     noSkillsOption: 'مهارتهای همراه را وارد نکن',
     descriptionOptional: 'توضیحات (اختیاری)',
     modelOptional: 'مدل (اختیاری)',
@@ -446,7 +446,7 @@ export const fa = defineLocale({
     categories: 'دستهها',
     filters: 'فیلترها',
     noSkills:
-      'هنوز مهارتی نصب نشده. از مرکز مهارتها浏览 کنید یا یکی بسازید؛ از ترمینال هم میتوانید `hermes skills search <topic>` را اجرا کنید.',
+      'هنوز مهارتی نصب نشده است. در مرکز مهارتها مرور کنید یا همینجا یکی بسازید؛ از ترمینال هم میتوانید `hermes skills search <topic>` را اجرا کنید.',
     noSkillsMatch: 'مهارتی با جستجو یا فیلتر شما مطابقت ندارد.',
     skillCount: '{count} مهارت',
     resultCount: '{count} نتیجه',
