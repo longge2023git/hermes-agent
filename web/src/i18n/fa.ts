@@ -42,8 +42,8 @@ export const fa = defineLocale({
     noResults: 'نتیجهای یافت نشد',
     of: 'از',
     page: 'صفحه',
-    msgs: 'پیامها',
-    tools: 'ابزارها',
+    msgs: 'پیام‌ها',
+    tools: 'ابزار‌ها',
     match: 'تطبیق',
     other: 'سایر',
     configured: 'پیکربندیشده',
@@ -66,11 +66,11 @@ export const fa = defineLocale({
     brand: 'Hermes Agent',
     brandShort: 'HA',
     closeNavigation: 'بستن ناوبری',
-    closeModelTools: 'بستن مدل و ابزارها',
+    closeModelTools: 'بستن مدل و ابزار‌ها',
     footer: {
       org: 'Nous Research'
     },
-    activeSessionsLabel: 'نشستهای فعال:',
+    activeSessionsLabel: 'نشست‌های فعال:',
     gatewayStatusLabel: 'وضعیت گیتوی:',
     gatewayStrip: {
       degraded: 'کاهشیافته',
@@ -83,19 +83,19 @@ export const fa = defineLocale({
     },
     nav: {
       analytics: 'تحلیلها',
-      chat: 'گفتوگو',
+      chat: 'گفت‌وگو',
       config: 'پیکربندی',
       cron: 'Cron',
       documentation: 'مستندات',
       keys: 'کلیدها',
-      logs: 'گزارشها',
-      models: 'مدلها',
-      profiles: 'پروفایلها',
+      logs: 'گزارش‌ها',
+      models: 'مدل‌ها',
+      profiles: 'پروفایل‌ها',
       plugins: 'پلاگینها',
-      sessions: 'نشستها',
-      skills: 'مهارتها'
+      sessions: 'نشست‌ها',
+      skills: 'مهارت‌ها'
     },
-    modelToolsSheetSubtitle: 'و ابزارها',
+    modelToolsSheetSubtitle: 'و ابزار‌ها',
     modelToolsSheetTitle: 'مدل',
     navigation: 'ناوبری',
     openDocumentation: 'باز کردن مستندات در تب جدید',
@@ -151,12 +151,12 @@ export const fa = defineLocale({
     starting: 'در حال شروع',
     startedInBackground: 'در پس‌زمینه شروع شد — برای پیشرفت گزارش‌ها را بررسی کنید',
     stopped: 'متوقف شد',
-    updateHermes: 'بهروزرسانی Hermes',
+    updateHermes: 'به‌روز‌رسانی Hermes',
     updateHermesConfirmMessage:
-      'این کار hermes update را اجرا و پس از اتمام، گیتوی را مجدداً راهاندازی میکند. نشستهای فعال تا آن زمان کش درخواست خود را حفظ میکنند.',
-    updateHermesConfirmNow: 'بهروزرسانی کن',
-    updateHermesConfirmTitle: 'Hermes بهروزرسانی شود؟',
-    updatingHermes: 'در حال بهروزرسانی Hermes…',
+      'این کار hermes update را اجرا و پس از اتمام، گیتوی را مجدداً راهاندازی می‌کند. نشست‌های فعال تا آن زمان کش درخواست خود را حفظ می‌کنند.',
+    updateHermesConfirmNow: 'به‌روز‌رسانی کن',
+    updateHermesConfirmTitle: 'Hermes به‌روز‌رسانی شود؟',
+    updatingHermes: 'در حال به‌روز‌رسانی Hermes…',
     waitingForOutput: 'در انتظار خروجی…'
   },
   sessions: {
@@ -210,12 +210,12 @@ export const fa = defineLocale({
   analytics: {
     period: 'دوره:',
     totalTokens: 'کل توکنها',
-    totalSessions: 'کل نشستها',
+    totalSessions: 'کل نشست‌ها',
     apiCalls: 'فراخوانی API',
     dailyTokenUsage: 'مصرف روزانه توکن',
     dailyBreakdown: 'تفکیک روزانه',
     perModelBreakdown: 'تفکیک بر اساس مدل',
-    topSkills: 'مهارتهای برتر',
+    topSkills: 'مهارت‌های برتر',
     skill: 'مهارت',
     loads: 'بارگذاری عامل',
     edits: 'مدیریت عامل',
@@ -253,10 +253,10 @@ export const fa = defineLocale({
     noLogLines: 'هیچ خط گزارشی یافت نشد'
   },
   cron: {
-    loadWhat: 'کارهای cron',
+    loadWhat: 'کار‌های cron',
     scriptRequired:
-      'کارهای فقط-اسکریپتی نیاز به مسیر اسکریپت دارند. فیلد Script را پر کنید یا کار را به حالت prompt برگردانید.',
-    confirmDeleteMessage: 'این کار را از برنامه حذف میکند. این عمل قابل بازگشت نیست.',
+      'کار‌های فقط-اسکریپتی نیاز به مسیر اسکریپت دارند. فیلد Script را پر کنید یا کار را به حالت prompt برگردانید.',
+    confirmDeleteMessage: 'این کار را از برنامه حذف می‌کند. این عمل قابل بازگشت نیست.',
     confirmDeleteTitle: 'کار زمانبندیشده حذف شود؟',
     newJob: 'کار cron جدید',
     nameOptional: 'نام (اختیاری)',
@@ -345,7 +345,7 @@ export const fa = defineLocale({
     copyFailed: 'کپی ممکن نشد',
     confirmDeleteTitle: 'حذف پروفایل؟',
     confirmDeleteMessage:
-      "این عمل پروفایل '{name}' را برای همیشه حذف می‌کند — تنظیمات، کلیدها، خاطرات، نشست‌ها، مهارت‌ها، کارهای cron. قابل بازگشت نیست.",
+      "این عمل پروفایل '{name}' را برای همیشه حذف می‌کند — تنظیمات، کلیدها، خاطرات، نشست‌ها، مهارت‌ها، کار‌های cron. قابل بازگشت نیست.",
     created: 'ایجاد شد',
     deleted: 'حذف شد',
     renamed: 'تغییر نام داد',
@@ -358,7 +358,7 @@ export const fa = defineLocale({
     gatewayRunningWarning: 'گیتوی این پروفایل در حال اجراست — متوقف خواهد شد.',
     aliasBadge: 'نام مستعار',
     description: 'توضیحات',
-    descriptionPlaceholder: 'این پروفایل در چه کاری خوب است؟ برای مسیریابی وظایف کانبان بر اساس نقش استفاده میشود.',
+    descriptionPlaceholder: 'این پروفایل در چه کاری خوب است؟ برای مسیریابی وظایف کانبان بر اساس نقش استفاده می‌شود.',
     noDescription: 'بدون توضیحات',
     editDescription: 'ویرایش توضیحات',
     descriptionSaved: 'توضیحات ذخیره شد',
@@ -367,17 +367,17 @@ export const fa = defineLocale({
     generating: 'در حال تولید…',
     describeFailed: 'تولید توضیحات ممکن نشد',
     distribution: 'توزیع',
-    advancedOptions: 'گزینههای پیشرفته',
-    cloneAll: 'کلون کردن همهچیز (حافظهها، نشستها، مهارتها، وضعیت)',
-    noSkillsOption: 'مهارتهای همراه را وارد نکن',
+    advancedOptions: 'گزینه‌های پیشرفته',
+    cloneAll: 'کلون کردن همهچیز (حافظهها، نشست‌ها، مهارت‌ها، وضعیت)',
+    noSkillsOption: 'مهارت‌های همراه را وارد نکن',
     descriptionOptional: 'توضیحات (اختیاری)',
     modelOptional: 'مدل (اختیاری)',
     modelInherit: 'ارثبری از کلون / پیشفرض',
-    modelLoading: 'در حال بارگذاری مدلها…',
+    modelLoading: 'در حال بارگذاری مدل‌ها…',
     modelNone:
       'هیچ ارائهدهنده مدلی تنظیم نشده است. یک کلید API در بخش Keys اضافه کنید یا در بخش Models به یک ارائهدهنده وارد شوید.',
     editModel: 'تغییر مدل',
-    modelSaved: 'مدل بهروزرسانی شد',
+    modelSaved: 'مدل به‌روز‌رسانی شد',
     modelSelect: 'انتخاب مدل',
     actions: 'عملیات'
   },
@@ -436,22 +436,22 @@ export const fa = defineLocale({
     removedFromCatalog: 'از کاتالوگ حذف شد'
   },
   skills: {
-    title: 'مهارتها',
-    searchPlaceholder: 'جستجوی مهارتها و مجموعهابزارها...',
-    loadWhat: 'مهارتها',
-    browseHub: 'مرور مرکز مهارتها',
+    title: 'مهارت‌ها',
+    searchPlaceholder: 'جستجوی مهارت‌ها و مجموعهابزار‌ها...',
+    loadWhat: 'مهارت‌ها',
+    browseHub: 'مرور مرکز مهارت‌ها',
     createSkill: 'ایجاد مهارت',
     enabledOf: '{enabled}/{total} فعال',
     all: 'همه',
     categories: 'دستهها',
     filters: 'فیلترها',
     noSkills:
-      'هنوز مهارتی نصب نشده است. در مرکز مهارتها مرور کنید یا همینجا یکی بسازید؛ از ترمینال هم میتوانید `hermes skills search <topic>` را اجرا کنید.',
+      'هنوز مهارتی نصب نشده است. در مرکز مهارت‌ها مرور کنید یا همینجا یکی بسازید؛ از ترمینال هم می‌توانید `hermes skills search <topic>` را اجرا کنید.',
     noSkillsMatch: 'مهارتی با جستجو یا فیلتر شما مطابقت ندارد.',
     skillCount: '{count} مهارت',
     resultCount: '{count} نتیجه',
     noDescription: 'توضیحی در دسترس نیست.',
-    toolsets: 'مجموعهابزارها',
+    toolsets: 'مجموعهابزار‌ها',
     toolsetLabel: 'مجموعهابزار {name}',
     noToolsetsMatch: 'مجموعهابزاری با جستجو مطابقت ندارد.',
     setupNeeded: 'نیاز به راهاندازی',
@@ -459,7 +459,7 @@ export const fa = defineLocale({
     more: '+{count} بیشتر',
     profileSelector: 'پروفایل',
     currentProfile: 'فعلی ({name})',
-    managingProfile: 'مدیریت پروفایل «{name}» — تغییرات روی آن پروفایل اعمال میشود، نه این داشبورد.'
+    managingProfile: 'مدیریت پروفایل «{name}» — تغییرات روی آن پروفایل اعمال می‌شود، نه این داشبورد.'
   },
   config: {
     configPath: '~/.hermes/config.yaml',
@@ -470,7 +470,7 @@ export const fa = defineLocale({
     resetDefaults: 'بازنشانی به پیشفرض',
     resetScopeTooltip: 'بازنشانی {scope} به پیشفرض',
     confirmResetScope:
-      'همه تنظیمات {scope} به پیشفرض بازنشانی شوند؟ این فقط فرم را بهروزرسانی میکند — تغییرات تا فشار دادن Save در config.yaml نوشته نمیشوند.',
+      'همه تنظیمات {scope} به پیشفرض بازنشانی شوند؟ این فقط فرم را به‌روز‌رسانی می‌کند — تغییرات تا فشار دادن Save در config.yaml نوشته نمیشوند.',
     resetScopeToast: '{scope} به پیشفرض بازنشانی شد — بررسی و Save برای ذخیره',
     rawYaml: 'پیکربندی خام YAML',
     searchResults: 'نتایج جستجو',
@@ -502,7 +502,7 @@ export const fa = defineLocale({
     }
   },
   env: {
-    changesNote: 'تغییرات بلافاصله روی دیسک ذخیره میشوند. نشستهای فعال کلیدهای جدید را بهطور خودکار دریافت میکنند.',
+    changesNote: 'تغییرات بلافاصله روی دیسک ذخیره میشوند. نشست‌های فعال کلیدهای جدید را بهطور خودکار دریافت می‌کنند.',
     confirmClearMessage:
       'مقدار ذخیرهشده برای این متغیر از فایل .env حذف خواهد شد. این عمل از رابط کاربری قابل بازگشت نیست.',
     confirmClearTitle: 'این کلید پاک شود؟',
@@ -523,7 +523,7 @@ export const fa = defineLocale({
     hideValue: 'پنهانکردن مقدار',
     customTitle: 'کلیدهای سفارشی',
     customHint:
-      'متغیرهای محیطی دلخواه ذخیرهشده در .env که Hermes آنها را تشخیص نمیدهد. از اینها برای تزریق متغیرهای env برای مهارتها، سرورهای MCP یا ابزارهای خود استفاده کنید.',
+      'متغیرهای محیطی دلخواه ذخیرهشده در .env که Hermes آنها را تشخیص نمی‌دهد. از اینها برای تزریق متغیرهای env برای مهارت‌ها، سرورهای MCP یا ابزار‌های خود استفاده کنید.',
     customConfigured: '{count} کلید سفارشی{s} تنظیم شده',
     addCustomKey: 'افزودن کلید سفارشی',
     customKeyName: 'نام متغیر',
@@ -550,7 +550,7 @@ export const fa = defineLocale({
     cli: 'کپی',
     copyCliCommand: 'کپی دستور CLI (برای خارجی / جایگزین)',
     connect: 'اتصال',
-    sessionExpires: 'نشست در {time} منقضی میشود',
+    sessionExpires: 'نشست در {time} منقضی می‌شود',
     sessionExpiredNoError:
       'ورود بدون رسیدن به ارائهدهنده منقضی شد. این معمولاً به این معنی است که صفحه ورود در تب باز شده متوقف شده (مشکل سمت سرور) — ورود را در آنجا تمام کنید، سپس روی Retry کلیک کنید. اگر همچنان شکست خورد، بهجای آن از کلید API یا CLI استفاده کنید.',
     initiatingLogin: 'شروع فرایند ورود…',
@@ -592,9 +592,9 @@ export const fa = defineLocale({
       kicker: 'امتیاز بازی عاملی',
       title: 'دستاوردهای Hermes',
       subtitle:
-        'نشانهای قابل جمعآوری Hermes که از تاریخچه واقعی نشستها به دست میآیند. دستاوردهای ناتمام شناختهشده بهصورت «کشفشده» نمایش داده میشوند؛ دستاوردهای مخفی تا ظهور اولین رفتار منطبق، پنهان میمانند.',
+        'نشانهای قابل جمعآوری Hermes که از تاریخچه واقعی نشست‌ها به دست میآیند. دستاوردهای ناتمام شناختهشده بهصورت «کشفشده» نمایش داده میشوند؛ دستاوردهای مخفی تا ظهور اولین رفتار منطبق، پنهان میمانند.',
       scan_subtitle:
-        'در حال اسکن تاریخچه نشستهای Hermes. اولین اسکن ممکن است ۵ تا ۱۰ ثانیه در تاریخچههای بزرگ طول بکشد.'
+        'در حال اسکن تاریخچه نشست‌های Hermes. اولین اسکن ممکن است ۵ تا ۱۰ ثانیه در تاریخچه‌های بزرگ طول بکشد.'
     },
     actions: {
       rescan: 'اسکن مجدد'
@@ -628,29 +628,29 @@ export const fa = defineLocale({
     },
     scan: {
       building_headline: 'در حال ساخت پروفایل دستاوردها…',
-      building_detail: 'در حال خواندن نشستها، فراخوانی ابزارها، فراداده مدلها و وضعیت باز شدن.',
+      building_detail: 'در حال خواندن نشست‌ها، فراخوانی ابزار‌ها، فراداده مدل‌ها و وضعیت باز شدن.',
       starting_headline: 'شروع اسکن دستاوردها…',
       progress_detail: '{scanned} از {total} نشست اسکن شد · {pct}%. نشانها با ورود تاریخچه بیشتر باز میشوند.',
       idle_detail:
-        'در حال خواندن نشستها، فراخوانی ابزارها، فراداده مدلها و وضعیت باز شدن. نشانها هنگام باز شدن اینجا ظاهر میشوند.'
+        'در حال خواندن نشست‌ها، فراخوانی ابزار‌ها، فراداده مدل‌ها و وضعیت باز شدن. نشانها هنگام باز شدن اینجا ظاهر میشوند.'
     },
     guide: {
       tiers_header: 'سطوح',
       secret_header: 'دستاوردهای مخفی',
       secret_body:
-        'دستاوردهای مخفی، شرط دقیق خود را پنهان میکنند. وقتی Hermes سیگنال مرتبطی ببیند، کارت به حالت «کشفشده» درمیآید و شرط آن نمایش داده میشود.',
+        'دستاوردهای مخفی، شرط دقیق خود را پنهان می‌کنند. وقتی Hermes سیگنال مرتبطی ببیند، کارت به حالت «کشفشده» درمی‌آید و شرط آن نمایش داده می‌شود.',
       scan_status_header: 'وضعیت اسکن',
       scan_status_body:
-        'Hermes یک بار تاریخچه محلی را اسکن میکند و سپس کارتها بهطور خودکار ظاهر میشوند. اگر چند ثانیه طول بکشد، مشکلی نیست.',
-      what_scanned_header: 'چه چیزی اسکن میشود',
-      what_scanned_body: 'نشستها، فراخوانی ابزارها، فراداده مدل، خطاها، دستاوردها و وضعیت باز شدن محلی.'
+        'Hermes یک بار تاریخچه محلی را اسکن می‌کند و سپس کارتها بهطور خودکار ظاهر میشوند. اگر چند ثانیه طول بکشد، مشکلی نیست.',
+      what_scanned_header: 'چه چیزی اسکن می‌شود',
+      what_scanned_body: 'نشست‌ها، فراخوانی ابزار‌ها، فراداده مدل، خطاها، دستاوردها و وضعیت باز شدن محلی.'
     },
     card: {
       share_title: 'اشتراکگذاری این دستاورد',
       share_label: 'اشتراکگذاری {name}',
       share_text: 'اشتراکگذاری',
       how_to_reveal: 'نحوه آشکار شدن',
-      what_counts: 'چه چیزی محاسبه میشود',
+      what_counts: 'چه چیزی محاسبه می‌شود',
       evidence_label: 'شواهد',
       evidence_session_fallback: 'نشست',
       no_evidence: 'هنوز شواهدی نیست'
@@ -661,7 +661,7 @@ export const fa = defineLocale({
     empty: {
       no_secrets_header: 'در این اسکن، راز پنهانی باقی نمانده است.',
       no_secrets_body:
-        'راهنما: رازها معمولاً از خطاهای غیرعادی یا الگوهای کاربر حرفهای شروع میشوند — تداخل پورت، محدودیتهای دسترسی، متغیرهای محیطی ازدسترفته، اشتباهات YAML، تداخل Docker، استفاده از بازگردانی/نقطهبازیابی، ضربههای کش، یا اصلاحات کوچک پس از متنهای قرمز زیاد.'
+        'راهنما: رازها معمولاً از خطاهای غیرعادی یا الگوهای کاربر حرفهای شروع میشوند — تداخل پورت، محدودیتهای دسترسی، متغیرهای محیطی ازدسترفته، اشتباهات YAML، تداخل Docker، استفاده از بازگردانی/نقطهبازیابی، ضربه‌های کش، یا اصلاحات کوچک پس از متنهای قرمز زیاد.'
     },
     filters: {
       all_categories: 'همه',
@@ -683,9 +683,9 @@ export const fa = defineLocale({
       copy_button: 'کپی تصویر',
       copied: 'کپی شد ✓',
       download_button: 'دانلود PNG',
-      hint: 'اشتراکگذاری در X یک پست از پیش پر شده در تب جدید باز میکند. اگر میخواهید نشان 1200×630 ضمیمه شود، ابتدا روی «کپی تصویر» کلیک کنید — X به شما اجازه میدهد آن را مستقیماً در ویرایشگر توییت بچسبانید. «دانلود PNG» فایل را برای استفاده در هر جایی ذخیره میکند.',
+      hint: 'اشتراکگذاری در X یک پست از پیش پر شده در تب جدید باز می‌کند. اگر میخواهید نشان 1200×630 ضمیمه شود، ابتدا روی «کپی تصویر» کلیک کنید — X به شما اجازه می‌دهد آن را مستقیماً در ویرایشگر توییت بچسبانید. «دانلود PNG» فایل را برای استفاده در هر جایی ذخیره می‌کند.',
       clipboard_unsupported:
-        'کپی تصویر در کلیپبورد در این مرورگر پشتیبانی نمیشود — به جای آن از «دانلود» استفاده کنید.',
+        'کپی تصویر در کلیپبورد در این مرورگر پشتیبانی نمی‌شود — به جای آن از «دانلود» استفاده کنید.',
       tweet_text: 'تازه {tier_part}\"{name}\" را در Hermes Agent ☤ باز کردم'
     }
   },
@@ -693,7 +693,7 @@ export const fa = defineLocale({
     loading: 'در حال بارگذاری برد Kanban…',
     loadFailed: 'بارگذاری برد Kanban ناموفق بود: ',
     loadFailedHint:
-      'بکاند در اولین خواندن بهطور خودکار kanban.db را ایجاد میکند. اگر این مشکل ادامه داشت، گزارشهای داشبورد را بررسی کنید.',
+      'بکاند در اولین خواندن بهطور خودکار kanban.db را ایجاد می‌کند. اگر این مشکل ادامه داشت، گزارش‌های داشبورد را بررسی کنید.',
     board: 'برد',
     newBoard: '+ برد جدید',
     newBoardTitle: 'برد جدید',
@@ -716,7 +716,7 @@ export const fa = defineLocale({
     tenant: 'مستأجر',
     allTenants: 'همه مستأجرها',
     assignee: 'مسئول',
-    allProfiles: 'همه پروفایلها',
+    allProfiles: 'همه پروفایل‌ها',
     showArchived: 'نمایش بایگانیشده',
     lanesByProfile: 'خطوط بر اساس پروفایل',
     nudgeDispatcher: 'یادآوری به توزیعکننده',
@@ -730,14 +730,14 @@ export const fa = defineLocale({
     noTasks: '— بدون وظیفه —',
     unassigned: 'بدون محول',
     needsAssignee: 'نیاز به محول',
-    needsAssigneeHint: 'وابستگیها برآورده شدهاند، اما توزیعکننده این وظیفه را رد میکند تا یک پروفایل محول کنید.',
+    needsAssigneeHint: 'وابستگیها برآورده شدهاند، اما توزیعکننده این وظیفه را رد می‌کند تا یک پروفایل محول کنید.',
     untitled: '(بدون عنوان)',
     loadingDetail: 'در حال بارگذاری…',
     addComment: 'افزودن نظر… (Enter برای ارسال)',
     comment: 'نظر',
     status: 'وضعیت',
     workspace: 'فضای کاری',
-    skills: 'مهارتها',
+    skills: 'مهارت‌ها',
     createdBy: 'ایجاد شده توسط',
     result: 'نتیجه',
     comments: 'نظرات',
@@ -818,7 +818,7 @@ export const fa = defineLocale({
       archived: 'بایگانیشده'
     },
     columnHelp: {
-      triage: 'ایدههای خام — یک مشخصکننده جزئیات را تکمیل میکند',
+      triage: 'ایده‌های خام — یک مشخصکننده جزئیات را تکمیل می‌کند',
       todo: 'در انتظار وابستگیها یا بدون اختصاص',
       scheduled: 'در انتظار تأخیر زمانی مشخص یا پیگیری زمانبندیشده',
       ready: 'وابستگیها برآورده شده؛ برای ارسال، یک پروفایل اختصاص دهید',
@@ -827,42 +827,42 @@ export const fa = defineLocale({
       done: 'تکمیل شده',
       archived: 'بایگانیشده'
     },
-    confirmDone: 'این کار را به عنوان انجام شده علامت بزنیم؟ ادعای کارگر آزاد میشود و فرزندان وابسته آماده میشوند.',
-    confirmArchive: 'این کار را بایگانی کنیم؟ از نمای پیشفرض تخته ناپدید میشود.',
-    confirmBlocked: 'این کار را به عنوان مسدود علامت بزنیم؟ ادعای کارگر آزاد میشود.',
+    confirmDone: 'این کار را به عنوان انجام شده علامت بزنیم؟ ادعای کارگر آزاد می‌شود و فرزندان وابسته آماده میشوند.',
+    confirmArchive: 'این کار را بایگانی کنیم؟ از نمای پیشفرض تخته ناپدید می‌شود.',
+    confirmBlocked: 'این کار را به عنوان مسدود علامت بزنیم؟ ادعای کارگر آزاد می‌شود.',
     confirmScheduled:
-      'این کار را به زمانبندیشده منتقل کنیم؟ برای تأخیرهای زمانی مشخص به جای مسدودکنندههای انسانی استفاده کنید.',
+      'این کار را به زمانبندیشده منتقل کنیم؟ برای تأخیرهای زمانی مشخص به جای مسدودکننده‌های انسانی استفاده کنید.',
     confirmDoneMany:
-      '{n} کار را به عنوان انجام شده علامت بزنیم؟ ادعای کارگران آزاد میشود و فرزندان وابسته آماده میشوند.',
+      '{n} کار را به عنوان انجام شده علامت بزنیم؟ ادعای کارگران آزاد می‌شود و فرزندان وابسته آماده میشوند.',
     confirmArchiveMany: '{n} کار را بایگانی کنیم؟ از نمای پیشفرض تخته ناپدید میشوند.',
-    confirmBlockedMany: '{n} کار را به عنوان مسدود علامت بزنیم؟ ادعای کارگران آزاد میشود.',
-    completionSummary: 'خلاصه تکمیل برای {label}. این به عنوان نتیجه کار ذخیره میشود.',
+    confirmBlockedMany: '{n} کار را به عنوان مسدود علامت بزنیم؟ ادعای کارگران آزاد می‌شود.',
+    completionSummary: 'خلاصه تکمیل برای {label}. این به عنوان نتیجه کار ذخیره می‌شود.',
     completionSummaryRequired: 'خلاصه تکمیل قبل از علامت زدن کار به عنوان انجام شده الزامی است.',
-    triagePlaceholder: 'ایده خام — AI آن را مشخص میکند…',
+    triagePlaceholder: 'ایده خام — AI آن را مشخص می‌کند…',
     taskTitlePlaceholder: 'عنوان کار جدید…',
     specifier: 'مشخصکننده',
     assigneePlaceholder: 'اختصاصیافته',
     priority: 'اولویت',
-    skillsPlaceholder: 'مهارتها (اختیاری، با کاما جدا شده): translation, github-code-review',
+    skillsPlaceholder: 'مهارت‌ها (اختیاری، با کاما جدا شده): translation, github-code-review',
     noParent: '— بدون والد —',
     workspacePathDir: 'مسیر فضای کاری (الزامی، مثلاً ~/projects/my-app)',
-    workspacePathOptional: 'مسیر فضای کاری (اختیاری، اگر خالی باشد از اختصاصیافته استخراج میشود)',
+    workspacePathOptional: 'مسیر فضای کاری (اختیاری، اگر خالی باشد از اختصاصیافته استخراج می‌شود)',
     logTruncated: '(نمایش آخرین 100 KB — گزارش کامل در ',
     logAt: ')',
     newTaskTitle: 'وظیفه جدید — {column}',
     taskTitleLabel: 'عنوان',
     assigneeLabel: 'انتصابدهنده',
     assigneeLabelHint: '(خالی = انتخاب توسط توزیعکننده)',
-    skillsLabel: 'مهارتها',
+    skillsLabel: 'مهارت‌ها',
     skillsLabelHint: '(اختیاری، با کاما جدا کنید)',
     parentLabel: 'وظیفه والد',
-    parentLabelHint: '(فرزند تا اتمام والد مسدود میماند)',
+    parentLabelHint: '(فرزند تا اتمام والد مسدود می‌ماند)',
     create: 'ایجاد',
     boardSettings: 'تنظیمات',
     boardSettingsTitle: 'تنظیمات بورد — نام، توضیحات، و دایرکتوری پیشفرض پروژه که وظایف جدید ارث میبرند',
     boardSettingsTitleFor: 'تنظیمات بورد — {name}',
     projectDirectoryOverrideHint:
-      'وظایف جدید این را به عنوان پیشفرض فضای کاری خود ارث میبرند؛ هر وظیفه همچنان میتواند در گفتگوی ایجاد آن را تغییر دهد.',
+      'وظایف جدید این را به عنوان پیشفرض فضای کاری خود ارث میبرند؛ هر وظیفه همچنان می‌تواند در گفتگوی ایجاد آن را تغییر دهد.',
     saving: 'در حال ذخیره…',
     commentHint: 'نظرات در اجرای بعدی یا kanban_show() به کارگر میرسند — نیازی به مسدود کردن وظیفه نیست.',
     commentHintTitle:

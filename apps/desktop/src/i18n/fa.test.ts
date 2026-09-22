@@ -418,4 +418,30 @@ describe('persian (fa) locale', () => {
     }
     expect(offenders).toEqual([])
   })
+
+  it('writes Persian morphemes with ZWNJ instead of gluing them', () => {
+    // 审计 M9：机翻把「می」+「شود」这类语素粘连，是波斯语界面最显眼的"机翻味"。
+    // 提示词自己的示例当时也是错形（0 个 U+200C），等于在教模型写错 —— 已一并修正。
+    const GLUED = [
+      /\u0645\u06cc\u0634\u0648\u062f/,
+      /\u0646\u0645\u06cc\u0634\u0648\u062f/,
+      /\u0645\u06cc\u06a9\u0646\u062f/,
+      /\u0645\u06cc\u062f\u0647\u062f/,
+      /\u0645\u06cc\u0631\u0648\u062f/,
+      /\u0645\u06cc\u062a\u0648\u0627\u0646/,
+      /\u0628\u0647\u0631\u0648\u0632/,
+      /\u06af\u0641\u062a\u0648\u06af\u0648/,
+      /[\u0600-\u06FF]{2,}\u0647\u0647\u0627\u06cc/
+    ]
+    const offenders: string[] = []
+    for (const [path, value] of faLeaves) {
+      const text = typeof value === 'function' ? String(value) : String(value)
+      for (const re of GLUED) {
+        if (re.test(text)) {
+          offenders.push(`${path}: missing ZWNJ`)
+        }
+      }
+    }
+    expect(offenders).toEqual([])
+  })
 })

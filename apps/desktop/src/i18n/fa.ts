@@ -12,14 +12,14 @@ import { defineLocale } from './define-locale'
 
 export const fa = defineLocale({
   connectors: {
-    title: 'اتصال برنامههایتان',
+    title: 'اتصال برنامه‌هایتان',
     connect: 'اتصال',
     skip: 'فعلاً نه',
     cancel: 'لغو انتظار',
     retry: 'تلاش دوباره',
     grant: 'اتصال مجدد',
     connected: 'متصل',
-    checking: 'در حال بررسی برنامههایتان…',
+    checking: 'در حال بررسی برنامه‌هایتان…',
     notConnected: 'متصل نیست',
     skipped: 'رد شد',
     disabled: 'در دسترس نیست',
@@ -36,11 +36,11 @@ export const fa = defineLocale({
     search: 'جستجوی برنامه',
     empty: 'برنامه‌ای یافت نشد',
     disclaimer: 'اتصال اختیاری است. فقط به برنامه‌هایی که می‌خواهید Hermes استفاده کند مجوز دهید.',
-    execution: 'ابزارهای اتصال',
+    execution: 'ابزار‌های اتصال',
     setup: server => `راه‌اندازی ${server}`,
     openInBrowser: 'باز کردن در مرورگر',
     setupCancel: 'انصراف',
-    authorizedToolsUnavailable: 'مجاز شد. ابزارها در دسترس نیستند.',
+    authorizedToolsUnavailable: 'مجاز شد. ابزار‌ها در دسترس نیستند.',
     required: 'الزامی'
   },
   sessionImport: {
@@ -113,7 +113,7 @@ export const fa = defineLocale({
     send: 'ارسال',
     set: 'تنظیم',
     skip: 'رد کردن',
-    update: 'بهروزرسانی',
+    update: 'به‌روز‌رسانی',
     tryHint: term => `امتحان کنید «${term}»`,
     on: 'روشن',
     off: 'خاموش'
@@ -144,26 +144,26 @@ export const fa = defineLocale({
     steps: {
       connectingGateway: 'اتصال به گیتوی زندهٔ دسکتاپ',
       loadingSettings: 'بارگذاری تنظیمات Hermes',
-      loadingSessions: 'بارگذاری نشستهای اخیر',
+      loadingSessions: 'بارگذاری نشست‌های اخیر',
       retryingRemoteBackend: 'اتصال دوباره به بکاند راه دور Hermes…',
       startingDesktopConnection: 'شروع اتصال دسکتاپ',
       startingHermesDesktop: 'راهاندازی Hermes Desktop…'
     },
     errors: {
       backgroundExited:
-        'سرویسی که گفتوگوها را اجرا میکند بهطور غیرمنتظره بسته شد. برای ادامه آن را دوباره راهاندازی کنید — گفتوگوها و تنظیمات شما امن هستند.',
+        'سرویسی که گفت‌وگوها را اجرا می‌کند بهطور غیرمنتظره بسته شد. برای ادامه آن را دوباره راهاندازی کنید — گفت‌وگوها و تنظیمات شما امن هستند.',
       backgroundExitedDuringStartup: 'Hermes بلافاصله پس از شروع، متوقف شد.',
       backendStopped: 'Hermes در پسزمینه از کار افتاد',
       restartHermes: 'راهاندازی دوبارهٔ Hermes',
-      openLogs: 'باز کردن گزارشها',
+      openLogs: 'باز کردن گزارش‌ها',
       desktopBootFailed: 'Hermes شروع نشد',
       gatewayConnectionLost: 'ارتباط Hermes قطع شد',
       gatewayConnectionLostDetail:
-        'در حال تلاش برای اتصال دوباره هستیم. میتوانید به خواندن و نوشتن ادامه دهید. اگر ادامه پیدا کرد، همین حالا دوباره وصل شوید یا تنظیمات اتصال را بررسی کنید.',
+        'در حال تلاش برای اتصال دوباره هستیم. می‌توانید به خواندن و نوشتن ادامه دهید. اگر ادامه پیدا کرد، همین حالا دوباره وصل شوید یا تنظیمات اتصال را بررسی کنید.',
       reconnectNow: 'همین حالا اتصال دوباره',
       connectionSettings: 'تنظیمات اتصال',
       gatewaySignInRequired: 'Hermes راه دور شما را خارج کرد',
-      gatewaySignInRequiredDetail: 'برای اتصال دوباره وارد شوید. گفتوگوها و تنظیمات شما امن هستند.',
+      gatewaySignInRequiredDetail: 'برای اتصال دوباره وارد شوید. گفت‌وگوها و تنظیمات شما امن هستند.',
       signInAgain: 'ورود دوباره',
       ipcBridgeUnavailable: 'Hermes Desktop نتوانست با لایهٔ پسزمینهٔ خود ارتباط بگیرد. برنامه را دوباره اجرا کنید.'
     },
@@ -172,36 +172,36 @@ export const fa = defineLocale({
       timedOut: 'سرویس پسزمینهٔ Hermes در زمان مقرر پاسخ نداد.',
       permission: 'Hermes نتوانست در پوشهٔ دادهٔ خود بنویسد (مشکل دسترسی).',
       diskFull: 'فضای دیسک پر است، بنابراین Hermes نتوانست شروع شود.',
-      portInUse: 'برنامهٔ دیگری از پورت شبکهٔ موردنیاز Hermes استفاده میکند.',
+      portInUse: 'برنامهٔ دیگری از پورت شبکهٔ موردنیاز Hermes استفاده می‌کند.',
       installMissing: 'بخشی از نصب Hermes موجود نیست. گزینهٔ «تعمیر نصب» را انتخاب کنید.'
     },
     failure: {
       title: 'Hermes شروع نشد',
       description:
-        'سرویس پسزمینهٔ Hermes بالا نیامد. یکی از راههای بازیابی زیر را امتحان کنید. هیچکدام از این کارها گفتوگوها یا تنظیمات شما را پاک نمیکند.',
+        'سرویس پسزمینهٔ Hermes بالا نیامد. یکی از راه‌های بازیابی زیر را امتحان کنید. هیچکدام از این کار‌ها گفت‌وگوها یا تنظیمات شما را پاک نمی‌کند.',
       details: 'جزئیات',
       remoteTitle: 'ورود به گیتوی راه دور لازم است',
       remoteDescription:
-        'نشست گیتوی راه دور شما منقضی شده است. برای اتصال دوباره وارد شوید. هیچکدام از این کارها گفتوگوها یا تنظیمات شما را پاک نمیکند.',
+        'نشست گیتوی راه دور شما منقضی شده است. برای اتصال دوباره وارد شوید. هیچکدام از این کار‌ها گفت‌وگوها یا تنظیمات شما را پاک نمی‌کند.',
       retry: 'تلاش دوباره',
       repairInstall: 'تعمیر نصب',
       useLocalGateway: 'استفاده از گیتوی محلی',
       gatewaySettings: 'تنظیمات گیتوی',
       back: 'بازگشت',
-      openLogs: 'باز کردن گزارشها',
-      repairHint: 'تعمیر، نصبکننده را دوباره اجرا میکند و روی یک دستگاه نو ممکن است چند دقیقه طول بکشد.',
+      openLogs: 'باز کردن گزارش‌ها',
+      repairHint: 'تعمیر، نصبکننده را دوباره اجرا می‌کند و روی یک دستگاه نو ممکن است چند دقیقه طول بکشد.',
       remoteSignInHint: signInLabel =>
-        `از نشست مرورگر راه دور ذخیرهشده خارج میشود، سپس ${signInLabel} را باز میکند. برای تغییر به بکاند داخلی، از گیتوی محلی استفاده کنید.`,
+        `از نشست مرورگر راه دور ذخیرهشده خارج می‌شود، سپس ${signInLabel} را باز می‌کند. برای تغییر به بکاند داخلی، از گیتوی محلی استفاده کنید.`,
       signOutAndSignIn: 'خروج و ورود دوباره',
       remoteFailureHint: 'نشانی گیتوی و ورود را در تنظیمات گیتوی بررسی کنید یا به گیتوی محلی سوئیچ کنید.',
       cloudDownTitle: 'عامل Nous Cloud از کار افتاده است',
       cloudDownDescription:
-        'عاملی که این گیتوی به آن وصل میشود خطای سرور برمیگرداند. از اینجا قابل راهاندازی دوباره نیست — وضعیت آن را بررسی کنید، به گیتوی محلی سوئیچ کنید یا از پشتیبانی کمک بگیرید.',
-      cloudDownHint: 'دکمههای زیر Nous Portal (وضعیت و کنترل نمونه) و دیسکورد ما را برای پشتیبانی باز میکنند.',
+        'عاملی که این گیتوی به آن وصل می‌شود خطای سرور برمیگرداند. از اینجا قابل راهاندازی دوباره نیست — وضعیت آن را بررسی کنید، به گیتوی محلی سوئیچ کنید یا از پشتیبانی کمک بگیرید.',
+      cloudDownHint: 'دکمه‌های زیر Nous Portal (وضعیت و کنترل نمونه) و دیسکورد ما را برای پشتیبانی باز می‌کنند.',
       cloudDownCheckPortal: 'بررسی وضعیت Portal',
       cloudDownDiscord: 'کمک در دیسکورد',
-      hideRecentLogs: 'پنهان کردن گزارشهای اخیر',
-      showRecentLogs: 'نمایش گزارشهای اخیر',
+      hideRecentLogs: 'پنهان کردن گزارش‌های اخیر',
+      showRecentLogs: 'نمایش گزارش‌های اخیر',
       signedInTitle: 'وارد شدید',
       signedInMessage: 'در حال اتصال دوباره به گیتوی راه دور…',
       signInIncompleteTitle: 'ورود کامل نشد',
@@ -213,7 +213,7 @@ export const fa = defineLocale({
     }
   },
   notifications: {
-    region: 'اعلانها',
+    region: 'اعلان‌ها',
     hide: 'پنهان',
     show: 'نمایش',
     more: count => `${count} اعلان دیگر`,
@@ -224,12 +224,12 @@ export const fa = defineLocale({
     copyDetailFailed: 'کپی جزئیات اعلان ممکن نشد',
     backendOutOfDateTitle: 'پشتیبان قدیمی است',
     backendOutOfDateMessage:
-      'پشتیبان Hermes شما قدیمیتر از این نسخه دسکتاپ است و ممکن است درست کار نکند. برای هماهنگی، بهروزرسانی کنید.',
-    installMethodUnsupportedTitle: 'روش نصب پشتیبانی نمیشود',
-    updateHermes: 'بهروزرسانی Hermes',
-    updateReadyTitle: 'آماده بهروزرسانی',
+      'پشتیبان Hermes شما قدیمیتر از این نسخه دسکتاپ است و ممکن است درست کار نکند. برای هماهنگی، به‌روز‌رسانی کنید.',
+    installMethodUnsupportedTitle: 'روش نصب پشتیبانی نمی‌شود',
+    updateHermes: 'به‌روز‌رسانی Hermes',
+    updateReadyTitle: 'آماده به‌روز‌رسانی',
     updateReadyMessage: count => `${count} تغییر جدید موجود است.`,
-    updateReadyMessageUnknown: 'یک بهروزرسانی جدید موجود است.',
+    updateReadyMessageUnknown: 'یک به‌روز‌رسانی جدید موجود است.',
     seeWhatsNew: 'مشاهده تازهها',
     mcp: {
       needsAuthTitle: 'نیاز به احراز هویت مجدد سرور MCP',
@@ -324,7 +324,7 @@ export const fa = defineLocale({
   sendDiagnostics: {
     title: 'ارسال اطلاعات تشخیصی به Nous',
     privacyNotice:
-      'این کار یک بسته‌ی اشکال‌زدایی را در فضای ذخیره‌سازی داخلی Nous بارگذاری می‌کند (نه یک paste عمومی). شامل اطلاعات سیستم (سیستم‌عامل، نسخه‌ها، ارائه‌دهنده، اینکه کدام کلیدهای API پیکربندی شده‌اند — هرگز خود کلیدها) و گزارش‌های کامل agent، گیتوی و دسکتاپ (هر کدام تا ۵۱۲ کیلوبایت) است که احتمالاً شامل محتوای گفت‌وگو، خروجی ابزارها و مسیرهای فایل هستند. اطلاعات محرمانه پیش از بارگذاری پاک می‌شوند. این بسته فقط برای کارکنان Nous و ناظران مجاز Discord قابل مشاهده است و پس از ۱۴ روز خودکار حذف می‌شود.',
+      'این کار یک بسته‌ی اشکال‌زدایی را در فضای ذخیره‌سازی داخلی Nous بارگذاری می‌کند (نه یک paste عمومی). شامل اطلاعات سیستم (سیستم‌عامل، نسخه‌ها، ارائه‌دهنده، اینکه کدام کلیدهای API پیکربندی شده‌اند — هرگز خود کلیدها) و گزارش‌های کامل agent، گیتوی و دسکتاپ (هر کدام تا ۵۱۲ کیلوبایت) است که احتمالاً شامل محتوای گفت‌وگو، خروجی ابزار‌ها و مسیرهای فایل هستند. اطلاعات محرمانه پیش از بارگذاری پاک می‌شوند. این بسته فقط برای کارکنان Nous و ناظران مجاز Discord قابل مشاهده است و پس از ۱۴ روز خودکار حذف می‌شود.',
     upload: 'بارگذاری',
     uploading: 'در حال بارگذاری…',
     cancel: 'انصراف',
@@ -348,7 +348,7 @@ export const fa = defineLocale({
     hideSidebar: 'پنهان کردن نوار کنار',
     showSidebar: 'نمایش نوار کنار',
     search: 'جستجو',
-    searchTitle: 'جستجوی نشستها، نماها و اقدامات',
+    searchTitle: 'جستجوی نشست‌ها، نماها و اقدامات',
     swapSidebarSides: 'جابهجایی طرفین نوار کنار',
     hideRightSidebar: 'پنهان کردن نوار کنار راست',
     showRightSidebar: 'نمایش نوار کنار راست',
@@ -365,7 +365,7 @@ export const fa = defineLocale({
   },
   keybinds: {
     title: 'میانبرهای صفحهکلید',
-    subtitle: open => `برای تغییر، روی یک میانبر کلیک کنید · ${open} این پنل را دوباره باز میکند.`,
+    subtitle: open => `برای تغییر، روی یک میانبر کلیک کنید · ${open} این پنل را دوباره باز می‌کند.`,
     search: 'جستجوی میانبرها…',
     rebind: 'تغییر',
     reset: 'بازنشانی به پیشفرض',
@@ -375,7 +375,7 @@ export const fa = defineLocale({
     conflictWith: label => `همچنین به «${label}» متصل است`,
     categories: {
       composer: 'کامپوزر',
-      profiles: 'پروفایلها',
+      profiles: 'پروفایل‌ها',
       session: 'نشست',
       navigation: 'ناوبری',
       view: 'نمایش'
@@ -385,8 +385,8 @@ export const fa = defineLocale({
       'nav.commandPalette': 'باز کردن پالت فرمان',
       'nav.commandCenter': 'باز کردن مرکز فرمان',
       'nav.settings': 'باز کردن تنظیمات',
-      'nav.profiles': 'باز کردن پروفایلها',
-      'nav.capabilities': 'باز کردن مهارتها',
+      'nav.profiles': 'باز کردن پروفایل‌ها',
+      'nav.capabilities': 'باز کردن مهارت‌ها',
       'nav.messaging': 'باز کردن پیامرسانی',
       'nav.artifacts': 'باز کردن مصنوعات',
       'nav.cron': 'باز کردن وظایف زمانبندیشده',
@@ -405,16 +405,16 @@ export const fa = defineLocale({
       'session.slot.7': 'رفتن به نشست اخیر ۷',
       'session.slot.8': 'رفتن به نشست اخیر ۸',
       'session.slot.9': 'رفتن به نشست اخیر ۹',
-      'session.focusSearch': 'جستجوی نشستها',
+      'session.focusSearch': 'جستجوی نشست‌ها',
       'session.togglePin': 'سنجاق/برداشتن سنجاق نشست فعلی',
       'session.archive': 'بایگانی نشست فعلی',
       'workspace.newWorktree': 'worktree جدید',
       'workspace.openFolder': 'باز کردن پوشه به عنوان پروژه',
       'composer.focus': 'تمرکز بر کامپوزر',
       'composer.modelPicker': 'باز کردن انتخابگر مدل',
-      'composer.voice': 'شروع/توقف گفتوگوی صوتی',
-      'view.toggleSidebar': 'تغییر وضعیت نوار کنار نشستها',
-      'view.cycleSidebarGrouping': 'تغییر گروهبندی نشستها',
+      'composer.voice': 'شروع/توقف گفت‌وگوی صوتی',
+      'view.toggleSidebar': 'تغییر وضعیت نوار کنار نشست‌ها',
+      'view.cycleSidebarGrouping': 'تغییر گروهبندی نشست‌ها',
       'view.toggleRightSidebar': 'تغییر وضعیت مرورگر فایل',
       'view.toggleReview': 'تغییر وضعیت پنل بازبینی',
       'view.toggleStatusbar': 'تغییر وضعیت نوار وضعیت',
@@ -460,14 +460,14 @@ export const fa = defineLocale({
       'profile.switch.18': 'تغییر به پروفایل ۱۸',
       'profile.next': 'پروفایل بعدی',
       'profile.prev': 'پروفایل قبلی',
-      'profile.toggleAll': 'نمایش همه پروفایلها',
+      'profile.toggleAll': 'نمایش همه پروفایل‌ها',
       'profile.create': 'ایجاد پروفایل',
       'composer.send': 'ارسال پیام',
       'composer.newline': 'درج خط جدید',
       'composer.steer': 'هدایت اجرای جاری',
       'composer.queue': 'صف پیام',
       'composer.sendQueued': 'ارسال نوبت بعدی صف',
-      'composer.mention': 'ارجاع فایلها، پوشهها، URL',
+      'composer.mention': 'ارجاع فایل‌ها، پوشه‌ها، URL',
       'composer.slash': 'فرمان اسلش',
       'composer.help': 'راهنمای سریع',
       'composer.history': 'چرخش پاپاور / تاریخچه',
@@ -496,14 +496,14 @@ export const fa = defineLocale({
       appearancePet: 'حیوان خانگی',
       appearanceGeneral: 'عمومی',
       modelMain: 'مدل اصلی',
-      modelAuxiliary: 'مدلهای کمکی',
+      modelAuxiliary: 'مدل‌های کمکی',
       modelMoa: 'ترکیب عاملها',
-      modelFallbacks: 'مدلهای جایگزین',
+      modelFallbacks: 'مدل‌های جایگزین',
       chatBehavior: 'رفتار',
       chatAttachments: 'پیوستها',
       workspaceProjects: 'پروژهها و کشف',
       workspaceShell: 'محیط شل',
-      workspaceFiles: 'فایلها و اجرا',
+      workspaceFiles: 'فایل‌ها و اجرا',
       safetyApprovals: 'تأییدها',
       safetyPrivacy: 'حریم خصوصی و شبکه',
       safetyCheckpoints: 'نقاط بازرسی',
@@ -515,26 +515,26 @@ export const fa = defineLocale({
       voiceTranscription: 'گفتار به متن',
       voiceSpeech: 'متن به گفتار',
       advancedRuntime: 'محدودیتهای عامل',
-      advancedTools: 'دسترسی به ابزارها',
+      advancedTools: 'دسترسی به ابزار‌ها',
       advancedTerminal: 'پشتیبان ترمینال',
       advancedOutput: 'محدودیتهای خروجی',
       advancedDelegation: 'زیرعاملها',
       advancedDesktop: 'دسکتاپ و راهاندازی',
       gatewayConnection: 'این پنجره',
       gatewayDevices: 'اتصالهای ذخیرهشده',
-      gatewayManagedUpdates: 'بهروزرسانیهای از راه دور',
+      gatewayManagedUpdates: 'به‌روز‌رسانیهای از راه دور',
       gatewayManagedUpdatesUnavailable:
-        'بهروزرسانیهای از راه دور نیاز به نسخه دسکتاپ با پشتیبانی بهروزرسانی SSH مدیریتشده دارند.',
-      gatewayManagedUpdatesEmpty: 'برای مدیریت بهروزرسانیها، یک اتصال SSH در اتصالهای ذخیرهشده اضافه کنید.',
+        'به‌روز‌رسانیهای از راه دور نیاز به نسخه دسکتاپ با پشتیبانی به‌روز‌رسانی SSH مدیریتشده دارند.',
+      gatewayManagedUpdatesEmpty: 'برای مدیریت به‌روز‌رسانیها، یک اتصال SSH در اتصالهای ذخیرهشده اضافه کنید.',
       keyboardShortcuts: 'کلیدهای میانبر',
       screenCapture: 'ضبط صفحه',
       notificationAlerts: 'هشدارهای دسکتاپ',
       notificationSounds: 'صداها',
       archivedSessions: 'بایگانی و نگهداری',
       defaultDirectory: 'پوشه پروژه پیشفرض',
-      vaultCredentials: 'اعتبارنامههای ذخیرهشده',
+      vaultCredentials: 'اعتبارنامه‌های ذخیرهشده',
       vaultSources: 'مدیران رمز عبور',
-      appUpdates: 'نسخه و بهروزرسانیها',
+      appUpdates: 'نسخه و به‌روز‌رسانیها',
       uninstall: 'حذف نصب',
       billingOverview: 'نمای کلی',
       billingPlans: 'طرحها'
@@ -551,23 +551,23 @@ export const fa = defineLocale({
       providerAccounts: 'حسابها',
       providerApiKeys: 'کلیدهای API',
       providerCustomEndpoints: 'نقاط پایانی سفارشی',
-      providerLocalModels: 'مدلهای محلی',
+      providerLocalModels: 'مدل‌های محلی',
       gateway: 'گیتویها',
-      apiKeys: 'ابزارها و کلیدها',
+      apiKeys: 'ابزار‌ها و کلیدها',
       keybinds: 'میانبرهای صفحهکلید',
-      keysTools: 'ابزارها',
+      keysTools: 'ابزار‌ها',
       keysSettings: 'تنظیمات',
       mcp: 'MCP',
-      archivedChats: 'گفتوگوهای بایگانیشده',
+      archivedChats: 'گفت‌وگوهای بایگانیشده',
       about: 'درباره',
       billing: 'صورتحساب',
-      notifications: 'اعلانها',
+      notifications: 'اعلان‌ها',
       vault: 'گذرواژهها و ورودها'
     },
     plugins: {
-      title: 'افزونههای دسکتاپ',
+      title: 'افزونه‌های دسکتاپ',
       blurb:
-        'این برنامه را گسترش دهید، نه یک عامل — یکبار برای کل برنامه نصب میشود، به هر پروفایل، گیتوی یا ماشینی که متصل شوید. همراه یا در پوشه desktop-plugins قرار میگیرد؛ تغییرات بهصورت زنده اعمال میشوند.',
+        'این برنامه را گسترش دهید، نه یک عامل — یکبار برای کل برنامه نصب می‌شود، به هر پروفایل، گیتوی یا ماشینی که متصل شوید. همراه یا در پوشه desktop-plugins قرار می‌گیرد؛ تغییرات بهصورت زنده اعمال میشوند.',
       count: n => `${n} نصبشده`,
       openFolder: 'باز کردن پوشه افزونهها',
       rescan: 'بازبینی',
@@ -594,35 +594,35 @@ export const fa = defineLocale({
         includesHeading: 'این بسته شامل',
         agentLabel: 'پلاگین عامل',
         desktopLabel: 'رابط دسکتاپ',
-        agentTargetLocal: (profile, dir) => `در بکاند ${profile} (${dir}) نصب میشود`,
-        agentTargetRemote: profile => `در بکاند متصل ${profile} نصب میشود`,
+        agentTargetLocal: (profile, dir) => `در بکاند ${profile} (${dir}) نصب می‌شود`,
+        agentTargetRemote: profile => `در بکاند متصل ${profile} نصب می‌شود`,
         catalogPinned: (name, sha) =>
-          `ورودی کاتالوگ Hermes «${name}» — کامپوننت عامل در پین بررسیشده ${sha ? ` ${sha}` : ''} نصب میشود، نه در انتهای شاخه.`,
+          `ورودی کاتالوگ Hermes «${name}» — کامپوننت عامل در پین بررسیشده ${sha ? ` ${sha}` : ''} نصب می‌شود، نه در انتهای شاخه.`,
         reviewedHeading: 'ورودی کاتالوگ بررسیشده',
         reviewedIntro:
-          'این ورودی در کامیت پینشده توسط انسان بررسی شده است. همچنان میتوانید کد دقیق را در زیر بررسی کنید.',
+          'این ورودی در کامیت پینشده توسط انسان بررسی شده است. همچنان می‌توانید کد دقیق را در زیر بررسی کنید.',
         restartToApply: 'برای اعمال پلاگین، گیتوی را مجدداً راهاندازی کنید.',
         restartNow: 'راهاندازی مجدد گیتوی',
         missingEnvAction: 'راهاندازی کنید',
         alreadyInstalled: name => `${name} قبلاً نصب شده است.`,
-        desktopTarget: 'در پوشه پلاگینهای دسکتاپ محلی این برنامه نصب میشود',
-        desktopTargetFromPackage: 'از بسته بالا در این برنامه بارگذاری میشود — برای هر پروفایل یکسان است',
-        desktopOnlyNote: 'بستههای فقط-دسکتاپ پلاگین عامل بکاند را نصب نمیکنند.',
+        desktopTarget: 'در پوشه پلاگینهای دسکتاپ محلی این برنامه نصب می‌شود',
+        desktopTargetFromPackage: 'از بسته بالا در این برنامه بارگذاری می‌شود — برای هر پروفایل یکسان است',
+        desktopOnlyNote: 'بسته‌های فقط-دسکتاپ پلاگین عامل بکاند را نصب نمی‌کنند.',
         insecureWarning:
-          'این URL از طرح ناامن یا محلی استفاده میکند. برای نصبهای تولیدی https:// یا git@ را ترجیح دهید.',
+          'این URL از طرح ناامن یا محلی استفاده می‌کند. برای نصبهای تولیدی https:// یا git@ را ترجیح دهید.',
         securityHeading: 'قبل از نصب',
         securityIntro:
-          'فقط از منابع مورد اعتماد نصب کنید — اگر میخواهید ببینید چه چیزی اضافه میشود، مخزن زیر را بررسی کنید.',
+          'فقط از منابع مورد اعتماد نصب کنید — اگر میخواهید ببینید چه چیزی اضافه می‌شود، مخزن زیر را بررسی کنید.',
         sourceHeading: 'کد منبع',
         viewRepository: 'مشاهده مخزن',
-        viewPluginFiles: 'مشاهده فایلهای پلاگین',
+        viewPluginFiles: 'مشاهده فایل‌های پلاگین',
         gitCloneLabel: 'URL کلون Git',
         enableAgent: 'فعالسازی پلاگین عامل پس از نصب',
         forceReinstall: 'نصب مجدد اجباری (جایگزینی در صورت نصب قبلی)',
         pinToCommit: 'پین به کامیت (اختیاری)',
         pinToCommitPlaceholder: 'SHA کامل ۴۰ کاراکتری کامیت',
         pinToCommitHint:
-          'هر کسی که این SHA را نصب کند کد یکسان دریافت میکند؛ پلاگین تا زمان پین مجدد از بهروزرسانی خودداری میکند. برای آخرین کامیت خالی بگذارید.',
+          'هر کسی که این SHA را نصب کند کد یکسان دریافت می‌کند؛ پلاگین تا زمان پین مجدد از به‌روز‌رسانی خودداری می‌کند. برای آخرین کامیت خالی بگذارید.',
         pinToCommitInvalid: 'باید SHA کامل ۴۰ کاراکتری کامیت باشد (شاخهها و تگها پذیرفته نمیشوند).',
         install: 'نصب',
         installing: 'در حال نصب…',
@@ -635,13 +635,13 @@ export const fa = defineLocale({
         agentFailed: 'نصب افزونه عامل ناموفق بود',
         desktopFailed: 'نصب افزونه دسکتاپ ناموفق بود',
         missingEnv: (name, vars) =>
-          `${name} نصب است اما برای کار کردن به کلید نیاز دارد: ${vars}. اکنون آن را اضافه کنید، وگرنه ابزارهای افزونه از کار میافتند.`
+          `${name} نصب است اما برای کار کردن به کلید نیاز دارد: ${vars}. اکنون آن را اضافه کنید، وگرنه ابزار‌های افزونه از کار میافتند.`
       }
     },
     vault: {
       title: 'رمزها و ورودها',
       blurb:
-        'بگویید «وارد GitHub شو» و عامل برای شما وارد میشود. اولین بار که با صفحه ورود مواجه شود، همانجا از شما رمز را میپرسد؛ بعد از آن خودکار کار میکند. رمزها روی این دستگاه رمزنگاری شده و مستقیماً در صفحه پر میشوند — مدل هرگز آنها را نمیبیند.',
+        'بگویید «وارد GitHub شو» و عامل برای شما وارد می‌شود. اولین بار که با صفحه ورود مواجه شود، همانجا از شما رمز را میپرسد؛ بعد از آن خودکار کار می‌کند. رمزها روی این دستگاه رمزنگاری شده و مستقیماً در صفحه پر میشوند — مدل هرگز آنها را نمیبیند.',
       count: n => `${n} ذخیرهشده`,
       loadFailed: 'بارگذاری موارد گاوصندوق ممکن نشد',
       empty: 'هنوز چیزی ذخیره نشده',
@@ -649,7 +649,7 @@ export const fa = defineLocale({
         'لازم نیست چیزی اینجا اضافه کنید. از عامل بخواهید وارد سایتی شود و همانجا یک بار رمز را از شما میپرسد. اگر ترجیح میدهید از قبل وارد کنید، از «افزودن» استفاده کنید.',
       add: 'افزودن',
       addTitle: 'افزودن ورود، کارت یا آدرس',
-      addDescription: 'روی این دستگاه رمزنگاری شده ذخیره میشود. عامل هرگز رمز را نمیبیند.',
+      addDescription: 'روی این دستگاه رمزنگاری شده ذخیره می‌شود. عامل هرگز رمز را نمیبیند.',
       added: 'ذخیره شد.',
       adding: 'در حال ذخیره…',
       addConfirm: 'ذخیره',
@@ -753,23 +753,23 @@ export const fa = defineLocale({
           description: 'دسترسی به اعتبار متوقف یا بازیابی شد.'
         },
         plugin: {
-          label: 'اعلانهای افزونه',
+          label: 'اعلان‌های افزونه',
           description: 'یک افزونه دسکتاپ در حالی که Hermes در پسزمینه بود اعلانی ارسال کرد.'
         }
       },
       test: 'ارسال اعلان آزمایشی',
       testTitle: 'Hermes',
-      testBody: 'اعلانها کار میکنند.',
+      testBody: 'اعلان‌ها کار می‌کنند.',
       testSent: 'آزمایش ارسال شد. اگر چیزی ظاهر نشد، مجوزهای اعلان سیستم عامل و حالت تمرکز/مزاحم نشوید را بررسی کنید.',
-      testUnsupported: 'این سیستم از اعلانهای بومی پشتیبانی نمیکند.',
+      testUnsupported: 'این سیستم از اعلان‌های بومی پشتیبانی نمی‌کند.',
       completionSoundTitle: 'صدای تکمیل',
       completionSoundDesc:
-        'هنگامی که یک نوبت عامل به پایان میرسد پخش میشود. یک پیشتنظیم انتخاب کنید و آن را اینجا پیشنمایش کنید.',
+        'هنگامی که یک نوبت عامل به پایان میرسد پخش می‌شود. یک پیشتنظیم انتخاب کنید و آن را اینجا پیشنمایش کنید.',
       completionSoundPreview: 'پیشنمایش'
     },
     sections: {
       model: 'مدل',
-      chat: 'گفتوگو',
+      chat: 'گفت‌وگو',
       appearance: 'ظاهر',
       workspace: 'فضای کاری',
       safety: 'ایمنی',
@@ -783,7 +783,7 @@ export const fa = defineLocale({
       gateway: 'اتصال گیتوی...',
       keys: 'جستجوی کلیدهای API...',
       mcp: 'جستجوی سرورهای MCP...',
-      sessions: 'جستجوی نشستهای بایگانیشده...'
+      sessions: 'جستجوی نشست‌های بایگانیشده...'
     },
     modeOptions: {
       light: {
@@ -805,7 +805,7 @@ export const fa = defineLocale({
       colorMode: 'حالت رنگ',
       colorModeDesc: 'یک حالت ثابت انتخاب کنید یا اجازه دهید Hermes از تنظیمات سیستم پیروی کند.',
       toolViewTitle: 'نمایش فراخوانی ابزار',
-      toolViewDesc: 'محصول بارهای خام ابزار را پنهان میکند؛ فنی ورودی/خروجی کامل را نشان میدهد.',
+      toolViewDesc: 'محصول بارهای خام ابزار را پنهان می‌کند؛ فنی ورودی/خروجی کامل را نشان می‌دهد.',
       hideCodeDiffsTitle: 'پنهان کردن تفاوتهای کد',
       hideCodeDiffsDesc:
         'ویرایشهای فایل را به صورت ردیفهای ابزار درونخطی با تعداد خطوط اضافه/حذفشده نشان بده، بدون کد.',
@@ -815,15 +815,15 @@ export const fa = defineLocale({
       reasoningCollapsedDesc: 'تفکر جریانی را بدون باز کردن آن در دسترس نگه دار تا زمانی که آن را باز کنید.',
       uiScaleTitle: 'مقیاس رابط کاربری',
       uiScaleDesc: percent =>
-        `مقیاس متن و کنترلها در کل برنامه. Cmd/Ctrl با +، - و 0 نیز کار میکند. فعلی: ${percent}%.`,
+        `مقیاس متن و کنترلها در کل برنامه. Cmd/Ctrl با +، - و 0 نیز کار می‌کند. فعلی: ${percent}%.`,
       sessionDensityTitle: 'تراکم فهرست نشست',
-      sessionDensityDesc: 'انتخاب کنید چقدر زمینه زیر عنوان نشستها در نوار کنار نمایش داده شود.',
+      sessionDensityDesc: 'انتخاب کنید چقدر زمینه زیر عنوان نشست‌ها در نوار کنار نمایش داده شود.',
       sessionDensityCompact: 'فشرده',
       sessionDensityComfortable: 'راحت',
       sessionDensityDetailed: 'جزئی',
       tabStripTitle: 'نوار برگه',
       tabStripDesc:
-        'نمایش برگهها بالای یک ناحیه. به صورت خودکار برای یک پنل تنها پنهان میشود مگر اینکه گفتگو یا ناحیه کاشی دیگری باز باشد.',
+        'نمایش برگهها بالای یک ناحیه. به صورت خودکار برای یک پنل تنها پنهان می‌شود مگر اینکه گفتگو یا ناحیه کاشی دیگری باز باشد.',
       tabStripAuto: 'خودکار',
       tabStripAlways: 'همیشه',
       tabStripNever: 'هرگز',
@@ -837,17 +837,17 @@ export const fa = defineLocale({
       terminalFontPlaceholder: 'MesloLGS NF یا یک پشته فونت CSS',
       terminalFontPreview: 'پیشنمایش گلیف',
       terminalFontReset: 'استفاده از پیشفرض',
-      chatFontTitle: 'فونت گفتوگو',
+      chatFontTitle: 'فونت گفت‌وگو',
       chatFontDesc:
-        'فونت نصبشدهای برای گفتوگو و بقیه برنامه انتخاب کنید. برای فونتهای خوانا مثل OpenDyslexic مفید است؛ خالی بگذارید تا از فونت تم استفاده شود.',
+        'فونت نصبشدهای برای گفت‌وگو و بقیه برنامه انتخاب کنید. برای فونتهای خوانا مثل OpenDyslexic مفید است؛ خالی بگذارید تا از فونت تم استفاده شود.',
       chatFontPlaceholder: 'OpenDyslexic یا یک پشته فونت CSS',
       chatFontPreview: 'پیشنمایش',
       chatFontSample: 'روباه قهوهای سریع از روی سگ تنبل میپرد. ۰۱۲۳۴۵۶۷۸۹',
       chatFontReset: 'استفاده از فونت تم',
       translucencyTitle: 'شفافیت پنجره',
-      translucencyDesc: 'دسکتاپ را از طریق کل پنجره، متن و همهچیز ببینید. برای حالت روشن و تاریک جداگانه تنظیم میشود.',
+      translucencyDesc: 'دسکتاپ را از طریق کل پنجره، متن و همهچیز ببینید. برای حالت روشن و تاریک جداگانه تنظیم می‌شود.',
       translucencyGlassDesc:
-        'شیشه مات: دسکتاپ به صورت بلور نرم نمایان میشود در حالی که متن واضح میماند. برای حالت روشن و تاریک جداگانه تنظیم میشود.',
+        'شیشه مات: دسکتاپ به صورت بلور نرم نمایان می‌شود در حالی که متن واضح می‌ماند. برای حالت روشن و تاریک جداگانه تنظیم می‌شود.',
       translucencyModeClear: 'شفاف',
       translucencyModeGlass: 'شیشهای',
       translucencyTintTitle: 'رنگآمیزی',
@@ -864,22 +864,22 @@ export const fa = defineLocale({
         window: 'کل پنجره',
         sidebar: 'فقط نوار کنار'
       },
-      backdropTitle: 'پسزمینه گفتوگو',
-      backdropDesc: 'تصویر محو مجسمه پشت گفتوگو.',
+      backdropTitle: 'پسزمینه گفت‌وگو',
+      backdropDesc: 'تصویر محو مجسمه پشت گفت‌وگو.',
       userBubbleTitle: 'حباب پیام',
-      userBubbleDesc: 'شفافیت پیامهای خودتان. در 0 کاملاً مات؛ در 100 فقط خط دور باقی میماند.',
+      userBubbleDesc: 'شفافیت پیام‌های خودتان. در 0 کاملاً مات؛ در 100 فقط خط دور باقی می‌ماند.',
       introSplashTitle: 'صفحه خوشآمد',
-      introSplashDesc: 'نشان و درخواست نمایش دادهشده در گفتوگوی خالی.',
+      introSplashDesc: 'نشان و درخواست نمایش دادهشده در گفت‌وگوی خالی.',
       reactionsTitle: 'واکنش به پیام',
       reactionsDesc:
-        'واکنشهای ایموجی به سبک iMessage — به پیامها واکنش نشان دهید و Hermes هم میتواند به پیامهای شما واکنش نشان دهد.',
+        'واکنشهای ایموجی به سبک iMessage — به پیام‌ها واکنش نشان دهید و Hermes هم می‌تواند به پیام‌های شما واکنش نشان دهد.',
       tipsTitle: 'نکات درونبرنامهای',
       tipsDesc:
-        'راهنماییهای گاهبهگاه از برنامه و Hermes. هر نکته فقط یکبار نمایش داده میشود. پس از ۳۰ روز اول بهطور خودکار خاموش میشود؛ میتوانید دوباره روشن کنید.',
+        'راهنماییهای گاهبهگاه از برنامه و Hermes. هر نکته فقط یکبار نمایش داده می‌شود. پس از ۳۰ روز اول بهطور خودکار خاموش می‌شود؛ می‌توانید دوباره روشن کنید.',
       tipsReset: count => `نمایش دوباره ${count} نکته`,
       toursTitle: 'تورهای راهنما',
       toursDesc:
-        'اجازه دهید Hermes هر مرحله را هنگام راهنمایی در برنامه برجسته کند. پس از ۳۰ روز اول بهطور خودکار خاموش میشود؛ میتوانید دوباره روشن کنید.',
+        'اجازه دهید Hermes هر مرحله را هنگام راهنمایی در برنامه برجسته کند. پس از ۳۰ روز اول بهطور خودکار خاموش می‌شود؛ می‌توانید دوباره روشن کنید.',
       composerPopoutTitle: 'کامپوزر شناور',
       composerPopoutDesc: 'اجازه کشیدن کامپوزر از جایگاهش. برای قفل کردن در پایین، این را خاموش کنید.',
       vibeHeartsTitle: 'قلبهای حالت',
@@ -887,20 +887,20 @@ export const fa = defineLocale({
         'قلبهای شناور وقتی تشکر، دوستت دارم، ربات خوب میگویید یا قلب میفرستید. جدا از واکنشهای پیام بالا.',
       embedsTitle: 'نمایشهای داخلی',
       embedsDesc:
-        'پیشنمایشهای غنی از سایتهای شخص ثالث (YouTube، X، …) بارگذاری میشوند. «پرسیدن» تا اجازه شما placeholder نشان میدهد؛ «همیشه» خودکار بارگذاری میکند؛ «خاموش» لینکهای ساده نگه میدارد.',
+        'پیشنمایشهای غنی از سایتهای شخص ثالث (YouTube، X، …) بارگذاری میشوند. «پرسیدن» تا اجازه شما placeholder نشان می‌دهد؛ «همیشه» خودکار بارگذاری می‌کند؛ «خاموش» لینکهای ساده نگه میدارد.',
       embedsAsk: 'پرسیدن',
       embedsAlways: 'همیشه',
       embedsOff: 'خاموش',
       embedsReset: count => `بازنشانی ${count} سرویس مجاز`,
-      resumeLastSessionTitle: 'بازگشایی آخرین گفتوگو هنگام راهاندازی',
+      resumeLastSessionTitle: 'بازگشایی آخرین گفت‌وگو هنگام راهاندازی',
       resumeLastSessionDesc:
-        'در صورت فعال بودن، برنامه آخرین گفتوگوی شما را در شروع سرد باز میکند. برای شروع همیشه با گفتوگوی جدید، غیرفعال کنید.',
+        'در صورت فعال بودن، برنامه آخرین گفت‌وگوی شما را در شروع سرد باز می‌کند. برای شروع همیشه با گفت‌وگوی جدید، غیرفعال کنید.',
       product: 'محصول',
-      productDesc: 'فعالیت ابزار دوستانه با خلاصههای مختصر.',
+      productDesc: 'فعالیت ابزار دوستانه با خلاصه‌های مختصر.',
       technical: 'فنی',
       technicalDesc: 'شامل آرگومانها/نتایج خام ابزار و جزئیات سطح پایین.',
       themeTitle: 'پوسته',
-      themeDesc: 'فقط پالتهای دسکتاپ. حالت انتخابشده روی آن اعمال میشود.',
+      themeDesc: 'فقط پالتهای دسکتاپ. حالت انتخابشده روی آن اعمال می‌شود.',
       themeSearchPlaceholder: 'جستجوی پوستهها یا VS Code Marketplace…',
       themeProfileNote: profile => `برای پروفایل ${profile} ذخیره شد — هر پروفایل پوسته خودش را دارد.`,
       installTitle: 'نصب از VS Code',
@@ -916,17 +916,17 @@ export const fa = defineLocale({
       pet: {
         title: 'حیوان خانگی',
         intro:
-          'یک ماسکوت petdex متحرک را به فرزندی بگیرید که روی برنامه شناور است و به کارهای Hermes واکنش نشان میدهد — هنگام اجرای ابزارها میدود، در موفقیت جشن میگیرد و در خطاها قهر میکند.',
+          'یک ماسکوت petdex متحرک را به فرزندی بگیرید که روی برنامه شناور است و به کار‌های Hermes واکنش نشان می‌دهد — هنگام اجرای ابزار‌ها میدود، در موفقیت جشن می‌گیرد و در خطاها قهر می‌کند.',
         restartHint:
           'حیوانات خانگی نیاز به راهاندازی مجدد سریع دارند — برنامه در حال اجرا قبل از افزودن این ویژگی شروع شده است. Hermes را ببندید و دوباره باز کنید، سپس به اینجا برگردید.',
         on: 'روشن',
         off: 'خاموش',
         scaleTitle: 'اندازه',
-        scaleDesc: 'تغییر اندازه ماسکوت شناور. فوراً در همهجا اعمال میشود.',
+        scaleDesc: 'تغییر اندازه ماسکوت شناور. فوراً در همهجا اعمال می‌شود.',
         roamTitle: 'پرسه',
         roamDesc: 'اجازه دهید حیوان خانگی در حالت بیکار خودش در پنجره پرسه بزند.',
         chooseTitle: 'انتخاب حیوان خانگی',
-        chooseDesc: 'انتخاب یکی، آن را نصب (در صورت نیاز) و فعال میکند.',
+        chooseDesc: 'انتخاب یکی، آن را نصب (در صورت نیاز) و فعال می‌کند.',
         searchPlaceholder: 'جستجوی حیوانات خانگی…',
         unreachable: 'دسترسی به گالری petdex ممکن نشد. اتصال خود را بررسی و این صفحه را دوباره باز کنید.',
         noMatch: query => `هیچ حیوان خانگی با «${query}» مطابقت ندارد.`,
@@ -937,7 +937,7 @@ export const fa = defineLocale({
         uninstall: name => `حذف نصب ${name}`,
         delete: name => `حذف ${name}`,
         deleteTitle: name => `حذف ${name}؟`,
-        deleteBody: 'این عمل حیوان خانگی را برای همیشه حذف میکند — قابل نصب مجدد نیست.',
+        deleteBody: 'این عمل حیوان خانگی را برای همیشه حذف می‌کند — قابل نصب مجدد نیست.',
         deleteConfirm: 'حذف',
         rename: name => `تغییر نام ${name}`,
         renameTitle: 'تغییر نام حیوان خانگی',
@@ -957,7 +957,7 @@ export const fa = defineLocale({
       model: 'مدل پیش‌فرض',
       modelContextLength: 'پنجره زمینه مدل اصلی (بازنویسی)',
       fallbackProviders: 'مدل‌های جایگزین',
-      toolsets: 'مجموعه ابزارهای فعال',
+      toolsets: 'مجموعه ابزار‌های فعال',
       timezone: 'منطقه زمانی',
       'display.personality': 'شخصیت',
       'display.showReasoning': 'بلوک‌های استدلال',
@@ -997,7 +997,7 @@ export const fa = defineLocale({
       'voice.recordKey': 'میانبر صوتی',
       'voice.maxRecordingSeconds': 'حداکثر مدت ضبط',
       'voice.autoTts': 'خواندن پاسخها با صدا',
-      'voice.voiceChatMode': 'حالت گفتوگوی صوتی',
+      'voice.voiceChatMode': 'حالت گفت‌وگوی صوتی',
       'voice.gptLive.voice': 'صدای GPT-Live',
       'voice.gptLive.instructions': 'شخصیت GPT-Live',
       'stt.enabled': 'تبدیل گفتار به متن',
@@ -1048,7 +1048,7 @@ export const fa = defineLocale({
       'compression.threshold': 'آستانه فشردهسازی',
       'compression.codexGpt55Autoraise': 'افزایش خودکار فشردهسازی Codex',
       'compression.targetRatio': 'هدف فشردهسازی',
-      'compression.protectLastN': 'پیامهای اخیر محافظتشده',
+      'compression.protectLastN': 'پیام‌های اخیر محافظتشده',
       'auxiliary.compression.timeout': 'مهلت مدل فشردهسازی (ثانیه)',
       'delegation.model': 'مدل زیرعامل',
       'delegation.provider': 'ارائهدهنده زیرعامل',
@@ -1056,63 +1056,63 @@ export const fa = defineLocale({
       'delegation.maxConcurrentChildren': 'زیرعاملهای موازی',
       'delegation.childTimeoutSeconds': 'مهلت زیرعامل',
       'delegation.reasoningEffort': 'تلاش استدلال زیرعامل',
-      'updates.nonInteractiveLocalChanges': 'تغییرات محلی بهروزرسانی درونبرنامهای'
+      'updates.nonInteractiveLocalChanges': 'تغییرات محلی به‌روز‌رسانی درونبرنامهای'
     },
     fieldDescriptions: {
-      model: 'برای گفتوگوهای جدید استفاده میشود، مگر اینکه مدل دیگری را در کامپوزر انتخاب کنید.',
+      model: 'برای گفت‌وگوهای جدید استفاده می‌شود، مگر اینکه مدل دیگری را در کامپوزر انتخاب کنید.',
       modelContextLength:
-        'پنجره زمینه تشخیص داده شده را فقط برای مدل اصلی گفتوگو بازنویسی میکند (توکن). برای استفاده از مقدار تشخیص داده شده مدل انتخاب شده، 0 بگذارید. روی مدلهای کمکی/MoA تأثیر نمیگذارد.',
+        'پنجره زمینه تشخیص داده شده را فقط برای مدل اصلی گفت‌وگو بازنویسی می‌کند (توکن). برای استفاده از مقدار تشخیص داده شده مدل انتخاب شده، 0 بگذارید. روی مدل‌های کمکی/MoA تأثیر نمیگذارد.',
       fallbackProviders: 'ورودیهای provider:model پشتیبان برای تلاش در صورت شکست مدل پیشفرض.',
-      'display.personality': 'سبک پیشفرض دستیار برای نشستهای جدید.',
-      'display.showReasoning': 'بخشهای استدلال را وقتی backend ارائه میدهد، نشان بده.',
-      'desktop.repoScanEnabled': 'پوشههای محلی را برای مخازن Git برای نمایش در پروژهها اسکن کن.',
-      'desktop.repoScanRoots': 'پوشههایی که اسکن شوند. برای اسکن پوشه خانه، خالی بگذار.',
-      'desktop.repoScanExcludePaths': 'پوشهها و زیرشاخههای آنها که در کشف مخزن نادیده گرفته شوند.',
+      'display.personality': 'سبک پیشفرض دستیار برای نشست‌های جدید.',
+      'display.showReasoning': 'بخشهای استدلال را وقتی backend ارائه می‌دهد، نشان بده.',
+      'desktop.repoScanEnabled': 'پوشه‌های محلی را برای مخازن Git برای نمایش در پروژهها اسکن کن.',
+      'desktop.repoScanRoots': 'پوشه‌هایی که اسکن شوند. برای اسکن پوشه خانه، خالی بگذار.',
+      'desktop.repoScanExcludePaths': 'پوشه‌ها و زیرشاخه‌های آنها که در کشف مخزن نادیده گرفته شوند.',
       timezone: 'شناسه منطقه زمانی IANA. خالی به معنای استفاده از منطقه زمانی سیستم است.',
       'browser.useRealProfile':
-        'مرور محلی از ورودهای واقعی شما استفاده میکند. Hermes پروفایل مرورگر پیشفرض شما (کوکیها، ورودها، تنظیمات) را در یک snapshot مدیریتشده کپی میکند و آن را با Chromium بستهبندیشده خود اجرا میکند — پروفایل زنده شما هرگز مستقیماً باز نمیشود و کپی در هر اجرا از آن تازه میشود. همچنین به عامل اجازه میدهد در صورت درخواست، یک نشست محلی با پروفایل واقعی باز کند، حتی وقتی backend مرورگر ابری پیکربندی شده است. فقط مرورگرهای Chromium (Chrome، Edge، Brave، Brave Origin، Chromium) پشتیبانی میشوند؛ پیشفرض غیر-Chromium با پیام واضح شکست میخورد. بهطور پیشفرض غیرفعال است.',
-      'agent.imageInputMode': 'کنترل میکند که پیوستهای تصویری چگونه به مدل ارسال شوند.',
+        'مرور محلی از ورودهای واقعی شما استفاده می‌کند. Hermes پروفایل مرورگر پیشفرض شما (کوکیها، ورودها، تنظیمات) را در یک snapshot مدیریتشده کپی می‌کند و آن را با Chromium بستهبندیشده خود اجرا می‌کند — پروفایل زنده شما هرگز مستقیماً باز نمی‌شود و کپی در هر اجرا از آن تازه می‌شود. همچنین به عامل اجازه می‌دهد در صورت درخواست، یک نشست محلی با پروفایل واقعی باز کند، حتی وقتی backend مرورگر ابری پیکربندی شده است. فقط مرورگرهای Chromium (Chrome، Edge، Brave، Brave Origin، Chromium) پشتیبانی میشوند؛ پیشفرض غیر-Chromium با پیام واضح شکست میخورد. بهطور پیشفرض غیرفعال است.',
+      'agent.imageInputMode': 'کنترل می‌کند که پیوستهای تصویری چگونه به مدل ارسال شوند.',
       'agent.maxTurns': 'حد بالایی برای نوبتهای فراخوانی ابزار قبل از توقف اجرا توسط Hermes.',
       'terminal.cwd': 'پوشه پروژه پیشفرض برای کار ابزار و ترمینال.',
-      'terminal.persistentShell': 'حالت shell را بین دستورات حفظ کن وقتی backend آن را پشتیبانی میکند.',
+      'terminal.persistentShell': 'حالت shell را بین دستورات حفظ کن وقتی backend آن را پشتیبانی می‌کند.',
       'terminal.envPassthrough': 'متغیرهای محیطی که به اجرای ابزار منتقل شوند.',
       'terminal.dockerImage': 'تصویر کانتینر وقتی backend اجرا Docker است.',
       'terminal.singularityImage': 'تصویر وقتی backend اجرا Singularity است.',
-      'terminal.modalImage': 'تصویری که هنگام استفاده از بکاند اجرای Modal استفاده میشود.',
-      'terminal.daytonaImage': 'تصویری که هنگام استفاده از بکاند اجرای Daytona استفاده میشود.',
+      'terminal.modalImage': 'تصویری که هنگام استفاده از بکاند اجرای Modal استفاده می‌شود.',
+      'terminal.daytonaImage': 'تصویری که هنگام استفاده از بکاند اجرای Daytona استفاده می‌شود.',
       'codeExecution.mode': 'میزان محدودیت اجرای کد به پروژه فعلی.',
-      fileReadMaxChars: 'حداکثر کاراکترهایی که Hermes میتواند از یک درخواست فایل بخواند.',
+      fileReadMaxChars: 'حداکثر کاراکترهایی که Hermes می‌تواند از یک درخواست فایل بخواند.',
       'approvals.mode': 'نحوه برخورد Hermes با دستوراتی که نیاز به تأیید صریح دارند.',
       'approvals.timeout': 'مدت انتظار برای تأیید قبل از انقضای زمان.',
       'security.redactSecrets': 'در صورت امکان، اسرار شناساییشده را از محتوای قابل مشاهده مدل پنهان کن.',
-      'checkpoints.enabled': 'قبل از ویرایش فایلها، عکسهای فوری برای بازگشت ایجاد کن.',
-      'memory.memoryEnabled': 'خاطرات ماندگاری ذخیره کن که میتواند به نشستهای آینده کمک کند.',
+      'checkpoints.enabled': 'قبل از ویرایش فایل‌ها، عکسهای فوری برای بازگشت ایجاد کن.',
+      'memory.memoryEnabled': 'خاطرات ماندگاری ذخیره کن که می‌تواند به نشست‌های آینده کمک کند.',
       'memory.userProfileEnabled': 'پروفایل فشردهای از ترجیحات کاربر نگهداری کن.',
-      'context.engine': 'راهبرد مدیریت گفتوگوهای طولانی نزدیک به محدودیت زمینه.',
-      'compression.enabled': 'وقتی گفتوگوها بزرگ میشوند، زمینه قدیمیتر را خلاصه کن.',
-      'compression.codexGpt55Autoraise': 'فشردهسازی را برای مدلهای ChatGPT Codex OAuth پشتیبانیشده به ۸۵٪ افزایش بده.',
+      'context.engine': 'راهبرد مدیریت گفت‌وگوهای طولانی نزدیک به محدودیت زمینه.',
+      'compression.enabled': 'وقتی گفت‌وگوها بزرگ میشوند، زمینه قدیمیتر را خلاصه کن.',
+      'compression.codexGpt55Autoraise': 'فشردهسازی را برای مدل‌های ChatGPT Codex OAuth پشتیبانیشده به ۸۵٪ افزایش بده.',
       'auxiliary.compression.timeout':
-        'ثانیههای انتظار برای مدل فشردهسازی کمکی در هر فراخوانی (پیشفرض ۱۲۰). برای مدلهای محلی کند، افزایش بده.',
+        'ثانیه‌های انتظار برای مدل فشردهسازی کمکی در هر فراخوانی (پیشفرض ۱۲۰). برای مدل‌های محلی کند، افزایش بده.',
       'voice.autoTts': 'پاسخهای دستیار را بهطور خودکار گویا کن.',
       'voice.voiceChatMode':
-        'chained: گفتار به متن ← Hermes ← متن به گفتار با ارائهدهندگان زیر. gpt-live: یک مدل صوتی OpenAI تمامدوطرفه (gpt-live-1) گوش میدهد و صحبت میکند و هر درخواست واقعی را به Hermes میدهد — هر مدلی که انتخاب کرده باشید با مجموعه کامل ابزارها پاسخ میدهد. نیاز به کلید API OpenAI دارد؛ لایه صوتی ۰.۰۵ دلار در دقیقه هزینه دارد.',
-      'voice.gptLive.voice': 'صدا برای حالت GPT-Live. شناسههای صدای سفارشی پذیرفته میشوند.',
+        'chained: گفتار به متن ← Hermes ← متن به گفتار با ارائهدهندگان زیر. gpt-live: یک مدل صوتی OpenAI تمامدوطرفه (gpt-live-1) گوش می‌دهد و صحبت می‌کند و هر درخواست واقعی را به Hermes می‌دهد — هر مدلی که انتخاب کرده باشید با مجموعه کامل ابزار‌ها پاسخ می‌دهد. نیاز به کلید API OpenAI دارد؛ لایه صوتی ۰.۰۵ دلار در دقیقه هزینه دارد.',
+      'voice.gptLive.voice': 'صدا برای حالت GPT-Live. شناسه‌های صدای سفارشی پذیرفته میشوند.',
       'voice.gptLive.instructions':
-        'جملات اضافی برای شخصیت صدای زنده (لحن، سرعت، زبان). Hermes پرامپت سیستم خودش را حفظ میکند.',
+        'جملات اضافی برای شخصیت صدای زنده (لحن، سرعت، زبان). Hermes پرامپت سیستم خودش را حفظ می‌کند.',
       'tts.xai.voiceId': 'شناسه صدای xAI (مثلاً eve) یا شناسه صدای سفارشی.',
       'tts.xai.language': 'کد زبان گفتاری (مثلاً en، pt-BR) یا «auto» برای تشخیص خودکار.',
       'tts.xai.speed': 'سرعت پخش. ۰.۷ = کندتر، ۱.۰ = عادی، ۱.۵ = سریعتر.',
       'tts.xai.autoSpeechTags':
         'به LLM اجازه بده قبل از سنتز، برچسبهای صوتی بیانی ([laughing]، [sighs]) را در متن وارد کند.',
       'tts.xai.optimizeStreamingLatency': 'مبادله تأخیر در برابر کیفیت. ۰ = بهترین کیفیت، ۲ = کمترین تأخیر.',
-      'tts.xai.sampleRate': 'نرخ نمونهبرداری صدا بر حسب هرتز. بالاتر = کیفیت بهتر، فایلهای بزرگتر.',
-      'tts.xai.bitRate': 'نرخ بیت MP3 بر حسب bps. فقط وقتی کدک mp3 است اعمال میشود.',
+      'tts.xai.sampleRate': 'نرخ نمونهبرداری صدا بر حسب هرتز. بالاتر = کیفیت بهتر، فایل‌های بزرگتر.',
+      'tts.xai.bitRate': 'نرخ بیت MP3 بر حسب bps. فقط وقتی کدک mp3 است اعمال می‌شود.',
       'tts.neutts.device': 'دستگاه استنتاج محلی برای NeuTTS.',
       'stt.enabled': 'فعالسازی رونویسی گفتار محلی یا مبتنی بر ارائهدهنده.',
-      'stt.echoTranscripts': 'رونوشت خام 🎙️ پیامهای صوتی را به گفتوگو بازگردان.',
-      'stt.elevenlabs.languageCode': 'کد زبان ISO-639-3 اختیاری. خالی گذاشتن به ElevenLabs اجازه تشخیص خودکار میدهد.',
+      'stt.echoTranscripts': 'رونوشت خام 🎙️ پیام‌های صوتی را به گفت‌وگو بازگردان.',
+      'stt.elevenlabs.languageCode': 'کد زبان ISO-639-3 اختیاری. خالی گذاشتن به ElevenLabs اجازه تشخیص خودکار می‌دهد.',
       'updates.nonInteractiveLocalChanges':
-        'وقتی Hermes خودش را از برنامه بهروزرسانی میکند (بدون اعلان ترمینال)، تغییرات محلی منبع را نگه دار (stash) یا دور بریز (discard). بهروزرسانیهای ترمینال همیشه میپرسند.'
+        'وقتی Hermes خودش را از برنامه به‌روز‌رسانی می‌کند (بدون اعلان ترمینال)، تغییرات محلی منبع را نگه دار (stash) یا دور بریز (discard). به‌روز‌رسانیهای ترمینال همیشه میپرسند.'
     },
     uninstallSection: {
       dangerZone: 'منطقه خطر',
@@ -1144,30 +1144,30 @@ export const fa = defineLocale({
       versionUnavailable: 'نسخه در دسترس نیست',
       bundleOutOfSync: 'نسخه برنامه قدیمی است',
       bundleOutOfSyncDesc:
-        'زمان اجرای Hermes بهروزرسانی شده، اما خود برنامه دسکتاپ هنوز نسخه قدیمی است — ویژگیهای جدید رابط (مانند Bot Mode) تا بهروزرسانی در دسترس نخواهند بود. برای بازسازی برنامه، بهروزرسانی زیر را اجرا کنید. اگر این هشدار برطرف نشد، از آخرین نصبکننده دسکتاپ دوباره نصب کنید.',
+        'زمان اجرای Hermes به‌روز‌رسانی شده، اما خود برنامه دسکتاپ هنوز نسخه قدیمی است — ویژگیهای جدید رابط (مانند Bot Mode) تا به‌روز‌رسانی در دسترس نخواهند بود. برای بازسازی برنامه، به‌روز‌رسانی زیر را اجرا کنید. اگر این هشدار برطرف نشد، از آخرین نصبکننده دسکتاپ دوباره نصب کنید.',
       bundleOutOfSyncAction: 'دریافت نصبکننده',
-      bundleSwapPending: 'برای تکمیل بهروزرسانی، راهاندازی مجدد کنید',
+      bundleSwapPending: 'برای تکمیل به‌روز‌رسانی، راهاندازی مجدد کنید',
       bundleSwapPendingDesc:
-        'برنامه بهروزرسانیشده نصب شده — Hermes فقط برای بارگذاری آن نیاز به راهاندازی مجدد دارد. گفتوگوها و تنظیمات دستنخورده باقی میمانند.',
+        'برنامه به‌روز‌رسانیشده نصب شده — Hermes فقط برای بارگذاری آن نیاز به راهاندازی مجدد دارد. گفت‌وگوها و تنظیمات دستنخورده باقی میمانند.',
       bundleSwapPendingAction: 'راهاندازی مجدد Hermes',
-      updates: 'بهروزرسانیها',
+      updates: 'به‌روز‌رسانیها',
       checkNow: 'بررسی کن',
       checking: 'در حال بررسی…',
       seeWhatsNew: 'مشاهده تازهها',
-      updateNow: 'بهروزرسانی کن',
+      updateNow: 'به‌روز‌رسانی کن',
       releaseNotes: 'یادداشتهای انتشار',
       onLatest: 'شما آخرین نسخه را دارید.',
-      installing: 'یک بهروزرسانی در حال نصب است.',
-      cantUpdate: 'این نسخه نمیتواند از داخل برنامه خود را بهروزرسانی کند.',
-      cantReach: 'نتوانستیم به سرور بهروزرسانی دسترسی پیدا کنیم.',
-      tapCheck: 'برای بررسی بهروزرسانیها، روی «بررسی کن» بزنید.',
+      installing: 'یک به‌روز‌رسانی در حال نصب است.',
+      cantUpdate: 'این نسخه نمی‌تواند از داخل برنامه خود را به‌روز‌رسانی کند.',
+      cantReach: 'نتوانستیم به سرور به‌روز‌رسانی دسترسی پیدا کنیم.',
+      tapCheck: 'برای بررسی به‌روز‌رسانیها، روی «بررسی کن» بزنید.',
       updateReady: count => `به‌روزرسانی جدیدی آماده است (${count} تغییر گنجانده شده).`,
-      updateReadyUnknown: 'یک بهروزرسانی جدید آماده است.',
+      updateReadyUnknown: 'یک به‌روز‌رسانی جدید آماده است.',
       lastChecked: age => `آخرین بررسی ${age}`,
       justNowSuffix: ' · همین حالا',
-      automaticUpdates: 'بهروزرسانی خودکار',
+      automaticUpdates: 'به‌روز‌رسانی خودکار',
       automaticUpdatesDesc:
-        'Hermes بهطور خودکار در پسزمینه بهروزرسانیها را بررسی میکند و وقتی آماده شد به شما اطلاع میدهد.',
+        'Hermes بهطور خودکار در پسزمینه به‌روز‌رسانیها را بررسی می‌کند و وقتی آماده شد به شما اطلاع می‌دهد.',
       branchCommit: (branch, commit) => `شاخه ${branch} · کامیت ${commit}`,
       never: 'هرگز',
       justNow: 'همین حالا',
@@ -1192,16 +1192,16 @@ export const fa = defineLocale({
       imported: 'تنظیمات وارد شد',
       invalidJson: 'JSON تنظیمات نامعتبر است',
       toolsetsWipeConfirm:
-        'همه ابزارهای فعال حذف شوند؟ این کار حافظه، ترمینال، جستجوی وب، واگذاری و بیشتر ابزارهای دیگر را غیرفعال میکند تا دوباره فعالشان کنید.',
+        'همه ابزار‌های فعال حذف شوند؟ این کار حافظه، ترمینال، جستجوی وب، واگذاری و بیشتر ابزار‌های دیگر را غیرفعال می‌کند تا دوباره فعالشان کنید.',
       keepAwakeTitle: 'بیدار نگه داشتن کامپیوتر',
       keepAwakeDesc:
-        'جلوگیری از خواب رفتن این دستگاه تا اجراهای طولانی یا شبانه ادامه یابند. نمایشگر همچنان میتواند کمنور شود.',
+        'جلوگیری از خواب رفتن این دستگاه تا اجراهای طولانی یا شبانه ادامه یابند. نمایشگر همچنان می‌تواند کمنور شود.',
       disableF12Title: 'غیرفعال کردن F12 DevTools',
       disableF12Desc:
-        'مسدود کردن F12 برای باز کردن Developer Tools. Ctrl+Shift+I (یا Cmd+Opt+I در Mac) همچنان کار میکند.',
+        'مسدود کردن F12 برای باز کردن Developer Tools. Ctrl+Shift+I (یا Cmd+Opt+I در Mac) همچنان کار می‌کند.',
       attachmentSizeTitle: 'حداکثر اندازه پیشنمایش / بارگذاری تصویر',
       attachmentSizeDesc:
-        'حداکثر حجم فایل محلی که Desktop برای پیشنمایش و پیوست تصویر بارگذاری میکند، به مگابایت. پیشفرض 16 است. پیوست غیرتصویری از راه دور سقف جداگانهای 256 مگابایتی دارد. تنظیم این مقدار بسیار بالا کل فایل را در حافظه بارگذاری میکند و ممکن است برنامه را منجمد یا خراب کند.',
+        'حداکثر حجم فایل محلی که Desktop برای پیشنمایش و پیوست تصویر بارگذاری می‌کند، به مگابایت. پیشفرض 16 است. پیوست غیرتصویری از راه دور سقف جداگانهای 256 مگابایتی دارد. تنظیم این مقدار بسیار بالا کل فایل را در حافظه بارگذاری می‌کند و ممکن است برنامه را منجمد یا خراب کند.',
       attachmentSizeUnit: 'MB',
       attachmentSizeLabel: 'حداکثر اندازه پیشنمایش / بارگذاری تصویر به مگابایت',
       showOptions: 'نمایش گزینهها'
@@ -1209,16 +1209,16 @@ export const fa = defineLocale({
     screenshot: {
       enabledTitle: 'میانبر اسکرینشات',
       enabledDesc:
-        'فشردن هر دو کلید Command با هم از هر برنامهای، پنجره جلویی آن را ضبط و به پیشنویس فعلی Hermes پیوست میکند. هرگز بهطور خودکار ارسال نمیشود. بهطور پیشفرض خاموش است؛ فقط روی این Mac اعمال میشود. محتوای پنجره ممکن است حساس باشد — قبل از ارسال، پیوست را بررسی کنید.',
+        'فشردن هر دو کلید Command با هم از هر برنامهای، پنجره جلویی آن را ضبط و به پیشنویس فعلی Hermes پیوست می‌کند. هرگز بهطور خودکار ارسال نمی‌شود. بهطور پیشفرض خاموش است؛ فقط روی این Mac اعمال می‌شود. محتوای پنجره ممکن است حساس باشد — قبل از ارسال، پیوست را بررسی کنید.',
       statusTitle: 'وضعیت میانبر اسکرینشات',
       checking: 'در حال بررسی میانبر اسکرینشات…',
       disabled: 'میانبر اسکرینشات خاموش است.',
       starting: 'در حال شروع شنونده میانبر. هنوز آماده نیست.',
       ready: 'میانبر آماده است. اسکرینشاتها بدون ارسال به پیشنویس فعلی شما پیوست میشوند.',
       inputPermission:
-        'مجوز Input Monitoring به Hermes اجازه میدهد هر دو کلید Command را در حالی که برنامه دیگری فعال است تشخیص دهد. Hermes را در System Settings → Privacy & Security → Input Monitoring مجاز کنید، سپس به اینجا برگردید و دوباره تلاش کنید.',
+        'مجوز Input Monitoring به Hermes اجازه می‌دهد هر دو کلید Command را در حالی که برنامه دیگری فعال است تشخیص دهد. Hermes را در System Settings → Privacy & Security → Input Monitoring مجاز کنید، سپس به اینجا برگردید و دوباره تلاش کنید.',
       screenPermission:
-        'مجوز Screen Recording به Hermes اجازه میدهد پنجره جلویی برنامه را هنگام استفاده از این میانبر ضبط کند. Hermes را در System Settings → Privacy & Security → Screen Recording مجاز کنید، سپس به اینجا برگردید و دوباره تلاش کنید. اگر macOS خواست، Hermes را راهاندازی مجدد کنید.',
+        'مجوز Screen Recording به Hermes اجازه می‌دهد پنجره جلویی برنامه را هنگام استفاده از این میانبر ضبط کند. Hermes را در System Settings → Privacy & Security → Screen Recording مجاز کنید، سپس به اینجا برگردید و دوباره تلاش کنید. اگر macOS خواست، Hermes را راهاندازی مجدد کنید.',
       openSettings: 'باز کردن System Settings',
       retry: 'تلاش دوباره',
       unavailable: 'میانبر اسکرینشات در دسترس نیست. دوباره تلاش کنید یا آن را خاموش کنید.',
@@ -1264,9 +1264,9 @@ export const fa = defineLocale({
       title: 'گیتوی‌های ثبت‌شده',
       intro: 'این دستگاه و هر گیتوی Hermes که از طریق اتصالات remote، SSH یا Cloud قابل دسترسی است را مدیریت کنید.',
       stagedNote:
-        'گیتویها را از نشستها تغییر دهید. پروفایلها، گفتوگوها، پیامرسانی و کارهای cron با گیتوی خود میمانند؛ کار روی سایر گیتویها ادامه مییابد.',
-      launchModeTitle: 'در شروع، به نشستها در آخرین گیتوی استفادهشده برگرد',
-      launchModeDesc: 'وقتی خاموش است، نشستها روی گیتوی اصلی باز میشود.',
+        'گیتویها را از نشست‌ها تغییر دهید. پروفایل‌ها، گفت‌وگوها، پیامرسانی و کار‌های cron با گیتوی خود میمانند؛ کار روی سایر گیتویها ادامه مییابد.',
+      launchModeTitle: 'در شروع، به نشست‌ها در آخرین گیتوی استفادهشده برگرد',
+      launchModeDesc: 'وقتی خاموش است، نشست‌ها روی گیتوی اصلی باز می‌شود.',
       searchPlaceholder: 'جستجوی گیتویها…',
       noSearchResults: 'هیچ گیتویی با جستجوی شما مطابقت ندارد.',
       loadFailed: 'بارگذاری اتصالات ممکن نشد',
@@ -1278,23 +1278,23 @@ export const fa = defineLocale({
       removeConnection: 'حذف',
       removeConfirmTitle: 'این اتصال حذف شود؟',
       removeConfirmDesc: label =>
-        `«${label}» از این برنامه حذف خواهد شد. خود نمونه دست نمیخورد — میتوانید هر زمان دوباره اضافه کنید.`,
+        `«${label}» از این برنامه حذف خواهد شد. خود نمونه دست نمیخورد — می‌توانید هر زمان دوباره اضافه کنید.`,
       makePrimary: 'اصلی کن',
       testConnection: 'آزمایش',
       testOk: 'قابل دسترسی',
       testFailed: 'آزمایش اتصال ناموفق بود',
       saveFailed: 'ذخیره اتصال ممکن نشد',
       removeFailed: 'حذف اتصال ممکن نشد',
-      updateAll: 'بهروزرسانی همه نمونهها',
-      updateAllRunning: 'در حال بهروزرسانی همه نمونهها…',
-      updateAllDone: 'بهروزرسانیها ارسال شد',
-      updateAllFailed: 'گسترش بهروزرسانی ناموفق بود',
+      updateAll: 'به‌روز‌رسانی همه نمونهها',
+      updateAllRunning: 'در حال به‌روز‌رسانی همه نمونهها…',
+      updateAllDone: 'به‌روز‌رسانیها ارسال شد',
+      updateAllFailed: 'گسترش به‌روز‌رسانی ناموفق بود',
       updateSkippedCloud: 'مدیریتشده توسط Hermes Cloud',
       kindLocal: 'محلی',
       kindRemote: 'گیتوی راه دور',
       kindCloud: 'Hermes Cloud',
       kindSsh: 'SSH',
-      kindLocalDesc: 'زمان اجرای Hermes که توسط این برنامه مدیریت میشود.',
+      kindLocalDesc: 'زمان اجرای Hermes که توسط این برنامه مدیریت می‌شود.',
       kindRemoteDesc: 'یک گیتوی Hermes که از طریق HTTP(S) قابل دسترسی است — LAN، Tailscale یا اینترنت.',
       kindCloudDesc: 'یک نمونه میزبانی‌شده که از طریق حساب Hermes Cloud شما کشف می‌شود.',
       kindSshDesc: 'یک نصب Hermes که از طریق SSH قابل دسترسی است.',
@@ -1399,19 +1399,19 @@ export const fa = defineLocale({
       remoteUrlDesc: 'URL پایه برای بکاند داشبورد راه دور. پیشوندهای مسیر پشتیبانی میشوند، مثلاً /hermes.',
       probing: 'در حال بررسی نحوه احراز هویت این گیتوی…',
       probeError:
-        'Hermes به آن آدرس دسترسی ندارد. URL را بررسی کنید و مطمئن شوید رایانه دیگر Hermes را اجرا میکند — گزینههای ورود پس از پاسخ ظاهر میشوند.',
+        'Hermes به آن آدرس دسترسی ندارد. URL را بررسی کنید و مطمئن شوید رایانه دیگر Hermes را اجرا می‌کند — گزینه‌های ورود پس از پاسخ ظاهر میشوند.',
       signedIn: 'وارد شدهاید',
       signIn: 'ورود',
       signOut: 'خروج',
       signInWith: provider => `ورود با ${provider}`,
       authTitle: 'احراز هویت',
       authSignedInPassword:
-        'این گیتوی از نام کاربری و رمز عبور استفاده میکند. شما وارد شدهاید؛ نشست بهطور خودکار بازخوانی میشود.',
-      authSignedInOauth: 'این گیتوی از OAuth استفاده میکند. شما وارد شدهاید؛ نشست بهطور خودکار بازخوانی میشود.',
+        'این گیتوی از نام کاربری و رمز عبور استفاده می‌کند. شما وارد شدهاید؛ نشست بهطور خودکار بازخوانی می‌شود.',
+      authSignedInOauth: 'این گیتوی از OAuth استفاده می‌کند. شما وارد شدهاید؛ نشست بهطور خودکار بازخوانی می‌شود.',
       authNeedsPassword:
-        'این گیتوی از نام کاربری و رمز عبور استفاده میکند. برای مجوز دادن به این برنامه دسکتاپ وارد شوید.',
+        'این گیتوی از نام کاربری و رمز عبور استفاده می‌کند. برای مجوز دادن به این برنامه دسکتاپ وارد شوید.',
       authNeedsOauth: provider =>
-        `این گیتوی از OAuth استفاده میکند. با ${provider} وارد شوید تا به این برنامه دسکتاپ مجوز دهید.`,
+        `این گیتوی از OAuth استفاده می‌کند. با ${provider} وارد شوید تا به این برنامه دسکتاپ مجوز دهید.`,
       tokenTitle: 'توکن نشست',
       tokenDesc: 'توکن نشست داشبورد برای دسترسی REST و WebSocket. برای حفظ توکن ذخیرهشده، خالی بگذارید.',
       existingToken: value => `توکن موجود ${value}`,
@@ -1419,21 +1419,21 @@ export const fa = defineLocale({
       pasteSessionToken: 'چسباندن توکن نشست',
       plainTextConfirmTitle: 'توکن گیتوی بهصورت متن ساده ذخیره شود؟',
       plainTextConfirmDesc:
-        'هیچ سرویس keyring سیستمی روی این دستگاه یافت نشد، بنابراین توکن بدون رمزنگاری در فایل تنظیمات اتصال برنامه ذخیره میشود و هر فرآیندی که با این کاربر اجرا شود میتواند آن را بخواند. برای ذخیرهسازی رمزنگاریشده، keychain سیستم خود را نصب یا فعال کنید (GNOME Keyring یا KWallet در لینوکس).',
+        'هیچ سرویس keyring سیستمی روی این دستگاه یافت نشد، بنابراین توکن بدون رمزنگاری در فایل تنظیمات اتصال برنامه ذخیره می‌شود و هر فرآیندی که با این کاربر اجرا شود می‌تواند آن را بخواند. برای ذخیرهسازی رمزنگاریشده، keychain سیستم خود را نصب یا فعال کنید (GNOME Keyring یا KWallet در لینوکس).',
       plainTextConfirmAction: 'ذخیره بهصورت متن ساده',
       plainTextStoredTitle: 'توکن بهصورت متن ساده ذخیره شد',
       plainTextStoredDesc:
-        'ذخیرهسازی امن در دسترس نیست، بنابراین توکن ذخیرهشده بدون رمزنگاری در فایل تنظیمات اتصال برنامه روی این دستگاه ذخیره میشود. برای رمزنگاری آن، keychain سیستم خود را نصب یا فعال کنید (GNOME Keyring یا KWallet در لینوکس).',
+        'ذخیرهسازی امن در دسترس نیست، بنابراین توکن ذخیرهشده بدون رمزنگاری در فایل تنظیمات اتصال برنامه روی این دستگاه ذخیره می‌شود. برای رمزنگاری آن، keychain سیستم خود را نصب یا فعال کنید (GNOME Keyring یا KWallet در لینوکس).',
       keychainEncryptionTitle: 'رمزنگاری اسرار ذخیرهشده با keychain سیستم',
       keychainEncryptionDesc:
-        'بهطور پیشفرض خاموش است. وقتی روشن باشد، توکنهای گیتوی و اعتبارنامههای ورود با keychain سیستم شما رمزنگاری میشوند (Keychain Access، GNOME Keyring یا Windows DPAPI) — سیستم شما ممکن است اجازه یا رمز عبور بخواهد. وقتی خاموش باشد، بهصورت فایلهای ساده ذخیره میشوند که فقط حساب کاربری شما میتواند بخواند.',
+        'بهطور پیشفرض خاموش است. وقتی روشن باشد، توکنهای گیتوی و اعتبارنامه‌های ورود با keychain سیستم شما رمزنگاری میشوند (Keychain Access، GNOME Keyring یا Windows DPAPI) — سیستم شما ممکن است اجازه یا رمز عبور بخواهد. وقتی خاموش باشد، بهصورت فایل‌های ساده ذخیره میشوند که فقط حساب کاربری شما می‌تواند بخواند.',
       keychainEncryptionFailed: 'تغییر رمزنگاری اسرار ممکن نشد',
       testRemote: 'آزمایش راه دور',
       saveForRestart: 'ذخیره برای راهاندازی مجدد',
       saveAndReconnect: 'ذخیره و اتصال مجدد',
       diagnostics: 'تشخیص',
-      diagnosticsDesc: 'نمایش desktop.log در مدیر فایل — زمانی که گیتوی شروع نمیشود مفید است.',
-      openLogs: 'باز کردن گزارشها',
+      diagnosticsDesc: 'نمایش desktop.log در مدیر فایل — زمانی که گیتوی شروع نمی‌شود مفید است.',
+      openLogs: 'باز کردن گزارش‌ها',
       incompleteTitle: 'گیتوی راه دور ناقص است',
       incompleteSignIn: 'قبل از تغییر به حالت راه دور، یک URL راه دور وارد کرده و وارد شوید.',
       incompleteToken: 'قبل از تغییر به حالت راه دور، URL و توکن نشست را وارد کنید.',
@@ -1442,7 +1442,7 @@ export const fa = defineLocale({
       enterUrlFirst: 'ابتدا URL راه دور را وارد کنید.',
       restartingTitle: 'اتصال گیتوی در حال راهاندازی مجدد',
       savedTitle: 'تنظیمات گیتوی ذخیره شد',
-      restartingMessage: 'Hermes Desktop با تنظیمات ذخیرهشده دوباره وصل میشود — شل باز میماند.',
+      restartingMessage: 'Hermes Desktop با تنظیمات ذخیرهشده دوباره وصل می‌شود — شل باز می‌ماند.',
       savedMessage: 'برای راهاندازی مجدد بعدی ذخیره شد.',
       connectedTo: (baseUrl, version) => `متصل به ${baseUrl}${version ? ` \xB7 Hermes ${version}` : ''}`,
       reachableTitle: 'گیتوی راه دور در دسترس است',
@@ -1456,8 +1456,8 @@ export const fa = defineLocale({
       saveFailed: 'ذخیره تنظیمات گیتوی ممکن نشد',
       sshTitle: 'اتصال از طریق SSH',
       sshDesc:
-        'Hermes روی سیستم راه دور از طریق SSH اجرا و به این برنامه تونل میشود — نیازی به راهاندازی یا افشای چیزی نیست. نیاز به دسترسی SSH مبتنی بر کلید به میزبان دارد.',
-      sshTrustHint: 'اولین کلید میزبان ارائهشده اعتماد و پین میشود؛ تغییرات بعدی با شکست مواجه میشوند.',
+        'Hermes روی سیستم راه دور از طریق SSH اجرا و به این برنامه تونل می‌شود — نیازی به راهاندازی یا افشای چیزی نیست. نیاز به دسترسی SSH مبتنی بر کلید به میزبان دارد.',
+      sshTrustHint: 'اولین کلید میزبان ارائهشده اعتماد و پین می‌شود؛ تغییرات بعدی با شکست مواجه میشوند.',
       sshHostTitle: 'میزبان',
       sshHostDesc: 'user@host، یا یک نام مستعار Host از ~/.ssh/config.',
       sshHostPick: 'انتخاب میزبان…',
@@ -1476,20 +1476,20 @@ export const fa = defineLocale({
       sshHermesPathPlaceholder: 'تشخیص خودکار',
       sshTestConnection: 'تست SSH',
       sshConnect: 'اتصال',
-      sshButtonsHint: 'ذخیره در راهاندازی بعدی اعمال میشود. اتصال همین حالا دوباره وصل میکند.',
+      sshButtonsHint: 'ذخیره در راهاندازی بعدی اعمال می‌شود. اتصال همین حالا دوباره وصل می‌کند.',
       sshReachable: (host, platform) => `قابل دسترسی: ${host} (${platform}) — Hermes یافت شد`,
       sshIncompleteHost: 'قبل از اتصال، میزبان SSH را وارد کنید.',
-      sshErrUnreachable: 'نمیتوان از طریق SSH به آن میزبان دسترسی یافت. میزبان، پورت و شبکه را بررسی کنید.',
+      sshErrUnreachable: 'نمی‌توان از طریق SSH به آن میزبان دسترسی یافت. میزبان، پورت و شبکه را بررسی کنید.',
       sshErrAuth:
-        'احراز هویت SSH ناموفق بود. کلید خود را در ssh-agent بارگذاری کنید (ssh-add) یا IdentityFile را در ~/.ssh/config تنظیم کنید — Hermes به صورت غیرتعاملی ssh را اجرا میکند.',
+        'احراز هویت SSH ناموفق بود. کلید خود را در ssh-agent بارگذاری کنید (ssh-add) یا IdentityFile را در ~/.ssh/config تنظیم کنید — Hermes به صورت غیرتعاملی ssh را اجرا می‌کند.',
       sshErrHostKey:
         'کلید میزبان از آخرین اتصال شما تغییر کرده است. مطمئن شوید این مورد انتظار است، سپس ssh-keygen -R <host> را اجرا و دوباره وصل شوید.',
       sshErrNotInstalled:
         'Hermes روی میزبان راه دور نصب نیست. آن را نصب کنید (curl -fsSL https://hermes-agent.nousresearch.com/install.sh | sh) یا مسیر Hermes را تنظیم کنید.',
       sshErrPlatform:
-        'پلتفرم راه دور پشتیبانی نمیشود. حالت SSH دسکتاپ Hermes از میزبانهای راه دور لینوکس، macOS و ویندوز پشتیبانی میکند.',
+        'پلتفرم راه دور پشتیبانی نمی‌شود. حالت SSH دسکتاپ Hermes از میزبانهای راه دور لینوکس، macOS و ویندوز پشتیبانی می‌کند.',
       sshErrTimeout: 'اتصال SSH به پایان رسید. ممکن است میزبان غیرقابل دسترسی یا خواب باشد.',
-      sshErrUpdateRequired: 'قبل از اتصال با SSH دسکتاپ، Hermes را روی میزبان راه دور بهروزرسانی کنید.',
+      sshErrUpdateRequired: 'قبل از اتصال با SSH دسکتاپ، Hermes را روی میزبان راه دور به‌روز‌رسانی کنید.',
       sshErrUnknown: 'اتصال SSH ناموفق بود.'
     },
     keys: {
@@ -1503,7 +1503,7 @@ export const fa = defineLocale({
     },
     profileScope: {
       appliesTo: 'اعمال به',
-      editsProfile: profile => `تغییرات این صفحه به پروفایل «${profile}» اعمال میشود.`
+      editsProfile: profile => `تغییرات این صفحه به پروفایل «${profile}» اعمال می‌شود.`
     },
     mcp: {
       loading: 'در حال بارگذاری سرورهای MCP...',
@@ -1516,16 +1516,16 @@ export const fa = defineLocale({
       removeFailed: 'حذف ناموفق بود',
       gatewayUnavailableTitle: 'گیتوی در دسترس نیست',
       gatewayUnavailableMessage: 'قبل از بارگذاری مجدد MCP، گیتوی را دوباره متصل کنید.',
-      reloadedTitle: 'ابزارهای MCP بارگذاری شدند',
-      reloadedMessage: 'طرحوارههای ابزار جدید برای مراحل جدید اعمال میشوند.',
+      reloadedTitle: 'ابزار‌های MCP بارگذاری شدند',
+      reloadedMessage: 'طرحواره‌های ابزار جدید برای مراحل جدید اعمال میشوند.',
       reloadFailed: 'بارگذاری مجدد MCP ناموفق بود',
       savedTitle: 'سرور MCP ذخیره شد',
-      savedMessage: name => `${name} پس از بارگذاری مجدد MCP اعمال میشود.`,
+      savedMessage: name => `${name} پس از بارگذاری مجدد MCP اعمال می‌شود.`,
       newServer: 'سرور جدید',
       reload: 'بارگذاری مجدد MCP',
       reloading: 'در حال بارگذاری مجدد...',
       emptyTitle: 'هیچ سرور MCP وجود ندارد',
-      emptyDesc: 'یک سرور stdio یا HTTP اضافه کنید تا ابزارهای MCP در دسترس قرار گیرند.',
+      emptyDesc: 'یک سرور stdio یا HTTP اضافه کنید تا ابزار‌های MCP در دسترس قرار گیرند.',
       disabled: 'غیرفعال',
       editServer: 'ویرایش سرور',
       name: 'نام',
@@ -1604,13 +1604,13 @@ export const fa = defineLocale({
       reasoning: 'استدلال',
       reasoningOff: 'خاموش',
       defaultsFailed: 'ذخیره پیشفرضهای مدل ناموفق بود',
-      loadFailed: 'بارگذاری مدلها ممکن نشد',
+      loadFailed: 'بارگذاری مدل‌ها ممکن نشد',
       restartRequired:
-        'این بکاند پس از بهروزرسانی کد قدیمی را اجرا میکند. برای بارگذاری کد جدید، آن را راهاندازی مجدد کنید.',
+        'این بکاند پس از به‌روز‌رسانی کد قدیمی را اجرا می‌کند. برای بارگذاری کد جدید، آن را راهاندازی مجدد کنید.',
       restartBackend: 'راهاندازی مجدد بکاند',
       restartingBackend: 'در حال راهاندازی مجدد بکاند...',
       restartFailed: 'راهاندازی مجدد بکاند ممکن نشد',
-      auxiliaryTitle: 'مدلهای کمکی',
+      auxiliaryTitle: 'مدل‌های کمکی',
       resetAllToMain: 'بازنشانی همه به اصلی',
       auxiliaryDesc:
         'وظایف کمکی بهطور پیشفرض روی مدل اصلی اجرا میشوند. برای هر وظیفه یک مدل اختصاصی تعیین کنید تا جایگزین شود.',
@@ -1620,15 +1620,15 @@ export const fa = defineLocale({
       inheritMainEffort: 'ارثبری · تلاش مدل اصلی',
       providerDefault: '(پیشفرض ارائهدهنده)',
       fallbackAdd: 'افزودن جایگزین',
-      fallbackEmpty: 'مدل جایگزینی وجود ندارد — مدل پیشفرض استفاده میشود مگر اینکه ناموفق باشد.',
-      notInCatalog: 'در فهرست مدلهای این ارائهدهنده نیست — تماسها ممکن است به پشتیبان برگردند.',
+      fallbackEmpty: 'مدل جایگزینی وجود ندارد — مدل پیشفرض استفاده می‌شود مگر اینکه ناموفق باشد.',
+      notInCatalog: 'در فهرست مدل‌های این ارائهدهنده نیست — تماسها ممکن است به پشتیبان برگردند.',
       moaTitle: 'ترکیب عوامل',
       moaPreset: 'پیشتنظیم',
       moaDescription:
-        'پیشتنظیمهای نامگذاریشدهای را پیکربندی کنید که بهعنوان مدل در ارائهدهنده Mixture of Agents ظاهر میشوند. تجمیعکننده مدل عملکننده است — هر مرحله از حلقه ابزار را اجرا میکند و تقریباً تمام هزینه اجرا به ارائهدهنده آن محاسبه میشود. مراجع بهطور پیشفرض فقط یک بار در هر نوبت کاربر مشاوره میدهند.',
+        'پیشتنظیمهای نامگذاریشدهای را پیکربندی کنید که بهعنوان مدل در ارائهدهنده Mixture of Agents ظاهر میشوند. تجمیعکننده مدل عملکننده است — هر مرحله از حلقه ابزار را اجرا می‌کند و تقریباً تمام هزینه اجرا به ارائهدهنده آن محاسبه می‌شود. مراجع بهطور پیشفرض فقط یک بار در هر نوبت کاربر مشاوره میدهند.',
       moaAggregator: 'تجمیعکننده',
-      moaAggregatorBilled: 'مدل عملکننده · هزینه اجرا محاسبه میشود',
-      moaReferenceHint: 'بهطور پیشفرض یک بار در هر نوبت مشاوره میدهد',
+      moaAggregatorBilled: 'مدل عملکننده · هزینه اجرا محاسبه می‌شود',
+      moaReferenceHint: 'بهطور پیشفرض یک بار در هر نوبت مشاوره می‌دهد',
       tasks: {
         vision: {
           label: 'بینایی',
@@ -1639,7 +1639,7 @@ export const fa = defineLocale({
           hint: 'فشردهسازی متن'
         },
         skills_hub: {
-          label: 'مرکز مهارتها',
+          label: 'مرکز مهارت‌ها',
           hint: 'جستجوی مهارت'
         },
         approval: {
@@ -1677,16 +1677,16 @@ export const fa = defineLocale({
       }
     },
     localModels: {
-      title: 'مدلهای محلی',
+      title: 'مدل‌های محلی',
       runtimeTitle: 'زمان اجرای محلی',
       runtimeReady: backend => `آماده \xB7 ${backend}`,
       serverRunning: 'در حال اجرا',
       runtimeInstalled: 'زمان اجرای llama.cpp نصب شد',
       runtimeInstalledDetail: (tag, backend) =>
-        `ساخت ${tag}، پشتیبان ${backend}. Hermes سرور را برای شما شروع و مدیریت میکند.`,
+        `ساخت ${tag}، پشتیبان ${backend}. Hermes سرور را برای شما شروع و مدیریت می‌کند.`,
       installTitle: 'نصب زمان اجرای محلی',
       installDetail:
-        'موتور استنتاج llama.cpp را دانلود میکند (چند صد مگابایت). مدلهایی که دانلود میکنید کاملاً روی این دستگاه اجرا میشوند — بدون حساب، هیچ چیزی از کامپیوتر شما خارج نمیشود.',
+        'موتور استنتاج llama.cpp را دانلود می‌کند (چند صد مگابایت). مدل‌هایی که دانلود میکنید کاملاً روی این دستگاه اجرا میشوند — بدون حساب، هیچ چیزی از کامپیوتر شما خارج نمی‌شود.',
       installAction: 'نصب زمان اجرا',
       installing: 'در حال نصب runtime…',
       installFailed: 'نصب runtime ناموفق بود',
@@ -1695,20 +1695,20 @@ export const fa = defineLocale({
       vram: label => `${label} حافظه GPU`,
       ram: label => `${label} RAM`,
       unifiedMemory: 'حافظه یکپارچه',
-      modelsTitle: 'مدلها',
+      modelsTitle: 'مدل‌ها',
       recommended: 'پیشنهادی',
       recommendedReason: {
         'best-quality-resident':
-          'بهترین مدل از نظر کیفیت که کاملاً روی GPU شما با سرعت کامل اجرا میشود. انتخابها کیفیت را در برابر سرعت پیشبینیشده روی این سختافزار میسنجند.',
+          'بهترین مدل از نظر کیفیت که کاملاً روی GPU شما با سرعت کامل اجرا می‌شود. انتخابها کیفیت را در برابر سرعت پیشبینیشده روی این سختافزار میسنجند.',
         'speed-gated-quality':
-          'مدل با کیفیتتر روی این دستگاه جا میشود اما با پهنای باند حافظهاش کند پاسخ میدهد — این بهترین مدلی است که سریع میماند.',
+          'مدل با کیفیتتر روی این دستگاه جا می‌شود اما با پهنای باند حافظهاش کند پاسخ می‌دهد — این بهترین مدلی است که سریع می‌ماند.',
         'fastest-resident':
-          'هیچ مدلی روی این سختافزار به سرعت کامل نمیرسد؛ این مدل نزدیکترین حالت است در حالی که کاملاً در حافظه GPU اجرا میشود.'
+          'هیچ مدلی روی این سختافزار به سرعت کامل نمیرسد؛ این مدل نزدیکترین حالت است در حالی که کاملاً در حافظه GPU اجرا می‌شود.'
       },
       noRecommendationTitle: 'پیشنهاد خودکار برای این دستگاه وجود ندارد',
       noRecommendationDetail:
-        'راهاندازی خودکار به مدلی نیاز دارد که کاملاً در حافظه GPU یا یکپارچه جا شود. همچنان میتوانید مدلی را در زیر انتخاب کنید یا مدلهای بیشتری را مرور کنید.',
-      noRecommendationAction: 'مرور مدلها',
+        'راهاندازی خودکار به مدلی نیاز دارد که کاملاً در حافظه GPU یا یکپارچه جا شود. همچنان می‌توانید مدلی را در زیر انتخاب کنید یا مدل‌های بیشتری را مرور کنید.',
+      noRecommendationAction: 'مرور مدل‌ها',
       downloaded: 'دانلود شده',
       downloadAction: size => `دانلود \xB7 ${size}`,
       downloadProgress: (done, total) => `در حال دانلود ${done} از ${total}`,
@@ -1716,12 +1716,12 @@ export const fa = defineLocale({
       installDoneToast: 'runtime محلی نصب و آماده است.',
       quickstartTitle: 'اجرای مدل روی این دستگاه',
       quickstartDetail: (model, size) =>
-        `یک کلیک همهچیز را راهاندازی میکند: موتور محلی، ${model} (دانلود ${size})، و پیشفرض شما برای گفتوگوهای جدید. هیچچیز از این کامپیوتر خارج نمیشود.`,
+        `یک کلیک همهچیز را راهاندازی می‌کند: موتور محلی، ${model} (دانلود ${size})، و پیشفرض شما برای گفت‌وگوهای جدید. هیچچیز از این کامپیوتر خارج نمی‌شود.`,
       quickstartDetailReady: model =>
-        `یک کلیک ${model} را به پیشفرض گفتوگوهای جدید تبدیل میکند. همهچیز روی این دستگاه اجرا میشود.`,
+        `یک کلیک ${model} را به پیشفرض گفت‌وگوهای جدید تبدیل می‌کند. همهچیز روی این دستگاه اجرا می‌شود.`,
       quickstartAction: 'راهاندازی برای من',
       quickstartConfigure: 'بگذارید انتخاب کنم',
-      quickstartDoneToast: model => `${model} راهاندازی شد \u2014 گفتوگوهای جدید روی این دستگاه اجرا میشوند.`,
+      quickstartDoneToast: model => `${model} راهاندازی شد \u2014 گفت‌وگوهای جدید روی این دستگاه اجرا میشوند.`,
       quickstartFailed: 'راهاندازی مدل محلی ناموفق بود',
       quickstartStageEngine: 'موتور',
       quickstartStageModel: 'مدل',
@@ -1762,13 +1762,13 @@ export const fa = defineLocale({
       pillFitsGpu: 'مناسب GPU شما',
       pillUsesRam: 'استفاده از RAM سیستم',
       pillTooBig: 'بزرگ برای این دستگاه',
-      browseTitle: 'یافتن مدلهای بیشتر',
+      browseTitle: 'یافتن مدل‌های بیشتر',
       browseHint:
-        'جستجو در تمام Hugging Face. مدلهایی که اینجا دانلود میکنید بهطور خودکار با دستگاه شما اندازه میشوند، اما توسط ما تست نشدهاند.',
-      browsePlaceholder: 'جستجوی مدلها بر اساس نام یا نویسنده…',
+        'جستجو در تمام Hugging Face. مدل‌هایی که اینجا دانلود میکنید بهطور خودکار با دستگاه شما اندازه میشوند، اما توسط ما تست نشدهاند.',
+      browsePlaceholder: 'جستجوی مدل‌ها بر اساس نام یا نویسنده…',
       browseSearching: 'در حال جستجو در Hugging Face',
-      browseListing: 'در حال خواندن فایلهای مدل',
-      browseShowFiles: 'نمایش فایلها',
+      browseListing: 'در حال خواندن فایل‌های مدل',
+      browseShowFiles: 'نمایش فایل‌ها',
       browseRefresh: 'بازخوانی',
       browseDownloads: 'دانلودها',
       browseLikes: 'پسندها',
@@ -1784,9 +1784,9 @@ export const fa = defineLocale({
       sideloadDone: '{name} اضافه شد.',
       sideloadAlreadyPresent: 'قبلاً در کتابخانه شما موجود است.',
       pillFullContext: max => `زمینه کامل ${max}`,
-      pillFullContextTip: 'از ابتدا با پنجره زمینه کامل مدل اجرا میشود',
+      pillFullContextTip: 'از ابتدا با پنجره زمینه کامل مدل اجرا می‌شود',
       pillUpTo: max => `تا ${max} زمینه`,
-      pillGrowsTip: 'بهطور خودکار با نیاز گفتوگو به فضای بیشتر رشد میکند',
+      pillGrowsTip: 'بهطور خودکار با نیاز گفت‌وگو به فضای بیشتر رشد می‌کند',
       pillVision: 'تصاویر را میبیند',
       deleteAction: 'حذف مدل',
       deleteConfirm: model => `حذف ${model} از دیسک؟`,
@@ -1797,7 +1797,7 @@ export const fa = defineLocale({
       connectAccount: 'اتصال حساب',
       haveApiKey: 'به جای آن کلید API دارید؟',
       intro:
-        'با اشتراک وارد شوید — نیازی به کپی کلید API نیست. Hermes ورود مرورگر را برای شما، همینجا در برنامه انجام میدهد.',
+        'با اشتراک وارد شوید — نیازی به کپی کلید API نیست. Hermes ورود مرورگر را برای شما، همینجا در برنامه انجام می‌دهد.',
       connected: 'متصل',
       collapse: 'جمع کردن',
       connectAnother: 'اتصال ارائهدهنده دیگر',
@@ -1805,10 +1805,10 @@ export const fa = defineLocale({
       disconnect: 'قطع اتصال',
       disconnectInTerminal: 'قطع اتصال (اجرای دستور حذف در ترمینال)',
       removeConfirm: provider => `${provider} حذف شود؟`,
-      removeExternalGeneric: provider => `${provider} توسط CLI خودش مدیریت میشود — آنجا حذفش کنید.`,
+      removeExternalGeneric: provider => `${provider} توسط CLI خودش مدیریت می‌شود — آنجا حذفش کنید.`,
       removeKeyManaged: provider => `${provider} از کلید API پیکربندی شده. از بخش کلیدهای API حذفش کنید.`,
       removeTerminalConfirm: (provider, command) =>
-        `قطع اتصال ${provider}؟ این کار «${command}» را در ترمینال اجرا میکند تا اعتبارنامه پاک شود.`,
+        `قطع اتصال ${provider}؟ این کار «${command}» را در ترمینال اجرا می‌کند تا اعتبارنامه پاک شود.`,
       removeTerminalRunning: provider => `در حال قطع اتصال ${provider} در ترمینال…`,
       removedTitle: 'حساب حذف شد',
       removedMessage: provider => `${provider} حذف شد.`,
@@ -1823,12 +1823,12 @@ export const fa = defineLocale({
       loading: 'در حال بارگذاری ارائهدهندگان...'
     },
     sessions: {
-      loading: 'در حال بارگذاری نشستهای بایگانیشده…',
-      archivedTitle: 'نشستهای بایگانیشده',
+      loading: 'در حال بارگذاری نشست‌های بایگانیشده…',
+      archivedTitle: 'نشست‌های بایگانیشده',
       archivedIntro:
-        'گفتوگوهای بایگانیشده از نوار کنار پنهان میشوند اما همه پیامهایشان حفظ میشود. برای بایگانیشدن، Ctrl/⌘-کلیک روی گفتوگو در نوار کنار.',
+        'گفت‌وگوهای بایگانیشده از نوار کنار پنهان میشوند اما همه پیام‌هایشان حفظ می‌شود. برای بایگانیشدن، Ctrl/⌘-کلیک روی گفت‌وگو در نوار کنار.',
       emptyArchivedTitle: 'چیزی بایگانیشده نیست',
-      emptyArchivedDesc: 'برای پنهانکردن، یک گفتوگو را بایگانیش کنید.',
+      emptyArchivedDesc: 'برای پنهانکردن، یک گفت‌وگو را بایگانیش کنید.',
       unarchive: 'بازگردانی',
       deletePermanently: 'حذف دائمی',
       messages: count => `${count} پیام`,
@@ -1836,29 +1836,29 @@ export const fa = defineLocale({
       deleteConfirm: title => `آیا «${title}» را برای همیشه حذف کنیم؟ این عمل قابل بازگشت نیست.`,
       autoArchiveTitle: 'بایگانی خودکار گفتگوهای قدیمی',
       autoArchiveDesc:
-        'گفتگوهایی که مدتی است باز نکردهاید بهطور خودکار بایگانی میشوند. گفتگوهای سنجاقشده هرگز بایگانی نمیشوند و چیزی حذف نمیشود — گفتگوهای بایگانیشده فقط به اینجا منتقل میشوند.',
+        'گفتگوهایی که مدتی است باز نکردهاید بهطور خودکار بایگانی میشوند. گفتگوهای سنجاقشده هرگز بایگانی نمیشوند و چیزی حذف نمی‌شود — گفتگوهای بایگانیشده فقط به اینجا منتقل میشوند.',
       autoArchiveDaysLabel: 'بایگانی پس از',
       autoArchiveDaysUnit: 'روز عدم فعالیت',
-      autoArchiveFailed: 'بهروزرسانی بایگانی خودکار ممکن نشد',
+      autoArchiveFailed: 'به‌روز‌رسانی بایگانی خودکار ممکن نشد',
       defaultDirTitle: 'پوشه پیشفرض پروژه',
       defaultDirDesc:
-        'نشستهای جدید در این پوشه شروع میشوند مگر اینکه دیگری انتخاب کنید. برای استفاده از پوشه خانگی، آن را خالی بگذارید.',
-      defaultDirUpdated: 'پوشه پیشفرض پروژه بهروزرسانی شد — برای اعمال، گفتگوی جدیدی شروع کنید (Ctrl/⌘+N)',
+        'نشست‌های جدید در این پوشه شروع میشوند مگر اینکه دیگری انتخاب کنید. برای استفاده از پوشه خانگی، آن را خالی بگذارید.',
+      defaultDirUpdated: 'پوشه پیشفرض پروژه به‌روز‌رسانی شد — برای اعمال، گفتگوی جدیدی شروع کنید (Ctrl/⌘+N)',
       defaultsTo: label => `پیشفرض: ${label}.`,
       change: 'تغییر',
       choose: 'انتخاب',
       clear: 'پاک کردن',
       notSet: 'تنظیم نشده',
-      failedLoad: 'بارگذاری نشستهای بایگانیشده ممکن نشد',
+      failedLoad: 'بارگذاری نشست‌های بایگانیشده ممکن نشد',
       unarchiveFailed: 'بازگردانی ناموفق بود',
       deleteFailed: 'حذف ناموفق بود',
-      updateDirFailed: 'بهروزرسانی پوشه پیشفرض ممکن نشد',
+      updateDirFailed: 'به‌روز‌رسانی پوشه پیشفرض ممکن نشد',
       clearDirFailed: 'پاک کردن پوشه پیشفرض ممکن نشد'
     },
     toolsets: {
       loadingConfig: 'در حال بارگذاری پیکربندی',
       savedTitle: 'اعتبارنامه ذخیره شد',
-      savedMessage: key => `${key} بهروزرسانی شد.`,
+      savedMessage: key => `${key} به‌روز‌رسانی شد.`,
       removedTitle: 'اعتبارنامه حذف شد',
       removedMessage: key => `${key} حذف شد.`,
       failedSave: key => `ذخیره ${key} ناموفق بود`,
@@ -1901,8 +1901,8 @@ export const fa = defineLocale({
       postSetupCompleteMessage: step => `${step} نصب شد.`,
       postSetupErrorTitle: 'راهاندازی با خطا به پایان رسید',
       postSetupErrorMessage: step =>
-        `راهاندازی ${step} کامل نشد. گزارشها را باز کنید تا دلیل را ببینید، سپس دوباره راهاندازی را اجرا کنید.`,
-      postSetupOpenLogs: 'باز کردن گزارشها',
+        `راهاندازی ${step} کامل نشد. گزارش‌ها را باز کنید تا دلیل را ببینید، سپس دوباره راهاندازی را اجرا کنید.`,
+      postSetupOpenLogs: 'باز کردن گزارش‌ها',
       postSetupRunAgain: 'اجرای دوباره',
       postSetupFailed: step => `اجرای راهاندازی ${step} ناموفق بود`,
       webSearchActive: backend => `جستجو: ${backend}`,
@@ -1912,9 +1912,9 @@ export const fa = defineLocale({
       webUseForExtract: 'استفاده برای استخراج',
       webUsedForSearch: 'بکاند جستجو',
       webUsedForExtract: 'بکاند استخراج',
-      webCapabilitySelectedMessage: (provider, capability) => `${provider} اکنون وب ${capability} را مدیریت میکند.`,
+      webCapabilitySelectedMessage: (provider, capability) => `${provider} اکنون وب ${capability} را مدیریت می‌کند.`,
       failedSelectCapability: provider => `تنظیم ${provider} ناموفق بود`,
-      loadingModels: 'در حال بارگذاری فهرست مدلها...',
+      loadingModels: 'در حال بارگذاری فهرست مدل‌ها...',
       modelSectionTitle: 'مدل',
       modelCount: count => `${count} مدل`,
       modelInUse: 'در حال استفاده',
@@ -1957,14 +1957,14 @@ export const fa = defineLocale({
         enabledTitle: 'مرور با پروفایل واقعی فعال است',
         enabledMessage: 'نشست‌های جدید با snapshot پروفایل مرورگر پیش‌فرض شما مرور خواهند کرد.',
         disabledTitle: 'مرور با پروفایل واقعی خاموش است',
-        disabledMessage: 'عکس پروفایل حذف میشود؛ نشستهای جدید از مرورگر تمیز استفاده میکنند.',
+        disabledMessage: 'عکس پروفایل حذف می‌شود؛ نشست‌های جدید از مرورگر تمیز استفاده می‌کنند.',
         failedSave: 'ذخیره تنظیم پروفایل واقعی ممکن نشد',
         prompt: {
           title: 'در سایتهای خود وارد بمانید',
           body: 'به Hermes اجازه دهید با عکسی از پروفایل مرورگر پیشفرض شما مرور کند تا سایتها از قبل وارد شده باز شوند.',
           bulletSnapshot: 'کوکیها و ورودها در یک عکس مدیریتشده کپی میشوند.',
-          bulletLiveProfile: 'پروفایل زنده مرورگر شما هرگز مستقیماً باز نمیشود.',
-          bulletLocal: 'هیچ چیزی از این رایانه خارج نمیشود.',
+          bulletLiveProfile: 'پروفایل زنده مرورگر شما هرگز مستقیماً باز نمی‌شود.',
+          bulletLocal: 'هیچ چیزی از این رایانه خارج نمی‌شود.',
           dontShowAgain: 'دیگر نشان نده',
           notNow: 'الان نه',
           enable: 'استفاده از پروفایل من'
@@ -1973,15 +1973,15 @@ export const fa = defineLocale({
     }
   },
   skills: {
-    tabSkills: 'مهارتها',
-    tabToolsets: 'ابزارها',
+    tabSkills: 'مهارت‌ها',
+    tabToolsets: 'ابزار‌ها',
     configuringProfile: 'در حال پیکربندی:',
     tabMcp: 'MCP',
     all: 'همه',
-    searchSkills: 'جستجوی مهارتها...',
-    searchToolsets: 'جستجوی ابزارها...',
-    refresh: 'بازخوانی مهارتها',
-    refreshing: 'در حال بازخوانی مهارتها',
+    searchSkills: 'جستجوی مهارت‌ها...',
+    searchToolsets: 'جستجوی ابزار‌ها...',
+    refresh: 'بازخوانی مهارت‌ها',
+    refreshing: 'در حال بازخوانی مهارت‌ها',
     loading: 'در حال بارگذاری قابلیتها...',
     noSkillsTitle: 'مهارتی یافت نشد',
     noSkillsDesc: 'جستجوی گستردهتر یا دستهبندی دیگری را امتحان کنید.',
@@ -1991,13 +1991,13 @@ export const fa = defineLocale({
     configured: 'پیکربندیشده',
     needsKeys: 'نیازمند کلید',
     visionModelHint:
-      'ویژن از پیکربندی مدل کمکی شما استفاده میکند — مدل پشتیبان تصویر آنجا انتخاب میشود، نه بهازای هر ارائهدهنده.',
-    visionModelLink: 'انتخاب مدل ویژن در تنظیمات ← مدلها',
+      'ویژن از پیکربندی مدل کمکی شما استفاده می‌کند — مدل پشتیبان تصویر آنجا انتخاب می‌شود، نه بهازای هر ارائهدهنده.',
+    visionModelLink: 'انتخاب مدل ویژن در تنظیمات ← مدل‌ها',
     toolsetsEnabled: (enabled, total) => `${enabled}/${total} ابزار فعال شد`,
     configureToolset: label => `پیکربندی ${label}`,
     toggleToolset: (label, enabled) => `مجموعه‌ابزار ${label} را ${enabled ? 'روشن' : 'خاموش'} کنید`,
-    skillsLoadFailed: 'بارگذاری مهارتها ناموفق بود',
-    toolsetsRefreshFailed: 'بازخوانی ابزارها ناموفق بود',
+    skillsLoadFailed: 'بارگذاری مهارت‌ها ناموفق بود',
+    toolsetsRefreshFailed: 'بازخوانی ابزار‌ها ناموفق بود',
     skillEnabled: 'مهارت فعال شد',
     skillDisabled: 'مهارت غیرفعال شد',
     toolsetEnabled: 'مجموعه ابزار فعال شد',
@@ -2032,7 +2032,7 @@ export const fa = defineLocale({
     plugins: {
       agentTitle: 'افزونه‌های عامل',
       agentBlurb:
-        'عامل را برای پروفایل انتخاب‌شده گسترش دهید — ابزارها، هوک‌ها، ارائه‌دهنده‌ها. پس از راه‌اندازی مجدد گیتوی اعمال می‌شوند.',
+        'عامل را برای پروفایل انتخاب‌شده گسترش دهید — ابزار‌ها، هوک‌ها، ارائه‌دهنده‌ها. پس از راه‌اندازی مجدد گیتوی اعمال می‌شوند.',
       pageBlurb:
         'هر ردیف یک افزونه. یک افزونه می‌تواند این برنامه، عامل، یا هر دو را گسترش دهد — هر نیمه سوئیچ خودش را دارد.',
       halfDesktop: 'دسکتاپ',
@@ -2068,39 +2068,40 @@ export const fa = defineLocale({
         'روی \"+ Add to this Agent\" در هر افزونه بزنید — ورودی‌های بررسی‌شده در commit ثابت خود به پروفایل انتخاب‌شده نصب می‌شوند. افزونه‌های عامل+دسکتاپ هر دو نیمه را ارائه می‌دهند.',
       alreadyInstalled: name => `${name} از قبل در این پروفایل نصب شده است.`,
       catalogProvenance: sha => `نصب‌شده از کاتالوگ Hermes${sha ? ` روی پین ${sha}` : ''}.`,
-      pinnedProvenance: sha => `پینشده به commit ${sha}. تا زمانی که با پین جدید دوباره نصب نشود، بهروزرسانی رد میشود.`,
+      pinnedProvenance: sha =>
+        `پینشده به commit ${sha}. تا زمانی که با پین جدید دوباره نصب نشود، به‌روز‌رسانی رد می‌شود.`,
       pinnedBadge: sha => `پینشده @ ${sha}`,
       tierOfficial: 'رسمی',
       tierCommunity: 'اجتماعی',
-      updateToPin: sha => `بهروزرسانی به ${sha}`,
-      updateFailed: name => `بهروزرسانی ${name} ممکن نشد`,
-      updated: name => `${name} به پین فعلی کاتالوگ بهروزرسانی شد. برای اعمال، گیتوی را راهاندازی مجدد کنید.`,
+      updateToPin: sha => `به‌روز‌رسانی به ${sha}`,
+      updateFailed: name => `به‌روز‌رسانی ${name} ممکن نشد`,
+      updated: name => `${name} به پین فعلی کاتالوگ به‌روز‌رسانی شد. برای اعمال، گیتوی را راهاندازی مجدد کنید.`,
       uninstall: 'حذف',
       uninstallTip: (name, profile) => `حذف ${name} از ${profile}`,
       uninstallConfirmTitle: name => `حذف ${name}؟`,
       uninstallConfirmBody: (name, profile) =>
-        `این کار فایلهای افزونه را از پروفایل ${profile} حذف میکند. هر بخش دسکتاپی که همراه آن ارائه شده نیز حذف میشود. میتوانید هر زمان آن را از کاتالوگ یا Git دوباره نصب کنید.`,
+        `این کار فایل‌های افزونه را از پروفایل ${profile} حذف می‌کند. هر بخش دسکتاپی که همراه آن ارائه شده نیز حذف می‌شود. می‌توانید هر زمان آن را از کاتالوگ یا Git دوباره نصب کنید.`,
       uninstallFailed: name => `حذف ${name} ممکن نشد`,
       uninstalled: name => `${name} حذف شد. برای تخلیه، گیتوی را راهاندازی مجدد کنید.`,
       uninstallDesktopTip: name => `حذف ${name} از این برنامه`,
       uninstallDesktopConfirmBody: name =>
-        `این کار ${name} را از پوشه desktop-plugins روی این رایانه حذف و همین حالا تخلیه میکند. میتوانید هر زمان آن را از Git دوباره نصب کنید یا پوشه را برگردانید.`,
+        `این کار ${name} را از پوشه desktop-plugins روی این رایانه حذف و همین حالا تخلیه می‌کند. می‌توانید هر زمان آن را از Git دوباره نصب کنید یا پوشه را برگردانید.`,
       uninstalledDesktop: name => `${name} حذف شد.`,
       deepLinkErrorTitle: 'لینک نصب افزونه رد شد',
       deepLinkCatalogInvalidName: 'نام کاتالوگ لینک وجود ندارد یا نامعتبر است.',
-      deepLinkCatalogUnknown: name => `\u201C${name}\u201D در کاتالوگ افزونههای Hermes نیست. چیزی نصب نشد.`,
+      deepLinkCatalogUnknown: name => `\u201C${name}\u201D در کاتالوگ افزونه‌های Hermes نیست. چیزی نصب نشد.`,
       deepLinkCatalogUnavailable:
-        'بارگذاری کاتالوگ افزونههای Hermes ممکن نشد. اتصال خود را بررسی و لینک را دوباره باز کنید.'
+        'بارگذاری کاتالوگ افزونه‌های Hermes ممکن نشد. اتصال خود را بررسی و لینک را دوباره باز کنید.'
     },
     officialCatalog: 'قابل نصب',
     officialPill: 'رسمی',
     hub: {
-      searchPlaceholder: 'جستجو در مرکز مهارتها',
+      searchPlaceholder: 'جستجو در مرکز مهارت‌ها',
       search: 'جستجو',
       searching: 'در حال جستجو...',
       connectingHubs: 'در حال اتصال به مراکز مهارت...',
       connectedHubs: 'مراکز متصل:',
-      featured: 'مهارتهای ویژه',
+      featured: 'مهارت‌های ویژه',
       landingHint: 'برای مرور مهارت‌های قابل نصب از فهرست رسمی، GitHub و منابع جامعه، هاب را جستجو کنید.',
       noResults: 'مهارت مطابقی در هاب یافت نشد.',
       resultCount: (count, ms) => `${count} نتیجه${ms !== null ? ` در ${ms} میلی‌ثانیه` : ''}`,
@@ -2165,7 +2166,7 @@ export const fa = defineLocale({
     loadFailed: 'بارگذاری نقشه حافظه ممکن نشد',
     loading: 'در حال بارگذاری…',
     emptyTitle: 'هنوز چیزی یاد گرفته نشده',
-    emptyDesc: 'وقتی Hermes مهارتها و خاطراتی برای کار شما میسازد، اینجا ظاهر میشوند.',
+    emptyDesc: 'وقتی Hermes مهارت‌ها و خاطراتی برای کار شما می‌سازد، اینجا ظاهر میشوند.',
     share: 'اشتراکگذاری نقشه',
     shareHint:
       'کد را کپی کنید تا این نقشه را به اشتراک بگذارید، یا یکی را برای بارگذاری جایگذاری کنید. فقط شامل چیدمان است، نه متن حافظه یا مهارت شما.',
@@ -2225,7 +2226,7 @@ export const fa = defineLocale({
     close: 'بستن مرکز فرمان',
     paletteTitle: 'پالت فرمان',
     back: 'بازگشت',
-    searchPlaceholder: 'جستجوی نشستها، نماها و اقدامات',
+    searchPlaceholder: 'جستجوی نشست‌ها، نماها و اقدامات',
     goTo: 'رفتن به',
     goToSession: 'رفتن به نشست',
     branches: 'شاخهها',
@@ -2272,13 +2273,13 @@ export const fa = defineLocale({
       hatchComposing: 'در حال کنار هم چیدن…',
       hatchSaving: 'تقریباً تمام شد…',
       namePlaceholder: 'نام پت خود را بگذارید',
-      staleBackend: 'برای ساخت پت، Hermes را بهروزرسانی کنید.',
-      backgroundHint: 'میتوانید این را ببندید — Hermes وقتی تمام شد به شما اطلاع میدهد.',
+      staleBackend: 'برای ساخت پت، Hermes را به‌روز‌رسانی کنید.',
+      backgroundHint: 'می‌توانید این را ببندید — Hermes وقتی تمام شد به شما اطلاع می‌دهد.',
       slowProviderHint: 'این ممکن است چند دقیقه طول بکشد',
       remix: 'ترکیب مجدد',
       remixConfirmTitle: 'این طرح را ترکیب مجدد کنم؟',
       remixConfirmBody:
-        'این کار مجموعهای تازه از طرحها را با استفاده از این یکی به عنوان نقطه شروع میسازد. ممکن است چند دقیقه طول بکشد.',
+        'این کار مجموعهای تازه از طرحها را با استفاده از این یکی به عنوان نقطه شروع می‌سازد. ممکن است چند دقیقه طول بکشد.',
       genericError: 'ساخت ناموفق بود — دوباره تلاش کنید یا یک پیشنهاد را انتخاب کنید.',
       referenceImageTooLarge: 'تصویر مرجع بیش از حد بزرگ است. از تصویری زیر ۱۶ MB استفاده کنید.',
       referenceImageInvalid: 'خواندن تصویر مرجع ممکن نشد. از PNG، JPG، WebP یا GIF استفاده کنید.',
@@ -2299,17 +2300,17 @@ export const fa = defineLocale({
     },
     settingsFields: 'فیلدهای تنظیمات',
     mcpServers: 'سرورهای MCP',
-    archivedChats: 'گفتوگوهای بایگانیشده',
+    archivedChats: 'گفت‌وگوهای بایگانیشده',
     sections: {
       maintenance: 'نگهداری',
-      sessions: 'نشستها',
+      sessions: 'نشست‌ها',
       system: 'سیستم',
       usage: 'مصرف'
     },
     sectionDescriptions: {
-      maintenance: 'تشخیص، پشتیبانگیری، curator و دادههای حافظه',
-      sessions: 'جستجو و مدیریت نشستها',
-      system: 'وضعیت، گزارشها و اقدامات سیستمی',
+      maintenance: 'تشخیص، پشتیبانگیری، curator و داده‌های حافظه',
+      sessions: 'جستجو و مدیریت نشست‌ها',
+      system: 'وضعیت، گزارش‌ها و اقدامات سیستمی',
       usage: 'فعالیت توکن، هزینه و مهارت در طول زمان'
     },
     nav: {
@@ -2323,7 +2324,7 @@ export const fa = defineLocale({
       },
       capabilities: {
         title: 'قابلیتها',
-        detail: 'مهارتها، ابزارها، سرورهای MCP و افزونهها'
+        detail: 'مهارت‌ها، ابزار‌ها، سرورهای MCP و افزونهها'
       },
       messaging: {
         title: 'پیامرسانی',
@@ -2368,17 +2369,17 @@ export const fa = defineLocale({
     sharedGatewayRestartDescription: bots => `همه ربات‌های این دستگاه دوباره متصل می‌شوند: ${bots}`,
     sharedGatewayRestartConfirm: 'راه‌اندازی مجدد همه',
     sharedGatewayRestarted: count => `گیتوی مشترک راه‌اندازی مجدد شد (${count} ربات)`,
-    updateHermes: 'بهروزرسانی Hermes',
+    updateHermes: 'به‌روز‌رسانی Hermes',
     reloadWindow: 'بازنشانی پنجره',
     actionRunning: 'در حال اجرا',
     actionDone: 'انجام شد',
     actionFailed: 'ناموفق',
     actionStartedWaiting: 'عملیات شروع شد، در انتظار وضعیت...',
     loadingStatus: 'در حال بارگذاری وضعیت...',
-    recentLogs: 'گزارشهای اخیر',
+    recentLogs: 'گزارش‌های اخیر',
     noLogs: 'هنوز گزارشی بارگذاری نشده.',
     days: count => `${count} روز`,
-    statSessions: 'نشستها',
+    statSessions: 'نشست‌ها',
     statApiCalls: 'فراخوانی API',
     statTokens: 'توکن ورودی/خروجی',
     statCost: 'هزینه تخمینی',
@@ -2390,9 +2391,9 @@ export const fa = defineLocale({
     input: 'ورودی',
     output: 'خروجی',
     noDailyActivity: 'فعالیت روزانهای نیست.',
-    topModels: 'مدلهای برتر',
+    topModels: 'مدل‌های برتر',
     noModelUsage: 'هنوز مصرف مدلی نیست.',
-    topSkills: 'مهارتهای برتر',
+    topSkills: 'مهارت‌های برتر',
     noSkillActivity: 'هنوز فعالیت مهارتی نیست.',
     actions: count => `${count} عملیات`,
     logFile: 'فایل گزارش',
@@ -2403,18 +2404,18 @@ export const fa = defineLocale({
       doctor: 'اجرای doctor',
       doctorDesc: 'بررسی سلامت نصب، تنظیمات و ارائهدهندهها',
       securityAudit: 'بازبینی امنیتی',
-      securityAuditDesc: 'اسکن تنظیمات و مهارتها برای تنظیمات پرخطر',
+      securityAuditDesc: 'اسکن تنظیمات و مهارت‌ها برای تنظیمات پرخطر',
       backup: 'ایجاد پشتیبان',
-      backupDesc: 'فشردهسازی تنظیمات، خاطرات، مهارتها و نشستها',
+      backupDesc: 'فشردهسازی تنظیمات، خاطرات، مهارت‌ها و نشست‌ها',
       debugShare: 'اشتراک اشکالزدایی',
-      debugShareDesc: 'آپلود گزارش ویرایششده + گزارشها، دریافت لینکهای قابل اشتراک (حذف خودکار در ۶ ساعت)',
+      debugShareDesc: 'آپلود گزارش ویرایششده + گزارش‌ها، دریافت لینکهای قابل اشتراک (حذف خودکار در ۶ ساعت)',
       debugShareRunning: 'در حال آپلود گزارش اشکالزدایی...',
       debugShareLinks: 'لینکهای اشتراک',
       debugShareFailed: 'اشتراک اشکالزدایی ناموفق بود',
       copyLink: 'کپی لینک',
       linkCopied: 'لینک کپی شد',
       curator: 'مدیر مهارت',
-      curatorDesc: 'بررسی پسزمینه که مهارتهای قدیمی ساختهشده توسط عامل را بایگانی میکند',
+      curatorDesc: 'بررسی پسزمینه که مهارت‌های قدیمی ساختهشده توسط عامل را بایگانی می‌کند',
       curatorPaused: 'متوقف',
       curatorActive: 'فعال',
       curatorDisabled: 'غیرفعال',
@@ -2424,7 +2425,7 @@ export const fa = defineLocale({
       resume: 'ادامه',
       runNow: 'اجرا کن',
       memoryData: 'داده حافظه',
-      memoryDataDesc: 'فایلهای حافظه داخلی تزریقشده به هر نشست',
+      memoryDataDesc: 'فایل‌های حافظه داخلی تزریقشده به هر نشست',
       memoryProvider: name => `ارائهدهنده فعال: ${name}`,
       builtinMemory: 'داخلی',
       memoryFile: 'حافظه عامل (MEMORY.md)',
@@ -2443,7 +2444,7 @@ export const fa = defineLocale({
     }
   },
   messaging: {
-    search: 'جستجوی پیامها...',
+    search: 'جستجوی پیام‌ها...',
     loading: 'در حال بارگذاری پلتفرمهای پیامرسان...',
     loadFailed: 'بارگذاری پلتفرمهای پیامرسان ناموفق بود',
     states: {
@@ -2516,21 +2517,21 @@ export const fa = defineLocale({
     restarting: 'در حال راهاندازی مجدد…',
     restartFailedManual: 'Hermes نتوانست برای اعمال تنظیمات پیامرسان راهاندازی مجدد شود',
     restartFailedManualDetail:
-      'دوباره «راهاندازی مجدد» را امتحان کنید؛ اگر باز هم شکست خورد، گزارشها را باز کرده و اطلاعات تشخیصی ارسال کنید.',
+      'دوباره «راهاندازی مجدد» را امتحان کنید؛ اگر باز هم شکست خورد، گزارش‌ها را باز کرده و اطلاعات تشخیصی ارسال کنید.',
     restartAgain: 'راهاندازی مجدد دوباره',
-    openLogs: 'باز کردن گزارشها',
+    openLogs: 'باز کردن گزارش‌ها',
     telegramQr: {
       title: 'نحوه اتصال ربات Telegram خود را انتخاب کنید',
       subtitle:
-        'هر دو گزینه رباتی را که کنترل میکنید متصل میکنند و اعتبارنامههای آن را فقط در این نصب Hermes ذخیره میکنند.',
+        'هر دو گزینه رباتی را که کنترل میکنید متصل می‌کنند و اعتبارنامه‌های آن را فقط در این نصب Hermes ذخیره می‌کنند.',
       quickSetup: 'راهاندازی سریع',
       recommended: 'پیشنهادی',
       quickHelp:
-        'کد QR را اسکن کرده و در Telegram تأیید کنید. Hermes ربات را ایجاد کرده و شناسه کاربری Telegram شما را بهطور خودکار تشخیص میدهد.',
+        'کد QR را اسکن کرده و در Telegram تأیید کنید. Hermes ربات را ایجاد کرده و شناسه کاربری Telegram شما را بهطور خودکار تشخیص می‌دهد.',
       createWithQr: 'ایجاد با QR',
       starting: 'در حال شروع…',
       replaceWarning:
-        'اعتبارنامههای Telegram قبلاً پیکربندی شدهاند. راهاندازی QR جدید یا توکن ربات، ربات فعلی را هنگام ذخیره جایگزین خواهد کرد.',
+        'اعتبارنامه‌های Telegram قبلاً پیکربندی شدهاند. راهاندازی QR جدید یا توکن ربات، ربات فعلی را هنگام ذخیره جایگزین خواهد کرد.',
       scanHint: 'با برنامه Telegram روی گوشی خود اسکن کنید، یا لینک را روی این رایانه باز کنید.',
       waiting: 'در انتظار Telegram…',
       expiresIn: remaining => `انقضا در ${remaining}`,
@@ -2619,8 +2620,8 @@ export const fa = defineLocale({
         placeholder: 'توکن برنامه Slack را جایگذاری کنید'
       },
       SLACK_ALLOWED_USERS: {
-        label: 'شناسههای کاربری مجاز Slack',
-        help: 'توصیه میشود. شناسههای کاربری Slack با کاما جدا شوند.'
+        label: 'شناسه‌های کاربری مجاز Slack',
+        help: 'توصیه می‌شود. شناسه‌های کاربری Slack با کاما جدا شوند.'
       },
       MATTERMOST_URL: {
         label: 'URL سرور',
@@ -2678,7 +2679,7 @@ export const fa = defineLocale({
     loading: 'در حال بارگذاری webhookها...',
     loadFailed: 'بارگذاری webhookها ناموفق بود',
     subscriptions: count => `اشتراکها (${count})`,
-    hint: 'تغییرات اشتراک پس از اجرای receiver بهصورت hot-reload اعمال میشود. اشتراکهای غیرفعال رویدادهای ورودی را رد میکنند.',
+    hint: 'تغییرات اشتراک پس از اجرای receiver بهصورت hot-reload اعمال می‌شود. اشتراکهای غیرفعال رویدادهای ورودی را رد می‌کنند.',
     empty: 'هنوز هیچ اشتراک webhookی وجود ندارد.',
     disabledTitle: 'receiver وب‌هوک غیرفعال است',
     disabledBody:
@@ -2739,12 +2740,12 @@ export const fa = defineLocale({
     }
   },
   profiles: {
-    close: 'بستن پروفایلها',
+    close: 'بستن پروفایل‌ها',
     nameHint: 'حروف کوچک، ارقام، خط تیره و زیرخط. باید با حرف یا رقم شروع شود.',
-    title: 'پروفایلها',
+    title: 'پروفایل‌ها',
     count: count => `${count} پروفایل`,
-    search: 'جستجوی پروفایلها...',
-    loading: 'در حال بارگذاری پروفایلها...',
+    search: 'جستجوی پروفایل‌ها...',
+    loading: 'در حال بارگذاری پروفایل‌ها...',
     newProfile: 'پروفایل جدید',
     importProfile: 'وارد کردن پروفایل…',
     exportProfile: 'خروجی گرفتن از پروفایل…',
@@ -2752,16 +2753,16 @@ export const fa = defineLocale({
     exported: 'پروفایل خروجی گرفته شد',
     failedImport: 'وارد کردن پروفایل ناموفق بود',
     failedExport: 'خروجی گرفتن از پروفایل ناموفق بود',
-    allProfiles: 'همه پروفایلها',
-    showAllProfiles: 'نمایش همه پروفایلها',
+    allProfiles: 'همه پروفایل‌ها',
+    showAllProfiles: 'نمایش همه پروفایل‌ها',
     switchToProfile: name => `تغییر به ${name}`,
     switchToConnection: name => `تغییر به ${name}`,
     switchConnectionFailed: name => `اتصال به ${name} ممکن نشد`,
-    manageProfiles: 'مدیریت پروفایلها…',
+    manageProfiles: 'مدیریت پروفایل‌ها…',
     connectGateway: 'مدیریت گیتویها…',
     fleet: {
-      allOnGateway: 'همه پروفایلها روی این گیتوی',
-      gateway: gateway => `پروفایلها روی ${gateway}`,
+      allOnGateway: 'همه پروفایل‌ها روی این گیتوی',
+      gateway: gateway => `پروفایل‌ها روی ${gateway}`,
       gatewayUnreachable: gateway => `${gateway} \xB7 غیرقابل دسترسی`,
       onGateway: (name, gateway) => `${name} · ${gateway}`,
       switchTo: (name, gateway) => `تغییر به ${name} روی ${gateway}`,
@@ -2771,7 +2772,7 @@ export const fa = defineLocale({
       menuItem: 'اتصال به میزبان راه دور…',
       badge: host => `اجرا روی ${host}`,
       title: profile => `اتصال ${profile} به میزبان راه دور`,
-      description: 'نشستهای این پروفایل روی Hermes راه دوری که مشخص میکنید اجرا میشوند، نه روی این رایانه.',
+      description: 'نشست‌های این پروفایل روی Hermes راه دوری که مشخص میکنید اجرا میشوند، نه روی این رایانه.',
       urlLabel: 'آدرس راه دور',
       urlPlaceholder: 'https://hermes.example.com',
       urlInvalid: 'آدرس کامل با http:// یا https:// وارد کنید',
@@ -2779,20 +2780,20 @@ export const fa = defineLocale({
       tokenPlaceholder: 'توکن نشست راه دور را جایگذاری کنید',
       tokenSavedHint: 'توکن قبلاً ذخیره شده. برای حفظ آن، خالی بگذارید.',
       plainTextOptIn:
-        'این رایانه ذخیرهسازی امن کلید ندارد، بنابراین توکن بدون رمزنگاری روی دیسک ذخیره میشود. با این حال ذخیره شود.',
+        'این رایانه ذخیرهسازی امن کلید ندارد، بنابراین توکن بدون رمزنگاری روی دیسک ذخیره می‌شود. با این حال ذخیره شود.',
       collisionWarning: label =>
-        `گیتوی با نام «${label}» از قبل در تنظیمات وجود دارد. این اتصال پروفایل جدا است و آن را تغییر نمیدهد.`,
+        `گیتوی با نام «${label}» از قبل در تنظیمات وجود دارد. این اتصال پروفایل جدا است و آن را تغییر نمی‌دهد.`,
       confirmTitle: 'این پروفایل به میزبان راه دور متصل شود؟',
       confirmNote: (profile, host) =>
-        `گفتوگوهای جدید در ${profile} روی ${host} اجرا میشوند. آن رایانه دستورات را اجرا و فایلها را آنجا میخواند، نه روی این یکی. فقط به میزبانی که اعتماد دارید متصل شوید.`,
+        `گفت‌وگوهای جدید در ${profile} روی ${host} اجرا میشوند. آن رایانه دستورات را اجرا و فایل‌ها را آنجا میخواند، نه روی این یکی. فقط به میزبانی که اعتماد دارید متصل شوید.`,
       confirmBack: 'بازگشت',
       connect: 'اتصال',
       connecting: 'در حال اتصال…',
       disconnect: 'حذف اتصال راه دور',
       savedTitle: 'پروفایل متصل شد',
-      savedMessage: (profile, host) => `${profile} اکنون روی ${host} اجرا میشود`,
+      savedMessage: (profile, host) => `${profile} اکنون روی ${host} اجرا می‌شود`,
       removedTitle: 'اتصال راه دور حذف شد',
-      removedMessage: profile => `${profile} اکنون روی این رایانه اجرا میشود`,
+      removedMessage: profile => `${profile} اکنون روی این رایانه اجرا می‌شود`,
       removeFailed: 'حذف اتصال راه دور ممکن نشد',
       authFailedTitle: 'میزبان راه دور توکن ذخیرهشده را رد کرد',
       authFailedMessage: (profile, host) =>
@@ -2842,25 +2843,25 @@ export const fa = defineLocale({
     deleteTitle: 'حذف پروفایل؟',
     deleteDescPrefix: 'این کار ',
     deleteDescMid: ' را حذف و ',
-    deleteDescSuffix: ' دایرکتوری آن را پاک میکند. این عمل قابل بازگشت نیست.',
+    deleteDescSuffix: ' دایرکتوری آن را پاک می‌کند. این عمل قابل بازگشت نیست.',
     deleting: 'در حال حذف...',
-    createDesc: 'پروفایلها محیطهای مستقل Hermes هستند: تنظیمات، مهارتها و SOUL.md جداگانه.',
+    createDesc: 'پروفایل‌ها محیطهای مستقل Hermes هستند: تنظیمات، مهارت‌ها و SOUL.md جداگانه.',
     nameLabel: 'نام',
     cloneFrom: 'کلون از',
     cloneFromNone: 'هیچ (خالی)',
-    cloneFromDesc: 'تنظیمات، مهارتها و SOUL.md را از پروفایل منبع انتخابشده کپی میکند.',
+    cloneFromDesc: 'تنظیمات، مهارت‌ها و SOUL.md را از پروفایل منبع انتخابشده کپی می‌کند.',
     cloneFromDefault: 'کلون از پیشفرض',
-    cloneFromDefaultDesc: 'تنظیمات، مهارتها و SOUL.md را از پروفایل پیشفرض خود کپی کنید.',
+    cloneFromDefaultDesc: 'تنظیمات، مهارت‌ها و SOUL.md را از پروفایل پیشفرض خود کپی کنید.',
     invalidName: hint => `نام نامعتبر. ${hint}`,
     nameRequired: 'نام الزامی است.',
     creating: 'در حال ایجاد...',
     createAction: 'ایجاد پروفایل',
     renameTitle: 'تغییر نام پروفایل',
     renameDescPrefix: 'تغییر نام، دایرکتوری پروفایل و هر اسکریپت wrapper در ',
-    renameDescSuffix: 'را بهروزرسانی میکند.',
+    renameDescSuffix: 'را به‌روز‌رسانی می‌کند.',
     displayNameTitle: 'نام این عامل را تعیین کنید',
     displayNameDesc:
-      'یک نام نمایشی تنظیم میکند که در سراسر برنامه نشان داده میشود. شناسه داخلی پروفایل \"default\" باقی میماند.',
+      'یک نام نمایشی تنظیم می‌کند که در سراسر برنامه نشان داده می‌شود. شناسه داخلی پروفایل \"default\" باقی می‌ماند.',
     displayNameLabel: 'نام نمایشی',
     newNameLabel: 'نام جدید',
     renaming: 'در حال تغییر نام...',
@@ -2886,10 +2887,10 @@ export const fa = defineLocale({
   },
   cron: {
     close: 'بستن cron',
-    title: 'کارهای زمانبندیشده',
+    title: 'کار‌های زمانبندیشده',
     count: count => `${count} کار`,
-    search: 'جستجوی کارهای cron...',
-    loading: 'در حال بارگذاری کارهای cron...',
+    search: 'جستجوی کار‌های cron...',
+    loading: 'در حال بارگذاری کار‌های cron...',
     states: {
       enabled: 'فعال',
       scheduled: 'زمانبندیشده',
@@ -2958,7 +2959,7 @@ export const fa = defineLocale({
     showRuns: 'نمایش اجراها',
     hideRuns: 'پنهان کردن اجراها',
     runHistory: 'تاریخچه اجرا',
-    actionsTitle: 'عملیات کارهای کرون',
+    actionsTitle: 'عملیات کار‌های کرون',
     resume: 'از سرگیری cron',
     pause: 'توقف cron',
     resumeTitle: 'از سرگیری',
@@ -2967,15 +2968,15 @@ export const fa = defineLocale({
     edit: 'ویرایش cron',
     deleteTitle: 'حذف کار کرون',
     deleteDescPrefix: 'این ',
-    deleteDescSuffix: ' برای همیشه حذف میشود. بلافاصله متوقف خواهد شد.',
+    deleteDescSuffix: ' برای همیشه حذف می‌شود. بلافاصله متوقف خواهد شد.',
     deleting: 'در حال حذف...',
     resumed: 'cron از سر گرفته شد',
     paused: 'cron متوقف شد',
     triggered: 'cron اجرا شد',
     deleted: 'cron حذف شد',
     created: 'cron ایجاد شد',
-    updated: 'cron بهروزرسانی شد',
-    failedLoad: 'بارگذاری کارهای کرون ناموفق بود',
+    updated: 'cron به‌روز‌رسانی شد',
+    failedLoad: 'بارگذاری کار‌های کرون ناموفق بود',
     failedUpdate: 'به‌روزرسانی کار کرون ناموفق بود',
     failedTrigger: 'اجرای کار کرون ناموفق بود',
     failedDelete: 'حذف کار کرون ناموفق بود',
@@ -3005,7 +3006,7 @@ export const fa = defineLocale({
     saveChanges: 'ذخیره تغییرات',
     createAction: 'ایجاد cron',
     tabs: {
-      jobs: 'کارها',
+      jobs: 'کار‌ها',
       blueprints: 'الگوها'
     },
     blueprints: {
@@ -3030,7 +3031,7 @@ export const fa = defineLocale({
     indexing: 'در حال نمایهسازی مصنوعات نشست اخیر',
     tabAll: 'همه',
     tabImages: 'تصاویر',
-    tabFiles: 'فایلها',
+    tabFiles: 'فایل‌ها',
     tabLinks: 'پیوندها',
     noArtifactsTitle: 'مصنوعاتی یافت نشد',
     noArtifactsDesc: 'تصاویر و خروجیهای فایل تولیدشده در اینجا ظاهر میشوند.',
@@ -3053,7 +3054,7 @@ export const fa = defineLocale({
     kindImage: 'تصویر',
     kindFile: 'فایل',
     kindLink: 'پیوند',
-    chat: 'گفتوگو',
+    chat: 'گفت‌وگو',
     copyUrl: 'کپی URL',
     copyPath: 'کپی مسیر'
   },
@@ -3084,7 +3085,7 @@ export const fa = defineLocale({
       grouping: 'گیتوی و پروفایل',
       rename: 'تغییر نام گروه',
       aliasLabel: 'نام نمایشی',
-      aliasHint: 'فقط نام نمایشی؛ نام گیتوی و پروفایل تغییر نمیکند.',
+      aliasHint: 'فقط نام نمایشی؛ نام گیتوی و پروفایل تغییر نمی‌کند.',
       resetName: 'بازنشانی نام',
       moveUp: 'انتقال به بالا',
       moveDown: 'انتقال به پایین',
@@ -3099,33 +3100,33 @@ export const fa = defineLocale({
       artifacts: 'آثار',
       cron: 'وظایف زمانبندیشده'
     },
-    searchAria: 'جستجوی نشستها',
-    searchPlaceholder: 'جستجوی نشستها…',
+    searchAria: 'جستجوی نشست‌ها',
+    searchPlaceholder: 'جستجوی نشست‌ها…',
     clearSearch: 'پاک کردن جستجو',
     noMatch: query => `هیچ نشستی با «${query}» مطابقت ندارد.`,
     results: 'نتایج',
     pinned: 'سنجاقشده',
-    sessions: 'نشستها',
+    sessions: 'نشست‌ها',
     terminal: 'ترمینال',
-    files: 'فایلها',
+    files: 'فایل‌ها',
     review: 'بازبینی',
-    logs: 'گزارشها',
+    logs: 'گزارش‌ها',
     cronJobs: 'وظایف Cron',
-    groupAriaGrouped: 'نمایش نشستها بهصورت فهرست واحد',
-    groupAriaUngrouped: 'گروهبندی نشستها بر اساس فضای کاری',
+    groupAriaGrouped: 'نمایش نشست‌ها بهصورت فهرست واحد',
+    groupAriaUngrouped: 'گروهبندی نشست‌ها بر اساس فضای کاری',
     showProjects: 'نمایش پروژهها',
-    showSessions: 'نمایش نشستها',
-    groupTitleGrouped: 'لغو گروهبندی نشستها',
+    showSessions: 'نمایش نشست‌ها',
+    groupTitleGrouped: 'لغو گروهبندی نشست‌ها',
     groupTitleUngrouped: 'گروهبندی بر اساس فضای کاری',
-    allPinned: 'همه چیز اینجا سنجاق شده است. برای نمایش در موارد اخیر، یک گفتوگو را از سنجاق خارج کنید.',
-    shiftClickHint: 'برای سنجاق کردن گفتوگو، Shift-click کنید',
+    allPinned: 'همه چیز اینجا سنجاق شده است. برای نمایش در موارد اخیر، یک گفت‌وگو را از سنجاق خارج کنید.',
+    shiftClickHint: 'برای سنجاق کردن گفت‌وگو، Shift-click کنید',
     noWorkspace: 'بدون فضای کاری',
     projectEmpty: 'هنوز نشستی وجود ندارد',
-    projectLoadFailed: 'بارگذاری نشستها ممکن نشد',
+    projectLoadFailed: 'بارگذاری نشست‌ها ممکن نشد',
     noSessions: 'هنوز نشستی وجود ندارد',
     noFilterMatches: 'هیچ نشستی با این فیلترها مطابقت ندارد',
     projects: {
-      showAllSessions: 'نمایش همه نشستها',
+      showAllSessions: 'نمایش همه نشست‌ها',
       sectionLabel: 'پروژهها',
       home: 'خانه',
       autoDiscovered: 'شناسایی خودکار',
@@ -3135,7 +3136,7 @@ export const fa = defineLocale({
       renameTitle: 'تغییر نام پروژه',
       addFolderTitle: 'افزودن پوشه',
       namePlaceholder: 'مثلاً Skunkworks',
-      foldersLabel: 'پوشهها',
+      foldersLabel: 'پوشه‌ها',
       ideaLabel: 'ایده',
       ideaPlaceholder: 'این پروژه درباره چیست؟ (ذخیره در IDEA.md)',
       ideaGenerate: 'تولید ایده',
@@ -3163,8 +3164,8 @@ export const fa = defineLocale({
       removeFromSidebar: 'پنهان از نوار کنار',
       createFailed: 'ایجاد پروژه ممکن نشد',
       staleBackend:
-        'برای ایجاد پروژه، backend هرمس را بهروزرسانی کنید — backend شما قدیمیتر از این برنامه دسکتاپ است (تنظیمات ← بهروزرسانیها ← Backend).',
-      deleteConfirm: 'این کار پروژه ذخیرهشده را از هرمس حذف میکند. فایلها، مخازن git و worktreeها دستنخورده میمانند.',
+        'برای ایجاد پروژه، backend هرمس را به‌روز‌رسانی کنید — backend شما قدیمیتر از این برنامه دسکتاپ است (تنظیمات ← به‌روز‌رسانیها ← Backend).',
+      deleteConfirm: 'این کار پروژه ذخیرهشده را از هرمس حذف می‌کند. فایل‌ها، مخازن git و worktreeها دستنخورده میمانند.',
       startWork: 'worktree جدید',
       newWorktreeTitle: 'worktree جدید',
       newWorktreeDesc: 'نام شاخه را برای این worktree وارد کنید.',
@@ -3174,13 +3175,13 @@ export const fa = defineLocale({
       baseBranchNone: 'شاخهای یافت نشد',
       startWorkFailed: 'ایجاد worktree ممکن نشد',
       worktreeStaleBackend:
-        'برای ایجاد worktree از طریق این اتصال راه دور، backend هرمس را بهروزرسانی کنید — این اتصال قبل از API worktree گیت است.',
+        'برای ایجاد worktree از طریق این اتصال راه دور، backend هرمس را به‌روز‌رسانی کنید — این اتصال قبل از API worktree گیت است.',
       worktreeProjectLabel: 'پروژه',
       worktreeProjectPlaceholder: 'جستجوی پروژهها…',
       worktreeProjectNone: 'پروژهای با پوشه وجود ندارد',
       convertBranch: 'تبدیل یک شاخه…',
       convertBranchTitle: 'تبدیل یک شاخه',
-      convertBranchDesc: 'شاخههای checkout شده را باز کنید، یا برای یک شاخه آزاد worktree بسازید.',
+      convertBranchDesc: 'شاخه‌های checkout شده را باز کنید، یا برای یک شاخه آزاد worktree بسازید.',
       convertBranchPlaceholder: 'جستجوی شاخهها…',
       convertBranchInstead: 'تبدیل یک شاخه موجود',
       branchOpenExisting: 'باز کردن',
@@ -3192,7 +3193,7 @@ export const fa = defineLocale({
       removeWorktree: 'حذف worktree',
       removeWorktreeFailed: 'حذف worktree ممکن نشد (تغییرات commit نشده؟)',
       removeWorktreeConfirm:
-        'از git حذف شود (دایرکتوری worktree حذف میشود؛ شاخه باقی میماند)، یا فقط خط را از نوار کنار پنهان کنید و worktree روی دیسک بماند.',
+        'از git حذف شود (دایرکتوری worktree حذف می‌شود؛ شاخه باقی می‌ماند)، یا فقط خط را از نوار کنار پنهان کنید و worktree روی دیسک بماند.',
       removeWorktreeDirty:
         'این worktree تغییرات commit نشده دارد. حذف اجباری (این تغییرات از بین میروند)، یا فقط خط را پنهان کنید و روی دیسک نگه دارید.',
       forceRemove: 'حذف اجباری',
@@ -3289,7 +3290,7 @@ export const fa = defineLocale({
       'بیشتر پیش ببر',
       'تعدیل یا ادامه'
     ],
-    startVoice: 'شروع گفتوگوی صوتی',
+    startVoice: 'شروع گفت‌وگوی صوتی',
     openDirective: 'باز کردن',
     queueMessage: 'صف پیام',
     steer: 'هدایت اجرای فعلی',
@@ -3339,7 +3340,7 @@ export const fa = defineLocale({
       '/quit': 'خروج از hermes'
     },
     hotkeyDescs: {
-      'composer.mention': 'ارجاع به فایلها، پوشهها، URLها، git',
+      'composer.mention': 'ارجاع به فایل‌ها، پوشه‌ها، URLها، git',
       'composer.slash': 'پالت دستورات اسلش',
       'composer.help': 'این راهنمای سریع (حذف برای بستن)',
       'composer.sendNewline': 'ارسال · Shift+Enter برای خط جدید',
@@ -3349,7 +3350,7 @@ export const fa = defineLocale({
       'composer.history': 'چرخش پاپاور / تاریخچه'
     },
     attachUrlTitle: 'پیوست یک URL',
-    attachUrlDesc: 'Hermes صفحه را واکشی کرده و به عنوان زمینه برای این نوبت شامل میکند.',
+    attachUrlDesc: 'Hermes صفحه را واکشی کرده و به عنوان زمینه برای این نوبت شامل می‌کند.',
     urlPlaceholder: 'https://example.com/post',
     urlHintPre: 'URL کامل را وارد کنید، مثلاً ',
     attach: 'پیوست',
@@ -3392,31 +3393,31 @@ export const fa = defineLocale({
     url: 'URL…',
     promptSnippets: 'قطعات درخواست…',
     tipPre: 'نکته: تایپ کنید ',
-    tipPost: ' برای ارجاع به فایلها بهصورت درونخطی.',
+    tipPost: ' برای ارجاع به فایل‌ها بهصورت درونخطی.',
     snippetsTitle: 'قطعات درخواست',
     snippetsDesc: 'یک درخواست شروع را برای افزودن به کامپوزر انتخاب کنید.',
-    dropFiles: 'فایلها را برای پیوست رها کنید',
-    dropSession: 'برای پیوند این گفتوگو رها کنید',
+    dropFiles: 'فایل‌ها را برای پیوست رها کنید',
+    dropSession: 'برای پیوند این گفت‌وگو رها کنید',
     mcpSuggestions: {
       label: server => `افزودن ${server}`,
       tip: keyword => `پیشنهاد شده چون به «${keyword}» اشاره کردید — برای اتصال کلیک کنید`,
       connecting: server => `در حال اتصال ${server}…`,
       cancelTip: 'برای لغو کلیک کنید',
       added: server => `${server} اضافه شد`,
-      addedTip: 'متصل شد — ابزارهای آن در این گفتوگو آمادهاند',
+      addedTip: 'متصل شد — ابزار‌های آن در این گفت‌وگو آمادهاند',
       connectFailed: server => `اتصال ${server} ممکن نشد`
     },
     skillSuggestions: {
       label: skill => `استفاده از مهارت: ${skill}`,
       tip: skill => `به «${skill}» اشاره کردید — برای شروع با آن مهارت کلیک کنید`,
       done: skill => `/${skill} اضافه شد`,
-      doneTip: 'مهارت هنگام ارسال بارگذاری میشود'
+      doneTip: 'مهارت هنگام ارسال بارگذاری می‌شود'
     },
     githubSuggestions: {
       label: 'راهاندازی GitHub',
-      tip: 'GitHub از طریق مهارتهای gh CLI در اینجا کار میکند — برای اتصال حساب خود کلیک کنید',
+      tip: 'GitHub از طریق مهارت‌های gh CLI در اینجا کار می‌کند — برای اتصال حساب خود کلیک کنید',
       done: '/github-auth اضافه شد',
-      doneTip: 'پیام را ارسال کنید و عامل شما را در ورود به GitHub راهنمایی میکند'
+      doneTip: 'پیام را ارسال کنید و عامل شما را در ورود به GitHub راهنمایی می‌کند'
     },
     repairSuggestions: {
       label: server => `اتصال مجدد ${server}`,
@@ -3424,7 +3425,7 @@ export const fa = defineLocale({
       working: server => `در حال اتصال مجدد ${server}…`,
       workingTip: 'برای لغو کلیک کنید',
       done: server => `اتصال ${server} برقرار شد`,
-      doneTip: 'اعتبارنامههای جدید در این گفتوگو فعال هستند',
+      doneTip: 'اعتبارنامه‌های جدید در این گفت‌وگو فعال هستند',
       failed: server => `اتصال مجدد ${server} ممکن نشد`
     },
     cronSuggestions: {
@@ -3432,7 +3433,7 @@ export const fa = defineLocale({
       tip: phrase => `«${phrase}» تکراری به نظر میرسد — بهجای آن طبق برنامه اجرا کنید`,
       prefix: 'بهعنوان کار زمانبندیشده تنظیم کنید:',
       done: 'برای زمانبندی علامت خورده',
-      doneTip: 'ارسال کنید و عامل کار را میسازد'
+      doneTip: 'ارسال کنید و عامل کار را می‌سازد'
     },
     snippets: {
       codeReview: {
@@ -3447,8 +3448,8 @@ export const fa = defineLocale({
       },
       explainThis: {
         label: 'توضیح این',
-        description: 'نحوه کار کد انتخابشده را مرور کنید و به فایلهای کلیدی پیوند دهید.',
-        text: 'لطفاً توضیح دهید این چگونه کار میکند و مرا به فایلهای کلیدی راهنمایی کنید.'
+        description: 'نحوه کار کد انتخابشده را مرور کنید و به فایل‌های کلیدی پیوند دهید.',
+        text: 'لطفاً توضیح دهید این چگونه کار می‌کند و مرا به فایل‌های کلیدی راهنمایی کنید.'
       }
     }
   },
@@ -3575,7 +3576,7 @@ export const fa = defineLocale({
       revert: 'بازگردانی',
       revertAll: 'بازگردانی همه',
       revertConfirm: 'تغییرات این فایل را دور بریزیم و به حالت commit برگردانیم؟ این عمل قابل بازگشت نیست.',
-      revertAllConfirm: 'همه تغییرات را دور بریزیم و فایلها را به حالت commit برگردانیم؟ این عمل قابل بازگشت نیست.',
+      revertAllConfirm: 'همه تغییرات را دور بریزیم و فایل‌ها را به حالت commit برگردانیم؟ این عمل قابل بازگشت نیست.',
       staged: 'مرحله شده',
       noChanges: 'بدون تغییر',
       notRepo: 'مخزن git نیست',
@@ -3609,61 +3610,61 @@ export const fa = defineLocale({
       fetch: 'در حال دانلود…',
       pull: 'تقریباً تمام شد…',
       pydeps: 'در حال تکمیل…',
-      update: 'در حال بهروزرسانی Hermes…',
+      update: 'در حال به‌روز‌رسانی Hermes…',
       rebuild: 'در حال بازسازی اپ دسکتاپ…',
       restart: 'در حال راهاندازی مجدد Hermes…',
-      done: 'بهروزرسانی کامل شد',
-      manual: 'بهروزرسانی از ترمینال',
-      guiSkew: 'بهروزرسانی اپ دسکتاپ',
-      error: 'بهروزرسانی متوقف شد'
+      done: 'به‌روز‌رسانی کامل شد',
+      manual: 'به‌روز‌رسانی از ترمینال',
+      guiSkew: 'به‌روز‌رسانی اپ دسکتاپ',
+      error: 'به‌روز‌رسانی متوقف شد'
     },
-    checking: 'در حال بررسی بهروزرسانی…',
-    checkFailedTitle: 'بررسی بهروزرسانی ممکن نشد',
+    checking: 'در حال بررسی به‌روز‌رسانی…',
+    checkFailedTitle: 'بررسی به‌روز‌رسانی ممکن نشد',
     tryAgain: 'تلاش دوباره',
-    notAvailableTitle: 'بهروزرسانی موجود نیست',
-    unsupportedMessage: 'این نسخه از Hermes نمیتواند از داخل اپ خودش را بهروزرسانی کند.',
+    notAvailableTitle: 'به‌روز‌رسانی موجود نیست',
+    unsupportedMessage: 'این نسخه از Hermes نمی‌تواند از داخل اپ خودش را به‌روز‌رسانی کند.',
     connectionRetry:
-      'Hermes نتوانست به سرور بهروزرسانی متصل شود. اتصال اینترنت خود را بررسی و دوباره تلاش کنید. اگر از Hermes راه دور استفاده میکنید، مطمئن شوید آنلاین است.',
-    gitUnusable: 'Hermes نتوانست Git را روی این رایانه اجرا کند، بنابراین امکان بررسی بهروزرسانی وجود نداشت.',
+      'Hermes نتوانست به سرور به‌روز‌رسانی متصل شود. اتصال اینترنت خود را بررسی و دوباره تلاش کنید. اگر از Hermes راه دور استفاده میکنید، مطمئن شوید آنلاین است.',
+    gitUnusable: 'Hermes نتوانست Git را روی این رایانه اجرا کند، بنابراین امکان بررسی به‌روز‌رسانی وجود نداشت.',
     connectionSettings: 'تنظیمات اتصال',
     openDownloadPage: 'باز کردن صفحه دانلود',
     latestBody: 'شما آخرین نسخه را اجرا میکنید.',
-    latestBodyBackend: 'بکاند آخرین نسخه را اجرا میکند.',
+    latestBodyBackend: 'بکاند آخرین نسخه را اجرا می‌کند.',
     allSetTitle: 'همهچیز آماده است',
-    availableTitle: 'بهروزرسانی جدید موجود است',
+    availableTitle: 'به‌روز‌رسانی جدید موجود است',
     availableBody: 'نسخه جدیدی از Hermes آماده نصب است.',
-    availableTitleBackend: 'بهروزرسانی بکاند موجود است',
+    availableTitleBackend: 'به‌روز‌رسانی بکاند موجود است',
     availableBodyBackend: 'نسخه جدیدتری از بکاند Hermes متصل آماده نصب است.',
     availableBodyNoChangelog: 'نسخه جدیدتری آماده است. یادداشتهای انتشار برای این نوع نصب در دسترس نیستند.',
-    updateNow: 'بهروزرسانی کن',
+    updateNow: 'به‌روز‌رسانی کن',
     maybeLater: 'شاید بعداً',
     moreChanges: count => `+ ${count} تغییر دیگر گنجانده شد.`,
-    manualTitle: 'بهروزرسانی از ترمینال',
+    manualTitle: 'به‌روز‌رسانی از ترمینال',
     manualBody:
-      'شما Hermes را از خط فرمان نصب کردهاید، بنابراین بهروزرسانیها هم آنجا انجام میشوند. این را در ترمینال خود جایگذاری کنید:',
+      'شما Hermes را از خط فرمان نصب کردهاید، بنابراین به‌روز‌رسانیها هم آنجا انجام میشوند. این را در ترمینال خود جایگذاری کنید:',
     manualPickedUp: 'Hermes نسخه جدید را در دفعه بعدی که اجرا شود اعمال خواهد کرد.',
-    guiSkewTitle: 'بهروزرسانی برنامه دسکتاپ',
+    guiSkewTitle: 'به‌روز‌رسانی برنامه دسکتاپ',
     guiSkewBody:
-      'بکاند بهروزرسانی شد، اما این بسته برنامه دسکتاپ تغییر نکرده است. برنامه دسکتاپ Hermes (AppImage / .deb / .rpm خود) را بهروزرسانی یا دوباره نصب کنید تا مطابقت داشته باشد.',
+      'بکاند به‌روز‌رسانی شد، اما این بسته برنامه دسکتاپ تغییر نکرده است. برنامه دسکتاپ Hermes (AppImage / .deb / .rpm خود) را به‌روز‌رسانی یا دوباره نصب کنید تا مطابقت داشته باشد.',
     copy: 'کپی',
     copied: 'کپی شد',
     done: 'انجام شد',
     applyingBody:
-      'بهروزرسان Hermes در پنجره خودش کار را ادامه میدهد و پس از اتمام، Hermes را بهطور خودکار دوباره باز میکند. لطفاً در حین بهروزرسانی خودتان Hermes را دوباره باز نکنید.',
+      'به‌روزرسان Hermes در پنجره خودش کار را ادامه می‌دهد و پس از اتمام، Hermes را بهطور خودکار دوباره باز می‌کند. لطفاً در حین به‌روز‌رسانی خودتان Hermes را دوباره باز نکنید.',
     applyingBodyBackend:
-      'بکاند راه دور در حال اعمال بهروزرسانی است و دوباره راهاندازی میشود. Hermes بهطور خودکار وقتی برگشت، دوباره متصل میشود.',
-    applyingClose: 'این پنجره در حین اجرای بهروزرسانی بسته میشود و سپس Hermes خودش دوباره باز میشود.',
-    errorTitle: 'بهروزرسانی کامل نشد',
-    errorBody: 'نگران نباشید — چیزی از دست نرفته است. میتوانید الان دوباره تلاش کنید.',
-    blockerTitle: 'برای بهروزرسانی Hermes پیشنمایشهای محلی را ببندید؟',
+      'بکاند راه دور در حال اعمال به‌روز‌رسانی است و دوباره راهاندازی می‌شود. Hermes بهطور خودکار وقتی برگشت، دوباره متصل می‌شود.',
+    applyingClose: 'این پنجره در حین اجرای به‌روز‌رسانی بسته می‌شود و سپس Hermes خودش دوباره باز می‌شود.',
+    errorTitle: 'به‌روز‌رسانی کامل نشد',
+    errorBody: 'نگران نباشید — چیزی از دست نرفته است. می‌توانید الان دوباره تلاش کنید.',
+    blockerTitle: 'برای به‌روز‌رسانی Hermes پیشنمایشهای محلی را ببندید؟',
     blockerBody:
-      'Hermes باید این پیشنمایشهای محلی را قبل از بهروزرسانی متوقف کند. این کار فایلهای شما را تغییر یا حذف نمیکند.',
-    foreignBlockerTitle: 'برای بهروزرسانی Hermes سایر فرایندها را ببندید',
+      'Hermes باید این پیشنمایشهای محلی را قبل از به‌روز‌رسانی متوقف کند. این کار فایل‌های شما را تغییر یا حذف نمی‌کند.',
+    foreignBlockerTitle: 'برای به‌روز‌رسانی Hermes سایر فرایندها را ببندید',
     foreignBlockerBody:
-      'Hermes نمیتواند این فرایندها را بهطور خودکار به امنیت ببندد. برنامه، ترمینال یا سرویسی که هر کدام را دارد ببندید و سپس دوباره بهروزرسانی را امتحان کنید.',
+      'Hermes نمی‌تواند این فرایندها را بهطور خودکار به امنیت ببندد. برنامه، ترمینال یا سرویسی که هر کدام را دارد ببندید و سپس دوباره به‌روز‌رسانی را امتحان کنید.',
     mixedBlockerBody:
-      'Hermes میتواند پیشنمایشهای محلی فهرستشده زیر را ببندد. سایر فرایندها باید قبل از ادامه بهروزرسانی بهصورت دستی بسته شوند.',
-    closePreviewsAndUpdate: 'بستن پیشنمایشها و بهروزرسانی',
+      'Hermes می‌تواند پیشنمایشهای محلی فهرستشده زیر را ببندد. سایر فرایندها باید قبل از ادامه به‌روز‌رسانی بهصورت دستی بسته شوند.',
+    closePreviewsAndUpdate: 'بستن پیشنمایشها و به‌روز‌رسانی',
     closePreviewsAndCheckAgain: 'بستن پیشنمایشها و بررسی دوباره',
     localPreview: 'پیشنمایش محلی',
     portLabel: port => `پورت ${port}`,
@@ -3672,19 +3673,19 @@ export const fa = defineLocale({
     notNow: 'فعلاً نه',
     clientAlsoBehindTitle: 'اپ دسکتاپ عقب است',
     clientAlsoBehindMessage:
-      'بکاند بهروز است، اما این اپ دسکتاپ هنوز نسخه قدیمی دارد. برای دریافت آخرین اصلاحات، آن را بهروزرسانی کنید.',
-    clientAlsoBehindAction: 'بهروزرسانی اپ دسکتاپ',
-    everythingDispatched: 'بهروزرسانی ارسال شد',
+      'بکاند به‌روز است، اما این اپ دسکتاپ هنوز نسخه قدیمی دارد. برای دریافت آخرین اصلاحات، آن را به‌روز‌رسانی کنید.',
+    clientAlsoBehindAction: 'به‌روز‌رسانی اپ دسکتاپ',
+    everythingDispatched: 'به‌روز‌رسانی ارسال شد',
     everythingSkipped: 'رد شد',
-    everythingRowFailed: 'بهروزرسانی ناموفق بود',
-    everythingFanoutFailedTitle: 'بهروزرسانی سایر نمونهها ممکن نشد',
+    everythingRowFailed: 'به‌روز‌رسانی ناموفق بود',
+    everythingFanoutFailedTitle: 'به‌روز‌رسانی سایر نمونهها ممکن نشد',
     applyStatus: {
-      preparing: 'در حال بهروزرسانی بکاند…',
-      pulling: 'در حال بهروزرسانی بکاند…',
-      restarting: 'بکاند برای بارگذاری بهروزرسانی در حال راهاندازی مجدد…',
-      notAvailable: 'بهروزرسانی برای این بکاند در دسترس نیست.',
-      failed: 'بهروزرسانی بکاند ناموفق بود.',
-      noReturn: 'بکاند به خط برنگشت. ممکن است بهروزرسانی کامل نشده باشد — میزبان بکاند را بررسی کنید.'
+      preparing: 'در حال به‌روز‌رسانی بکاند…',
+      pulling: 'در حال به‌روز‌رسانی بکاند…',
+      restarting: 'بکاند برای بارگذاری به‌روز‌رسانی در حال راهاندازی مجدد…',
+      notAvailable: 'به‌روز‌رسانی برای این بکاند در دسترس نیست.',
+      failed: 'به‌روز‌رسانی بکاند ناموفق بود.',
+      noReturn: 'بکاند به خط برنگشت. ممکن است به‌روز‌رسانی کامل نشده باشد — میزبان بکاند را بررسی کنید.'
     }
   },
   handoffTour: {
@@ -3699,7 +3700,7 @@ export const fa = defineLocale({
   },
   guidedGreeting: {
     line: 'سلام، بیا تو. من Hermes هستم. دو دقیقه به من فرصت بده تا محیط را برایت آماده کنم، بعد بیا بریم سراغ کاری که واقعاً میخواهی انجام شود.\n\nاول بگو، چه صدايت کنم؟',
-    nameSuggestion: name => `(اگر ترجیح میدهی، میتوانم فقط ${name} صدایت کنم.)`
+    nameSuggestion: name => `(اگر ترجیح میدهی، می‌توانم فقط ${name} صدایت کنم.)`
   },
   install: {
     stageStates: {
@@ -3711,7 +3712,7 @@ export const fa = defineLocale({
     },
     oneTimeTitle: 'Hermes نیاز به نصب یکباره دارد',
     unsupportedDesc: platform =>
-      `نصب خودکار در اولین اجرا هنوز روی ${platform} در دسترس نیست. ترمینال را باز کنید و دستور زیر را اجرا کنید، سپس این برنامه را دوباره راهاندازی کنید. اجراهای بعدی این مرحله را رد میکنند.`,
+      `نصب خودکار در اولین اجرا هنوز روی ${platform} در دسترس نیست. ترمینال را باز کنید و دستور زیر را اجرا کنید، سپس این برنامه را دوباره راهاندازی کنید. اجراهای بعدی این مرحله را رد می‌کنند.`,
     installCommand: 'دستور نصب',
     copyCommand: 'کپی دستور',
     viewDocs: 'مشاهده مستندات نصب',
@@ -3723,19 +3724,19 @@ export const fa = defineLocale({
     connectExistingTitle: 'اتصال به Hermes موجود',
     connectExistingShort: 'اتصال به موجود',
     connectExistingDesc:
-      'از یک بکاند راه دور با توکن نشست یا ورود از طریق مرورگر استفاده کنید. هیچ نصب محلی شروع نمیشود.',
+      'از یک بکاند راه دور با توکن نشست یا ورود از طریق مرورگر استفاده کنید. هیچ نصب محلی شروع نمی‌شود.',
     installLocalTitle: 'نصب Hermes بهصورت محلی',
     installLocalDesc: 'Hermes را دانلود کنید، محیط Python آن را بسازید و بکاند را روی این رایانه اجرا کنید.',
     localStartUnavailable: 'نصب محلی شروع نشد. Hermes Desktop را مجدداً راهاندازی کنید و دوباره تلاش کنید.',
     remoteSetupTitle: 'اتصال به Hermes موجود',
     remoteSetupDesc:
-      'URL گیتوی خود را وارد کنید. Hermes Desktop تشخیص میدهد که به توکن یا ورود از طریق مرورگر نیاز دارد.',
+      'URL گیتوی خود را وارد کنید. Hermes Desktop تشخیص می‌دهد که به توکن یا ورود از طریق مرورگر نیاز دارد.',
     remoteUrlTitle: 'URL گیتوی',
     remoteUrlDesc: 'از URL پایه گیتوی Hermes استفاده کنید، شامل https:// وقتی راه دور است.',
     remoteUrlPlaceholder: 'https://gateway.example.com/hermes',
     probing: 'در حال تشخیص احراز هویت گیتوی...',
     probeError:
-      'Hermes نمیتواند به آن آدرس دسترسی پیدا کند. URL را بررسی کنید و مطمئن شوید رایانه دیگر Hermes را اجرا میکند — گزینههای ورود پس از پاسخ ظاهر میشوند.',
+      'Hermes نمی‌تواند به آن آدرس دسترسی پیدا کند. URL را بررسی کنید و مطمئن شوید رایانه دیگر Hermes را اجرا می‌کند — گزینه‌های ورود پس از پاسخ ظاهر میشوند.',
     probeErrorDetails: 'جزئیات',
     identityProvider: 'ارائهدهنده هویت شما',
     authTitle: 'احراز هویت',
@@ -3776,45 +3777,45 @@ export const fa = defineLocale({
     copiedOutput: 'کپی شد!',
     copyOutput: 'کپی خروجی',
     reloadRetry: 'بارگذاری مجدد و تلاش دوباره',
-    openLogs: 'باز کردن گزارشها'
+    openLogs: 'باز کردن گزارش‌ها'
   },
   onboarding: {
     headerTitle: 'بیایید Hermes Agent را برای شما راهاندازی کنیم',
-    headerDesc: 'برای شروع گفتوگو یک ارائهدهندهٔ مدل وصل کنید. بیشتر گزینهها با یک کلیک انجام میشوند.',
+    headerDesc: 'برای شروع گفت‌وگو یک ارائهدهندهٔ مدل وصل کنید. بیشتر گزینهها با یک کلیک انجام میشوند.',
     preparingInstall: 'Hermes در حال پایان نصب است. در اجرای اول معمولاً کمتر از یک دقیقه طول میکشد.',
     starting: 'در حال راهاندازی Hermes…',
     lookingUpProviders: 'در حال جستوجوی ارائهدهندهها…',
     collapse: 'جمع کردن',
-    otherProviders: 'ارائهدهندههای دیگر',
+    otherProviders: 'ارائهدهنده‌های دیگر',
     haveApiKey: 'کلید API دارم',
     chooseLater: 'بعداً یک ارائهدهنده انتخاب میکنم',
     recommended: 'پیشنهادی',
     connected: 'وصل شد',
     featuredPitch: 'یک اشتراک، بیش از ۳۰۰ مدل پیشرو — روش پیشنهادی برای اجرای Hermes',
-    fireworksPitch: 'API مستقیم مدلها — مدلهای پیشرو میزبانی Fireworks',
-    localModelsTitle: 'اجرای مدلها بهصورت محلی',
+    fireworksPitch: 'API مستقیم مدل‌ها — مدل‌های پیشرو میزبانی Fireworks',
+    localModelsTitle: 'اجرای مدل‌ها بهصورت محلی',
     localModelsPitch: 'بدون نیاز به حساب — یک مدل دانلود کنید و روی همین دستگاه اجرا کنید',
     openRouterPitch: 'یک کلید، صدها مدل — انتخاب پیشفرض مطمئن',
     apiKeyOptions: {
       fireworks: {
-        short: 'API مستقیم مدلها',
-        description: 'دسترسی مستقیم به مدلهای میزبانی Fireworks AI.'
+        short: 'API مستقیم مدل‌ها',
+        description: 'دسترسی مستقیم به مدل‌های میزبانی Fireworks AI.'
       },
       openrouter: {
-        short: 'یک کلید، مدلهای فراوان',
+        short: 'یک کلید، مدل‌های فراوان',
         description: 'صدها مدل پشت یک کلید. انتخاب خوبی برای نصبهای تازه.'
       },
       openai: {
-        short: 'مدلهای کلاس GPT',
-        description: 'دسترسی مستقیم به مدلهای OpenAI.'
+        short: 'مدل‌های کلاس GPT',
+        description: 'دسترسی مستقیم به مدل‌های OpenAI.'
       },
       gemini: {
-        short: 'مدلهای Gemini',
-        description: 'دسترسی مستقیم به مدلهای Google Gemini.'
+        short: 'مدل‌های Gemini',
+        description: 'دسترسی مستقیم به مدل‌های Google Gemini.'
       },
       xai: {
-        short: 'مدلهای Grok',
-        description: 'دسترسی مستقیم به مدلهای xAI Grok.'
+        short: 'مدل‌های Grok',
+        description: 'دسترسی مستقیم به مدل‌های xAI Grok.'
       },
       local: {
         short: 'میزبانی شخصی',
@@ -3829,11 +3830,11 @@ export const fa = defineLocale({
     localApiKeyPlaceholder: 'کلید API (اختیاری — فقط اگر نقطهٔ پایانی شما کلید لازم دارد)',
     couldNotSave: 'ذخیرهٔ اعتبارنامه ممکن نشد.',
     connecting: 'در حال اتصال',
-    update: 'بهروزرسانی',
+    update: 'به‌روز‌رسانی',
     flowSubtitles: {
-      pkce: 'مرورگر شما را برای ورود باز میکند و سپس همینجا ادامه مییابد',
-      device_code: 'یک صفحهٔ تأیید در مرورگر باز میکند — Hermes خودکار وصل میشود',
-      external: 'یکبار در ترمینال خود وارد شوید، سپس به گفتوگو برگردید'
+      pkce: 'مرورگر شما را برای ورود باز می‌کند و سپس همینجا ادامه مییابد',
+      device_code: 'یک صفحهٔ تأیید در مرورگر باز می‌کند — Hermes خودکار وصل می‌شود',
+      external: 'یکبار در ترمینال خود وارد شوید، سپس به گفت‌وگو برگردید'
     },
     startingSignIn: provider => `شروع ورود برای ${provider}...`,
     verifyingCode: provider => `در حال تأیید کد شما با ${provider}...`,
@@ -3875,7 +3876,7 @@ export const fa = defineLocale({
   },
   freeTier: {
     providerRowTitle: 'Nous · رایگان',
-    providerRowPitch: 'با حساب Nous وارد شوید تا مدلها و ابزارهای بیشتری فعال شوند.',
+    providerRowPitch: 'با حساب Nous وارد شوید تا مدل‌ها و ابزار‌های بیشتری فعال شوند.',
     readyTitle: 'Hermes آماده است.',
     readyCaption: 'رایگان · اتصالها گنجانده شده',
     begin: 'شروع',
@@ -3888,7 +3889,7 @@ export const fa = defineLocale({
     providerName: 'Nous',
     statusLabel: model => `Nous · ${model}`,
     signIn: 'ورود',
-    signInHeading: 'با حساب Nous وارد شوید تا مدلها و ابزارهای بیشتری فعال شوند.',
+    signInHeading: 'با حساب Nous وارد شوید تا مدل‌ها و ابزار‌های بیشتری فعال شوند.',
     settingUp: 'در حال راهاندازی استنتاج رایگان…',
     codeBody: 'این کد را در مرورگر خود وارد کنید تا ورود کامل شود.',
     copyLink: 'کپی لینک',
@@ -3898,7 +3899,7 @@ export const fa = defineLocale({
     finishingBody: 'در مرورگر تأیید شد. در حال جمعآوری توکنهای حساب شما.',
     signedInAs: email => `وارد شده بهعنوان ${email}`,
     signedIn: 'وارد شدید.',
-    completedBody: 'حساب شما اکنون استنتاج و ابزارها را دارد.',
+    completedBody: 'حساب شما اکنون استنتاج و ابزار‌ها را دارد.',
     defaultModel: 'مدل پیشفرض',
     change: 'تغییر',
     done: 'انجام شد',
@@ -3911,7 +3912,7 @@ export const fa = defineLocale({
     timedOutHeading: 'لینک ورود منقضی شده است',
     timedOutBody: 'هر وقت آماده بودید دوباره شروع کنید. شما همچنان از سرویس رایگان Nous استفاده میکنید.',
     retiredBody:
-      'نشست شما قبل از اتمام ورود به پایان رسید. Hermes یک نشست جدید شروع میکند؛ سپس هر وقت آماده بودید دوباره وارد شوید.',
+      'نشست شما قبل از اتمام ورود به پایان رسید. Hermes یک نشست جدید شروع می‌کند؛ سپس هر وقت آماده بودید دوباره وارد شوید.',
     errorBody: 'ورود به سیستم کامل نشد. هر وقت آماده بودید دوباره تلاش کنید.',
     busyHeading: 'تقریباً تمام شد',
     busyBody: wait =>
@@ -3922,18 +3923,18 @@ export const fa = defineLocale({
     alreadySignedInBody: 'این Hermes قبلاً به یک حساب Nous وارد شده است.',
     setupFailed: {
       gateClosed:
-        'این نسخه از Hermes بدون حساب Nous نمیتواند شروع به کار کند. وارد شوید یا حساب بسازید، رایگان است و فقط یک دقیقه طول میکشد.',
+        'این نسخه از Hermes بدون حساب Nous نمی‌تواند شروع به کار کند. وارد شوید یا حساب بسازید، رایگان است و فقط یک دقیقه طول میکشد.',
       paused:
-        'استفاده از Hermes بدون ورود موقتاً متوقف شده است. Hermes به بررسی ادامه میدهد. ورود رایگان است و شما را فوراً راه میاندازد.',
+        'استفاده از Hermes بدون ورود موقتاً متوقف شده است. Hermes به بررسی ادامه می‌دهد. ورود رایگان است و شما را فوراً راه میاندازد.',
       rateLimited: wait =>
-        `همین حالا افراد زیادی در حال شروع هستند، بنابراین Hermes در ${wait} دوباره تلاش میکند. ورود رایگان است و از انتظار جلوگیری میکند.`,
+        `همین حالا افراد زیادی در حال شروع هستند، بنابراین Hermes در ${wait} دوباره تلاش می‌کند. ورود رایگان است و از انتظار جلوگیری می‌کند.`,
       unreachable:
         'Hermes نتوانست به سرویس Nous دسترسی پیدا کند. اتصال اینترنت خود را بررسی کنید، سپس روی «تلاش دوباره» بزنید. یا فعلاً به ارائهدهنده دیگری متصل شوید.',
       serverError:
         'سرویس Nous دچار مشکل شد. لحظهای بعد روی «تلاش دوباره» بزنید یا فعلاً به ارائهدهنده دیگری متصل شوید.',
       powRequired:
         'سرور Nous درخواست اثبات کار کرد، اما این در Agent شما پیادهسازی نشده است. برای ادامه، وارد شوید یا یک حساب رایگان Nous بسازید.',
-      locked: 'این نشست بدون ورود نمیتواند ادامه یابد. برای ادامه، وارد شوید یا یک حساب رایگان Nous بسازید.',
+      locked: 'این نشست بدون ورود نمی‌تواند ادامه یابد. برای ادامه، وارد شوید یا یک حساب رایگان Nous بسازید.',
       generic:
         'Hermes نتوانست دسترسی رایگان را بدون ورود راهاندازی کند. ورود رایگان است یا به ارائهدهنده دیگری متصل شوید.',
       signInBelow: 'ورود رایگان است. در زیر Nous را انتخاب کنید.',
@@ -3945,24 +3946,24 @@ export const fa = defineLocale({
     title: 'تغییر مدل',
     current: 'فعلی:',
     unknown: '(ناشناس)',
-    search: 'فیلتر ارائهدهندهها و مدلها…',
+    search: 'فیلتر ارائهدهندهها و مدل‌ها…',
     noModels: 'مدلی پیدا نشد.',
     addProvider: 'افزودن ارائهدهنده',
-    loadFailed: 'بارگذاری مدلها ناموفق بود',
+    loadFailed: 'بارگذاری مدل‌ها ناموفق بود',
     loadingIntoMemory: 'بارگذاری در حافظه',
     downloading: 'در حال دانلود',
     localDownloadsHeading: 'محلی',
     noAuthenticatedProviders: 'ارائهدهندهٔ احراز هویتشدهٔ وجود ندارد.',
     pro: 'حرفهای',
-    proNeedsSubscription: 'مدلهای حرفهای به اشتراک پولی Nous نیاز دارند.',
+    proNeedsSubscription: 'مدل‌های حرفهای به اشتراک پولی Nous نیاز دارند.',
     free: 'رایگان',
     freeTier: 'سطح رایگان',
     priceTitle: 'قیمت ورودی / خروجی بهازای هر میلیون توکن',
     wasPrice: 'قبلاً'
   },
   modelVisibility: {
-    title: 'مدلها',
-    search: 'جستجوی مدلها',
+    title: 'مدل‌ها',
+    search: 'جستجوی مدل‌ها',
     noAuthenticatedProviders: 'ارائهدهندهای احراز هویت نشده است.',
     addProvider: 'افزودن ارائهدهنده…'
   },
@@ -4063,7 +4064,7 @@ export const fa = defineLocale({
       toggleSessionTimer: 'تایمر نشست',
       toggleTerminal: 'ترمینال',
       toggleTokensPerSecond: 'توکن در ثانیه',
-      toggleVersion: 'نسخه و بهروزرسانیها',
+      toggleVersion: 'نسخه و به‌روز‌رسانیها',
       toggleFreeTier: 'رایگان',
       toggleWorkspace: 'فضای کاری',
       cacheHitRateTitle: 'نرخ ضربه کش درخواست در این نشست — توکنهای کششده ارزانترند، پس بالاتر یعنی ارزانتر',
@@ -4075,7 +4076,7 @@ export const fa = defineLocale({
       failed: count => `${count} ناموفق`,
       running: count => `${count} در حال اجرا`,
       cron: 'کرون',
-      openCron: 'باز کردن کارهای کرون',
+      openCron: 'باز کردن کار‌های کرون',
       webhooks: 'Webhook',
       openWebhooks: 'باز کردن Webhookها',
       starmap: 'گراف حافظه',
@@ -4097,7 +4098,7 @@ export const fa = defineLocale({
           mcp: 'MCP',
           memory: 'حافظه',
           rules: 'قوانین',
-          skills: 'مهارتها',
+          skills: 'مهارت‌ها',
           subagent_definitions: 'تعاریف زیرعامل',
           system_prompt: 'پرامپت سیستم',
           tool_definitions: 'تعاریف ابزار'
@@ -4115,7 +4116,7 @@ export const fa = defineLocale({
       noModel: 'بدون مدل',
       switchModel: 'تغییر مدل',
       openModelPicker: 'باز کردن انتخابگر مدل',
-      modelPinned: 'پینشده توسط شما؛ گفتگوهای جدید از این بهجای پیشفرض تنظیمات استفاده میکنند',
+      modelPinned: 'پینشده توسط شما؛ گفتگوهای جدید از این بهجای پیشفرض تنظیمات استفاده می‌کنند',
       modelTitle: (provider, model) => `مدل · ${provider}: ${model}`,
       providerModelTitle: (provider, model) => `${provider} · ${model}`
     }
@@ -4182,7 +4183,7 @@ export const fa = defineLocale({
     previewAnyway: 'با این حال پیش‌نمایش',
     truncated: 'نمایش ۵۱۲ کیلوبایت اول.',
     noInlineTitle: 'بدون پیش‌نمایش داخلی',
-    noInlineBody: mimeType => `${mimeType || 'این نوع فایل'} همچنان میتواند به عنوان زمینه پیوست شود.`,
+    noInlineBody: mimeType => `${mimeType || 'این نوع فایل'} همچنان می‌تواند به عنوان زمینه پیوست شود.`,
     edit: 'ویرایش',
     editing: 'در حال ویرایش',
     unsavedChanges: 'تغییرات ذخیره‌نشده',
@@ -4209,21 +4210,21 @@ export const fa = defineLocale({
       clear: 'پاک کردن',
       empty: 'هنوز پیامی در کنسول نیست.',
       promptHeader: 'پیشنمایش کنسول:',
-      sentTitle: 'ارسال به گفتوگو',
+      sentTitle: 'ارسال به گفت‌وگو',
       sentMessage: count => `${count} ورودی گزارش به کامپوزر اضافه شد`
     },
     web: {
       appFailedToBoot: 'راهاندازی برنامه پیشنمایش ناموفق بود',
       serverNotFound: 'سرور یافت نشد',
       remoteLoopback:
-        'این آدرس به ماشینی اشاره دارد که عامل شما روی آن اجرا میشود، نه این یکی. پنل مرورگر صفحات را بهصورت محلی بارگذاری میکند، بنابراین سرور توسعه از راه دور نیاز به پورت فوروارد یا نام میزبان قابل دسترس دارد.',
+        'این آدرس به ماشینی اشاره دارد که عامل شما روی آن اجرا می‌شود، نه این یکی. پنل مرورگر صفحات را بهصورت محلی بارگذاری می‌کند، بنابراین سرور توسعه از راه دور نیاز به پورت فوروارد یا نام میزبان قابل دسترس دارد.',
       failedToLoad: 'بارگذاری پیشنمایش ناموفق بود',
       tryAgain: 'تلاش دوباره',
       restarting: 'در حال راهاندازی مجدد Hermes...',
       askRestart: 'از Hermes بخواهید سرور را راهاندازی مجدد کند',
       lookingRestart: taskId => `Hermes به دنبال سرور پیشنمایش برای راهاندازی مجدد است (${taskId})`,
       restartingTitle: 'راهاندازی مجدد سرور پیشنمایش',
-      restartingMessage: 'Hermes در پسزمینه کار میکند. کنسول پیشنمایش را برای پیشرفت تماشا کنید.',
+      restartingMessage: 'Hermes در پسزمینه کار می‌کند. کنسول پیشنمایش را برای پیشرفت تماشا کنید.',
       startRestartFailed: message => `شروع راهاندازی مجدد سرور ممکن نشد: ${message}`,
       restartFailed: 'راهاندازی مجدد سرور ناموفق بود',
       hideConsole: 'پنهان کردن کنسول پیشنمایش',
@@ -4250,7 +4251,7 @@ export const fa = defineLocale({
       filesChanged: (count, url) => `${count} تغییر فایل، بارگذاری مجدد پیشنمایش: ${url}`,
       watchFailed: message => `تماشای فایل پیشنمایش ممکن نشد: ${message}`,
       moduleMimeDescription:
-        'اسکریپتهای ماژول با نوع MIME اشتباه سرو میشوند. این معمولاً به این معنی است که یک سرور فایل استاتیک، برنامه Vite/React را به جای سرور توسعه پروژه سرو میکند.',
+        'اسکریپتهای ماژول با نوع MIME اشتباه سرو میشوند. این معمولاً به این معنی است که یک سرور فایل استاتیک، برنامه Vite/React را به جای سرور توسعه پروژه سرو می‌کند.',
       loadFailedConsole: (code, message) => `بارگذاری ناموفق بود${code ? ` (${code})` : ''}: ${message}`,
       unreachableDescription: 'صفحه پیشنمایش قابل دسترسی نبود.',
       openTarget: url => `باز کردن ${url}`,
@@ -4272,7 +4273,7 @@ export const fa = defineLocale({
     hideTabStrip: 'پنهان کردن تبها',
     showStripTab: title => `نمایش ${title}`,
     hideStripTab: title => `پنهان کردن ${title}`,
-    lastTabKeptTitle: 'آخرین تب باقی میماند',
+    lastTabKeptTitle: 'آخرین تب باقی می‌ماند',
     lastTabKeptBody:
       'این ناحیه حداقل به یک تب قابل مشاهده نیاز دارد. ابتدا تب دیگری را نشان دهید یا کل نوار کنار را جمع کنید.',
     toggleStripTab: title => `تغییر وضعیت تب ${title}`,
@@ -4280,7 +4281,7 @@ export const fa = defineLocale({
     restore: 'بازیابی',
     closeRunningTitle: 'تب در حال اجرا بسته شود؟',
     closeRunningBody:
-      'این گفتوگو هنوز در حال کار است (یا منتظر ورودی شما). بستن تب آن را پنهان میکند — نشست پیشرفت خود را حفظ میکند و میتوانید از نوار کنار دوباره باز کنید.',
+      'این گفت‌وگو هنوز در حال کار است (یا منتظر ورودی شما). بستن تب آن را پنهان می‌کند — نشست پیشرفت خود را حفظ می‌کند و می‌توانید از نوار کنار دوباره باز کنید.',
     closeRunningConfirm: 'بستن تب',
     reload: 'بارگذاری مجدد',
     closeOthers: 'بستن بقیه',
@@ -4302,7 +4303,7 @@ export const fa = defineLocale({
     deletePreset: name => `حذف ${name}`,
     zoneEditorTitle: 'ویرایشگر ناحیه',
     editorHintPre: 'برای تقسیم کلیک کنید · ',
-    editorHintPost: ' خط را برمیگرداند · برای ادغام روی نواحی بکشید · برای تغییر اندازه لبههای مشترک را بکشید',
+    editorHintPost: ' خط را برمیگرداند · برای ادغام روی نواحی بکشید · برای تغییر اندازه لبه‌های مشترک را بکشید',
     templateColumns: 'ستونها',
     templateRows: 'ردیفها',
     templateGrid: 'شبکه',
@@ -4378,7 +4379,7 @@ export const fa = defineLocale({
           'حساب شما برای این ارائه‌دهنده اعتبار ندارد. شارژ کنید یا ارائه‌دهنده را عوض کنید، سپس دوباره ارسال کنید.',
         disk: 'دیسک شما پر است، بنابراین Hermes نتوانست این گفتگو را ذخیره کند. فضا آزاد کنید و دوباره تلاش کنید.',
         endpoint:
-          'هرمس نمیتواند به سرور مدل سفارشی شما دسترسی پیدا کند. مطمئن شوید که در حال اجراست، سپس پیام خود را دوباره ارسال کنید.',
+          'هرمس نمی‌تواند به سرور مدل سفارشی شما دسترسی پیدا کند. مطمئن شوید که در حال اجراست، سپس پیام خود را دوباره ارسال کنید.',
         gateway:
           'هرمس هنگام شروع این پاسخ با مشکل داخلی مواجه شد. پیام خود را دوباره ارسال کنید؛ اگر ادامه یافت، اطلاعات تشخیصی را ارسال کنید.',
         generic: 'هنگام پاسخگویی هرمس خطایی رخ داد. دوباره تلاش کنید، یا اگر ادامه یافت جزئیات را کپی کنید.',
@@ -4392,12 +4393,12 @@ export const fa = defineLocale({
         auth: {
           title: provider => `${provider} ورود شما را رد کرد`,
           body: provider =>
-            `اعتبارنامههای ذخیرهشده برای ${provider} پذیرفته نشد. آنها را در تنظیمات اصلاح کنید یا ارائهدهنده را تغییر دهید، سپس پیام خود را دوباره ارسال کنید.`
+            `اعتبارنامه‌های ذخیرهشده برای ${provider} پذیرفته نشد. آنها را در تنظیمات اصلاح کنید یا ارائهدهنده را تغییر دهید، سپس پیام خود را دوباره ارسال کنید.`
         },
         auth_permanent: {
           title: provider => `${provider} ورود شما را رد کرد`,
           body: provider =>
-            `اعتبارنامههای ذخیرهشده برای ${provider} نامعتبر یا لغو شدهاند. آنها را بهروزرسانی کنید یا ارائهدهنده را تغییر دهید، سپس پیام خود را دوباره ارسال کنید.`
+            `اعتبارنامه‌های ذخیرهشده برای ${provider} نامعتبر یا لغو شدهاند. آنها را به‌روز‌رسانی کنید یا ارائهدهنده را تغییر دهید، سپس پیام خود را دوباره ارسال کنید.`
         },
         billing: {
           title: 'اعتبار کافی نیست',
@@ -4440,8 +4441,8 @@ export const fa = defineLocale({
             `هرمس نتوانست اتصال امن به ${provider} را تأیید کند. تنظیمات شبکه یا پروکسی خود را بررسی کنید یا ارائهدهنده را تغییر دهید، سپس پیام خود را دوباره ارسال کنید.`
         },
         context_overflow: {
-          title: 'این گفتوگو بیش از حد طولانی است',
-          body: 'گفتوگو دیگر در مدل جا نمیشود. آن را فشرده کنید یا گفتوگوی جدیدی شروع کنید، سپس دوباره ارسال کنید.'
+          title: 'این گفت‌وگو بیش از حد طولانی است',
+          body: 'گفت‌وگو دیگر در مدل جا نمی‌شود. آن را فشرده کنید یا گفت‌وگوی جدیدی شروع کنید، سپس دوباره ارسال کنید.'
         },
         payload_too_large: {
           title: 'این پیام بیش از حد بزرگ است',
@@ -4523,7 +4524,7 @@ export const fa = defineLocale({
         api_key: {
           title: provider => `${provider} کلید API شما را رد کرد`,
           body: provider =>
-            `کلید ذخیرهشده برای ${provider} نامعتبر است یا لغو شده. آن را بهروزرسانی و دوباره تلاش کنید.`
+            `کلید ذخیرهشده برای ${provider} نامعتبر است یا لغو شده. آن را به‌روز‌رسانی و دوباره تلاش کنید.`
         },
         oauth: {
           title: provider => `ورود ${provider} شما منقضی شده است`
@@ -4540,17 +4541,17 @@ export const fa = defineLocale({
       errorStartNewSession: 'شروع نشست جدید',
       errorSwitchProvider: 'تغییر ارائهدهنده',
       errorChooseModel: 'انتخاب مدل',
-      errorCompressConversation: 'فشردهسازی گفتوگو',
-      errorCompressFailed: 'فشردهسازی گفتوگو ممکن نشد',
+      errorCompressConversation: 'فشردهسازی گفت‌وگو',
+      errorCompressFailed: 'فشردهسازی گفت‌وگو ممکن نشد',
       errorOpenHermesFolder: 'باز کردن پوشه Hermes',
       errorOpenHermesFolderFailed: 'باز کردن پوشه Hermes ممکن نشد',
-      errorUpdateApiKey: 'بهروزرسانی کلید API',
+      errorUpdateApiKey: 'به‌روز‌رسانی کلید API',
       errorSignInAgain: provider => `دوباره به ${provider} وارد شوید`,
       errorSignInFreeTier: 'با حساب Nous وارد شوید',
-      errorOauthExpired: provider => `ورود ${provider} شما منقضی یا لغو شده. برای ادامه گفتوگو دوباره وارد شوید.`,
-      errorOpenLogs: 'باز کردن گزارشها',
-      errorOpenLogsFailed: 'باز کردن پوشه گزارشها ممکن نشد',
-      errorOpenDesktopLogs: 'باز کردن گزارشهای دسکتاپ',
+      errorOauthExpired: provider => `ورود ${provider} شما منقضی یا لغو شده. برای ادامه گفت‌وگو دوباره وارد شوید.`,
+      errorOpenLogs: 'باز کردن گزارش‌ها',
+      errorOpenLogsFailed: 'باز کردن پوشه گزارش‌ها ممکن نشد',
+      errorOpenDesktopLogs: 'باز کردن گزارش‌های دسکتاپ',
       errorCopyDiagnostics: 'کپی جزئیات خطا',
       errorSendDiagnostics: 'ارسال اطلاعات تشخیصی',
       filesChanged: count => `${count} فایل تغییر کرد`,
@@ -4567,7 +4568,7 @@ export const fa = defineLocale({
       restoreCheckpoint: 'بازیابی ایست بازرسی',
       restoreFromHere: 'بازیابی ایست بازرسی — اجرای مجدد از این درخواست',
       restoreTitle: 'بازیابی به این ایست بازرسی؟',
-      restoreBody: 'همه چیز بعد از این درخواست از گفتگو حذف میشود و درخواست از اینجا دوباره اجرا میشود.',
+      restoreBody: 'همه چیز بعد از این درخواست از گفتگو حذف می‌شود و درخواست از اینجا دوباره اجرا می‌شود.',
       restoreConfirm: 'بازیابی و اجرای مجدد',
       restoreNext: 'بازیابی ایست بازرسی بعدی',
       goForward: 'رفتن به جلو',
@@ -4584,14 +4585,14 @@ export const fa = defineLocale({
       openSafetySettings: 'باز کردن تنظیمات ایمنی',
       run: 'اجرا',
       command: 'فرمان',
-      moreOptions: 'گزینههای تأیید بیشتر',
+      moreOptions: 'گزینه‌های تأیید بیشتر',
       allowSession: 'اجازه به این نشست',
       alwaysAllowMenu: 'همیشه اجازه بده…',
       jumpToApproval: 'نیاز به تأیید',
       reject: 'رد کردن',
       alwaysTitle: 'همیشه این دستور مجاز باشد؟',
       alwaysDescription: pattern =>
-        `این الگوی «${pattern}» را به فهرست مجاز دائمی شما اضافه میکند (~/.hermes/config.yaml). Hermes دیگر برای دستورات مشابه سؤال نخواهد کرد — در این نشست یا نشستهای آینده.`,
+        `این الگوی «${pattern}» را به فهرست مجاز دائمی شما اضافه می‌کند (~/.hermes/config.yaml). Hermes دیگر برای دستورات مشابه سؤال نخواهد کرد — در این نشست یا نشست‌های آینده.`,
       alwaysAllow: 'همیشه اجازه بده'
     },
     clarify: {
@@ -4625,7 +4626,7 @@ export const fa = defineLocale({
       toolCount: count => `${count} ابزار`,
       envRequired: 'ابتدا اعتبارنامه‌های لازم را پر کنید',
       sendFailed: 'ارسال پاسخ MCP ممکن نشد',
-      reloadFailed: 'سرور ذخیره شد، اما بارگذاری مجدد ابزارهای MCP ناموفق بود — در نشست بعدی بارگذاری می‌شوند',
+      reloadFailed: 'سرور ذخیره شد، اما بارگذاری مجدد ابزار‌های MCP ناموفق بود — در نشست بعدی بارگذاری می‌شوند',
       gatewayDisconnected: 'Hermes در حال حاضر آفلاین است. دوباره متصل شوید و سپس دوباره ارسال کنید.'
     },
     tool: {
@@ -4748,8 +4749,8 @@ export const fa = defineLocale({
           pendingAction: 'در حال تولید'
         },
         list_files: {
-          done: 'فایلها فهرست شدند',
-          pending: 'در حال فهرستکردن فایلها',
+          done: 'فایل‌ها فهرست شدند',
+          pending: 'در حال فهرستکردن فایل‌ها',
           pendingAction: 'در حال فهرستکردن'
         },
         memory: {
@@ -4768,8 +4769,8 @@ export const fa = defineLocale({
           pendingAction: 'در حال خواندن'
         },
         search_files: {
-          done: 'جستجوی فایلها انجام شد',
-          pending: 'در حال جستجوی فایلها',
+          done: 'جستجوی فایل‌ها انجام شد',
+          pending: 'در حال جستجوی فایل‌ها',
           pendingAction: 'در حال جستجو'
         },
         session_search_recall: {
@@ -4783,9 +4784,9 @@ export const fa = defineLocale({
           pendingAction: 'در حال اجرا'
         },
         todo: {
-          done: 'وظایف بهروزرسانی شدند',
-          pending: 'در حال بهروزرسانی وظایف',
-          pendingAction: 'در حال بهروزرسانی'
+          done: 'وظایف به‌روز‌رسانی شدند',
+          pending: 'در حال به‌روز‌رسانی وظایف',
+          pendingAction: 'در حال به‌روز‌رسانی'
         },
         vision_analyze: {
           done: 'تصویر تحلیل شد',
@@ -4817,8 +4818,9 @@ export const fa = defineLocale({
     secretSendFailed: 'ارسال رمز ممکن نشد',
     sudoTitle: 'رمز administrator',
     sudoDesc:
-      'قبل از وارد کردن رمز sudo خود، دستور را بررسی کنید. رمز شما به agent در حال اجرا ارسال شده و برای این نشست ذخیره میشود.',
-    sudoCommandUnavailable: 'این agent دستور را ارائه نکرده است. اگر نمیتوانید آن را در گفتگو تأیید کنید، انصراف دهید.',
+      'قبل از وارد کردن رمز sudo خود، دستور را بررسی کنید. رمز شما به agent در حال اجرا ارسال شده و برای این نشست ذخیره می‌شود.',
+    sudoCommandUnavailable:
+      'این agent دستور را ارائه نکرده است. اگر نمی‌توانید آن را در گفتگو تأیید کنید، انصراف دهید.',
     sudoPlaceholder: 'رمز sudo',
     secretTitle: 'رمز لازم است',
     secretDesc: 'Hermes برای ادامه به یک credential نیاز دارد.',
@@ -4826,14 +4828,14 @@ export const fa = defineLocale({
     vaultUnlockSendFailed: 'ارسال رمز master ممکن نشد',
     vaultUnlockTitle: name => `باز کردن قفل ${name}`,
     vaultUnlockDesc: name =>
-      `agent میخواهد با یک ورود ذخیرهشده در ${name} وارد سایتی شود. رمز master خود را وارد کنید تا برای این نشست باز شود — مستقیماً به ${name} روی این دستگاه میرود و هرگز ذخیره یا به agent نشان داده نمیشود.`,
+      `agent می‌خواهد با یک ورود ذخیرهشده در ${name} وارد سایتی شود. رمز master خود را وارد کنید تا برای این نشست باز شود — مستقیماً به ${name} روی این دستگاه می‌رود و هرگز ذخیره یا به agent نشان داده نمی‌شود.`,
     vaultUnlockPlaceholder: 'رمز master',
     vaultUnlockKeepLocked: 'قفل بماند',
     vaultUnlockConfirm: 'باز کردن قفل',
     vaultSaveSendFailed: 'ذخیره ورود ممکن نشد',
     vaultSaveTitle: site => `ورود ${site} را ذخیره کنیم؟`,
     vaultSaveDesc: origin =>
-      `Hermes به صفحه ورود در ${origin} رسیده و ورودی برای آن ندارد. آن را یک بار اینجا وارد کنید؛ روی این دستگاه رمزنگاری شده و بدون اینکه مدل رمز را ببیند، در صفحه پر میشود.`,
+      `Hermes به صفحه ورود در ${origin} رسیده و ورودی برای آن ندارد. آن را یک بار اینجا وارد کنید؛ روی این دستگاه رمزنگاری شده و بدون اینکه مدل رمز را ببیند، در صفحه پر می‌شود.`,
     vaultSaveIdentifierLabel: 'ایمیل یا نام کاربری',
     vaultSaveIdentifierPlaceholder: 'you@example.com',
     vaultSavePasswordPlaceholder: 'رمز عبور',
@@ -4843,10 +4845,10 @@ export const fa = defineLocale({
     vaultCodeSendFailed: 'ارسال کد ممکن نشد',
     vaultCodeTitle: site => `کد تأیید برای ${site}`,
     vaultCodeDesc: site =>
-      `${site} یک کد یکبارمصرف (پیامک، ایمیل یا اپ احراز هویت) میخواهد. آن را اینجا وارد کنید و Hermes آن را در صفحه تایپ میکند؛ مدل هرگز آن را نمیبیند.`,
+      `${site} یک کد یکبارمصرف (پیامک، ایمیل یا اپ احراز هویت) می‌خواهد. آن را اینجا وارد کنید و Hermes آن را در صفحه تایپ می‌کند؛ مدل هرگز آن را نمیبیند.`,
     vaultCodeLabel: 'کد',
     vaultCodeFootnote:
-      'نکته: کلید احراز هویت را با این ورود در تنظیمات ← گذرواژهها و ورودها ذخیره کنید و Hermes کدها را برای شما وارد میکند.',
+      'نکته: کلید احراز هویت را با این ورود در تنظیمات ← گذرواژهها و ورودها ذخیره کنید و Hermes کدها را برای شما وارد می‌کند.',
     vaultCodeSkip: 'رد شدن',
     vaultCodeConfirm: 'وارد کردن کد'
   },
@@ -4879,8 +4881,8 @@ export const fa = defineLocale({
     resumeFailed: 'از سرگیری ناموفق بود',
     readOnlyTranscriptTitle: 'فقطخواندنی باز شد',
     readOnlyTranscriptBody:
-      'هیچ بکاند متصلی این گفتوگوی قدیمی را ادعا نکرده است، بنابراین بهصورت متن فقطخواندنی باز شد. تاریخچه آن دستنخورده است؛ ارسال تا زمانی که یک بکاند آن را ادعا کند غیرفعال است.',
-    readOnlyTranscriptSendBlocked: 'این گفتوگو بهصورت متن فقطخواندنی باز است — ارسال غیرفعال است.',
+      'هیچ بکاند متصلی این گفت‌وگوی قدیمی را ادعا نکرده است، بنابراین بهصورت متن فقطخواندنی باز شد. تاریخچه آن دستنخورده است؛ ارسال تا زمانی که یک بکاند آن را ادعا کند غیرفعال است.',
+    readOnlyTranscriptSendBlocked: 'این گفت‌وگو بهصورت متن فقطخواندنی باز است — ارسال غیرفعال است.',
     resumeStrandedTitle: 'بارگذاری این نشست ممکن نشد',
     resumeStrandedBody:
       'اتصال به این نشست ناموفق بود و تلاشهای خودکار متوقف شد. بررسی کنید که گیتوی در حال اجراست، سپس دوباره تلاش کنید.',
@@ -4889,9 +4891,9 @@ export const fa = defineLocale({
     poolSlotTimeoutOpenSettings: 'باز کردن تنظیمات پیشرفته',
     resumeRetry: 'تلاش دوباره',
     nothingToBranch: 'چیزی برای شاخهبندی نیست',
-    branchNeedsChat: 'قبل از شاخهبندی، یک گفتوگو را شروع یا ادامه دهید.',
+    branchNeedsChat: 'قبل از شاخهبندی، یک گفت‌وگو را شروع یا ادامه دهید.',
     sessionBusy: 'نشست مشغول است',
-    branchStopCurrent: 'قبل از شاخهبندی این گفتوگو، نوبت فعلی را متوقف کنید.',
+    branchStopCurrent: 'قبل از شاخهبندی این گفت‌وگو، نوبت فعلی را متوقف کنید.',
     branchNoText: 'این پیام متنی برای شاخهبندی ندارد.',
     branchTitle: n => `پیشنویس: شاخه #${n}`,
     branchFailed: 'شاخهبندی ناموفق بود',
@@ -4949,7 +4951,7 @@ export const fa = defineLocale({
       },
       skills: {
         title: 'یک بار یاد بده',
-        text: 'مهارتها پوشههایی از دستورالعملها هستند که Hermes وقتی کار به آنها نیاز دارد بارگذاری میکند.'
+        text: 'مهارت‌ها پوشه‌هایی از دستورالعملها هستند که Hermes وقتی کار به آنها نیاز دارد بارگذاری می‌کند.'
       },
       messaging: {
         title: 'Hermes دور از میز شما',
@@ -4957,48 +4959,48 @@ export const fa = defineLocale({
       },
       artifacts: {
         title: 'هر چیزی که Hermes ساخت',
-        text: 'تصاویر، فایلها و پیوندها از هر نشست، در یک جا فهرست شدهاند.'
+        text: 'تصاویر، فایل‌ها و پیوندها از هر نشست، در یک جا فهرست شدهاند.'
       },
       cron: {
-        title: 'کاری که خودش اجرا میشود',
+        title: 'کاری که خودش اجرا می‌شود',
         text: 'یک درخواست را ساعتی، شبانه یا با یک عبارت cron زمانبندی کنید.'
       },
       'command-palette': {
         title: 'یک جعبه برای همه چیز',
-        text: 'نشستها، تنظیمات، مهارتها و دستورها همه به پالت پاسخ میدهند.'
+        text: 'نشست‌ها، تنظیمات، مهارت‌ها و دستورها همه به پالت پاسخ میدهند.'
       },
       profiles: {
-        title: 'پروفایلها جدا هستند',
-        text: 'هر کدام Hermes خودش است — کلیدهای خودش، حافظه خودش، نشستهای خودش.'
+        title: 'پروفایل‌ها جدا هستند',
+        text: 'هر کدام Hermes خودش است — کلیدهای خودش، حافظه خودش، نشست‌های خودش.'
       },
       'composer-mentions': {
         title: 'پیوست و فرمان',
         text: '@ را تایپ کنید تا فایلی به گفتگو بیاید، / برای اجرای یک دستور.'
       },
       'local-runtime-update': {
-        title: 'یک بهروزرسانی موتور محلی موجود است',
-        text: 'موتوری که مدلهای محلی شما را اجرا میکند بهروزرسانی کنید. درخواستهای محلی فعال ممکن است قطع شوند.',
-        action: 'همین حالا بهروزرسانی کن'
+        title: 'یک به‌روز‌رسانی موتور محلی موجود است',
+        text: 'موتوری که مدل‌های محلی شما را اجرا می‌کند به‌روز‌رسانی کنید. درخواستهای محلی فعال ممکن است قطع شوند.',
+        action: 'همین حالا به‌روز‌رسانی کن'
       },
       'local-setup': {
-        title: 'این دستگاه میتواند مدلها را محلی اجرا کند',
-        text: 'سختافزار شما میتواند یک مدل محلی ارائه دهد. گفتگوها روی رایانه شما میمانند و هزینهای ندارند.',
+        title: 'این دستگاه می‌تواند مدل‌ها را محلی اجرا کند',
+        text: 'سختافزار شما می‌تواند یک مدل محلی ارائه دهد. گفتگوها روی رایانه شما میمانند و هزینهای ندارند.',
         action: 'راهاندازی کن'
       },
       'right-pane': {
         title: 'پنجره کاری',
-        text: 'فایلها، ترمینال، بازبینی و مرورگر داخلی سمت راست را به اشتراک میگذارند.'
+        text: 'فایل‌ها، ترمینال، بازبینی و مرورگر داخلی سمت راست را به اشتراک میگذارند.'
       }
     }
   },
   errors: {
     genericFailure: 'مشکلی پیش آمد',
     boundaryTitle: 'اشکالی در رابط کاربری پیش آمد',
-    boundaryDesc: 'این نما با خطای پیشبینینشده روبهرو شد. گفتوگوها و تنظیمات شما امن هستند.',
+    boundaryDesc: 'این نما با خطای پیشبینینشده روبهرو شد. گفت‌وگوها و تنظیمات شما امن هستند.',
     boundaryDetails: 'جزئیات',
     sendDiagnostics: 'ارسال گزارش تشخیصی',
     reloadWindow: 'بارگذاری دوبارهٔ پنجره',
-    openLogs: 'باز کردن گزارشها'
+    openLogs: 'باز کردن گزارش‌ها'
   },
   ui: {
     search: {
@@ -5013,7 +5015,7 @@ export const fa = defineLocale({
     },
     sidebar: {
       title: 'نوار کنار',
-      description: 'نوار کنار در حالت موبایل را نشان میدهد.',
+      description: 'نوار کنار در حالت موبایل را نشان می‌دهد.',
       toggle: open => `نوار کنار ${open ? 'نمایش' : 'پنهان'}`
     }
   }
