@@ -174,6 +174,16 @@ describe('persian (fa) locale', () => {
   const enLeaves = leafMap(en)
   const faLeaves = leafMap(TRANSLATIONS.fa)
 
+  /** 英文靠 `count === 1 ? '' : 's'` 拼复数后缀；波斯语数词后名词不变化，因此译文**有意**
+   *  去掉该分支（33 条，见 i18n-src/fa.manual.json）。渲染质量由下面
+   *  "renders count-bearing messages…" 断言保证，结构断言不再重复要求一致。 */
+  const isIntentionallySimplified = (path: string) => {
+    const enSrc = String(enLeaves.get(path))
+    const faSrc = String(faLeaves.get(path))
+
+    return /=== 1/.test(enSrc) && !/=== 1/.test(faSrc)
+  }
+
   it('is selectable in the language picker', () => {
     expect(LOCALE_OPTIONS.map(o => o.id)).toContain('fa')
     expect(LOCALE_OPTIONS.find(o => o.id === 'fa')?.name).toBe('فارسی')
@@ -248,7 +258,11 @@ describe('persian (fa) locale', () => {
   it('never drops an interpolated value from a function message', () => {
     const dropped: string[] = []
     for (const [path, enValue] of enLeaves) {
-      if (typeof enValue !== 'function' || STRUCTURE_INTENTIONALLY_CHANGED.has(path)) {
+      if (
+        typeof enValue !== 'function' ||
+        STRUCTURE_INTENTIONALLY_CHANGED.has(path) ||
+        isIntentionallySimplified(path)
+      ) {
         continue
       }
       const countEn = (enValue.toString().match(/\$\{/g) ?? []).length
@@ -265,7 +279,11 @@ describe('persian (fa) locale', () => {
     // "技能安装已被阻止"）。这里逐条比对字面量数量与空串模式。
     const broken: string[] = []
     for (const [path, enValue] of enLeaves) {
-      if (typeof enValue !== 'function' || STRUCTURE_INTENTIONALLY_CHANGED.has(path)) {
+      if (
+        typeof enValue !== 'function' ||
+        STRUCTURE_INTENTIONALLY_CHANGED.has(path) ||
+        isIntentionallySimplified(path)
+      ) {
         continue
       }
       const enLiterals = exprLiterals(enValue.toString())
@@ -306,5 +324,98 @@ describe('persian (fa) locale', () => {
     expect(fa.boot.desktopBootFailedWithMessage('boom')).toContain('boom')
     expect(fa.ui.sidebar.toggle(true)).not.toEqual(fa.ui.sidebar.toggle(false))
     expect(fa.common.tryHint('foo')).not.toEqual(en.common.tryHint('foo'))
+  })
+
+  // ── 以下三条针对"机翻静默产出坏句子"的类别，都是真实踩过的（详见 docs/verification.md） ──
+
+  const BRAND_OK =
+    /^(Hermes|Nous|DeepSeek|OpenAI|Anthropic|GPT|MCP|JSON|API|CLI|URL|HTTP|HTTPS|SSH|TLS|OAuth|JWT|SQL|YAML|TOML|GitHub|Slack|Discord|Telegram|Matrix|Claude|Codex|Google|Gemini|Grok|xAI|Ollama|Piper|MiniMax|DeepInfra|ElevenLabs|Edge|Mistral|Groq|Zoom|X|auto|off|on|all|first|none|true|false|Base\d*|NF|Mono|MesloLGS|MIT|YOLO|X)$/i
+
+  it('renders count-bearing messages without glue, stray suffixes or English', () => {
+    // 英文靠 `count === 1 ? '' : 's'` 拼复数后缀；机翻曾把整词塞进那个分支，
+    // 复数时渲染出「3 بار اجرا شدتعداد ضربان」这类黏连垃圾（类型检查/数量校验都看不见）。
+    const offenders: string[] = []
+    for (const [path, value] of enLeaves) {
+      if (typeof value !== 'function' || !/=== 1/.test(value.toString())) {
+        continue
+      }
+      const faFn = faLeaves.get(path) as unknown
+      if (typeof faFn !== 'function') {
+        offenders.push(`${path}: 未译`)
+
+        continue
+      }
+      for (const n of [1, 3, 11]) {
+        let rendered: string
+        try {
+          rendered = String((faFn as (...a: unknown[]) => unknown)(n, n, n, n))
+        } catch {
+          continue
+        }
+        const reasons: string[] = []
+        const latin = (rendered.match(/[A-Za-z]{3,}/g) ?? []).filter(w => !BRAND_OK.test(w))
+        if (latin.length) {
+          reasons.push(`英文残留 ${latin.join('/')}`)
+        }
+        if (/[\u0600-\u06FF]\s+ها\b/.test(rendered)) {
+          reasons.push('复数后缀与词分离')
+        }
+        const glue = /([\u0600-\u06FF]{3,})\1/.exec(rendered)
+        if (glue) {
+          reasons.push(`词块黏连 ${glue[1]}`)
+        }
+        if (reasons.length) {
+          offenders.push(`${path} (n=${n}): ${reasons.join('; ')} → ${rendered.slice(0, 80)}`)
+        }
+      }
+    }
+    expect(offenders).toEqual([])
+  })
+
+  it('does not leave domain terms in English', () => {
+    // 术语残留：同一概念别处已译（turn→نوبت、checkpoint→نقطه بازرسی…），个别条目却留英文。
+    const FORBIDDEN = [/\bturn\b/i, /\bhit\b/i, /\bcheckpoint\b/i, /\bspawn\b/i, /\bat pin\b/i, /\bjobs?\b/i]
+    const strip = (s: string) =>
+      s
+        .replace(/`[^`]*`/g, ' ')
+        .replace(/\$\{[^}]*\}/g, ' ')
+        .replace(/\{[^}]*\}/g, ' ')
+    const offenders: string[] = []
+    for (const [path, value] of faLeaves) {
+      const text = strip(typeof value === 'function' ? value.toString() : String(value))
+      if (!/[\u0600-\u06FF]/.test(text)) {
+        continue
+      }
+      for (const re of FORBIDDEN) {
+        const m = re.exec(text)
+        if (m) {
+          offenders.push(`${path}: 「${m[0]}」未翻译`)
+        }
+      }
+    }
+    expect(offenders).toEqual([])
+  })
+
+  it('uses Persian punctuation in Persian prose', () => {
+    // 波斯语用 ؟ 与 ،，机翻常留 ASCII ? 和 ,（波斯语读者一眼能看出别扭）。
+    const strip = (s: string) =>
+      s
+        .replace(/`[^`]*`/g, ' ')
+        .replace(/\$\{[^}]*\}/g, ' ')
+        .replace(/\{[^}]*\}/g, ' ')
+    const offenders: string[] = []
+    for (const [path, value] of faLeaves) {
+      const text = strip(typeof value === 'function' ? value.toString() : String(value))
+      if (!/[\u0600-\u06FF]/.test(text)) {
+        continue
+      }
+      if (/[\u0600-\u06FF]\s*\?/.test(text)) {
+        offenders.push(`${path}: ASCII ? 应为 ؟`)
+      }
+      if (/[\u0600-\u06FF]\s*,\s*[\u0600-\u06FF]/.test(text)) {
+        offenders.push(`${path}: ASCII , 应为 ،`)
+      }
+    }
+    expect(offenders).toEqual([])
   })
 })
