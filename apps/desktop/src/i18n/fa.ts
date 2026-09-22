@@ -2185,7 +2185,7 @@ export const fa = defineLocale({
     transcriptTruncated: 'نمایش آخرین 16 KiB',
     transcriptUnavailable: 'متن زنده در دسترس نیست',
     close: 'بستن زیرعامل‌ها',
-    title: 'درخت واگذاری',
+    title: 'درخت زیرعامل‌ها',
     subtitle: 'فعالیت زنده زیرعامل‌ها برای این نوبت.',
     emptyTitle: 'بدون زیرعامل زنده',
     emptyDesc: 'هنوز هیچ زیرعاملی در این نوبت اجرا نشده است.',
