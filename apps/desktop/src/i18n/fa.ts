@@ -374,7 +374,7 @@ export const fa = defineLocale({
     set: 'تنظیم',
     conflictWith: label => `همچنین به «${label}» متصل است`,
     categories: {
-      composer: 'نویسنده',
+      composer: 'کامپوزر',
       profiles: 'پروفایلها',
       session: 'نشست',
       navigation: 'ناوبری',
@@ -410,7 +410,7 @@ export const fa = defineLocale({
       'session.archive': 'بایگانی نشست فعلی',
       'workspace.newWorktree': 'worktree جدید',
       'workspace.openFolder': 'باز کردن پوشه به عنوان پروژه',
-      'composer.focus': 'تمرکز بر composer',
+      'composer.focus': 'تمرکز بر کامپوزر',
       'composer.modelPicker': 'باز کردن انتخابگر مدل',
       'composer.voice': 'شروع/توقف گفتوگوی صوتی',
       'view.toggleSidebar': 'تغییر وضعیت نوار کنار نشستها',
@@ -429,7 +429,7 @@ export const fa = defineLocale({
       'view.nextTerminal': 'ترمینال بعدی',
       'view.prevTerminal': 'ترمینال قبلی',
       'view.closeTerminal': 'بستن ترمینال',
-      'view.selectionToComposer': 'ارسال انتخاب به composer',
+      'view.selectionToComposer': 'ارسال انتخاب به کامپوزر',
       'view.terminalCopy': 'کپی انتخاب ترمینال',
       'view.terminalPaste': 'چسباندن در ترمینال',
       'view.closeTab': 'بستن تب',
@@ -880,8 +880,8 @@ export const fa = defineLocale({
       toursTitle: 'تورهای راهنما',
       toursDesc:
         'اجازه دهید Hermes هر مرحله را هنگام راهنمایی در برنامه برجسته کند. پس از ۳۰ روز اول بهطور خودکار خاموش میشود؛ میتوانید دوباره روشن کنید.',
-      composerPopoutTitle: 'نویسنده شناور',
-      composerPopoutDesc: 'اجازه کشیدن نویسنده از جایگاهش. برای قفل کردن در پایین، این را خاموش کنید.',
+      composerPopoutTitle: 'کامپوزر شناور',
+      composerPopoutDesc: 'اجازه کشیدن کامپوزر از جایگاهش. برای قفل کردن در پایین، این را خاموش کنید.',
       vibeHeartsTitle: 'قلبهای حالت',
       vibeHeartsDesc:
         'قلبهای شناور وقتی تشکر، دوستت دارم، ربات خوب میگویید یا قلب میفرستید. جدا از واکنشهای پیام بالا.',
@@ -1059,7 +1059,7 @@ export const fa = defineLocale({
       'updates.nonInteractiveLocalChanges': 'تغییرات محلی بهروزرسانی درونبرنامهای'
     },
     fieldDescriptions: {
-      model: 'برای گفتوگوهای جدید استفاده میشود، مگر اینکه مدل دیگری را در composer انتخاب کنید.',
+      model: 'برای گفتوگوهای جدید استفاده میشود، مگر اینکه مدل دیگری را در کامپوزر انتخاب کنید.',
       modelContextLength:
         'پنجره زمینه تشخیص داده شده را فقط برای مدل اصلی گفتوگو بازنویسی میکند (توکن). برای استفاده از مقدار تشخیص داده شده مدل انتخاب شده، 0 بگذارید. روی مدلهای کمکی/MoA تأثیر نمیگذارد.',
       fallbackProviders: 'ورودیهای provider:model پشتیبان برای تلاش در صورت شکست مدل پیشفرض.',
@@ -1596,7 +1596,7 @@ export const fa = defineLocale({
     model: {
       loading: 'در حال بارگذاری پیکربندی مدل...',
       appliesDesc:
-        'برای نشست‌های جدید اعمال می‌شود. از انتخاب‌گر مدل در composer برای تعویض سریع گفت‌وگوی فعال استفاده کنید.',
+        'برای نشست‌های جدید اعمال می‌شود. از انتخاب‌گر مدل در کامپوزر برای تعویض سریع گفت‌وگوی فعال استفاده کنید.',
       provider: 'ارائهدهنده',
       model: 'مدل',
       applying: 'در حال اعمال...',
@@ -3519,7 +3519,7 @@ export const fa = defineLocale({
       loopEveryHours: hours => `هر ${hours} ساعت`,
       loopSelfPaced: 'با سرعت خود',
       loopActions: 'عملیات حلقه',
-      pauseLoop: 'توقف حلقه',
+      pauseLoop: 'مکث حلقه',
       resumeLoop: 'ادامه حلقه',
       stopLoop: 'توقف حلقه',
       stopLoopConfirmTitle: 'توقف حلقه؟',
@@ -4099,7 +4099,7 @@ export const fa = defineLocale({
           rules: 'قوانین',
           skills: 'مهارتها',
           subagent_definitions: 'تعاریف زیرعامل',
-          system_prompt: 'درخواست سیستم',
+          system_prompt: 'پرامپت سیستم',
           tool_definitions: 'تعاریف ابزار'
         },
         empty: 'هنوز داده زمینهای نیست',
@@ -4170,7 +4170,7 @@ export const fa = defineLocale({
     popIn: 'بازگردانی',
     popOut: 'جدا کردن',
     linkHint: '⌘/Ctrl-کلیک برای پنجره پیش‌نمایش',
-    sourceLineTitle: 'کلیک برای انتخاب · shift-کلیک برای گسترش · کشیدن به composer',
+    sourceLineTitle: 'کلیک برای انتخاب · shift-کلیک برای گسترش · کشیدن به کامپوزر',
     source: 'منبع',
     renderedPreview: 'پیش‌نمایش',
     diff: 'تفاوت',
@@ -4210,7 +4210,7 @@ export const fa = defineLocale({
       empty: 'هنوز پیامی در کنسول نیست.',
       promptHeader: 'پیشنمایش کنسول:',
       sentTitle: 'ارسال به گفتوگو',
-      sentMessage: count => `${count} ورودی گزارش به آهنگساز اضافه شد`
+      sentMessage: count => `${count} ورودی گزارش به کامپوزر اضافه شد`
     },
     web: {
       appFailedToBoot: 'راهاندازی برنامه پیشنمایش ناموفق بود',
