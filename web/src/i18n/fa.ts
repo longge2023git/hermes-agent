@@ -302,6 +302,7 @@ export const fa = defineLocale({
   },
   models: {
     settingsTitle: 'تنظیمات مدل',
+    expensiveModelWarning: 'هشدار مدل گران',
     cacheRead: 'خوانده‌شده از کش',
     reasoning: 'استدلال',
     input: 'ورودی',

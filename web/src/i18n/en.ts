@@ -300,6 +300,7 @@ export const en: Translations = {
 
   models: {
     settingsTitle: "Model Settings",
+    expensiveModelWarning: "Expensive Model Warning",
     cacheRead: "Cache Read",
     reasoning: "Reasoning",
     input: "Input",

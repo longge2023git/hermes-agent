@@ -330,6 +330,7 @@ export interface Translations {
     noModelsData: string;
     startSession: string;
     settingsTitle?: string;
+    expensiveModelWarning?: string;
     cacheRead?: string;
     reasoning?: string;
     input?: string;
