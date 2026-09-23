@@ -5,6 +5,7 @@
 // partial locales should use `defineLocale()` so missing desktop-only strings
 // fall back to English while new keys remain type-checked.
 
+import type { ReferenceKind } from '@/components/assistant-ui/reference-kinds'
 import type { ErrorCodeKey } from '@/lib/error-surface'
 import type { TipId } from '@/lib/tips/catalog'
 
@@ -2718,6 +2719,13 @@ export interface Translations {
       doneTip: string
     }
   }
+
+  /** The composer's reference vocabulary (`components/assistant-ui/reference-kinds.ts`):
+   *  the word for each `@file:` / `@folder:` / `/skill` kind. Keyed by
+   *  `ReferenceKind`, so adding a kind fails the build here until `en` carries
+   *  its word — a kind cannot ship unlabelled. Optional so a locale that
+   *  predates these keys keeps the English word the style table carries. */
+  referenceKinds?: Record<ReferenceKind, string>
 
   statusStack: {
     agents: string

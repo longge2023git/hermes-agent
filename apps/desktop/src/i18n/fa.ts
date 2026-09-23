@@ -3486,6 +3486,24 @@ export const fa = defineLocale({
       }
     }
   },
+  referenceKinds: {
+    file: 'فایل‌ها',
+    folder: 'پوشه‌ها',
+    url: 'پیوندها',
+    image: 'تصویرها',
+    tool: 'ابزارها',
+    line: 'خط‌ها',
+    terminal: 'پایانه',
+    session: 'نشست‌ها',
+    git: 'Git',
+    diff: 'تغییرات',
+    staged: 'صحنه‌بندی‌شده',
+    command: 'فرمان‌ها',
+    skill: 'مهارت‌ها',
+    theme: 'پوسته‌ها',
+    emoji: 'ایموجی',
+    other: 'دیگر'
+  },
   statusStack: {
     agents: 'عوامل',
     background: count => `${count} پسزمینه`,

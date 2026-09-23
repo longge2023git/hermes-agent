@@ -3197,6 +3197,25 @@ export const en: Translations = {
     }
   },
 
+  referenceKinds: {
+    file: 'Files',
+    folder: 'Folders',
+    url: 'Links',
+    image: 'Images',
+    tool: 'Tools',
+    line: 'Lines',
+    terminal: 'Terminal',
+    session: 'Sessions',
+    git: 'Git',
+    diff: 'Changes',
+    staged: 'Staged',
+    command: 'Commands',
+    skill: 'Skills',
+    theme: 'Themes',
+    emoji: 'Emoji',
+    other: 'Other'
+  },
+
   statusStack: {
     agents: 'Agents',
     background: count => `${count} Background`,

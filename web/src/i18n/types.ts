@@ -414,6 +414,28 @@ export interface Translations {
       needsHomeChannel?: string;
       noneConfigured?: string;
     };
+    /** fa fork: cron-page strings that had bypassed i18n. Optional (like the
+     *  rest of the fa-added members) so untranslated locales keep compiling;
+     *  the page falls back to the English literal. */
+    advancedFields?: string;
+    provider?: string;
+    model?: string;
+    defaultOption?: string;
+    baseUrlOverride?: string;
+    script?: string;
+    workdir?: string;
+    contextFromPlaceholder?: string;
+    noToolsets?: string;
+    skillsOptional?: string;
+    noSkills?: string;
+    skillsHint?: string;
+    viewJobs?: string;
+    viewBlueprints?: string;
+    profile?: string;
+    allProfiles?: string;
+    editJob?: string;
+    saveChanges?: string;
+    savedChanges?: string;
   };
 
   // ── Plugins page ──
@@ -1371,5 +1393,47 @@ export interface Translations {
     badgeAllEvents?: string;
     enable?: string;
     disable?: string;
+  };
+
+  // ── Files page (web) ──
+  // Optional throughout (namespace + members) so locales without the
+  // translation keep compiling; FilesPage falls back to the English literal.
+  filesPage?: {
+    refreshFiles?: string;
+    path?: string;
+    pathRequired?: string;
+    directoryUnavailable?: string;
+    go?: string;
+    upload?: string;
+    createFolder?: string;
+    folderName?: string;
+    folderNameRequired?: string;
+    folderCreated?: string;
+    createFailed?: string;
+    uploadFiles?: string;
+    uploading?: string;
+    releaseToUpload?: string;
+    dropFilesHere?: string;
+    chooseFiles?: string;
+    loading?: string;
+    loadingFiles?: string;
+    uploadedCount?: string;
+    uploadFailed?: string;
+    downloadFailed?: string;
+    deleted?: string;
+    deleteFailed?: string;
+    name?: string;
+    size?: string;
+    modified?: string;
+    actions?: string;
+    noFiles?: string;
+    openNamed?: string;
+    downloadNamed?: string;
+    deleteNamed?: string;
+    deleteItemTitle?: string;
+    deleteNamedTitle?: string;
+    deleteFolderDescription?: string;
+    deleteFileDescription?: string;
+    target?: string;
   };
 }

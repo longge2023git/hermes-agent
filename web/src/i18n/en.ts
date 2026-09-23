@@ -398,6 +398,28 @@ export const en: Translations = {
       noneConfigured:
         "No messaging platforms configured. Set one up under Channels to deliver reports.",
     },
+    // ── fa fork: strings on the cron page that had bypassed i18n ──
+    advancedFields: "Advanced fields",
+    provider: "Provider",
+    model: "Model",
+    /** Empty <option> label in the provider/model selects. */
+    defaultOption: "Default",
+    baseUrlOverride: "Base URL override",
+    script: "Script",
+    workdir: "Workdir",
+    contextFromPlaceholder: "one job id per line",
+    noToolsets: "No toolsets available.",
+    skillsOptional: "Skills (optional)",
+    noSkills: "No skills installed for this profile.",
+    skillsHint:
+      "Selected skills are loaded before the prompt runs — the cron sets when, the skill sets how.",
+    viewJobs: "Jobs",
+    viewBlueprints: "Blueprints",
+    profile: "Profile",
+    allProfiles: "All profiles",
+    editJob: "Edit job",
+    saveChanges: "Save changes",
+    savedChanges: "Saved changes",
   },
 
   profiles: {
@@ -1425,5 +1447,51 @@ export const en: Translations = {
     badgeAllEvents: "(all)",
     enable: "Enable",
     disable: "Disable",
+  },
+
+  // ── Files page (web) ─────────────────────────────────────────────────
+  // fa fork: every user-visible string on the page went through i18n.
+  // Optional in types.ts (whole namespace) so untranslated locales keep
+  // compiling; the page falls back to the English literal.
+  filesPage: {
+    refreshFiles: "Refresh files",
+    path: "Path",
+    pathRequired: "Path required",
+    directoryUnavailable: "Directory unavailable",
+    go: "Go",
+    upload: "Upload",
+    createFolder: "Create folder",
+    folderName: "Folder name",
+    folderNameRequired: "Folder name required",
+    folderCreated: "Folder created",
+    createFailed: "Create failed:",
+    uploadFiles: "Upload files",
+    uploading: "Uploading",
+    releaseToUpload: "Release to upload",
+    dropFilesHere: "Drop files here",
+    chooseFiles: "Choose files",
+    loading: "Loading",
+    loadingFiles: "Loading files...",
+    /** "{count}" = number of files, "{s}" = English plural suffix. */
+    uploadedCount: "{count} file{s} uploaded",
+    uploadFailed: "Upload failed:",
+    downloadFailed: "Download failed:",
+    deleted: "Deleted",
+    deleteFailed: "Delete failed:",
+    name: "Name",
+    size: "Size",
+    modified: "Modified",
+    actions: "Actions",
+    noFiles: "No files",
+    /** "{name}" = the entry's file/folder name. */
+    openNamed: "Open {name}",
+    downloadNamed: "Download {name}",
+    deleteNamed: "Delete {name}",
+    deleteItemTitle: "Delete item?",
+    deleteNamedTitle: "Delete {name}?",
+    deleteFolderDescription: "This removes the folder and everything inside it.",
+    deleteFileDescription: "This removes the file.",
+    /** "{path}" = the directory being created in. */
+    target: "Target: {path}",
   },
 };

@@ -37,7 +37,14 @@ interface ReferenceStyle {
   codicon: string
   /** Tabler outline path data — the inline SVG a rendered reference uses. */
   paths: string[]
-  /** Section label when a surface groups by this kind. */
+  /** Section label when a surface groups by this kind.
+   *
+   *  This English word is the FALLBACK, not the surface copy: a surface that
+   *  renders it resolves `t.referenceKinds[<kind>]` first — the table's key IS
+   *  the i18n key, so nothing has to be kept in sync by hand. It stays here
+   *  because this table is also read where there is no React in scope (the
+   *  contract tests, any server-side render) and because `ReferenceKind` and
+   *  this word are the one vocabulary the two surfaces share. */
   label: string
 }
 
