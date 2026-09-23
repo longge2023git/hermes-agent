@@ -115,7 +115,7 @@ export const fa = defineLocale({
       channels: 'کانال‌ها',
       chat: 'گفت‌وگو',
       config: 'پیکربندی',
-      cron: 'cron',
+      cron: 'CRON',
       documentation: 'مستندات',
       files: 'فایل‌ها',
       keys: 'کلیدها',
