@@ -331,6 +331,12 @@ export interface Translations {
     startSession: string;
     settingsTitle?: string;
     expensiveModelWarning?: string;
+    auxSummaryTitle?: string;
+    auxSummaryAllAuto?: (n: number) => string;
+    moaTitle?: string;
+    moaNotLoaded?: string;
+    configure?: string;
+    setMainModel?: string;
     cacheRead?: string;
     reasoning?: string;
     input?: string;

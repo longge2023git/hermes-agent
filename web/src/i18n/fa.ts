@@ -303,6 +303,12 @@ export const fa = defineLocale({
   models: {
     settingsTitle: 'تنظیمات مدل',
     expensiveModelWarning: 'هشدار مدل گران',
+    auxSummaryTitle: 'کارهای کمکی',
+    auxSummaryAllAuto: n => `${n} کار · همه خودکار`,
+    moaTitle: 'ترکیب عوامل',
+    moaNotLoaded: 'بارگذاری نشده',
+    configure: 'پیکربندی',
+    setMainModel: 'تعیین مدل اصلی',
     cacheRead: 'خوانده‌شده از کش',
     reasoning: 'استدلال',
     input: 'ورودی',

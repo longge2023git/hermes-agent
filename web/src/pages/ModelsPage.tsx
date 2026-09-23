@@ -1028,13 +1028,13 @@ function ModelSettingsPanel({
             <div className="flex items-center gap-2 mb-0.5">
               <Cpu className="h-3 w-3 text-text-tertiary" />
               <span className="text-display text-xs font-medium tracking-wider">
-                Auxiliary tasks
+                 {t.models.auxSummaryTitle ?? "Auxiliary tasks"}
               </span>
             </div>
             <div className="text-xs font-mono text-text-secondary truncate">
               {auxOverrideCount > 0
                 ? `${auxOverrideCount} override${auxOverrideCount > 1 ? "s" : ""} · ${AUX_TASKS.length - auxOverrideCount} auto`
-                : `${AUX_TASKS.length} tasks · all auto`}
+                : (t.models.auxSummaryAllAuto?.(AUX_TASKS.length) ?? `${AUX_TASKS.length} tasks · all auto`)}
             </div>
           </div>
           <Button
@@ -1043,7 +1043,7 @@ function ModelSettingsPanel({
             onClick={() => setAuxModalOpen(true)}
             className="shrink-0 self-start text-xs uppercase sm:self-center"
           >
-            Configure
+            {t.models.configure ?? "Configure"}
           </Button>
         </div>
 
@@ -1052,13 +1052,13 @@ function ModelSettingsPanel({
             <div className="flex items-center gap-2 mb-0.5">
               <Brain className="h-3 w-3 text-text-tertiary" />
               <span className="text-display text-xs font-medium tracking-wider">
-                Mixture of Agents
+                 {t.models.moaTitle ?? "Mixture of Agents"}
               </span>
             </div>
             <div className="text-xs font-mono text-text-secondary truncate">
               {moa
                 ? `${moa.reference_models.length} reference${moa.reference_models.length === 1 ? "" : "s"} · ${moa.aggregator.provider}/${shortModelName(moa.aggregator.model)}`
-                : "not loaded"}
+                 : (t.models.moaNotLoaded ?? "not loaded")}
             </div>
           </div>
           <Button
@@ -1077,7 +1077,7 @@ function ModelSettingsPanel({
             key={`picker-${refreshKey}`}
             loader={api.getModelOptions}
             alwaysGlobal
-            title="Set Main Model"
+            title={t.models.setMainModel ?? "Set Main Model"}
             onApply={async ({ provider, model, confirmExpensiveModel }) => {
               const result = await applyAssignment({
                 confirmExpensiveModel,

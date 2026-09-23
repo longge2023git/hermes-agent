@@ -301,6 +301,12 @@ export const en: Translations = {
   models: {
     settingsTitle: "Model Settings",
     expensiveModelWarning: "Expensive Model Warning",
+    auxSummaryTitle: "Auxiliary tasks",
+    auxSummaryAllAuto: (n: number) => `${n} tasks · all auto`,
+    moaTitle: "Mixture of Agents",
+    moaNotLoaded: "not loaded",
+    configure: "Configure",
+    setMainModel: "Set Main Model",
     cacheRead: "Cache Read",
     reasoning: "Reasoning",
     input: "Input",
