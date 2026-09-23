@@ -51,18 +51,18 @@ const PERIODS = [
 ] as const;
 
 // Must match _AUX_TASK_SLOTS in hermes_cli/web_server.py.
-const AUX_TASKS: readonly { key: string; label: string; hint: string }[] = [
-  { key: "vision", label: "Vision", hint: "Image analysis" },
-  { key: "compression", label: "Compression", hint: "Context compaction" },
-  { key: "skills_hub", label: "Skills Hub", hint: "Skill search" },
-  { key: "approval", label: "Approval", hint: "Smart auto-approve" },
-  { key: "mcp", label: "MCP", hint: "MCP tool routing" },
-  { key: "title_generation", label: "Title Gen", hint: "Session titles" },
-  { key: "review", label: "Review", hint: "/review subagent" },
-  { key: "triage_specifier", label: "Triage Specifier", hint: "Kanban spec fleshing" },
-  { key: "kanban_decomposer", label: "Kanban Decomposer", hint: "Task decomposition" },
-  { key: "profile_describer", label: "Profile Describer", hint: "Auto profile descriptions" },
-  { key: "curator", label: "Curator", hint: "Skill-usage review" },
+const AUX_TASKS = [
+  "vision",
+  "compression",
+  "skills_hub",
+  "approval",
+  "mcp",
+  "title_generation",
+  "review",
+  "triage_specifier",
+  "kanban_decomposer",
+  "profile_describer",
+  "curator",
 ] as const;
 
 function formatTokens(n: number): string {
@@ -113,10 +113,10 @@ function TokenBar({
   // color-mix on the same value so themes don't need to ship two
   // separate hex literals.
   const segments: Array<{ color: string; label: string; value: number }> = [
-    { value: cacheRead, color: "#60a5fa", label: "Cache Read" }, // tailwind blue-400
-    { value: reasoning, color: "#c084fc", label: "Reasoning" }, // tailwind purple-400
-    { value: input, color: "var(--series-input-token)", label: "Input" },
-    { value: output, color: "var(--series-output-token)", label: "Output" },
+    { value: cacheRead, color: "#60a5fa", label: t.models.cacheRead }, // tailwind blue-400
+    { value: reasoning, color: "#c084fc", label: t.models.reasoning }, // tailwind purple-400
+    { value: input, color: "var(--series-input-token)", label: t.models.input },
+    { value: output, color: "var(--series-output-token)", label: t.models.output },
   ].filter((s) => s.value > 0);
 
   return (
@@ -316,21 +316,21 @@ function UseAsMenu({
             disabled={busy}
             className="flex w-full items-center justify-between px-3 py-1.5 text-xs uppercase hover:bg-muted/50 disabled:opacity-40"
           >
-            <span>All auxiliary tasks</span>
+            <span>{t.common.allAuxTasks}</span>
           </button>
 
-          {AUX_TASKS.map((t) => (
+          {AUX_TASKS.map((task) => (
             <button
-              key={t.key}
+              key={task}
               type="button"
-              onClick={() => assign("auxiliary", t.key)}
+              onClick={() => assign("auxiliary", task)}
               disabled={busy}
               className="flex w-full items-center justify-between px-3 py-1.5 text-xs uppercase hover:bg-muted/50 disabled:opacity-40"
             >
-              <span>{t.label}</span>
-              {mainAuxTask === t.key && (
+              <span>{t.auxTasks[task]}</span>
+              {mainAuxTask === task && (
                 <span className="text-display text-xs tracking-wider text-primary">
-                  current
+                  {t.common.current}
                 </span>
               )}
             </button>
@@ -628,20 +628,20 @@ function AuxiliaryTasksModal({
         </header>
 
         <div className="flex-1 overflow-y-auto p-5 space-y-1">
-          {AUX_TASKS.map((t) => {
-            const cur = aux?.tasks.find((a) => a.task === t.key);
+          {AUX_TASKS.map((task) => {
+            const cur = aux?.tasks.find((a) => a.task === task);
             const isAuto =
               !cur || cur.provider === "auto" || !cur.provider;
             return (
               <div
-                key={t.key}
+                key={task}
                 className="flex items-center justify-between gap-3 px-3 py-2 border border-border/30 bg-card/50 hover:bg-muted/20 transition-colors"
               >
                 <div className="min-w-0 flex-1">
                   <div className="flex items-baseline gap-2">
-                    <span className="text-xs font-medium">{t.label}</span>
+                    <span className="text-xs font-medium">{t.auxTasks[task]}</span>
                     <span className="text-xs text-text-tertiary">
-                      {t.hint}
+                      {t.auxTasks[`${task}Hint`]}
                     </span>
                   </div>
                   <div className="text-xs font-mono text-text-secondary truncate">
@@ -669,7 +669,7 @@ function AuxiliaryTasksModal({
             loader={api.getModelOptions}
             alwaysGlobal
             title={`Set Auxiliary: ${
-              AUX_TASKS.find((t) => t.key === picker.task)?.label ??
+              t.auxTasks[picker.task] ??
               picker.task
             }`}
             onApply={async ({ provider, model, confirmExpensiveModel }) => {

@@ -11,7 +11,33 @@ import { defineLocale } from './define-locale'
  */
 
 export const fa = defineLocale({
+  auxTasks: {
+    vision: 'بینایی',
+    visionHint: 'تحلیل تصویر',
+    compression: 'فشرده‌سازی',
+    compressionHint: 'فشرده‌سازی کانتکست',
+    skills_hub: 'مرکز مهارت‌ها',
+    skills_hubHint: 'جست‌و‌جوی مهارت',
+    approval: 'تأیید',
+    approvalHint: 'تأیید خودکار هوشمند',
+    mcp: 'MCP',
+    mcpHint: 'مسیریابی ابزارهای MCP',
+    title_generation: 'تولید عنوان',
+    title_generationHint: 'عنوان نشست‌ها',
+    review: 'بازبینی',
+    reviewHint: 'زیرعامل /review',
+    triage_specifier: 'مشخص‌کننده ورودی',
+    triage_specifierHint: 'تکمیل مشخصات کانبان',
+    kanban_decomposer: 'تجزیه‌کننده کانبان',
+    kanban_decomposerHint: 'تجزیه وظایف',
+    profile_describer: 'توصیف‌گر پروفایل',
+    profile_describerHint: 'توصیف خودکار پروفایل‌ها',
+    curator: 'سرپرست مهارت‌ها',
+    curatorHint: 'بازبینی مصرف مهارت‌ها'
+  },
   common: {
+    allAuxTasks: 'همه وظایف کمکی',
+    current: 'فعلی',
     appliesToNewSessions: 'روی نشست‌های جدید اعمال می‌شود',
     save: 'ذخیره',
     saving: 'در حال ذخیره...',
@@ -242,6 +268,10 @@ export const fa = defineLocale({
   },
   models: {
     settingsTitle: 'تنظیمات مدل',
+    cacheRead: 'خوانده‌شده از کش',
+    reasoning: 'استدلال',
+    input: 'ورودی',
+    output: 'خروجی',
     modelsUsed: 'مدل‌های استفاده‌شده',
     estimatedCost: 'هزینه تخمینی',
     tokens: 'توکن‌ها',

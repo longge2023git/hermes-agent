@@ -1,7 +1,33 @@
 import type { Translations } from "./types";
 
 export const en: Translations = {
+  auxTasks: {
+    vision: "Vision",
+    visionHint: "Image analysis",
+    compression: "Compression",
+    compressionHint: "Context compaction",
+    skills_hub: "Skills Hub",
+    skills_hubHint: "Skill search",
+    approval: "Approval",
+    approvalHint: "Smart auto-approve",
+    mcp: "MCP",
+    mcpHint: "MCP tool routing",
+    title_generation: "Title Gen",
+    title_generationHint: "Session titles",
+    review: "Review",
+    reviewHint: "/review subagent",
+    triage_specifier: "Triage Specifier",
+    triage_specifierHint: "Kanban spec fleshing",
+    kanban_decomposer: "Kanban Decomposer",
+    kanban_decomposerHint: "Task decomposition",
+    profile_describer: "Profile Describer",
+    profile_describerHint: "Auto profile descriptions",
+    curator: "Curator",
+    curatorHint: "Skill-usage review",
+  },
   common: {
+    allAuxTasks: "All auxiliary tasks",
+    current: "current",
     appliesToNewSessions: "applies to new sessions",
     save: "Save",
     saving: "Saving...",
@@ -240,6 +266,10 @@ export const en: Translations = {
 
   models: {
     settingsTitle: "Model Settings",
+    cacheRead: "Cache Read",
+    reasoning: "Reasoning",
+    input: "Input",
+    output: "Output",
     modelsUsed: "Models Used",
     estimatedCost: "Est. Cost",
     tokens: "tokens",
