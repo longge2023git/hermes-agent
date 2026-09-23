@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 
+import { translateNow } from '@/i18n'
 import { fmtDate } from '@/lib/time'
 import { FREE_TIER_MODEL } from '@/store/free-tier'
 import { openFreeTierSignIn } from '@/store/free-tier-sign-in'
@@ -32,7 +33,10 @@ const BILLING_QUERY_OPTIONS = {
 } as const
 
 export interface BillingSummaryItemView {
-  label: 'Auto-refill' | 'Balance' | 'Connectors' | 'Model' | 'Plan'
+  /** Copy, not state: each locale owns its own label text, so this is a plain
+   *  string (it used to be a union of the five English labels). Consumers key
+   *  the row on `value`, never on the label. */
+  label: string
   tone?: 'muted' | 'primary'
   value: string
 }
@@ -222,9 +226,12 @@ export function deriveBillingView(
   if (!billing.logged_in || subscription?.logged_in === false) {
     return {
       notice: {
-        action: { label: 'Open portal ↗', url: billing.portal_url ?? subscription?.portal_url ?? FALLBACK_PORTAL_URL },
-        message: 'Run /portal in the TUI or open the Nous portal to connect your account.',
-        title: 'Connect your Nous account'
+        action: {
+          label: translateNow('billing.notice.openPortal'),
+          url: billing.portal_url ?? subscription?.portal_url ?? FALLBACK_PORTAL_URL
+        },
+        message: translateNow('billing.notice.connectBody'),
+        title: translateNow('billing.notice.connectTitle')
       },
       status: 'logged_out',
       summary: emptySummary(),
@@ -249,12 +256,16 @@ export function deriveBillingView(
     refillRow: autoReloadRow(billing),
     status: 'normal',
     summary: [
-      { label: 'Balance', value: displayBalance(billing) },
-      { label: 'Plan', value: displayPlan(subscription, billing.usage) },
+      { label: translateNow('billing.summary.balance'), value: displayBalance(billing) },
+      { label: translateNow('billing.summary.plan'), value: displayPlan(subscription, billing.usage) },
       {
-        label: 'Auto-refill',
+        label: translateNow('billing.summary.autoRefill'),
         tone: billing.auto_reload?.enabled ? 'primary' : billing.auto_reload ? 'muted' : undefined,
-        value: billing.auto_reload ? (billing.auto_reload.enabled ? 'Enabled' : 'Off') : EMPTY_BILLING_VALUE
+        value: billing.auto_reload
+          ? billing.auto_reload.enabled
+            ? translateNow('billing.value.enabled')
+            : translateNow('billing.value.off')
+          : EMPTY_BILLING_VALUE
       }
     ],
     tiers,
@@ -314,9 +325,9 @@ export function formatBillingDate(value?: null | string): string {
 
 function emptySummary(): BillingSummaryItemView[] {
   return [
-    { label: 'Balance', value: EMPTY_BILLING_VALUE },
-    { label: 'Plan', value: EMPTY_BILLING_VALUE },
-    { label: 'Auto-refill', value: EMPTY_BILLING_VALUE }
+    { label: translateNow('billing.summary.balance'), value: EMPTY_BILLING_VALUE },
+    { label: translateNow('billing.summary.plan'), value: EMPTY_BILLING_VALUE },
+    { label: translateNow('billing.summary.autoRefill'), value: EMPTY_BILLING_VALUE }
   ]
 }
 
@@ -329,23 +340,25 @@ function emptySummary(): BillingSummaryItemView[] {
 function freeTierView(billing: BillingStateResponse): BillingView {
   return {
     notice: {
-      action: { label: 'Sign in', onSelect: openFreeTierSignIn },
-      message: 'Sign in with a Nous account to unlock more models and tools.',
-      title: "You're on the Nous free tier",
+      action: { label: translateNow('billing.notice.signIn'), onSelect: openFreeTierSignIn },
+      message: translateNow('billing.notice.freeTierBody'),
+      title: translateNow('billing.notice.freeTierTitle'),
       tone: 'info'
     },
     plan: {
-      caption:
-        'Runs on nous/welcome with connectors included. Signing in keeps your connectors and adds the tools that need an account and every other model.',
-      tierName: 'Nous · free tier'
+      caption: translateNow('billing.plan.freeTierCaption'),
+      tierName: translateNow('billing.plan.freeTierName')
     },
-    planFootnote:
-      'The free tier has no balance and nothing to pay. Payment and usage appear when you sign in with a Nous account.',
+    planFootnote: translateNow('billing.plan.freeTierFootnote'),
     status: 'free_tier',
     summary: [
-      { label: 'Plan', value: 'Free tier' },
-      { label: 'Model', value: billing.free_tier_model ?? FREE_TIER_MODEL },
-      { label: 'Connectors', tone: 'primary', value: 'Included' }
+      { label: translateNow('billing.summary.plan'), value: translateNow('billing.value.freeTier') },
+      { label: translateNow('billing.summary.model'), value: billing.free_tier_model ?? FREE_TIER_MODEL },
+      {
+        label: translateNow('billing.summary.connectors'),
+        tone: 'primary',
+        value: translateNow('billing.value.included')
+      }
     ],
     tiers: [],
     usageRows: []
@@ -357,7 +370,7 @@ function refusalNotice(refusal: BillingRefusal): BillingNoticeView {
   const portalUrl = resolved.action.type === 'portal' ? resolved.action.url : undefined
 
   return {
-    action: portalUrl ? { label: 'Open portal ↗', url: portalUrl } : undefined,
+    action: portalUrl ? { label: translateNow('billing.notice.openPortal'), url: portalUrl } : undefined,
     message: resolved.message,
     title: resolved.title,
     tone: 'warn'
@@ -373,9 +386,9 @@ function noCardNotice(billing: BillingStateResponse): BillingNoticeView | undefi
   }
 
   return {
-    action: { label: 'Add card ↗', url: billing.portal_url ?? FALLBACK_PORTAL_BILLING_URL },
-    message: 'Buying top-up credits and auto-refill stay disabled until a card is on file. Add one on the portal.',
-    title: 'No payment method on file',
+    action: { label: translateNow('billing.notice.addCard'), url: billing.portal_url ?? FALLBACK_PORTAL_BILLING_URL },
+    message: translateNow('billing.notice.noPaymentMethodBody'),
+    title: translateNow('billing.notice.noPaymentMethodTitle'),
     tone: 'warn'
   }
 }
@@ -442,7 +455,7 @@ function derivePlanCard(
   pending: PendingPlanTransition | undefined
 ): BillingPlanCardView {
   const current = subscription?.current
-  const tierName = current?.tier_name ?? billing.usage?.plan_name ?? 'Free'
+  const tierName = current?.tier_name ?? billing.usage?.plan_name ?? translateNow('billing.plan.fallbackName')
   // Price resolves against the UNFILTERED catalog so a grandfathered current tier
   // still shows its price.
   const price = findCurrentTier(subscription)?.dollars_per_month_display
@@ -450,14 +463,14 @@ function derivePlanCard(
   const unavailable = subscriptionResult ? !subscriptionResult.ok : false
 
   const caption = unavailable
-    ? 'Subscription details are unavailable; opening the portal is still available.'
+    ? translateNow('billing.plan.unavailable')
     : pending
       ? pending.kind === 'downgrade'
-        ? `Changes to ${pending.tierName} on ${pending.when}.`
-        : `Cancels on ${pending.when}.`
+        ? translateNow('billing.plan.scheduledChange', pending.tierName, pending.when)
+        : translateNow('billing.plan.scheduledCancellation', pending.when)
       : current
-        ? `Renews ${renewal}`
-        : 'No active subscription — paid models draw down top-up credits.'
+        ? translateNow('billing.plan.renewal', renewal)
+        : translateNow('billing.plan.noSubscription')
 
   // Actionable = a paid tier above (upgrade) or an in-app downgrade below the current
   // one. Ticket 11 counts downgrades (they act in-app, so they carry no `action`); a
@@ -465,14 +478,20 @@ function derivePlanCard(
   const hasActionableTier = tiers.some(tier => tier.state === 'upgrade' || tier.state === 'downgrade')
 
   if (capable && hasActionableTier) {
-    return { action: { label: current ? 'Change plan' : 'View plans' }, caption, pending, price, tierName }
+    return {
+      action: { label: current ? translateNow('billing.plan.change') : translateNow('billing.plan.view') },
+      caption,
+      pending,
+      price,
+      tierName
+    }
   }
 
   return {
     caption,
     // No in-app action → always hand off to the portal so the user isn't stranded.
     link: {
-      label: 'Adjust plan ↗',
+      label: translateNow('billing.plan.adjust'),
       url: buildManageSubscriptionUrl(subscription, subscription?.portal_url ?? billing.portal_url)
     },
     pending,
@@ -584,7 +603,10 @@ function derivePlanTiers(
 
     return {
       ...base,
-      action: { label: 'Choose ↗', url: buildManageSubscriptionUrl(subscription, manageBase, tier.tier_id) },
+      action: {
+        label: translateNow('billing.plan.choose'),
+        url: buildManageSubscriptionUrl(subscription, manageBase, tier.tier_id)
+      },
       state: 'upgrade'
     }
   })
@@ -599,18 +621,18 @@ function paymentMethodRow(billing: BillingStateResponse): BillingAccountRowView 
     // it. The reason (buys/auto-refill are blocked) already leads the page as a
     // notice, so the row stays a bare call-to-action with no redundant status text.
     return {
-      action: { label: 'Add payment method', url: portalUrl },
+      action: { label: translateNow('billing.payment.add'), url: portalUrl },
       description: '',
       id: 'payment_method',
-      title: 'Payment method'
+      title: translateNow('billing.payment.title')
     }
   }
 
   return {
-    action: { label: 'Update', url: portalUrl },
-    description: 'Manage the card used for top-ups and subscription renewals.',
+    action: { label: translateNow('billing.payment.update'), url: portalUrl },
+    description: translateNow('billing.payment.description'),
     id: 'payment_method',
-    title: 'Payment method',
+    title: translateNow('billing.payment.title'),
     value: `${capitalize(card.brand)} •••• ${card.last4}${provenanceSuffix(card.resolved_via)}`
   }
 }
@@ -621,11 +643,11 @@ function buyCreditsRow(billing: BillingStateResponse): BillingAccountRowView {
     // (noCardNotice); repeating it here — emoji and all — just clutters the row,
     // so keep the plain "what buying does" line and let the controls sit disabled.
     return {
-      action: { disabled: true, label: 'Buy' },
+      action: { disabled: true, label: translateNow('billing.credits.buy') },
       chips: billing.charge_presets.map(amount => ({ disabled: true, label: formatMoney(amount) })),
-      description: 'A single charge on your card, added to your balance today.',
+      description: translateNow('billing.credits.buyDescription'),
       id: 'buy_credits',
-      title: 'Buy credits now'
+      title: translateNow('billing.credits.buyTitle')
     }
   }
 
@@ -635,45 +657,47 @@ function buyCreditsRow(billing: BillingStateResponse): BillingAccountRowView {
     return {
       description: disabledReason,
       id: 'buy_credits',
-      title: 'Buy credits now'
+      title: translateNow('billing.credits.buyTitle')
     }
   }
 
   return {
-    action: { disabled: true, label: 'Buy' },
+    action: { disabled: true, label: translateNow('billing.credits.buy') },
     chips: billing.charge_presets.map(amount => ({ disabled: true, label: formatMoney(amount) })),
-    description: 'A single charge on your card, added to your balance today.',
+    description: translateNow('billing.credits.buyDescription'),
     id: 'buy_credits',
-    title: 'Buy credits now'
+    title: translateNow('billing.credits.buyTitle')
   }
 }
 
 // The generic first sentence shared by the off / absent / divergent states,
 // where the concrete amounts aren't the headline. The configured state overrides
 // this with the disambiguating "Charges $X … below $Y." sentence (spec §8).
-const AUTO_REFILL_GENERIC = 'Keep your balance topped up when it drops below your threshold.'
+// A function rather than a module constant: module scope has no hook to subscribe
+// with, so resolving on each call is what picks up the active locale.
+const autoRefillDescription = () => translateNow('billing.refill.description')
 
 function autoReloadRow(billing: BillingStateResponse): BillingAccountRowView {
   const autoReload = billing.auto_reload
 
   if (!autoReload) {
     return {
-      action: { disabled: true, label: 'Manage' },
-      caption: 'Manage auto-refill from the portal.',
-      description: AUTO_REFILL_GENERIC,
+      action: { disabled: true, label: translateNow('billing.refill.manage') },
+      caption: translateNow('billing.refill.captionPortal'),
+      description: autoRefillDescription(),
       id: 'auto_reload',
       pill: { label: EMPTY_BILLING_VALUE, tone: 'muted' },
-      title: 'Refill when low'
+      title: translateNow('billing.refill.title')
     }
   }
 
   if (!autoReload.enabled) {
     return {
-      caption: 'Turn on auto-refill from the portal',
-      description: AUTO_REFILL_GENERIC,
+      caption: translateNow('billing.refill.captionTurnOn'),
+      description: autoRefillDescription(),
       id: 'auto_reload',
-      pill: { label: 'Off', tone: 'muted' },
-      title: 'Refill when low'
+      pill: { label: translateNow('billing.value.off'), tone: 'muted' },
+      title: translateNow('billing.refill.title')
     }
   }
 
@@ -681,16 +705,16 @@ function autoReloadRow(billing: BillingStateResponse): BillingAccountRowView {
   // the default enabled path below — the same treatment as a canonical card.
   if (autoReload.card?.kind === 'distinct') {
     const { brand, last4 } = autoReload.card
-    const cardLabel = brand && last4 ? `${capitalize(brand)} ••${last4}` : 'a different card'
+    const cardLabel = brand && last4 ? `${capitalize(brand)} ••${last4}` : translateNow('billing.refill.differentCard')
     const portalUrl = billing.portal_url ?? FALLBACK_PORTAL_BILLING_URL
 
     return {
-      action: { label: 'Reconcile ↗', url: portalUrl },
-      caption: `Auto-refill charges ${cardLabel} — reconcile on the portal`,
-      description: AUTO_REFILL_GENERIC,
+      action: { label: translateNow('billing.refill.reconcile'), url: portalUrl },
+      caption: translateNow('billing.refill.reconciliation', cardLabel),
+      description: autoRefillDescription(),
       id: 'auto_reload',
-      pill: { label: 'Enabled', tone: 'primary' },
-      title: 'Refill when low'
+      pill: { label: translateNow('billing.value.enabled'), tone: 'primary' },
+      title: translateNow('billing.refill.title')
     }
   }
 
@@ -698,16 +722,16 @@ function autoReloadRow(billing: BillingStateResponse): BillingAccountRowView {
   const threshold = autoReload.threshold_display || formatMoney(autoReload.threshold_usd)
 
   return {
-    action: { label: 'Manage' },
+    action: { label: translateNow('billing.refill.manage') },
     // Numbers live in the first sentence (spec §8); the swap region below carries
     // the editable fields, so no redundant caption here.
-    description: `Charges ${reloadTo} automatically when your balance falls below ${threshold}.`,
+    description: translateNow('billing.refill.schedule', reloadTo, threshold),
     id: 'auto_reload',
     // The only row that edits in place — AutoReloadRow keys its swap layout off this
     // flag rather than sniffing the action label.
     manageInApp: true,
-    pill: { label: 'Enabled', tone: 'primary' },
-    title: 'Refill when low'
+    pill: { label: translateNow('billing.value.enabled'), tone: 'primary' },
+    title: translateNow('billing.refill.title')
   }
 }
 
@@ -726,8 +750,13 @@ function deriveUsageRows(
   const subscriptionValue =
     remaining != null && monthly != null
       ? remaining < 0
-        ? `${formatMoney(0)} of ${formatMoney(monthly)} left · ${formatMoney(Math.abs(remaining))} over`
-        : `${formatMoney(remaining)} of ${formatMoney(monthly)} left`
+        ? translateNow(
+            'billing.usage.subscriptionLeftOver',
+            formatMoney(0),
+            formatMoney(monthly),
+            formatMoney(Math.abs(remaining))
+          )
+        : translateNow('billing.usage.subscriptionLeft', formatMoney(remaining), formatMoney(monthly))
       : (usage?.subscription_remaining_display ?? usage?.plan_bar?.remaining_display ?? EMPTY_BILLING_VALUE)
 
   const remainingFraction = remaining != null && monthly != null && monthly > 0 ? remaining / monthly : null
@@ -736,16 +765,16 @@ function deriveUsageRows(
     bar:
       remainingFraction != null
         ? {
-            label: 'Subscription credits remaining',
+            label: translateNow('billing.usage.subscriptionBarLabel'),
             state: remainingFraction <= 0.1 ? 'danger' : 'ok',
             tone: 'subscription',
             track: remaining != null && remaining <= 0 ? 'danger' : undefined,
             value: clamp01(remainingFraction)
           }
         : undefined,
-    caption: `Resets ${formatBillingDate(current?.cycle_ends_at ?? usage?.renews_at)}`,
+    caption: translateNow('billing.usage.reset', formatBillingDate(current?.cycle_ends_at ?? usage?.renews_at)),
     id: 'subscription_credits',
-    title: 'Subscription credits',
+    title: translateNow('billing.usage.subscriptionTitle'),
     value: subscriptionValue
   })
 
@@ -754,9 +783,9 @@ function deriveUsageRows(
   // No bar: top-ups have no denominator (the wire carries only the current
   // balance, and the pool is open-ended), so a fill fraction would be fiction.
   rows.push({
-    caption: 'Does not expire',
+    caption: translateNow('billing.usage.topupCaption'),
     id: 'topup_credits',
-    title: 'Top-up credits',
+    title: translateNow('billing.usage.topupTitle'),
     value: topupValue
   })
 
@@ -766,22 +795,28 @@ function deriveUsageRows(
     const limit = parseAmount(cap.limit_usd)
     const spent = parseAmount(cap.spent_this_month_usd) ?? 0
     const usedFraction = limit != null && limit > 0 ? spent / limit : null
-    const value = `${cap.spent_display || formatMoney(spent)} of ${cap.limit_display || formatMoney(limit)} used`
+    const value = translateNow(
+      'billing.usage.capSpentOfLimit',
+      cap.spent_display || formatMoney(spent),
+      cap.limit_display || formatMoney(limit)
+    )
 
     rows.push({
       bar:
         usedFraction != null
           ? {
-              label: 'Monthly spend cap used',
+              label: translateNow('billing.usage.capUsed'),
               state: usedFraction >= 0.9 ? 'danger' : 'ok',
               tone: 'cap',
               track: usedFraction >= 1 ? 'danger' : undefined,
               value: clamp01(usedFraction)
             }
           : undefined,
-      caption: cap.is_default_ceiling ? 'Default ceiling' : 'Monthly remote spending',
+      caption: cap.is_default_ceiling
+        ? translateNow('billing.usage.capDefaultCeiling')
+        : translateNow('billing.usage.capRemote'),
       id: 'monthly_cap',
-      title: 'Monthly spend cap',
+      title: translateNow('billing.usage.capTitle'),
       value
     })
   }
@@ -838,10 +873,12 @@ function provenanceSuffix(resolvedVia?: null | string): string {
     return ''
   }
 
+  // `resolvedVia` itself is a backend value (compared, never rendered) and stays
+  // the record key; only the label printed beside the card is copy.
   const labels: Record<string, string> = {
-    autoRefill: 'auto-refill card',
-    customerDefault: 'customer default',
-    subPin: 'subscription card'
+    autoRefill: translateNow('billing.payment.provenanceAutoRefill'),
+    customerDefault: translateNow('billing.payment.provenanceCustomerDefault'),
+    subPin: translateNow('billing.payment.provenanceSubscription')
   }
 
   return ` - ${labels[resolvedVia] ?? resolvedVia}`

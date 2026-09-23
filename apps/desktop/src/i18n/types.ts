@@ -391,6 +391,137 @@ export interface Translations {
     dismiss: string
   }
 
+  /** Billing settings page copy. Both producers build their strings at module
+   *  scope — `app/settings/billing/use-billing-state.ts` (the account / plan /
+   *  usage view model) and `app/settings/billing/errors.ts` (refusal copy) — and
+   *  resolve them through `translateNow`, because neither has a React hook to
+   *  read. Values are plain strings and functions, never hook reads.
+   *
+   *  Backend enums that are COMPARED rather than shown (`refusal.kind`,
+   *  `card.resolved_via`, `action.type`) are state, not copy, and stay literal in
+   *  the source. Optional so a locale that predates the billing page keeps
+   *  rendering (English fallback); `en` ships them all. */
+  billing?: {
+    summary?: {
+      autoRefill?: string
+      balance?: string
+      connectors?: string
+      model?: string
+      plan?: string
+    }
+    value?: {
+      enabled?: string
+      freeTier?: string
+      included?: string
+      off?: string
+    }
+    notice?: {
+      addCard?: string
+      connectBody?: string
+      connectTitle?: string
+      freeTierBody?: string
+      freeTierTitle?: string
+      noPaymentMethodBody?: string
+      noPaymentMethodTitle?: string
+      openPortal?: string
+      signIn?: string
+    }
+    plan?: {
+      adjust?: string
+      change?: string
+      choose?: string
+      fallbackName?: string
+      freeTierCaption?: string
+      freeTierFootnote?: string
+      freeTierName?: string
+      noSubscription?: string
+      renewal?: (date: string) => string
+      scheduledCancellation?: (when: string) => string
+      scheduledChange?: (tier: string, when: string) => string
+      unavailable?: string
+      view?: string
+    }
+    payment?: {
+      add?: string
+      description?: string
+      provenanceAutoRefill?: string
+      provenanceCustomerDefault?: string
+      provenanceSubscription?: string
+      title?: string
+      update?: string
+    }
+    credits?: {
+      buy?: string
+      buyDescription?: string
+      buyTitle?: string
+    }
+    refill?: {
+      captionPortal?: string
+      captionTurnOn?: string
+      description?: string
+      differentCard?: string
+      manage?: string
+      reconcile?: string
+      reconciliation?: (card: string) => string
+      schedule?: (amount: string, threshold: string) => string
+      title?: string
+    }
+    usage?: {
+      capDefaultCeiling?: string
+      capRemote?: string
+      capSpentOfLimit?: (spent: string, limit: string) => string
+      capTitle?: string
+      capUsed?: string
+      reset?: (date: string) => string
+      subscriptionBarLabel?: string
+      subscriptionLeft?: (left: string, total: string) => string
+      subscriptionLeftOver?: (left: string, total: string, over: string) => string
+      subscriptionTitle?: string
+      topupCaption?: string
+      topupTitle?: string
+    }
+    refusal?: {
+      cardConfirmBody?: string
+      cardConfirmTitle?: string
+      endpointBody?: string
+      endpointTitle?: string
+      failedBody?: string
+      failedTitle?: string
+      idempotencyBody?: string
+      idempotencyTitle?: string
+      monthlyCapBody?: string
+      monthlyCapBodyWithHeadroom?: (amount: string) => string
+      monthlyCapTitle?: string
+      noCardBody?: string
+      noCardTitle?: string
+      orgBody?: string
+      orgTitle?: string
+      remoteOffBody?: string
+      remoteOffTitle?: string
+      remoteSpendingReconnect?: (who: string) => string
+      remoteSpendingStoppedByAdmin?: string
+      remoteSpendingStoppedByYou?: string
+      remoteSpendingTitle?: string
+      retryDelay?: (mins: number) => string
+      roleBody?: string
+      roleTitle?: string
+      scopeBody?: string
+      scopeTitle?: string
+      sessionBody?: string
+      sessionTitle?: string
+      stripeBody?: (delay: string) => string
+      stripeTitle?: string
+      timeoutBody?: string
+      timeoutTitle?: string
+      tooManyChargesBody?: (delay: string) => string
+      tooManyChargesTitle?: string
+      transportBody?: string
+      transportTitle?: string
+      upgradeCapBody?: string
+      upgradeCapTitle?: string
+    }
+  }
+
   sendDiagnostics: {
     title: string
     privacyNotice: string

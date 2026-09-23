@@ -13,6 +13,7 @@ import { Toast } from "@nous-research/ui/ui/components/toast";
 import { Card, CardContent } from "@nous-research/ui/ui/components/card";
 import { usePageHeader } from "@/contexts/usePageHeader";
 import { errorMessage } from "@/lib/api-error";
+import { useI18n } from "@/i18n";
 
 function getUserKey(user: PairingUser): string {
   return `${user.platform}:${user.user_id}`;
@@ -36,6 +37,7 @@ export default function PairingPage() {
   const [clearing, setClearing] = useState(false);
   const { toast, showToast } = useToast();
   const { setEnd } = usePageHeader();
+  const { t } = useI18n();
 
   const loadPairing = useCallback(() => {
     api
@@ -144,13 +146,13 @@ export default function PairingPage() {
         open={userRevoke.isOpen}
         onCancel={userRevoke.cancel}
         onConfirm={userRevoke.confirm}
-        title="Revoke access"
+        title={t.pairing?.revokeAccessTitle ?? "Revoke access"}
         description={
           pendingRevokeUser
             ? `"${getUserLabel(pendingRevokeUser)}" will lose access. This cannot be undone.`
             : "This user will lose access. This cannot be undone."
         }
-        confirmLabel="Revoke"
+        confirmLabel={t.pairing?.revoke ?? "Revoke"}
         loading={userRevoke.isDeleting}
       />
 
@@ -256,8 +258,8 @@ export default function PairingPage() {
                   <Button
                     ghost
                     size="icon"
-                    title="Revoke"
-                    aria-label="Revoke"
+                    title={t.pairing?.revoke ?? "Revoke"}
+                    aria-label={t.pairing?.revoke ?? "Revoke"}
                     className="text-destructive"
                     onClick={() => userRevoke.requestDelete(key)}
                   >

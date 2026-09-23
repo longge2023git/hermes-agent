@@ -541,6 +541,10 @@ export const en: Translations = {
       "Plugins install disabled; enable it after install to activate.",
     catalogRequiresEnv: "Requires env",
     removedFromCatalog: "Removed from catalog",
+    setupResults: "Setup results",
+    pythonDependencies: "Python dependencies",
+    saveFailed: "Save failed",
+    failed: "Failed",
   },
 
   skills: {
@@ -548,6 +552,16 @@ export const en: Translations = {
     searchPlaceholder: "Search skills and toolsets...",
     loadWhat: "skills",
     browseHub: "Browse skills hub",
+    /** Sidebar tab — distinct from the page's "Browse skills hub" CTA. */
+    browseHubTab: "Browse hub",
+    learnSkill: "Learn a skill",
+    editSkillFile: "Edit SKILL.md",
+    /** "{name}" = the skill's name. */
+    editSkillNamed: "Edit {name}",
+    verdictSafe: "Safe",
+    verdictCaution: "Caution",
+    verdictDangerous: "Dangerous",
+    hubSearchPlaceholder: "Search the skill hub (GitHub, official, community)…",
     createSkill: "Create skill",
     enabledOf: "{enabled}/{total} enabled",
     all: "All",
@@ -1493,5 +1507,52 @@ export const en: Translations = {
     deleteFileDescription: "This removes the file.",
     /** "{path}" = the directory being created in. */
     target: "Target: {path}",
+  },
+
+  // ── Chat page chrome (web) ──
+  // Optional in types.ts → non-English locales fall back to the English
+  // literal in the component (`t.chat?.x ?? "…"`).
+  chat: {
+    reconnectChat: "Reconnect chat",
+    reconnectNow: "Reconnect now",
+    /** Button label and aria-label of the "go look at the server" action. */
+    checkServerStatus: "Check server status",
+    startNewChatSession: "Start a new chat session",
+    startNewSession: "Start new session",
+    openLogs: "Open logs",
+    copyLastResponseTitle: "Copy last assistant response as raw markdown",
+    copyLastResponse: "Copy last assistant response",
+    showSidePanelTitle: "Show side panel (model + sessions)",
+    showChatSidePanel: "Show chat side panel",
+    collapseChatSidePanel: "Collapse chat side panel",
+    collapseSidePanel: "Collapse side panel",
+  },
+
+  // ── Pairing page (web) ──
+  pairing: {
+    revokeAccessTitle: "Revoke access",
+    /** Confirm-button label and the revoke icon button's title/aria-label. */
+    revoke: "Revoke",
+  },
+
+  // ── Model info card (web) ──
+  modelInfo: {
+    contextWindow: "Context Window",
+    maxOutput: "Max Output",
+    autoDetected: "auto-detected",
+    /** "{n}" = the model's auto-detected context length. */
+    overrideAuto: "(override — auto: {n})",
+    capTools: "Tools",
+    capVision: "Vision",
+    capReasoning: "Reasoning",
+  },
+
+  // ── Console modal (web) ──
+  consoleModal: {
+    title: "Hermes Console",
+    reconnect: "Reconnect",
+    /** Reconnect button label + its aria-label. */
+    reconnectConsole: "Reconnect console",
+    closeConsole: "Close console",
   },
 };

@@ -61,6 +61,7 @@ import {
 import { cn } from "@/lib/utils";
 import { Input } from "@nous-research/ui/ui/components/input";
 import { useI18n } from "@/i18n";
+import type { Translations } from "@/i18n";
 import { en } from "@/i18n/en";
 import { usePageHeader } from "@/contexts/usePageHeader";
 import { PluginSlot } from "@/plugins";
@@ -434,7 +435,7 @@ export default function SkillsPage() {
                 />
                 <PanelItem
                   icon={Search}
-                  label="Browse hub"
+                  label={t.skills.browseHubTab ?? en.skills.browseHubTab!}
                   active={view === "hub"}
                   onClick={() => {
                     setView("hub");
@@ -704,7 +705,7 @@ export default function SkillsPage() {
       <Dialog open={learnOpen} onOpenChange={setLearnOpen}>
         <DialogContent className="max-w-lg">
           <DialogHeader>
-            <DialogTitle>Learn a skill</DialogTitle>
+            <DialogTitle>{t.skills.learnSkill ?? en.skills.learnSkill}</DialogTitle>
             <DialogDescription>
               Point Hermes at anything and it will distill a reusable skill —
               following the house authoring standards. Fill in any combination
@@ -771,6 +772,7 @@ function SkillRow({
   onEdit,
   noDescriptionLabel,
 }: SkillRowProps) {
+  const { t } = useI18n();
   return (
     <div className="group flex items-start gap-3 px-3 py-2.5 transition-colors hover:bg-muted/40">
       <div className="pt-0.5 shrink-0">
@@ -798,8 +800,8 @@ function SkillRow({
         ghost
         size="icon"
         className="shrink-0 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100 focus-visible:opacity-100 hover:text-foreground"
-        title="Edit SKILL.md"
-        aria-label={`Edit ${skill.name}`}
+        title={t.skills.editSkillFile ?? en.skills.editSkillFile!}
+        aria-label={(t.skills.editSkillNamed ?? en.skills.editSkillNamed!).replace("{name}", skill.name)}
         onClick={onEdit}
       >
         <Pencil />
@@ -861,19 +863,26 @@ function trustVisual(level: string): {
   }
 }
 
-/** Map a scan verdict to tone + icon. */
-function verdictVisual(verdict: string): {
+/** Map a scan verdict to tone + icon. Labels come from the i18n catalog. */
+function verdictVisual(
+  verdict: string,
+  t: Translations,
+): {
   tone: "success" | "warning" | "destructive";
   Icon: React.ComponentType<{ className?: string }>;
   label: string;
 } {
   switch (verdict) {
     case "safe":
-      return { tone: "success", Icon: ShieldCheck, label: "Safe" };
+      return { tone: "success", Icon: ShieldCheck, label: t.skills.verdictSafe ?? en.skills.verdictSafe! };
     case "caution":
-      return { tone: "warning", Icon: ShieldAlert, label: "Caution" };
+      return { tone: "warning", Icon: ShieldAlert, label: t.skills.verdictCaution ?? en.skills.verdictCaution! };
     case "dangerous":
-      return { tone: "destructive", Icon: ShieldAlert, label: "Dangerous" };
+      return {
+        tone: "destructive",
+        Icon: ShieldAlert,
+        label: t.skills.verdictDangerous ?? en.skills.verdictDangerous!,
+      };
     default:
       return { tone: "warning", Icon: ShieldQuestion, label: verdict };
   }
@@ -894,6 +903,7 @@ function HubBrowser({
   /** Optional profile scoping installs + installed-state badges. */
   profile?: string;
 }) {
+  const { t } = useI18n();
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<SkillHubResult[]>([]);
   const [searching, setSearching] = useState(false);
@@ -1040,7 +1050,7 @@ function HubBrowser({
               <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground" />
               <Input
                 className="h-8 pl-8 text-sm"
-                placeholder="Search the skill hub (GitHub, official, community)…"
+                placeholder={t.skills.hubSearchPlaceholder ?? en.skills.hubSearchPlaceholder!}
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 onKeyDown={(e) => {
@@ -1089,7 +1099,7 @@ function HubBrowser({
                   size="xs"
                   className="ml-auto text-muted-foreground"
                   onClick={() => setAction(null)}
-                  aria-label="Dismiss"
+                  aria-label={t.app.dismiss}
                 >
                   <X className="h-3.5 w-3.5" />
                 </Button>
@@ -1554,6 +1564,7 @@ function ScanPanel({
   scan: SkillHubScan | null;
   scanning: boolean;
 }) {
+  const { t } = useI18n();
   if (scanning && !scan) {
     return (
       <div className="flex flex-col items-center justify-center gap-2 py-12">
@@ -1573,7 +1584,7 @@ function ScanPanel({
     );
   }
 
-  const v = verdictVisual(scan.verdict);
+  const v = verdictVisual(scan.verdict, t);
   const policyTone =
     scan.policy === "allow"
       ? "success"

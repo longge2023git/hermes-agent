@@ -490,6 +490,10 @@ export interface Translations {
     catalogConfirmInstallNote?: string;
     catalogRequiresEnv?: string;
     removedFromCatalog?: string;
+    setupResults?: string;
+    pythonDependencies?: string;
+    saveFailed?: string;
+    failed?: string;
   };
 
   // ── Profiles page ──
@@ -566,6 +570,16 @@ export interface Translations {
     /** Optional — English fallback until translated. */
     loadWhat?: string;
     browseHub?: string;
+    /** Sidebar tab ("Browse hub") — distinct from the page's `browseHub` CTA. */
+    browseHubTab?: string;
+    learnSkill?: string;
+    editSkillFile?: string;
+    /** "{name}" = the skill's name. */
+    editSkillNamed?: string;
+    verdictSafe?: string;
+    verdictCaution?: string;
+    verdictDangerous?: string;
+    hubSearchPlaceholder?: string;
     createSkill?: string;
     enabledOf: string;
     all: string;
@@ -1435,5 +1449,53 @@ export interface Translations {
     deleteFolderDescription?: string;
     deleteFileDescription?: string;
     target?: string;
+  };
+
+  // ── Chat page chrome (web) ──
+  // Optional throughout (including the nested namespace) so every non-English
+  // locale keeps compiling while it lacks the translation; the component falls
+  // back to the English literal (`t.chat?.x ?? "…"`).
+  chat?: {
+    reconnectChat?: string;
+    reconnectNow?: string;
+    /** Used for both the button label and its aria-label. */
+    checkServerStatus?: string;
+    startNewChatSession?: string;
+    startNewSession?: string;
+    openLogs?: string;
+    copyLastResponseTitle?: string;
+    copyLastResponse?: string;
+    showSidePanelTitle?: string;
+    showChatSidePanel?: string;
+    collapseChatSidePanel?: string;
+    collapseSidePanel?: string;
+  };
+
+  // ── Pairing page (web) ──
+  pairing?: {
+    revokeAccessTitle?: string;
+    /** Confirm-button label and the revoke icon button's title/aria-label. */
+    revoke?: string;
+  };
+
+  // ── Model info card (web) ──
+  modelInfo?: {
+    contextWindow?: string;
+    maxOutput?: string;
+    autoDetected?: string;
+    /** "{n}" = the model's auto-detected context length. */
+    overrideAuto?: string;
+    capTools?: string;
+    capVision?: string;
+    capReasoning?: string;
+  };
+
+  // ── Console modal (web) ──
+  consoleModal?: {
+    title?: string;
+    reconnect?: string;
+    /** Reconnect button label + its aria-label. */
+    reconnectConsole?: string;
+    closeConsole?: string;
   };
 }

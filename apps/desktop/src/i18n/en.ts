@@ -146,7 +146,8 @@ export const en: Translations = {
       startingHermesDesktop: 'Starting Hermes Desktop…'
     },
     errors: {
-      backgroundExited: 'The service that runs your chats closed unexpectedly. Restart it to keep going — your chats and settings are safe.',
+      backgroundExited:
+        'The service that runs your chats closed unexpectedly. Restart it to keep going — your chats and settings are safe.',
       backgroundExitedDuringStartup: 'Hermes stopped right after it started.',
       backendStopped: 'Hermes stopped working in the background',
       restartHermes: 'Restart Hermes',
@@ -248,11 +249,13 @@ export const en: Translations = {
       storageFailure: "Hermes couldn't save to its data folder. Open Maintenance to check and repair it.",
       gatewayAuthFailed:
         'This Hermes no longer accepts your saved sign-in. Open Gateways and sign in again (or paste a new access token), then retry.',
-      methodNotAllowed: "Hermes' background service is out of step with the app, probably after an update. Restart it to fix this.",
+      methodNotAllowed:
+        "Hermes' background service is out of step with the app, probably after an update. Restart it to fix this.",
       microphonePermission: 'Microphone permission was denied.',
       openaiRejectedApiKey: "OpenAI didn't accept your API key. Update it in Settings → Keys, then try again.",
       openaiTtsNeedsKey: 'Voice needs an OpenAI key. Add one in Settings → Keys.',
-      codeSkewRestartRequired: 'Hermes was updated but is still running the old version. Restart it to finish the update.',
+      codeSkewRestartRequired:
+        'Hermes was updated but is still running the old version. Restart it to finish the update.',
       restartHermesFailed: "Couldn't restart Hermes"
     },
     actions: {
@@ -316,6 +319,134 @@ export const en: Translations = {
     openBilling: 'Open billing',
     addCredits: 'Add credits',
     dismiss: 'Dismiss'
+  },
+
+  // Billing settings page copy, resolved at module scope via `translateNow` by
+  // `app/settings/billing/use-billing-state.ts` and `errors.ts`.
+  billing: {
+    summary: {
+      autoRefill: 'Auto-refill',
+      balance: 'Balance',
+      connectors: 'Connectors',
+      model: 'Model',
+      plan: 'Plan'
+    },
+    value: {
+      enabled: 'Enabled',
+      freeTier: 'Free tier',
+      included: 'Included',
+      off: 'Off'
+    },
+    notice: {
+      addCard: 'Add card ↗',
+      connectBody: 'Run /portal in the TUI or open the Nous portal to connect your account.',
+      connectTitle: 'Connect your Nous account',
+      freeTierBody: 'Sign in with a Nous account to unlock more models and tools.',
+      freeTierTitle: "You're on the Nous free tier",
+      noPaymentMethodBody:
+        'Buying top-up credits and auto-refill stay disabled until a card is on file. Add one on the portal.',
+      noPaymentMethodTitle: 'No payment method on file',
+      openPortal: 'Open portal ↗',
+      signIn: 'Sign in'
+    },
+    plan: {
+      adjust: 'Adjust plan ↗',
+      change: 'Change plan',
+      choose: 'Choose ↗',
+      fallbackName: 'Free',
+      freeTierCaption:
+        'Runs on nous/welcome with connectors included. Signing in keeps your connectors and adds the tools that need an account and every other model.',
+      freeTierFootnote:
+        'The free tier has no balance and nothing to pay. Payment and usage appear when you sign in with a Nous account.',
+      freeTierName: 'Nous · free tier',
+      noSubscription: 'No active subscription — paid models draw down top-up credits.',
+      renewal: date => `Renews ${date}`,
+      scheduledCancellation: when => `Cancels on ${when}.`,
+      scheduledChange: (tier, when) => `Changes to ${tier} on ${when}.`,
+      unavailable: 'Subscription details are unavailable; opening the portal is still available.',
+      view: 'View plans'
+    },
+    payment: {
+      add: 'Add payment method',
+      description: 'Manage the card used for top-ups and subscription renewals.',
+      provenanceAutoRefill: 'auto-refill card',
+      provenanceCustomerDefault: 'customer default',
+      provenanceSubscription: 'subscription card',
+      title: 'Payment method',
+      update: 'Update'
+    },
+    credits: {
+      buy: 'Buy',
+      buyDescription: 'A single charge on your card, added to your balance today.',
+      buyTitle: 'Buy credits now'
+    },
+    refill: {
+      captionPortal: 'Manage auto-refill from the portal.',
+      captionTurnOn: 'Turn on auto-refill from the portal',
+      description: 'Keep your balance topped up when it drops below your threshold.',
+      differentCard: 'a different card',
+      manage: 'Manage',
+      reconcile: 'Reconcile ↗',
+      reconciliation: card => `Auto-refill charges ${card} — reconcile on the portal`,
+      schedule: (amount, threshold) => `Charges ${amount} automatically when your balance falls below ${threshold}.`,
+      title: 'Refill when low'
+    },
+    usage: {
+      capDefaultCeiling: 'Default ceiling',
+      capRemote: 'Monthly remote spending',
+      capSpentOfLimit: (spent, limit) => `${spent} of ${limit} used`,
+      capTitle: 'Monthly spend cap',
+      capUsed: 'Monthly spend cap used',
+      reset: date => `Resets ${date}`,
+      subscriptionBarLabel: 'Subscription credits remaining',
+      subscriptionLeft: (left, total) => `${left} of ${total} left`,
+      subscriptionLeftOver: (left, total, over) => `${left} of ${total} left · ${over} over`,
+      subscriptionTitle: 'Subscription credits',
+      topupCaption: 'Does not expire',
+      topupTitle: 'Top-up credits'
+    },
+    refusal: {
+      cardConfirmBody: 'Confirm this card for terminal charges in the portal',
+      cardConfirmTitle: 'Card confirmation needed',
+      endpointBody: 'Billing endpoint returned a non-JSON response (it may not be available on this deployment).',
+      endpointTitle: 'Billing endpoint unavailable',
+      failedBody: 'Billing request failed.',
+      failedTitle: 'Billing request failed',
+      idempotencyBody: '🔴 That charge key was already used for a different amount. Start a fresh top-up.',
+      idempotencyTitle: 'Start a fresh top-up',
+      monthlyCapBody: '🔴 Monthly spend cap reached.',
+      monthlyCapBodyWithHeadroom: amount => `🔴 Monthly spend cap reached — $${amount} headroom left.`,
+      monthlyCapTitle: 'Monthly spend cap reached',
+      noCardBody:
+        "💳 No saved card for terminal charges yet. Set one up on the portal (one-time credit buys don't save a reusable card).",
+      noCardTitle: 'No saved card',
+      orgBody: "This token isn't bound to an org you can manage",
+      orgTitle: 'Org access denied',
+      remoteOffBody:
+        "Remote spending is off for this account — a billing admin can turn it on from the portal's Hermes Agent page.",
+      remoteOffTitle: 'Remote spending is off',
+      remoteSpendingReconnect: who => `${who} Reconnect from Settings → Gateway to re-authorize this device.`,
+      remoteSpendingStoppedByAdmin: 'An admin stopped remote spending for this terminal.',
+      remoteSpendingStoppedByYou: 'You stopped remote spending for this terminal.',
+      remoteSpendingTitle: 'Remote spending was stopped',
+      retryDelay: mins => ` (try again in ~${mins} min)`,
+      roleBody: 'Adding funds needs an org admin/owner. Ask an admin, or manage on the portal.',
+      roleTitle: 'Admin role required',
+      scopeBody: 'This needs Remote Spending allowed. Start a top-up to allow it, then retry.',
+      scopeTitle: 'Remote Spending needs approval',
+      sessionBody: 'Your session was logged out. Sign in again from Settings → Gateway.',
+      sessionTitle: 'Session logged out',
+      stripeBody: delay => `Stripe is having trouble — try again shortly${delay}`,
+      stripeTitle: 'Stripe is having trouble',
+      timeoutBody: 'Billing request timed out.',
+      timeoutTitle: 'Billing request timed out',
+      tooManyChargesBody: delay => `🟡 Too many charges right now${delay}. This isn't a payment failure.`,
+      tooManyChargesTitle: 'Too many charges right now',
+      transportBody: 'Billing request failed before reaching the gateway.',
+      transportTitle: 'Billing connection failed',
+      upgradeCapBody: 'Daily plan-change limit reached — try again tomorrow',
+      upgradeCapTitle: 'Daily plan-change limit reached'
+    }
   },
 
   sendDiagnostics: {
@@ -630,7 +761,8 @@ export const en: Translations = {
         desktopSuccess: name => `Desktop plugin ${name} installed`,
         agentFailed: 'Agent plugin install failed',
         desktopFailed: 'Desktop plugin install failed',
-        missingEnv: (name, vars) => `${name} is installed but needs a key before it can work: ${vars}. Add it now, or the plugin's tools will fail.`
+        missingEnv: (name, vars) =>
+          `${name} is installed but needs a key before it can work: ${vars}. Add it now, or the plugin's tools will fail.`
       }
     },
     vault: {
@@ -798,7 +930,8 @@ export const en: Translations = {
       sessionDensityComfortable: 'Comfortable',
       sessionDensityDetailed: 'Detailed',
       tabStripTitle: 'Tab Strip',
-      tabStripDesc: 'Show tabs above a zone. Auto hides them for a single pane unless another chat or tile zone is open.',
+      tabStripDesc:
+        'Show tabs above a zone. Auto hides them for a single pane unless another chat or tile zone is open.',
       tabStripAuto: 'Auto',
       tabStripAlways: 'Always',
       tabStripNever: 'Never',
@@ -1156,7 +1289,8 @@ export const en: Translations = {
     gateway: {
       loading: 'Loading gateway settings...',
       unavailableTitle: 'Gateway settings unavailable',
-      unavailableDesc: 'Connection settings can only be changed from the Hermes Desktop app on the computer running it.',
+      unavailableDesc:
+        'Connection settings can only be changed from the Hermes Desktop app on the computer running it.',
       title: 'Gateway Connection',
       envOverride: 'env override',
       intro:
@@ -1209,7 +1343,8 @@ export const en: Translations = {
       remoteUrlTitle: 'Remote URL',
       remoteUrlDesc: 'Base URL for the remote dashboard backend. Path prefixes are supported, for example /hermes.',
       probing: 'Checking how this gateway authenticates…',
-      probeError: "Hermes can't reach that address. Check the URL and that the other computer is running Hermes — sign-in options appear once it answers.",
+      probeError:
+        "Hermes can't reach that address. Check the URL and that the other computer is running Hermes — sign-in options appear once it answers.",
       signedIn: 'Signed in',
       signIn: 'Sign in',
       signOut: 'Sign out',
@@ -1656,7 +1791,8 @@ export const en: Translations = {
       useBackend: 'Use this backend',
       nousIncluded: 'Included with a Nous subscription — sign in with your Nous account to activate.',
       nousAuthNeededTitle: 'Sign in with your Nous account',
-      nousAuthNeededMessage: provider => `${provider} is saved but will only work once you sign in with your Nous account.`,
+      nousAuthNeededMessage: provider =>
+        `${provider} is saved but will only work once you sign in with your Nous account.`,
       nousAuthSignIn: 'Sign in',
       nousAuthDoneTitle: 'Nous account connected',
       nousAuthDoneMessage: 'Your subscription backends are now active.',
@@ -1675,7 +1811,8 @@ export const en: Translations = {
       postSetupCompleteTitle: 'Setup complete',
       postSetupCompleteMessage: step => `${step} installed.`,
       postSetupErrorTitle: 'Setup finished with errors',
-      postSetupErrorMessage: step => `Setting up ${step} did not finish. Open the logs to see why, then run setup again.`,
+      postSetupErrorMessage: step =>
+        `Setting up ${step} did not finish. Open the logs to see why, then run setup again.`,
       postSetupOpenLogs: 'Open logs',
       postSetupRunAgain: 'Run again',
       postSetupFailed: step => `Failed to run ${step} setup`,
@@ -1864,7 +2001,8 @@ export const en: Translations = {
       deepLinkCatalogInvalidName: 'The link\u2019s catalog name is missing or invalid.',
       deepLinkCatalogUnknown: (name: string) =>
         `\u201C${name}\u201D is not in the Hermes plugin catalog. Nothing was installed.`,
-      deepLinkCatalogUnavailable: 'Could not load the Hermes plugin catalog. Check your connection and open the link again.'
+      deepLinkCatalogUnavailable:
+        'Could not load the Hermes plugin catalog. Check your connection and open the link again.'
     },
     officialCatalog: 'Available to install',
     officialPill: 'Official',
@@ -3497,7 +3635,8 @@ export const en: Translations = {
     remoteUrlDesc: 'Use the base URL of the Hermes gateway, including https:// when remote.',
     remoteUrlPlaceholder: 'https://gateway.example.com/hermes',
     probing: 'Detecting gateway authentication...',
-    probeError: "Hermes can't reach that address. Check the URL and that the other computer is running Hermes — sign-in options appear once it answers.",
+    probeError:
+      "Hermes can't reach that address. Check the URL and that the other computer is running Hermes — sign-in options appear once it answers.",
     probeErrorDetails: 'Details',
     identityProvider: 'your identity provider',
     authTitle: 'Authentication',
@@ -3665,7 +3804,7 @@ export const en: Translations = {
     timedOutHeading: 'That sign-in link has expired',
     timedOutBody: "Start again whenever you're ready. You're still on the free Nous service.",
     retiredBody:
-      'Your session ended before the sign-in finished. Hermes will start a new one; then sign in again whenever you\'re ready.',
+      "Your session ended before the sign-in finished. Hermes will start a new one; then sign in again whenever you're ready.",
     errorBody: "Sign-in didn't finish. Try again whenever you're ready.",
     busyHeading: 'Almost there',
     busyBody: wait =>
@@ -3687,7 +3826,8 @@ export const en: Translations = {
       powRequired:
         "The Nous server asked for a proof of work, but that isn't implemented in your Agent yet. Sign in or create a free Nous account to continue.",
       locked: "This session can't continue without signing in. Sign in or create a free Nous account to keep going.",
-      generic: "Hermes couldn't set up free access without signing in. Signing in is free, or connect another provider.",
+      generic:
+        "Hermes couldn't set up free access without signing in. Signing in is free, or connect another provider.",
       signInBelow: 'Signing in is free. Pick Nous below.',
       tryAgain: 'Try again',
       retrying: 'Trying again…'
@@ -4138,17 +4278,21 @@ export const en: Translations = {
         auth: 'The AI service rejected your sign-in. Check the credentials for this provider, then send your message again.',
         billing: 'Your account has no credits left for this provider. Top up or switch provider, then send again.',
         disk: 'Your disk is full, so Hermes could not save this conversation. Free some space, then retry.',
-        endpoint: "Hermes can't reach your custom model server. Check that it is running, then send your message again.",
-        gateway: 'Hermes hit an internal problem starting this reply. Send your message again; if it keeps happening, send diagnostics.',
+        endpoint:
+          "Hermes can't reach your custom model server. Check that it is running, then send your message again.",
+        gateway:
+          'Hermes hit an internal problem starting this reply. Send your message again; if it keeps happening, send diagnostics.',
         generic: 'Something went wrong while Hermes was replying. Retry, or copy the details if it keeps happening.',
         provider: 'The AI service could not complete this request. Retry in a moment or switch provider.',
-        runtime: 'Hermes hit an internal problem starting this reply. Send your message again; if it keeps happening, send diagnostics.',
+        runtime:
+          'Hermes hit an internal problem starting this reply. Send your message again; if it keeps happening, send diagnostics.',
         streaming: 'The connection dropped before the reply finished. Retry to send it again.'
       },
       errorCodes: {
         auth: {
           title: provider => `${provider} rejected your sign-in`,
-          body: provider => `The credentials saved for ${provider} were not accepted. Fix them in Settings or switch provider, then send your message again.`
+          body: provider =>
+            `The credentials saved for ${provider} were not accepted. Fix them in Settings or switch provider, then send your message again.`
         },
         auth_permanent: {
           title: provider => `${provider} rejected your sign-in`,
@@ -4203,7 +4347,8 @@ export const en: Translations = {
         },
         model_not_found: {
           title: 'This model is not available',
-          body: provider => `${provider} does not offer this model on your account. Choose another model, then send your message again.`
+          body: provider =>
+            `${provider} does not offer this model on your account. Choose another model, then send your message again.`
         },
         provider_policy_blocked: {
           title: 'This model is blocked by your account settings',
@@ -4493,8 +4638,10 @@ export const en: Translations = {
     sudoSendFailed: 'Could not send sudo password',
     secretSendFailed: 'Could not send secret',
     sudoTitle: 'Administrator password',
-    sudoDesc: 'Review the command before entering your sudo password. Your password is sent to the agent running it and cached for this session.',
-    sudoCommandUnavailable: 'This agent did not provide the command. Cancel if you cannot verify it in the conversation.',
+    sudoDesc:
+      'Review the command before entering your sudo password. Your password is sent to the agent running it and cached for this session.',
+    sudoCommandUnavailable:
+      'This agent did not provide the command. Cancel if you cannot verify it in the conversation.',
     sudoPlaceholder: 'sudo password',
     secretTitle: 'Secret required',
     secretDesc: 'Hermes needs a credential to continue.',
@@ -4612,7 +4759,8 @@ export const en: Translations = {
       success: platform => `Handed off to ${platform}. Resume here anytime.`,
       systemNote: platform => `↻ Handed off to ${platform} — resume here anytime.`,
       failed: error => `Handoff failed: ${error}`,
-      timedOut: "Hermes couldn't reach your messaging connection. Start it from Settings → Messaging, then try the handoff again.",
+      timedOut:
+        "Hermes couldn't reach your messaging connection. Start it from Settings → Messaging, then try the handoff again.",
       startMessaging: 'Start messaging'
     }
   },

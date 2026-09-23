@@ -525,13 +525,25 @@ export const fa = defineLocale({
     catalogConfirmTitle: 'این افزونه نصب شود؟',
     catalogConfirmInstallNote: 'نصب افزونه‌ها غیرفعال است؛ پس از نصب، آن را فعال کنید.',
     catalogRequiresEnv: 'نیازمند env',
-    removedFromCatalog: 'از کاتالوگ حذف شد'
+    removedFromCatalog: 'از کاتالوگ حذف شد',
+    setupResults: 'نتایج راه‌اندازی',
+    pythonDependencies: 'وابستگی‌های Python',
+    saveFailed: 'ذخیره ناموفق بود‌',
+    failed: 'ناموفق'
   },
   skills: {
     title: 'مهارت‌ها',
     searchPlaceholder: 'جستجوی مهارت‌ها و مجموعهابزار‌ها...',
     loadWhat: 'مهارت‌ها',
     browseHub: 'مرور مرکز مهارت‌ها',
+    browseHubTab: 'مرور مرکز',
+    learnSkill: 'یادگیری یک مهارت',
+    editSkillFile: 'ویرایش SKILL.md',
+    editSkillNamed: 'ویرایش {name}‌',
+    verdictSafe: 'بی‌خطر',
+    verdictCaution: 'احتیاط',
+    verdictDangerous: 'خطرناک',
+    hubSearchPlaceholder: 'جست‌وجو در مرکز مهارت‌ها (GitHub، رسمی، انجمن)…',
     createSkill: 'ایجاد مهارت',
     enabledOf: '{enabled}/{total} فعال',
     all: 'همه',
@@ -577,10 +589,10 @@ export const fa = defineLocale({
     invalidJson: 'فایل JSON نامعتبر',
     categories: {
       general: 'عمومی',
-      agent: 'Agent',
+      agent: 'عامل',
       terminal: 'ترمینال',
       display: 'نمایش',
-      delegation: 'Delegation',
+      delegation: 'واگذاری',
       memory: 'حافظه',
       compression: 'فشردهسازی',
       security: 'امنیت',
@@ -682,9 +694,9 @@ export const fa = defineLocale({
     fontTitle: 'فونت',
     fontDefault: 'پیش‌فرض پوسته',
     fontDefaultHint: 'استفاده از فونت پوسته فعال',
-    fontSans: 'Sans',
-    fontSerif: 'Serif',
-    fontMono: 'Mono'
+    fontSans: 'بدون دندانه',
+    fontSerif: 'دندانه‌دار',
+    fontMono: 'هم‌عرض'
   },
   achievements: {
     hero: {
@@ -798,7 +810,7 @@ export const fa = defineLocale({
     newBoardTitle: 'برد جدید',
     newBoardDescription:
       'بردها به شما امکان میدهند جریانهای کاری نامرتبط را جدا کنید — یکی برای هر پروژه، مخزن یا حوزه. کارگران در یک برد هرگز وظایف برد دیگر را نمیبینند.',
-    slug: 'Slug',
+    slug: 'نام‌ک',
     slugHint: '— حروف کوچک، خط تیره، مثلاً atm10-server',
     displayName: 'نام نمایشی',
     displayNameHint: '(اختیاری)',
@@ -1390,5 +1402,38 @@ export const fa = defineLocale({
     deleteFolderDescription: 'این کار، پوشه و هر چه درونش است را حذف می‌کند.',
     deleteFileDescription: 'این کار فایل را حذف می‌کند.',
     target: 'هدف: {path}'
+  },
+  chat: {
+    reconnectChat: 'اتصال دوبارهٔ گفت‌وگو',
+    reconnectNow: 'اتصال دوباره هم‌اکنون',
+    checkServerStatus: 'بررسی وضعیت سرور',
+    startNewChatSession: 'شروع نشست گفت‌وگوی جدید',
+    startNewSession: 'شروع نشست جدید',
+    openLogs: 'باز کردن گزارش‌ها',
+    copyLastResponseTitle: 'رونوشت آخرین پاسخ دستیار به‌صورت markdown خام',
+    copyLastResponse: 'رونوشت آخرین پاسخ دستیار',
+    showSidePanelTitle: 'نمایش پنل کناری (مدل + نشست‌ها)',
+    showChatSidePanel: 'نمایش پنل کناری گفت‌وگو',
+    collapseChatSidePanel: 'جمع کردن پنل کناری گفت‌وگو',
+    collapseSidePanel: 'جمع کردن پنل کناری'
+  },
+  pairing: {
+    revokeAccessTitle: 'لغو دسترسی',
+    revoke: 'لغو'
+  },
+  modelInfo: {
+    contextWindow: 'پنجرهٔ کانتکست',
+    maxOutput: 'حداکثر خروجی',
+    autoDetected: 'شناسایی‌شدهٔ خودکار',
+    overrideAuto: '(بازنویسی — خودکار: {n})',
+    capTools: 'ابزارها',
+    capVision: 'بینایی',
+    capReasoning: 'استدلال'
+  },
+  consoleModal: {
+    title: 'کنسول Hermes',
+    reconnect: 'اتصال دوباره',
+    reconnectConsole: 'اتصال دوبارهٔ کنسول',
+    closeConsole: 'بستن کنسول'
   }
 })

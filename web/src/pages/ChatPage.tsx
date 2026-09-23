@@ -1927,18 +1927,18 @@ export default function ChatPage({ isActive = true }: { isActive?: boolean }) {
                     outlined
                     onClick={reconnectPty}
                     prefix={<RotateCcw className="h-4 w-4" />}
-                    aria-label="Reconnect chat"
+                    aria-label={t.chat?.reconnectChat ?? "Reconnect chat"}
                   >
-                    Reconnect now
+                    {t.chat?.reconnectNow ?? "Reconnect now"}
                   </Button>
                   {ptyState === "closed" && reconnectGaveUp && (
                     <Button
                       size="sm"
                       ghost
                       onClick={() => navigate("/system")}
-                      aria-label="Check server status"
+                      aria-label={t.chat?.checkServerStatus ?? "Check server status"}
                     >
-                      Check server status
+                      {t.chat?.checkServerStatus ?? "Check server status"}
                     </Button>
                   )}
                 </div>
@@ -1973,17 +1973,17 @@ export default function ChatPage({ isActive = true }: { isActive?: boolean }) {
                 <Button
                   onClick={startFreshPty}
                   prefix={<RotateCcw className="h-4 w-4" />}
-                  aria-label="Start a new chat session"
+                  aria-label={t.chat?.startNewChatSession ?? "Start a new chat session"}
                 >
-                  Start new session
+                  {t.chat?.startNewSession ?? "Start new session"}
                 </Button>
                 {endedReason === "exited" && (
                   <Button
                     outlined
                     onClick={() => navigate("/logs")}
-                    aria-label="Open logs"
+                    aria-label={t.chat?.openLogs ?? "Open logs"}
                   >
-                    Open logs
+                    {t.chat?.openLogs ?? "Open logs"}
                   </Button>
                 )}
               </div>
@@ -1993,8 +1993,8 @@ export default function ChatPage({ isActive = true }: { isActive?: boolean }) {
           <Button
             ghost
             onClick={handleCopyLast}
-            title="Copy last assistant response as raw markdown"
-            aria-label="Copy last assistant response"
+            title={t.chat?.copyLastResponseTitle ?? "Copy last assistant response as raw markdown"}
+            aria-label={t.chat?.copyLastResponse ?? "Copy last assistant response"}
             className={cn(
               "absolute z-10",
               "normal-case tracking-normal font-normal",
@@ -2019,8 +2019,8 @@ export default function ChatPage({ isActive = true }: { isActive?: boolean }) {
             <Button
               ghost
               onClick={toggleChatPanel}
-              title="Show side panel (model + sessions)"
-              aria-label="Show chat side panel"
+              title={t.chat?.showSidePanelTitle ?? "Show side panel (model + sessions)"}
+              aria-label={t.chat?.showChatSidePanel ?? "Show chat side panel"}
               className={cn(
                 "absolute z-10",
                 "normal-case tracking-normal font-normal",
@@ -2054,8 +2054,8 @@ export default function ChatPage({ isActive = true }: { isActive?: boolean }) {
                 ghost
                 size="icon"
                 onClick={toggleChatPanel}
-                aria-label="Collapse chat side panel"
-                title="Collapse side panel"
+                aria-label={t.chat?.collapseChatSidePanel ?? "Collapse chat side panel"}
+                title={t.chat?.collapseSidePanel ?? "Collapse side panel"}
                 className="text-text-secondary hover:text-midground"
               >
                 <X />
