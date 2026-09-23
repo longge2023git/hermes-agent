@@ -115,7 +115,8 @@ describe('persian (fa) locale — web dashboard', () => {
       /\u0645\u06cc\u062a\u0648\u0627\u0646/,
       /\u0628\u0647\u0631\u0648\u0632/,
       /\u06af\u0641\u062a\u0648\u06af\u0648/,
-      /[\u0600-\u06FF]{2,}\u0647\u0647\u0627\u06cc/
+      /[\u0600-\u06FF]{2,}\u0647\u0647\u0627\u06cc/,
+      /[\u0600-\u06FF]{2,}\u0647\u0647\u0627/  // «Xهها」粘连（本轮盲区）
     ]
     const offenders: string[] = []
     for (const [path, value] of faLeaves) {
