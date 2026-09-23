@@ -83,17 +83,22 @@ export const fa = defineLocale({
     },
     nav: {
       analytics: 'تحلیلها',
+      channels: 'کانال‌ها',
       chat: 'گفت‌وگو',
       config: 'پیکربندی',
       cron: 'cron',
       documentation: 'مستندات',
+      files: 'فایل‌ها',
       keys: 'کلیدها',
       logs: 'گزارش‌ها',
       models: 'مدل‌ها',
+      pairing: 'جفت‌سازی',
       profiles: 'پروفایل‌ها',
       plugins: 'افزونهها',
       sessions: 'نشست‌ها',
-      skills: 'مهارت‌ها'
+      skills: 'مهارت‌ها',
+      system: 'سیستم',
+      webhooks: 'وبه‌وک‌ها'
     },
     modelToolsSheetSubtitle: 'و ابزار‌ها',
     modelToolsSheetTitle: 'مدل',
