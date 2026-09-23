@@ -109,7 +109,8 @@ import { sharedGatewayProfiles, sharedGatewayRestartDescription } from "@/lib/sh
 import { api } from "@/lib/api";
 import type { StatusResponse, UpdateCheckResponse } from "@/lib/api";
 
-function RouteFallback({ label = "Loading…" }: { label?: string }) {
+function RouteFallback({ label }: { label?: string }) {
+  const { t } = useI18n();
   return (
     <div
       className="flex min-h-[12rem] flex-1 items-center justify-center"
@@ -118,7 +119,7 @@ function RouteFallback({ label = "Loading…" }: { label?: string }) {
     >
       <div className="flex items-center gap-2 text-sm text-muted-foreground">
         <Spinner />
-        <span>{label}</span>
+        <span>{label ?? t.common.loading}</span>
       </div>
     </div>
   );

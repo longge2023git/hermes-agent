@@ -24,6 +24,7 @@ export const fa = defineLocale({
     loadFailedDetails: 'جزئیات: {detail}',
     search: 'جستجو...',
     loading: 'در حال بارگذاری...',
+    logOut: 'خروج',
     create: 'ایجاد',
     creating: 'در حال ایجاد...',
     set: 'تنظیم',

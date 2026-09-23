@@ -14,6 +14,7 @@ export const en: Translations = {
     loadFailedDetails: "Details: {detail}",
     search: "Search...",
     loading: "Loading...",
+    logOut: "Log out",
     create: "Create",
     creating: "Creating...",
     set: "Set",
