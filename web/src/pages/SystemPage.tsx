@@ -71,6 +71,7 @@ import type {
   GatewayMigratePlan,
 } from "@/lib/api";
 import { apiErrorFromResponse, errorMessage } from "@/lib/api-error";
+import { useI18n } from "@/i18n";
 
 function formatBytes(n: number): string {
   if (n < 1024) return `${n} B`;
@@ -121,6 +122,7 @@ function ActionLogViewer({
   const [exitCode, setExitCode] = useState<number | null>(null);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const completeRef = useRef(false);
+  const { t } = useI18n();
 
   useEffect(() => {
     let cancelled = false;
@@ -156,19 +158,30 @@ function ActionLogViewer({
             <Terminal className="h-4 w-4 text-muted-foreground" />
             <span className="font-mono text-sm">{action}</span>
             {running ? (
-              <Badge tone="warning">running</Badge>
+              <Badge tone="warning">
+                {t.system?.running ?? "running"}
+              </Badge>
             ) : (
               <Badge tone={exitCode === 0 ? "success" : "destructive"}>
-                {exitCode === 0 ? "done" : `exit ${exitCode}`}
+                {exitCode === 0
+                  ? (t.system?.done ?? "done")
+                  : `exit ${exitCode}`}
               </Badge>
             )}
           </div>
-          <Button ghost size="icon" onClick={onClose} aria-label="Close log">
+          <Button
+            ghost
+            size="icon"
+            onClick={onClose}
+            aria-label={t.system?.closeLog ?? "Close log"}
+          >
             <X />
           </Button>
         </div>
         <pre className="max-h-72 overflow-auto whitespace-pre-wrap break-words bg-background/50 border border-border p-3 text-xs font-mono text-muted-foreground">
-          {lines.length ? lines.join("\n") : "Starting…"}
+          {lines.length
+            ? lines.join("\n")
+            : (t.system?.starting ?? "Starting…")}
         </pre>
       </CardContent>
     </Card>
@@ -203,6 +216,7 @@ const MEMORY_STATUS_TONE: Record<
 
 export default function SystemPage() {
   const { toast, showToast } = useToast();
+  const { t } = useI18n();
 
   const [status, setStatus] = useState<StatusResponse | null>(null);
   const [stats, setStats] = useState<SystemStats | null>(null);
@@ -730,54 +744,66 @@ export default function SystemPage() {
           setSharedRestartOpen(false);
           void restartShared();
         }}
-        title="Restart the shared gateway?"
+        title={t.system?.restartSharedTitle ?? "Restart the shared gateway?"}
         description={sharedGatewayRestartDescription(sharedGateway ?? [])}
-        confirmLabel="Restart all"
+        confirmLabel={t.system?.restartAll ?? "Restart all"}
       />
 
       <ConfirmDialog
         open={canUpdateHermes && updateConfirmOpen}
         onCancel={() => setUpdateConfirmOpen(false)}
         onConfirm={() => void applyUpdate()}
-        title="Update Hermes?"
+        title={t.system?.updateHermesTitle ?? "Update Hermes?"}
         description={
           updateInfo && updateInfo.behind && updateInfo.behind > 0
             ? `This will run 'hermes update' (${updateInfo.update_command}) and pull ${updateInfo.behind} new commit${updateInfo.behind === 1 ? "" : "s"}. The gateway restarts when the update finishes; the current session keeps its prompt cache until then.`
             : `This will run 'hermes update' (${updateInfo?.update_command ?? "hermes update"}) and restart the gateway when it finishes.`
         }
-        confirmLabel="Update now"
+        confirmLabel={t.system?.updateNow ?? "Update now"}
       />
 
       <DeleteConfirmDialog
         open={memoryReset.isOpen}
         onCancel={memoryReset.cancel}
         onConfirm={memoryReset.confirm}
-        title="Reset memory"
-        description="This permanently erases the selected built-in memory files. This cannot be undone."
+        title={t.system?.resetMemoryTitle ?? "Reset memory"}
+        description={
+          t.system?.resetMemoryDesc ??
+          "This permanently erases the selected built-in memory files. This cannot be undone."
+        }
         loading={memoryReset.isDeleting}
       />
       <DeleteConfirmDialog
         open={credDelete.isOpen}
         onCancel={credDelete.cancel}
         onConfirm={credDelete.confirm}
-        title="Remove credential"
-        description="Remove this pooled API key? The agent will no longer rotate through it."
+        title={t.system?.removeCredential ?? "Remove credential"}
+        description={
+          t.system?.removeCredentialDesc ??
+          "Remove this pooled API key? The agent will no longer rotate through it."
+        }
         loading={credDelete.isDeleting}
       />
       <DeleteConfirmDialog
         open={checkpointsPrune.isOpen}
         onCancel={checkpointsPrune.cancel}
         onConfirm={checkpointsPrune.confirm}
-        title="Prune checkpoints"
-        description="Delete the rollback checkpoint shadow store? Existing /rollback points will be lost."
+        title={t.system?.pruneCheckpointsTitle ?? "Prune checkpoints"}
+        description={
+          t.system?.pruneCheckpointsDesc ??
+          "Delete the rollback checkpoint shadow store? Existing /rollback points will be lost."
+        }
         loading={checkpointsPrune.isDeleting}
       />
       <DeleteConfirmDialog
         open={hookDelete.isOpen}
         onCancel={hookDelete.cancel}
         onConfirm={hookDelete.confirm}
-        title="Remove shell hook"
-        description="Remove this hook from config and revoke its consent? It stops firing on the next restart."
+        title={t.system?.removeHookTitle ?? "Remove shell hook"}
+        description={
+          t.system?.removeHookDesc ??
+          "Remove this hook from config and revoke its consent? It stops firing on the next restart."
+        }
         loading={hookDelete.isDeleting}
       />
       <HermesConsoleModal
@@ -800,18 +826,18 @@ export default function SystemPage() {
               size="icon"
               onClick={() => setHookModalOpen(false)}
               className="absolute right-2 top-2 text-muted-foreground hover:text-foreground"
-              aria-label="Close"
+              aria-label={t.common.close}
             >
               <X />
             </Button>
             <header className="p-5 pb-3 border-b border-border">
               <h2 className="font-mondwest text-display text-base tracking-wider">
-                New shell hook
+                {t.system?.newShellHook ?? "New shell hook"}
               </h2>
             </header>
             <div className="p-5 grid gap-4">
               <div className="grid gap-2">
-                <Label htmlFor="hook-event">Event</Label>
+                <Label htmlFor="hook-event">{t.system?.event ?? "Event"}</Label>
                 <Select
                   id="hook-event"
                   value={hookEvent}
@@ -825,7 +851,9 @@ export default function SystemPage() {
                 </Select>
               </div>
               <div className="grid gap-2">
-                <Label htmlFor="hook-command">Command (absolute path)</Label>
+                <Label htmlFor="hook-command">
+                  {t.system?.commandAbsolutePath ?? "Command (absolute path)"}
+                </Label>
                 <Input
                   id="hook-command"
                   autoFocus
@@ -836,10 +864,14 @@ export default function SystemPage() {
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div className="grid gap-2">
-                  <Label htmlFor="hook-matcher">Matcher (optional)</Label>
+                  <Label htmlFor="hook-matcher">
+                    {t.system?.matcherOptional ?? "Matcher (optional)"}
+                  </Label>
                   <Input
                     id="hook-matcher"
-                    placeholder="e.g. terminal"
+                    placeholder={
+                      t.system?.matcherPlaceholder ?? "e.g. terminal"
+                    }
                     value={hookMatcher}
                     onChange={(e) => setHookMatcher(e.target.value)}
                   />
@@ -865,13 +897,13 @@ export default function SystemPage() {
                   className="cursor-pointer text-sm font-normal normal-case tracking-normal text-muted-foreground"
                   htmlFor="hook-approve"
                 >
-                  Approve now (grant consent so it fires; otherwise it stays
-                  configured but inactive)
+                  {t.system?.approveNow ??
+                    "Approve now (grant consent so it fires; otherwise it stays configured but inactive)"}
                 </Label>
               </div>
               <p className="text-xs text-warning">
-                Shell hooks run arbitrary commands on this host. Only add scripts
-                you trust. Takes effect on the next gateway/session restart.
+                {t.system?.shellHooksWarning ??
+                  "Shell hooks run arbitrary commands on this host. Only add scripts you trust. Takes effect on the next gateway/session restart."}
               </p>
               <div className="flex justify-end">
                 <Button
@@ -881,7 +913,9 @@ export default function SystemPage() {
                   disabled={creatingHook}
                   prefix={creatingHook ? <Spinner /> : undefined}
                 >
-                  {creatingHook ? "Creating" : "Create hook"}
+                  {creatingHook
+                    ? (t.system?.creatingHook ?? "Creating")
+                    : (t.system?.createHook ?? "Create hook")}
                 </Button>
               </div>
             </div>
@@ -901,7 +935,7 @@ export default function SystemPage() {
       {/* ── Host / system stats ───────────────────────────────────── */}
       <section className="flex flex-col gap-3">
         <H2 variant="sm" className="flex items-center gap-2 text-muted-foreground">
-          <Server className="h-4 w-4" /> Host
+          <Server className="h-4 w-4" /> {t.system?.host ?? "Host"}
         </H2>
         <Card>
           <CardContent className="py-4">
@@ -911,15 +945,21 @@ export default function SystemPage() {
                 <div>{stats?.os} {stats?.os_release}</div>
               </div>
               <div>
-                <div className="text-xs uppercase tracking-wider text-muted-foreground">Arch</div>
+                <div className="text-xs uppercase tracking-wider text-muted-foreground">
+                  {t.system?.arch ?? "Arch"}
+                </div>
                 <div>{stats?.arch}</div>
               </div>
               <div>
-                <div className="text-xs uppercase tracking-wider text-muted-foreground">Host</div>
+                <div className="text-xs uppercase tracking-wider text-muted-foreground">
+                  {t.system?.host ?? "Host"}
+                </div>
                 <div className="truncate">{stats?.hostname}</div>
               </div>
               <div>
-                <div className="text-xs uppercase tracking-wider text-muted-foreground">Python</div>
+                <div className="text-xs uppercase tracking-wider text-muted-foreground">
+                  {t.system?.python ?? "Python"}
+                </div>
                 <div>{stats?.python_impl} {stats?.python_version}</div>
               </div>
               <div>
@@ -931,11 +971,16 @@ export default function SystemPage() {
                     (updateInfo.update_available ? (
                       <Badge tone="warning">
                         {updateInfo.behind && updateInfo.behind > 0
-                          ? `${updateInfo.behind} behind`
-                          : "update available"}
+                          ? (
+                              t.system?.updateBehind ?? "{count} behind"
+                            ).replace("{count}", String(updateInfo.behind))
+                          : (t.system?.updateAvailable ??
+                            "update available")}
                       </Badge>
                     ) : updateInfo.behind === 0 ? (
-                      <Badge tone="success">latest</Badge>
+                      <Badge tone="success">
+                        {t.system?.latest ?? "latest"}
+                      </Badge>
                     ) : null)}
                 </div>
               </div>
@@ -952,7 +997,9 @@ export default function SystemPage() {
               </div>
               {stats?.memory && (
                 <div>
-                  <div className="text-xs uppercase tracking-wider text-muted-foreground">Memory</div>
+                  <div className="text-xs uppercase tracking-wider text-muted-foreground">
+                    {t.system?.memory ?? "Memory"}
+                  </div>
                   <div>
                     {formatBytes(stats.memory.used)} / {formatBytes(stats.memory.total)} ({stats.memory.percent}%)
                   </div>
@@ -961,7 +1008,7 @@ export default function SystemPage() {
               {stats?.disk && (
                 <div>
                   <div className="text-xs uppercase tracking-wider text-muted-foreground flex items-center gap-1">
-                    <HardDrive className="h-3 w-3" /> Disk
+                    <HardDrive className="h-3 w-3" /> {t.system?.disk ?? "Disk"}
                   </div>
                   <div>
                     {formatBytes(stats.disk.used)} / {formatBytes(stats.disk.total)} ({stats.disk.percent}%)
@@ -970,13 +1017,17 @@ export default function SystemPage() {
               )}
               {typeof stats?.uptime_seconds === "number" && (
                 <div>
-                  <div className="text-xs uppercase tracking-wider text-muted-foreground">Uptime</div>
+                  <div className="text-xs uppercase tracking-wider text-muted-foreground">
+                    {t.system?.uptime ?? "Uptime"}
+                  </div>
                   <div>{formatDuration(stats.uptime_seconds)}</div>
                 </div>
               )}
               {stats?.load_avg && stats.load_avg.length >= 3 && (
                 <div>
-                  <div className="text-xs uppercase tracking-wider text-muted-foreground">Load avg</div>
+                  <div className="text-xs uppercase tracking-wider text-muted-foreground">
+                    {t.system?.loadAvg ?? "Load avg"}
+                  </div>
                   <div>{stats.load_avg.map((n) => n.toFixed(2)).join(" / ")}</div>
                 </div>
               )}
@@ -1002,7 +1053,7 @@ export default function SystemPage() {
                   }
                   onClick={() => void checkForUpdate(true)}
                 >
-                  Check for updates
+                  {t.system?.checkForUpdates ?? "Check for updates"}
                 </Button>
                 {updateInfo?.update_available && updateInfo.can_apply && (
                   <Button
@@ -1010,7 +1061,7 @@ export default function SystemPage() {
                     prefix={<Download className="h-3.5 w-3.5" />}
                     onClick={() => setUpdateConfirmOpen(true)}
                   >
-                    Update now
+                    {t.system?.updateNow ?? "Update now"}
                   </Button>
                 )}
                 {updateInfo &&
@@ -1041,7 +1092,9 @@ export default function SystemPage() {
           <CardContent className="flex flex-col gap-3 py-4">
             <div className="flex items-center gap-3">
               <Badge tone={portal?.logged_in ? "success" : "secondary"}>
-                {portal?.logged_in ? "logged in" : "not logged in"}
+                {portal?.logged_in
+                  ? (t.system?.loggedIn ?? "logged in")
+                  : (t.system?.notLoggedIn ?? "not logged in")}
               </Badge>
               {portal?.provider && (
                 <span className="text-sm text-muted-foreground">
@@ -1054,13 +1107,13 @@ export default function SystemPage() {
                 rel="noreferrer"
                 className="ml-auto text-xs text-primary underline"
               >
-                Manage subscription
+                {t.system?.manageSubscription ?? "Manage subscription"}
               </a>
             </div>
             {portal?.features && portal.features.length > 0 && (
               <div className="flex flex-col gap-1 border-t border-border pt-3">
                 <span className="text-xs uppercase tracking-wider text-muted-foreground">
-                  Tool Gateway routing
+                  {t.system?.toolGatewayRouting ?? "Tool Gateway routing"}
                 </span>
                 {portal.features.map((f) => (
                   <div key={f.label} className="flex items-center justify-between text-sm">
@@ -1082,22 +1135,40 @@ export default function SystemPage() {
       {/* ── Curator ───────────────────────────────────────────────── */}
       <section className="flex flex-col gap-3">
         <H2 variant="sm" className="flex items-center gap-2 text-muted-foreground">
-          <Sparkles className="h-4 w-4" /> Skill curator
+          <Sparkles className="h-4 w-4" />{" "}
+          {t.system?.skillCurator ?? "Skill curator"}
         </H2>
         <Card>
           <CardContent className="flex items-center justify-between py-4">
             <div className="flex items-center gap-3">
               <Badge tone={curator?.paused ? "warning" : curator?.enabled ? "success" : "secondary"}>
-                {curator?.paused ? "paused" : curator?.enabled ? "active" : "disabled"}
+                {curator?.paused
+                  ? (t.system?.paused ?? "paused")
+                  : curator?.enabled
+                    ? t.common.active
+                    : t.common.disabled}
               </Badge>
               <span className="text-sm text-muted-foreground">
-                {curator?.interval_hours ? `every ${curator.interval_hours}h` : ""}
-                {curator?.last_run_at ? ` · last run ${new Date(curator.last_run_at).toLocaleString()}` : " · never run"}
+                {curator?.interval_hours
+                  ? (
+                      t.system?.curatorEvery ?? "every {hours}h"
+                    ).replace("{hours}", String(curator.interval_hours))
+                  : ""}
+                {curator?.last_run_at
+                  ? ` · ${(
+                      t.system?.curatorLastRun ?? "last run {at}"
+                    ).replace(
+                      "{at}",
+                      new Date(curator.last_run_at).toLocaleString(),
+                    )}`
+                  : ` · ${t.system?.curatorNeverRun ?? "never run"}`}
               </span>
             </div>
             <div className="flex items-center gap-2">
               <Button size="sm" ghost onClick={toggleCuratorPaused}>
-                {curator?.paused ? "Resume" : "Pause"}
+                {curator?.paused
+                  ? (t.system?.resume ?? "Resume")
+                  : (t.system?.pause ?? "Pause")}
               </Button>
               <Button
                 size="sm"
@@ -1105,7 +1176,7 @@ export default function SystemPage() {
                 prefix={<Play className="h-3.5 w-3.5" />}
                 onClick={() => runOp(api.runCurator, "Curator review")}
               >
-                Run now
+                {t.system?.runNow ?? "Run now"}
               </Button>
             </div>
           </CardContent>
@@ -1115,20 +1186,22 @@ export default function SystemPage() {
       {/* ── Gateway ───────────────────────────────────────────────── */}
       <section className="flex flex-col gap-3">
         <H2 variant="sm" className="flex items-center gap-2 text-muted-foreground">
-          <Power className="h-4 w-4" /> Gateway
+          <Power className="h-4 w-4" /> {t.common.gateway ?? "Gateway"}
         </H2>
         <Card>
           <CardContent className="flex items-center justify-between py-4">
             <div className="flex items-center gap-3">
               <Badge tone={gatewayRunning ? "success" : "secondary"}>
-                {gatewayRunning ? "running" : "stopped"}
+                {gatewayRunning
+                  ? (t.system?.running ?? "running")
+                  : (t.system?.stopped ?? "stopped")}
               </Badge>
               <span className="text-sm text-muted-foreground">
                 {gatewayStateDescription(status?.gateway_state, gatewayRunning)}
               </span>
               {gatewayStateNeedsLogs(status?.gateway_state) && (
                 <Link to="/logs?file=gateway" className="text-sm underline">
-                  Open logs
+                  {t.system?.openLogs ?? "Open logs"}
                 </Link>
               )}
             </div>
@@ -1140,7 +1213,7 @@ export default function SystemPage() {
                 disabled={gatewayRunning}
                 prefix={<Play className="h-3.5 w-3.5" />}
               >
-                Start
+                {t.system?.start ?? "Start"}
               </Button>
               <Button
                 size="sm"
@@ -1148,7 +1221,7 @@ export default function SystemPage() {
                 onClick={requestRestart}
                 prefix={<RotateCw className="h-3.5 w-3.5" />}
               >
-                Restart
+                {t.system?.restart ?? "Restart"}
               </Button>
               <Button
                 size="sm"
@@ -1158,13 +1231,17 @@ export default function SystemPage() {
                 disabled={!gatewayRunning}
                 prefix={<Power className="h-3.5 w-3.5" />}
               >
-                Stop
+                {t.system?.stop ?? "Stop"}
               </Button>
             </div>
           </CardContent>
           {(sharedGateway || servedNotice) && (
             <CardContent className="border-t border-current/10 py-3 text-xs text-muted-foreground" data-slot="shared-gateway-notice">
-              {servedNotice ?? `Served by the shared gateway with ${sharedGateway!.join(", ")}.`}
+              {servedNotice ??
+                (
+                  t.system?.servedByShared ??
+                  "Served by the shared gateway with {profiles}."
+                ).replace("{profiles}", sharedGateway!.join(", "))}
             </CardContent>
           )}
           {migratePlan && !migratePlan.already_multiplexed && migratePlan.profiles.length > 1 && (
@@ -1173,16 +1250,23 @@ export default function SystemPage() {
             <CardContent className="flex flex-col gap-2 border-t border-border py-4 text-sm">
               <div className="flex items-center justify-between gap-3">
                 <span className="text-muted-foreground">
-                  Your profiles each run their own gateway. One multiplexed gateway serves every profile from a single process.
+                  {t.system?.migrateHint ??
+                    "Your profiles each run their own gateway. One multiplexed gateway serves every profile from a single process."}
                 </span>
                 <Button
                   size="sm"
                   className="uppercase"
                   onClick={migrateToMultiplex}
                   disabled={!migratePlan.eligible}
-                  title={migratePlan.eligible ? undefined : "Fix the blockers below first"}
+                  title={
+                    migratePlan.eligible
+                      ? undefined
+                      : (t.system?.fixBlockersFirst ??
+                        "Fix the blockers below first")
+                  }
                 >
-                  Migrate to a single multiplexed gateway
+                  {t.system?.migrateToSingle ??
+                    "Migrate to a single multiplexed gateway"}
                 </Button>
               </div>
               {migratePlan.blockers.map((b) => (
@@ -1196,15 +1280,16 @@ export default function SystemPage() {
       {/* ── Memory ────────────────────────────────────────────────── */}
       <section className="flex flex-col gap-3">
         <H2 variant="sm" className="flex items-center gap-2 text-muted-foreground">
-          <Brain className="h-4 w-4" /> Memory
+          <Brain className="h-4 w-4" /> {t.system?.memory ?? "Memory"}
         </H2>
         <Card>
           <CardContent className="flex flex-col gap-4 py-4">
             <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground">
               <span>
-                External provider:{" "}
+                {t.system?.externalProvider ?? "External provider:"}{" "}
                 <span className="font-mono text-foreground">
-                  {memory?.active || "built-in only"}
+                  {memory?.active ||
+                    (t.system?.builtInOnly ?? "built-in only")}
                 </span>
               </span>
               {activeMemoryProvider && (
@@ -1213,19 +1298,20 @@ export default function SystemPage() {
                 </Badge>
               )}
               <Link to="/plugins" className="underline">
-                Change in Plugins →
+                {t.system?.changeInPlugins ?? "Change in Plugins →"}
               </Link>
               <span className="ml-auto">
-                Provider setup:{" "}
+                {t.system?.providerSetup ?? "Provider setup:"}{" "}
                 <Link to="/plugins" className="underline">
-                  configure in Plugins
+                  {t.system?.configureInPlugins ?? "configure in Plugins"}
                 </Link>
               </span>
             </div>
 
             {activeMemoryProvider?.status === "missing" && (
               <p className="border border-destructive/50 px-3 py-2 text-xs text-destructive">
-                The configured provider is no longer installed. Switch to built-in memory or configure another provider in Plugins.
+                {t.system?.providerMissingWarning ??
+                  "The configured provider is no longer installed. Switch to built-in memory or configure another provider in Plugins."}
               </p>
             )}
 
@@ -1237,13 +1323,13 @@ export default function SystemPage() {
               </span>
               <div className="flex items-center gap-2 ml-auto">
                 <Button size="sm" ghost className="text-destructive" onClick={() => memoryReset.requestDelete("memory")}>
-                  Reset MEMORY.md
+                  {t.system?.resetMemoryMd ?? "Reset MEMORY.md"}
                 </Button>
                 <Button size="sm" ghost className="text-destructive" onClick={() => memoryReset.requestDelete("user")}>
-                  Reset USER.md
+                  {t.system?.resetUserMd ?? "Reset USER.md"}
                 </Button>
                 <Button size="sm" ghost className="text-destructive" onClick={() => memoryReset.requestDelete("all")}>
-                  Reset all
+                  {t.system?.resetAll ?? "Reset all"}
                 </Button>
               </div>
             </div>
@@ -1254,32 +1340,35 @@ export default function SystemPage() {
       {/* ── Credential pool ───────────────────────────────────────── */}
       <section className="flex flex-col gap-3">
         <H2 variant="sm" className="flex items-center gap-2 text-muted-foreground">
-          <KeyRound className="h-4 w-4" /> Credential pool
+          <KeyRound className="h-4 w-4" /> {t.system?.credentialPool ?? "Credential pool"}
         </H2>
         <Card>
           <CardContent className="flex flex-col gap-4 py-4">
             <div className="grid grid-cols-1 sm:grid-cols-4 gap-3 items-end">
               <div className="grid gap-2">
-                <Label htmlFor="cred-provider">Provider</Label>
+                <Label htmlFor="cred-provider">
+                  {t.system?.provider ?? "Provider"}
+                </Label>
                 <Input id="cred-provider" value={credProvider} onChange={(e) => setCredProvider(e.target.value)} placeholder="openrouter" />
               </div>
               <div className="grid gap-2 sm:col-span-2">
-                <Label htmlFor="cred-key">API key</Label>
+                <Label htmlFor="cred-key">{t.system?.apiKey ?? "API key"}</Label>
                 <Input id="cred-key" type="password" value={credKey} onChange={(e) => setCredKey(e.target.value)} placeholder="sk-…" />
               </div>
               <div className="grid gap-2">
-                <Label htmlFor="cred-label">Label</Label>
-                <Input id="cred-label" value={credLabel} onChange={(e) => setCredLabel(e.target.value)} placeholder="optional" />
+                <Label htmlFor="cred-label">{t.system?.label ?? "Label"}</Label>
+                <Input id="cred-label" value={credLabel} onChange={(e) => setCredLabel(e.target.value)} placeholder={t.system?.optional ?? "optional"} />
               </div>
             </div>
             <div className="flex justify-end">
               <Button size="sm" className="uppercase" onClick={addCredential} disabled={addingCred} prefix={addingCred ? <Spinner /> : undefined}>
-                Add key
+                {t.system?.addKey ?? "Add key"}
               </Button>
             </div>
             {pool.length === 0 && (
               <p className="text-sm text-muted-foreground">
-                No pooled credentials. Add one above to enable key rotation.
+                {t.system?.noCredentials ??
+                  "No pooled credentials. Add one above to enable key rotation."}
               </p>
             )}
             {pool.map((prov) => (
@@ -1293,7 +1382,7 @@ export default function SystemPage() {
                     <span className="font-mono text-xs text-muted-foreground">{entry.token_preview}</span>
                     <Badge tone="outline">{entry.auth_type}</Badge>
                     {entry.last_status && <Badge tone="secondary">{entry.last_status}</Badge>}
-                    <Button ghost size="icon" className="ml-auto text-destructive" aria-label="Remove credential" onClick={() => credDelete.requestDelete(`${prov.provider}|${entry.index}`)}>
+                    <Button ghost size="icon" className="ml-auto text-destructive" aria-label={t.system?.removeCredential ?? "Remove credential"} onClick={() => credDelete.requestDelete(`${prov.provider}|${entry.index}`)}>
                       <Trash2 />
                     </Button>
                   </div>
@@ -1307,30 +1396,30 @@ export default function SystemPage() {
       {/* ── Operations ────────────────────────────────────────────── */}
       <section className="flex flex-col gap-3">
         <H2 variant="sm" className="flex items-center gap-2 text-muted-foreground">
-          <Activity className="h-4 w-4" /> Operations
+          <Activity className="h-4 w-4" /> {t.system?.operations ?? "Operations"}
         </H2>
         <Card>
           <CardContent className="flex flex-wrap gap-2 py-4">
             <Button size="sm" ghost prefix={<Terminal className="h-3.5 w-3.5" />} onClick={() => setConsoleOpen(true)}>
-              Open console
+              {t.system?.openConsole ?? "Open console"}
             </Button>
             <Button size="sm" ghost prefix={<Stethoscope className="h-3.5 w-3.5" />} onClick={() => runOp(api.runDoctor, "Doctor")}>
-              Run doctor
+              {t.system?.runDoctor ?? "Run doctor"}
             </Button>
             <Button size="sm" ghost prefix={<ShieldCheck className="h-3.5 w-3.5" />} onClick={() => runOp(api.runSecurityAudit, "Security audit")}>
-              Security audit
+              {t.system?.securityAudit ?? "Security audit"}
             </Button>
             <Button size="sm" ghost prefix={<RotateCw className="h-3.5 w-3.5" />} onClick={() => runOp(api.updateSkillsFromHub, "Skills update")}>
-              Update skills
+              {t.system?.updateSkills ?? "Update skills"}
             </Button>
             <Button size="sm" ghost prefix={<Activity className="h-3.5 w-3.5" />} onClick={() => runOp(api.runPromptSize, "Prompt size")}>
-              Prompt size
+              {t.system?.promptSize ?? "Prompt size"}
             </Button>
             <Button size="sm" ghost prefix={<Database className="h-3.5 w-3.5" />} onClick={() => runOp(api.runDump, "Support dump")}>
-              Support dump
+              {t.system?.supportDump ?? "Support dump"}
             </Button>
             <Button size="sm" ghost prefix={<RotateCw className="h-3.5 w-3.5" />} onClick={() => runOp(api.runConfigMigrate, "Config migrate")}>
-              Migrate config
+              {t.system?.migrateConfig ?? "Migrate config"}
             </Button>
           </CardContent>
         </Card>
@@ -1339,7 +1428,7 @@ export default function SystemPage() {
           <CardContent className="flex flex-col gap-4 py-4">
             <div className="flex flex-col gap-3 lg:flex-row lg:items-end">
               <div className="grid min-w-0 flex-1 gap-2">
-                <Label>Full backup</Label>
+                <Label>{t.system?.fullBackup ?? "Full backup"}</Label>
                 <div className="flex min-w-0 flex-col gap-2 sm:flex-row sm:items-center">
                   <Button
                     size="sm"
@@ -1347,7 +1436,7 @@ export default function SystemPage() {
                     prefix={<Database className="h-3.5 w-3.5" />}
                     onClick={() => void runDashboardBackup()}
                   >
-                    Create backup
+                    {t.system?.createBackup ?? "Create backup"}
                   </Button>
                   <Button
                     size="sm"
@@ -1362,11 +1451,14 @@ export default function SystemPage() {
                     }
                     onClick={() => void downloadBackup()}
                   >
-                    Download backup
+                    {t.system?.downloadBackup ?? "Download backup"}
                   </Button>
                   <span
                     className="min-w-0 truncate text-xs text-muted-foreground"
-                    title={pendingBackupArchive ?? "No backup created yet"}
+                    title={
+                      pendingBackupArchive ??
+                      (t.system?.noBackupYet ?? "No backup created yet")
+                    }
                   >
                     {backupFileName(pendingBackupArchive)}
                   </span>
@@ -1376,7 +1468,9 @@ export default function SystemPage() {
 
             <div className="flex flex-col gap-3 border-t border-border pt-4 sm:flex-row sm:items-end">
               <div className="grid min-w-0 flex-1 gap-2">
-                <Label>Restore from backup upload</Label>
+                <Label>
+                  {t.system?.restoreFromUpload ?? "Restore from backup upload"}
+                </Label>
                 <div className="flex min-w-0 flex-col gap-2 sm:flex-row sm:items-center">
                   <Button
                     type="button"
@@ -1386,13 +1480,13 @@ export default function SystemPage() {
                     prefix={<Upload className="h-3.5 w-3.5" />}
                     onClick={() => importUploadInputRef.current?.click()}
                   >
-                    Choose restore zip
+                    {t.system?.chooseRestoreZip ?? "Choose restore zip"}
                   </Button>
                   <span
                     className="min-w-0 truncate text-xs text-muted-foreground"
-                    title={importFile?.name ?? "No backup archive selected"}
+                    title={importFile?.name ?? (t.system?.noArchiveSelected ?? "No backup archive selected")}
                   >
-                    {importFile?.name ?? "No backup archive selected"}
+                    {importFile?.name ?? (t.system?.noArchiveSelected ?? "No backup archive selected")}
                   </span>
                 </div>
               </div>
@@ -1406,13 +1500,15 @@ export default function SystemPage() {
                   setImportConfirmTarget({ kind: "upload", file: importFile });
                 }}
               >
-                Restore upload
+                {t.system?.restoreUpload ?? "Restore upload"}
               </Button>
             </div>
 
             <div className="flex flex-col gap-3 border-t border-border pt-4 sm:flex-row sm:items-end">
               <div className="grid min-w-0 flex-1 gap-2">
-                <Label htmlFor="import-path">Restore from backups path</Label>
+                <Label htmlFor="import-path">
+                  {t.system?.restoreFromPath ?? "Restore from backups path"}
+                </Label>
                 <Input
                   id="import-path"
                   value={importPath}
@@ -1431,16 +1527,19 @@ export default function SystemPage() {
                   setImportConfirmTarget({ kind: "path", path });
                 }}
               >
-                Restore path
+                {t.system?.restorePath ?? "Restore path"}
               </Button>
             </div>
             <ConfirmDialog
               open={!!importConfirmTarget}
-              title="Restore full Hermes backup?"
-              description={`This will overwrite your current Hermes configuration, skills, sessions, and data with the contents of ${backupImportLabel(importConfirmTarget)}. This cannot be undone.`}
+              title={t.system?.restoreConfirmTitle ?? "Restore full Hermes backup?"}
+              description={(
+                t.system?.restoreConfirmDesc ??
+                "This will overwrite your current Hermes configuration, skills, sessions, and data with the contents of {target}. This cannot be undone."
+              ).replace("{target}", backupImportLabel(importConfirmTarget))}
               destructive
-              confirmLabel="Restore"
-              cancelLabel="Cancel"
+              confirmLabel={t.system?.restore ?? "Restore"}
+              cancelLabel={t.common.cancel}
               onCancel={() => setImportConfirmTarget(null)}
               onConfirm={() => {
                 const target = importConfirmTarget;
@@ -1460,11 +1559,12 @@ export default function SystemPage() {
               <div className="flex items-start gap-2">
                 <Share2 className="h-4 w-4 mt-0.5 text-muted-foreground" />
                 <div className="flex flex-col">
-                  <span className="text-sm font-medium">Share debug report</span>
+                  <span className="text-sm font-medium">
+                    {t.system?.shareDebugReport ?? "Share debug report"}
+                  </span>
                   <span className="text-xs text-muted-foreground max-w-prose">
-                    Uploads system info + logs to a public paste service and
-                    returns links to send the Hermes team. Pastes auto-delete
-                    after 6 hours.
+                    {t.system?.shareDebugHint ??
+                      "Uploads system info + logs to a public paste service and returns links to send the Hermes team. Pastes auto-delete after 6 hours."}
                   </span>
                 </div>
               </div>
@@ -1480,7 +1580,9 @@ export default function SystemPage() {
                 }
                 onClick={() => void runDebugShare()}
               >
-                {sharing ? "Uploading…" : "Generate share link"}
+                {sharing
+                  ? (t.system?.uploading ?? "Uploading…")
+                  : (t.system?.generateShareLink ?? "Generate share link")}
               </Button>
             </div>
 
@@ -1496,7 +1598,8 @@ export default function SystemPage() {
                 className="cursor-pointer select-none text-xs font-normal normal-case tracking-normal text-muted-foreground"
                 htmlFor="share-redact"
               >
-                Redact credential-shaped tokens before upload (recommended)
+                {t.system?.redactRecommended ??
+                  "Redact credential-shaped tokens before upload (recommended)"}
               </Label>
             </div>
 
@@ -1504,16 +1607,28 @@ export default function SystemPage() {
               <div className="flex flex-col gap-2 border-t border-border pt-3">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <Badge tone="success">uploaded</Badge>
+                    <Badge tone="success">
+                      {t.system?.uploaded ?? "uploaded"}
+                    </Badge>
                     {shareResult.redacted ? (
-                      <Badge tone="outline">redacted</Badge>
+                      <Badge tone="outline">
+                        {t.system?.redacted ?? "redacted"}
+                      </Badge>
                     ) : (
-                      <Badge tone="warning">not redacted</Badge>
+                      <Badge tone="warning">
+                        {t.system?.notRedacted ?? "not redacted"}
+                      </Badge>
                     )}
                     <span className="flex items-center gap-1 text-xs text-muted-foreground">
                       <Clock className="h-3 w-3" />
-                      auto-deletes in{" "}
-                      {Math.round(shareResult.auto_delete_seconds / 3600)}h
+                      {(
+                        t.system?.autoDeletesIn ?? "auto-deletes in {hours}h"
+                      ).replace(
+                        "{hours}",
+                        String(
+                          Math.round(shareResult.auto_delete_seconds / 3600),
+                        ),
+                      )}
                     </span>
                   </div>
                   {Object.keys(shareResult.urls).length > 1 && (
@@ -1536,7 +1651,7 @@ export default function SystemPage() {
                         )
                       }
                     >
-                      Copy all
+                      {t.system?.copyAll ?? "Copy all"}
                     </Button>
                   )}
                 </div>
@@ -1561,7 +1676,9 @@ export default function SystemPage() {
                     <Button
                       ghost
                       size="icon"
-                      aria-label={`Copy ${label} link`}
+                      aria-label={(
+                        t.system?.copyLink ?? "Copy {label} link"
+                      ).replace("{label}", label)}
                       onClick={() => void copyToClipboard(url, label)}
                     >
                       {copiedLabel === label ? <Check /> : <Copy />}
@@ -1571,7 +1688,10 @@ export default function SystemPage() {
 
                 {shareResult.failures.length > 0 && (
                   <span className="text-xs text-destructive">
-                    Some logs failed to upload: {shareResult.failures.join("; ")}
+                    {(
+                      t.system?.logsFailedUpload ??
+                      "Some logs failed to upload: {failures}"
+                    ).replace("{failures}", shareResult.failures.join("; "))}
                   </span>
                 )}
               </div>
@@ -1583,7 +1703,7 @@ export default function SystemPage() {
       {/* ── Checkpoints ───────────────────────────────────────────── */}
       <section className="flex flex-col gap-3">
         <H2 variant="sm" className="flex items-center gap-2 text-muted-foreground">
-          <Database className="h-4 w-4" /> Checkpoints
+          <Database className="h-4 w-4" /> {t.system?.checkpoints ?? "Checkpoints"}
         </H2>
         <Card>
           <CardContent className="flex items-center justify-between py-4">
@@ -1592,7 +1712,7 @@ export default function SystemPage() {
               {formatBytes(checkpoints?.total_bytes ?? 0)}
             </span>
             <Button size="sm" ghost className="text-destructive" disabled={!checkpoints?.sessions.length} prefix={<Trash2 className="h-3.5 w-3.5" />} onClick={() => checkpointsPrune.requestDelete("all")}>
-              Prune
+              {t.system?.prune ?? "Prune"}
             </Button>
           </CardContent>
         </Card>
@@ -1602,16 +1722,16 @@ export default function SystemPage() {
       <section className="flex flex-col gap-3">
         <div className="flex items-center justify-between">
           <H2 variant="sm" className="flex items-center gap-2 text-muted-foreground">
-            <Terminal className="h-4 w-4" /> Shell hooks
+            <Terminal className="h-4 w-4" /> {t.system?.shellHooks ?? "Shell hooks"}
           </H2>
           <Button size="sm" className="uppercase" prefix={<Plus className="h-3.5 w-3.5" />} onClick={() => setHookModalOpen(true)}>
-            New hook
+            {t.system?.newHook ?? "New hook"}
           </Button>
         </div>
         {(!hooks || hooks.hooks.length === 0) && (
           <Card>
             <CardContent className="py-6 text-center text-sm text-muted-foreground">
-              No shell hooks configured.
+              {t.system?.noHooks ?? "No shell hooks configured."}
             </CardContent>
           </Card>
         )}
@@ -1620,20 +1740,29 @@ export default function SystemPage() {
             <CardContent className="flex items-center gap-3 py-3">
               <Badge tone="outline">{h.event}</Badge>
               {h.matcher && (
-                <span className="text-xs text-muted-foreground">matcher: {h.matcher}</span>
+                <span className="text-xs text-muted-foreground">
+                  {(t.system?.matcherLabel ?? "matcher: {value}").replace(
+                    "{value}",
+                    h.matcher,
+                  )}
+                </span>
               )}
               <span className="font-mono text-xs truncate flex-1">{h.command}</span>
               {h.executable === false && (
-                <Badge tone="destructive">not executable</Badge>
+                <Badge tone="destructive">
+                  {t.system?.notExecutable ?? "not executable"}
+                </Badge>
               )}
               <Badge tone={h.allowed ? "success" : "warning"}>
-                {h.allowed ? "allowed" : "not approved"}
+                {h.allowed
+                  ? (t.system?.allowed ?? "allowed")
+                  : (t.system?.notApproved ?? "not approved")}
               </Badge>
               <Button
                 ghost
                 size="icon"
                 className="text-destructive"
-                aria-label="Remove hook"
+                aria-label={t.system?.removeHook ?? "Remove hook"}
                 onClick={() =>
                   hookDelete.requestDelete(`${h.event}|${h.command ?? ""}`)
                 }
