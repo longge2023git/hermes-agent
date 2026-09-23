@@ -3966,6 +3966,43 @@ export interface Translations {
     emptySlashCommand: string
     desktopCommands: string
     skillCommandsAvailable: (count: number) => string
+    /** Slash-palette copy for `lib/desktop-slash-commands.ts`, keyed by
+     *  canonical command (the command NAMES themselves are never translated).
+     *  Every member is optional so a locale may omit the group entirely and
+     *  fall back to English while the pipeline catches up. */
+    slashCommands?: {
+      new?: string
+      stop?: string
+      branch?: string
+      yolo?: string
+      reasoning?: string
+      wake?: string
+      handoff?: string
+      profile?: string
+      skin?: string
+      title?: string
+      help?: string
+      browser?: string
+      journey?: string
+      model?: string
+      resume?: string
+      compress?: string
+      btw?: string
+      pet?: string
+      hatch?: string
+      save?: string
+      status?: string
+      skinList?: string
+      skinNext?: string
+      skinCurrent?: string
+      unavailableAdvanced?: (command: string) => string
+      unavailableComposerVoice?: () => string
+      unavailableMessaging?: (command: string) => string
+      unavailableSettings?: (command: string) => string
+      unavailableTerminal?: (command: string) => string
+      pickerModel?: (command: string) => string
+      pickerSession?: (command: string) => string
+    }
     warningLine: (message: string) => string
     yoloArmed: string
     yoloOff: string

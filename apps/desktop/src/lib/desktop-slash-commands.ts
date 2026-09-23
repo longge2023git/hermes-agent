@@ -1,3 +1,5 @@
+import { translateNow } from '@/i18n'
+
 import { peekCachedSlashCompletion } from '@/lib/slash-completion-cache'
 
 import desktopSlashRegistry from './desktop-slash-registry.json'
@@ -134,8 +136,11 @@ export type DesktopSlashArgumentMode = 'mixed' | 'options' | 'text'
 export interface DesktopCommandSpec {
   /** Canonical command, leading slash included (e.g. `/resume`). */
   name: string
-  /** Popover/help label; omitted for unavailable commands (never surfaced). */
-  description?: string
+  /** Catalog key (`desktop.slashCommands.*`) for the popover/help label;
+   *  omitted for unavailable commands (never surfaced). Resolved through
+   *  `translateNow` at call time — the command NAME and every parsing
+   *  identifier stay literal, only the copy follows the active locale. */
+  descriptionKey?: string
   aliases?: string[]
   surface: DesktopCommandSurface
   /**
@@ -176,64 +181,79 @@ const rpc = (
  */
 const DESKTOP_COMMAND_SPECS: readonly DesktopCommandSpec[] = [
   // Local client actions
-  { name: '/new', description: 'Start a new desktop chat', aliases: ['/reset'], surface: action('new') },
+  { name: '/new', descriptionKey: 'desktop.slashCommands.new', aliases: ['/reset'], surface: action('new') },
   {
     name: '/stop',
-    description: 'Stop the active turn and background processes',
+    descriptionKey: 'desktop.slashCommands.stop',
     surface: action('stop')
   },
   {
     name: '/branch',
-    description: 'Branch the latest message into a new chat',
+    descriptionKey: 'desktop.slashCommands.branch',
     aliases: ['/fork'],
     surface: action('branch')
   },
-  { name: '/yolo', description: 'Toggle YOLO — auto-approve dangerous commands', surface: action('yolo') },
+  { name: '/yolo', descriptionKey: 'desktop.slashCommands.yolo', surface: action('yolo') },
   {
     name: '/reasoning',
-    description: 'Reasoning effort or display [<level> [--global]|show|hide|full|clamp]',
+    descriptionKey: 'desktop.slashCommands.reasoning',
     surface: action('reasoning'),
     argumentMode: 'options'
   },
   {
     name: '/wake',
-    description: 'Control the desktop wake-word listener [on|off|status]',
+    descriptionKey: 'desktop.slashCommands.wake',
     surface: action('wake'),
     argumentMode: 'options'
   },
   {
     name: '/handoff',
-    description: 'Hand off this session to a messaging platform',
+    descriptionKey: 'desktop.slashCommands.handoff',
     surface: action('handoff'),
     argumentMode: 'options'
   },
-  { name: '/profile', description: 'Switch the active Hermes profile', surface: action('profile') },
+  { name: '/profile', descriptionKey: 'desktop.slashCommands.profile', surface: action('profile') },
   {
     name: '/skin',
-    description: 'Switch desktop theme or cycle to the next one',
+    descriptionKey: 'desktop.slashCommands.skin',
     surface: action('skin'),
     argumentMode: 'options'
   },
-  { name: '/title', description: 'Rename the current session', surface: action('title'), argumentMode: 'text' },
-  { name: '/help', description: 'Show desktop slash commands', aliases: ['/commands'], surface: action('help') },
+  {
+    name: '/title',
+    descriptionKey: 'desktop.slashCommands.title',
+    surface: action('title'),
+    argumentMode: 'text'
+  },
+  {
+    name: '/help',
+    descriptionKey: 'desktop.slashCommands.help',
+    aliases: ['/commands'],
+    surface: action('help')
+  },
   {
     name: '/browser',
-    description: 'Manage browser CDP connection [connect|disconnect|status] (local gateway only)',
+    descriptionKey: 'desktop.slashCommands.browser',
     surface: action('browser'),
     argumentMode: 'options'
   },
   {
     name: '/journey',
-    description: 'Open the memory graph — skills + memories over time',
+    descriptionKey: 'desktop.slashCommands.journey',
     aliases: ['/learning', '/memory-graph'],
     surface: action('journey')
   },
 
   // Overlay pickers
-  { name: '/model', description: 'Switch the model for this session', surface: picker('model'), hidden: true },
+  {
+    name: '/model',
+    descriptionKey: 'desktop.slashCommands.model',
+    surface: picker('model'),
+    hidden: true
+  },
   {
     name: '/resume',
-    description: 'Resume a saved session',
+    descriptionKey: 'desktop.slashCommands.resume',
     aliases: ['/sessions', '/switch'],
     surface: picker('session'),
     // `mixed`, not `options`: the argument is a free-text search the picker
@@ -251,7 +271,7 @@ const DESKTOP_COMMAND_SPECS: readonly DesktopCommandSpec[] = [
   // "not a quick/plugin/skill command: compress" (#44456).
   {
     name: '/compress',
-    description: 'Compress this conversation context',
+    descriptionKey: 'desktop.slashCommands.compress',
     aliases: ['/compact'],
     surface: action('compress'),
     argumentMode: 'text'
@@ -261,30 +281,30 @@ const DESKTOP_COMMAND_SPECS: readonly DesktopCommandSpec[] = [
   // saw the acknowledgement (#99065). The answer arrives as btw.complete.
   {
     name: '/btw',
-    description: 'Ask a side question about this conversation without interrupting it',
+    descriptionKey: 'desktop.slashCommands.btw',
     surface: action('btw'),
     argumentMode: 'text'
   },
   {
     name: '/pet',
-    description: 'Toggle or adopt a petdex mascot (/pet, /pet list, /pet boba)',
+    descriptionKey: 'desktop.slashCommands.pet',
     surface: action('pet'),
     argumentMode: 'options'
   },
   {
     name: '/hatch',
-    description: 'Generate a new pet (opens the pet generator)',
+    descriptionKey: 'desktop.slashCommands.hatch',
     aliases: ['/generate-pet'],
     surface: action('hatch')
   },
   {
     name: '/save',
-    description: 'Save the current transcript to JSON',
+    descriptionKey: 'desktop.slashCommands.save',
     surface: rpc('session.save', ctx => ({ session_id: ctx.sessionId }))
   },
   {
     name: '/status',
-    description: 'Show current session status',
+    descriptionKey: 'desktop.slashCommands.status',
     surface: rpc('session.status', ctx => ({ session_id: ctx.sessionId }))
   }
 ]
@@ -459,18 +479,16 @@ function isAliasCommand(command: string): boolean {
 }
 
 const UNAVAILABLE_MESSAGE: Record<DesktopUnavailableReason, (command: string) => string> = {
-  advanced: command =>
-    `${command} is not shown in the desktop slash palette. Use the relevant desktop control or terminal interface instead.`,
-  'composer-voice': () =>
-    'Voice chat lives in the composer here: click the microphone button and choose "Start voice chat" (or press Ctrl+B).',
-  messaging: command => `${command} is only used from messaging platforms.`,
-  settings: command => `${command} is managed from the desktop sidebar.`,
-  terminal: command => `${command} is only available in the terminal interface.`
+  advanced: command => translateNow('desktop.slashCommands.unavailableAdvanced', command),
+  'composer-voice': () => translateNow('desktop.slashCommands.unavailableComposerVoice'),
+  messaging: command => translateNow('desktop.slashCommands.unavailableMessaging', command),
+  settings: command => translateNow('desktop.slashCommands.unavailableSettings', command),
+  terminal: command => translateNow('desktop.slashCommands.unavailableTerminal', command)
 }
 
 const PICKER_UNAVAILABLE_MESSAGE: Record<DesktopPickerId, (command: string) => string> = {
-  model: command => `${command} uses the desktop model picker instead of a slash command.`,
-  session: command => `${command} uses the desktop session picker instead of a slash command.`
+  model: command => translateNow('desktop.slashCommands.pickerModel', command),
+  session: command => translateNow('desktop.slashCommands.pickerSession', command)
 }
 
 function normalizeCommand(command: string): string {
@@ -610,8 +628,12 @@ export function desktopSlashUnavailableMessage(command: string): string | null {
   return null
 }
 
+/** Popover/help copy for a known desktop command, resolved through the active
+ *  locale. The command NAME is never translated — only this label. */
 export function desktopSlashDescription(command: string, fallback = ''): string {
-  return SPEC_BY_NAME.get(canonicalDesktopSlashCommand(command))?.description || fallback
+  const key = SPEC_BY_NAME.get(canonicalDesktopSlashCommand(command))?.descriptionKey
+
+  return key ? translateNow(key) : fallback
 }
 
 export function desktopSlashCommandArgumentMode(command: string): DesktopSlashArgumentMode | null {
@@ -629,17 +651,17 @@ export function desktopSkinSlashCompletions(
     {
       text: '/skin list',
       display: '/skin list',
-      meta: 'Show available desktop themes'
+      meta: translateNow('desktop.slashCommands.skinList')
     },
     {
       text: '/skin next',
       display: '/skin next',
-      meta: 'Cycle to the next desktop theme'
+      meta: translateNow('desktop.slashCommands.skinNext')
     },
     ...themes.map(theme => ({
       text: `/skin ${theme.name}`,
       display: `/skin ${theme.name}`,
-      meta: `${theme.label}${theme.name === activeThemeName ? ' (current)' : ''} - ${theme.description}`
+      meta: `${theme.label}${theme.name === activeThemeName ? translateNow('desktop.slashCommands.skinCurrent') : ''} - ${theme.description}`
     }))
   ]
 
