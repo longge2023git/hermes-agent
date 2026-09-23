@@ -13,18 +13,20 @@ const BUILTIN: Record<string, keyof Translations["app"]["nav"]> = {
   "/config": "config",
   "/env": "keys",
   "/docs": "documentation",
+  "/files": "files",
+  "/channels": "channels",
+  "/webhooks": "webhooks",
+  "/pairing": "pairing",
+  "/system": "system",
 };
 
 // Built-in routes without an i18n nav key. Keep these in sync with the
 // sidebar labels in App.tsx — the naive capitalize fallback below mangles
 // initialisms ("/mcp" → "Mcp") and can't match multi-word labels.
 const BUILTIN_LITERAL: Record<string, string> = {
-  "/files": "Files",
+  // /mcp has no app.nav key (the sidebar renders "MCP" as a literal); keep it here
+  // so the page title matches the sidebar exactly.
   "/mcp": "MCP",
-  "/channels": "Channels",
-  "/webhooks": "Webhooks",
-  "/pairing": "Pairing",
-  "/system": "System",
 };
 
 export function resolvePageTitle(
