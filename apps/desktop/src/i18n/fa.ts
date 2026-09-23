@@ -605,7 +605,7 @@ export const fa = defineLocale({
         restartNow: 'راهاندازی مجدد گیتوی',
         missingEnvAction: 'راهاندازی کنید',
         alreadyInstalled: name => `${name} قبلاً نصب شده است.`,
-        desktopTarget: 'در پوشه افزونههای دسکتاپ محلی این برنامه نصب می‌شود',
+        desktopTarget: 'در پوشه افزونه‌های دسکتاپ محلی این برنامه نصب می‌شود',
         desktopTargetFromPackage: 'از بسته بالا در این برنامه بارگذاری می‌شود — برای هر پروفایل یکسان است',
         desktopOnlyNote: 'بسته‌های فقط-دسکتاپ افزونه عامل بکاند را نصب نمی‌کنند.',
         insecureWarning:
