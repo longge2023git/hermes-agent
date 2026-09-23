@@ -42,6 +42,33 @@ export type ToolTitleKey =
   | 'web_search'
   | 'write_file'
 
+/** Option labels for the sidebar filter menu. The menu's option *ids* are state
+ *  (persisted view preferences) and never translated; the copy that renders
+ *  beside them is looked up by these keys, so a locale cannot drift from the
+ *  ids and a new option cannot silently ship unlabelled. */
+export type FilterMenuLabelKey =
+  | 'archived'
+  | 'closed'
+  | 'cost'
+  | 'created'
+  | 'draft'
+  | 'idle'
+  | 'inboxStyle'
+  | 'manual'
+  | 'merged'
+  | 'needsInput'
+  | 'noPr'
+  | 'open'
+  | 'pr'
+  | 'preview'
+  | 'profile'
+  | 'project'
+  | 'status'
+  | 'tokens'
+  | 'unread'
+  | 'updated'
+  | 'working'
+
 interface ToolTitleCopy {
   done: string
   pending: string
@@ -2534,6 +2561,20 @@ export interface Translations {
       done: string
     }
     markAllRead: string
+    /** The sidebar filter menu (`app/chat/sidebar/filter-menu.tsx`). Optional so
+     *  a locale that predates these controls keeps rendering (English fallback);
+     *  `en` ships them all. */
+    filterMenu?: {
+      grouping?: string
+      ordering?: string
+      show?: string
+      filters?: string
+      pullRequest?: string
+      expandAll?: string
+      collapseAll?: string
+      /** Shared option vocabulary — see `FilterMenuLabelKey`. */
+      labels?: Record<FilterMenuLabelKey, string>
+    }
   }
 
   composer: {
@@ -2624,6 +2665,8 @@ export interface Translations {
     themeTryPre: string
     themeTryPost: string
     attachLabel: string
+    /** The composer's tools button ("+" menu) — label and aria-label. */
+    addContext?: string
     files: string
     folder: string
     images: string

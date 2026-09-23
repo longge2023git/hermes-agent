@@ -3264,7 +3264,39 @@ export const fa = defineLocale({
       working: 'در حال کار',
       done: 'انجام شد'
     },
-    markAllRead: 'علامت‌گذاری همه به عنوان خوانده‌شده'
+    markAllRead: 'علامت‌گذاری همه به عنوان خوانده‌شده',
+    filterMenu: {
+      grouping: 'گروه‌بندی',
+      ordering: 'ترتیب',
+      show: 'نمایش',
+      filters: 'فیلترها',
+      pullRequest: 'درخواست ادغام',
+      expandAll: 'باز کردن همه',
+      collapseAll: 'بستن همه',
+      labels: {
+        archived: 'بایگانی‌شده',
+        closed: 'بسته',
+        cost: 'هزینه',
+        created: 'ساخته‌شده',
+        draft: 'پیش‌نویس',
+        idle: 'بی‌کار',
+        inboxStyle: 'سبک صندوق ورودی',
+        manual: 'دستی',
+        merged: 'ادغام‌شده',
+        needsInput: 'نیازمند ورودی',
+        noPr: 'بدون PR',
+        open: 'باز',
+        pr: 'PR',
+        preview: 'پیش‌نمایش',
+        profile: 'نمایه',
+        project: 'پروژه',
+        status: 'وضعیت',
+        tokens: 'توکن‌ها',
+        unread: 'خوانده‌نشده',
+        updated: 'به‌روز‌شده',
+        working: 'در حال کار'
+      }
+    }
   },
   composer: {
     message: 'پیام',
@@ -3386,6 +3418,7 @@ export const fa = defineLocale({
     themeTryPre: 'تلاش ',
     themeTryPost: '.',
     attachLabel: 'پیوست',
+    addContext: 'افزودن کانتکست',
     files: 'فایل‌ها…',
     folder: 'پوشه…',
     images: 'تصاویر…',

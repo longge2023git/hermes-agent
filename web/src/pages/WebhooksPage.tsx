@@ -28,6 +28,7 @@ import { Label } from "@nous-research/ui/ui/components/label";
 import { usePageHeader } from "@/contexts/usePageHeader";
 import { cn, themedBody } from "@/lib/utils";
 import { errorMessage } from "@/lib/api-error";
+import { useI18n } from "@/i18n";
 
 interface CreatedWebhook {
   url: string;
@@ -35,6 +36,7 @@ interface CreatedWebhook {
 }
 
 function CopyButton({ value }: { value: string }) {
+  const { t } = useI18n();
   const [copied, setCopied] = useState(false);
   const handleCopy = useCallback(() => {
     void copyTextToClipboard(value).then((copied) => {
@@ -47,8 +49,8 @@ function CopyButton({ value }: { value: string }) {
     <Button
       ghost
       size="icon"
-      title="Copy"
-      aria-label="Copy"
+      title={t.webhooks?.copy ?? "Copy"}
+      aria-label={t.webhooks?.copy ?? "Copy"}
       onClick={handleCopy}
       className="text-muted-foreground hover:text-foreground"
     >
@@ -67,6 +69,7 @@ export default function WebhooksPage() {
   const [restarting, setRestarting] = useState(false);
   const { toast, showToast } = useToast();
   const { setEnd } = usePageHeader();
+  const { t } = useI18n();
 
   // New subscription modal state
   const [createModalOpen, setCreateModalOpen] = useState(false);
@@ -136,7 +139,7 @@ export default function WebhooksPage() {
       await api.restartGateway();
       setRestartNeeded(false);
       setRestartError(null);
-      setRestartMessage("Gateway restarting…");
+      setRestartMessage(t.webhooks?.restartingNote ?? "Gateway restarting…");
       showToast("Gateway restarting…", "success");
       setTimeout(() => void loadWebhooks(), 4000);
       void watchRestartOutcome();
@@ -147,7 +150,7 @@ export default function WebhooksPage() {
     } finally {
       setRestarting(false);
     }
-  }, [loadWebhooks, showToast, watchRestartOutcome]);
+  }, [loadWebhooks, showToast, t, watchRestartOutcome]);
 
   const handleEnableWebhooks = useCallback(async () => {
     setEnabling(true);
@@ -157,7 +160,7 @@ export default function WebhooksPage() {
       const result = await api.enableWebhooks();
       await loadWebhooks();
       if (result.restart_started) {
-        setRestartMessage("Webhooks enabled; gateway restarting…");
+        setRestartMessage(t.webhooks?.enabledRestartingNote ?? "Webhooks enabled; gateway restarting…");
         showToast("Webhooks enabled; gateway restarting…", "success");
         setTimeout(() => void loadWebhooks(), 4000);
         void watchRestartOutcome();
@@ -173,7 +176,7 @@ export default function WebhooksPage() {
     } finally {
       setEnabling(false);
     }
-  }, [loadWebhooks, showToast, watchRestartOutcome]);
+  }, [loadWebhooks, showToast, t, watchRestartOutcome]);
 
   const resetForm = useCallback(() => {
     setName("");
@@ -264,13 +267,13 @@ export default function WebhooksPage() {
           setCreateModalOpen(true);
         }}
       >
-        New subscription
+        {t.webhooks?.newSubscription ?? "New subscription"}
       </Button>,
     );
     return () => {
       setEnd(null);
     };
-  }, [setEnd, enabled, enabling, loading]);
+  }, [setEnd, enabled, enabling, loading, t]);
 
   if (loading) {
     return (
@@ -290,11 +293,15 @@ export default function WebhooksPage() {
         open={webhookDelete.isOpen}
         onCancel={webhookDelete.cancel}
         onConfirm={webhookDelete.confirm}
-        title="Delete webhook"
+        title={t.webhooks?.deleteTitle ?? "Delete webhook"}
         description={
           pendingName
-            ? `"${pendingName}" — this will permanently remove this webhook subscription.`
-            : "This will permanently remove this webhook subscription."
+            ? (
+                t.webhooks?.deleteNamed ??
+                `"{name}" — this will permanently remove this webhook subscription.`
+              ).replace("{name}", pendingName)
+            : (t.webhooks?.deleteGeneric ??
+                "This will permanently remove this webhook subscription.")
         }
         loading={webhookDelete.isDeleting}
       />
@@ -315,7 +322,7 @@ export default function WebhooksPage() {
               size="icon"
               onClick={closeCreateModal}
               className="absolute right-2 top-2 text-muted-foreground hover:text-foreground"
-              aria-label="Close"
+              aria-label={t.common.close}
             >
               <X />
             </Button>
@@ -325,19 +332,19 @@ export default function WebhooksPage() {
                 id="create-webhook-title"
                 className="font-mondwest text-display text-base tracking-wider"
               >
-                New subscription
+                {t.webhooks?.newSubscription ?? "New subscription"}
               </h2>
             </header>
 
             {created ? (
               <div className="p-5 grid gap-4">
                 <p className="text-sm text-muted-foreground">
-                  Subscription created. Copy the secret now — it is only shown
-                  once.
+                  {t.webhooks?.createdNote ??
+                    "Subscription created. Copy the secret now — it is only shown once."}
                 </p>
 
                 <div className="grid gap-2">
-                  <Label>Webhook URL</Label>
+                  <Label>{t.webhooks?.webhookUrl ?? "Webhook URL"}</Label>
                   <div className="flex items-center gap-2 border border-border bg-background/40 px-3 py-2">
                     <span className="flex-1 min-w-0 truncate font-mono text-xs">
                       {created.url}
@@ -347,7 +354,7 @@ export default function WebhooksPage() {
                 </div>
 
                 <div className="grid gap-2">
-                  <Label>Secret (shown once)</Label>
+                  <Label>{t.webhooks?.secretShownOnce ?? "Secret (shown once)"}</Label>
                   <div className="flex items-center gap-2 border border-warning/40 bg-warning/10 px-3 py-2">
                     <span className="flex-1 min-w-0 truncate font-mono text-xs">
                       {created.secret}
@@ -362,38 +369,44 @@ export default function WebhooksPage() {
                     size="sm"
                     onClick={closeCreateModal}
                   >
-                    Done
+                    {t.webhooks?.done ?? "Done"}
                   </Button>
                 </div>
               </div>
             ) : (
               <div className="p-5 grid gap-4">
                 <div className="grid gap-2">
-                  <Label htmlFor="webhook-name">Name</Label>
+                  <Label htmlFor="webhook-name">{t.webhooks?.name ?? "Name"}</Label>
                   <Input
                     id="webhook-name"
                     autoFocus
-                    placeholder="e.g. github-push"
+                    placeholder={t.webhooks?.namePlaceholder ?? "e.g. github-push"}
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                   />
                 </div>
 
                 <div className="grid gap-2">
-                  <Label htmlFor="webhook-description">Description</Label>
+                  <Label htmlFor="webhook-description">{t.webhooks?.description ?? "Description"}</Label>
                   <Input
                     id="webhook-description"
-                    placeholder="What this webhook does (optional)"
+                    placeholder={
+                      t.webhooks?.descriptionPlaceholder ??
+                      "What this webhook does (optional)"
+                    }
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
                   />
                 </div>
 
                 <div className="grid gap-2">
-                  <Label htmlFor="webhook-events">Events</Label>
+                  <Label htmlFor="webhook-events">{t.webhooks?.events ?? "Events"}</Label>
                   <Input
                     id="webhook-events"
-                    placeholder="comma-separated, leave empty for all"
+                    placeholder={
+                      t.webhooks?.eventsPlaceholder ??
+                      "comma-separated, leave empty for all"
+                    }
                     value={events}
                     onChange={(e) => setEvents(e.target.value)}
                   />
@@ -401,25 +414,35 @@ export default function WebhooksPage() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="grid gap-2">
-                    <Label htmlFor="webhook-deliver">Deliver to</Label>
+                    <Label htmlFor="webhook-deliver">{t.webhooks?.deliverTo ?? "Deliver to"}</Label>
                     <Select
                       id="webhook-deliver"
                       value={deliver}
                       onValueChange={(v) => setDeliver(v)}
                     >
-                      <SelectOption value="log">Log</SelectOption>
-                      <SelectOption value="telegram">Telegram</SelectOption>
-                      <SelectOption value="discord">Discord</SelectOption>
-                      <SelectOption value="slack">Slack</SelectOption>
-                      <SelectOption value="email">Email</SelectOption>
+                      <SelectOption value="log">{t.webhooks?.deliverLog ?? "Log"}</SelectOption>
+                      <SelectOption value="telegram">
+                        {t.webhooks?.deliverTelegram ?? "Telegram"}
+                      </SelectOption>
+                      <SelectOption value="discord">
+                        {t.webhooks?.deliverDiscord ?? "Discord"}
+                      </SelectOption>
+                      <SelectOption value="slack">
+                        {t.webhooks?.deliverSlack ?? "Slack"}
+                      </SelectOption>
+                      <SelectOption value="email">
+                        {t.webhooks?.deliverEmail ?? "Email"}
+                      </SelectOption>
                       <SelectOption value="github_comment">
-                        GitHub comment
+                        {t.webhooks?.deliverGithubComment ?? "GitHub comment"}
                       </SelectOption>
                     </Select>
                   </div>
 
                   <div className="grid gap-2">
-                    <Label htmlFor="webhook-deliver-only">Deliver only</Label>
+                    <Label htmlFor="webhook-deliver-only">
+                      {t.webhooks?.deliverOnly ?? "Deliver only"}
+                    </Label>
                     <label className="flex items-center gap-2 text-sm text-muted-foreground h-9">
                       <input
                         id="webhook-deliver-only"
@@ -427,17 +450,21 @@ export default function WebhooksPage() {
                         checked={deliverOnly}
                         onChange={(e) => setDeliverOnly(e.target.checked)}
                       />
-                      Skip the agent, deliver payload directly
+                      {t.webhooks?.deliverOnlyHint ??
+                        "Skip the agent, deliver payload directly"}
                     </label>
                   </div>
                 </div>
 
                 <div className="grid gap-2">
-                  <Label htmlFor="webhook-prompt">Prompt</Label>
+                  <Label htmlFor="webhook-prompt">{t.webhooks?.prompt ?? "Prompt"}</Label>
                   <textarea
                     id="webhook-prompt"
                     className="flex min-h-[80px] w-full border border-border bg-background/40 px-3 py-2 text-sm font-courier shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-foreground/30 focus-visible:border-foreground/25"
-                    placeholder="Instructions for the agent when this webhook fires (optional)"
+                    placeholder={
+                      t.webhooks?.promptPlaceholder ??
+                      "Instructions for the agent when this webhook fires (optional)"
+                    }
                     value={prompt}
                     onChange={(e) => setPrompt(e.target.value)}
                   />
@@ -451,7 +478,7 @@ export default function WebhooksPage() {
                     disabled={creating}
                     prefix={creating ? <Spinner /> : undefined}
                   >
-                    {creating ? "Creating…" : "Create"}
+                    {creating ? (t.webhooks?.creating ?? "Creating…") : (t.webhooks?.create ?? "Create")}
                   </Button>
                 </div>
               </div>
@@ -466,12 +493,12 @@ export default function WebhooksPage() {
             <div className="flex items-start gap-3">
               <Webhook className="h-5 w-5 shrink-0 text-warning" />
               <div className="flex flex-col gap-1">
-                <span className="font-medium">Webhook receiver disabled</span>
+                <span className="font-medium">
+                  {t.webhooks?.receiverDisabled ?? "Webhook receiver disabled"}
+                </span>
                 <span className="text-muted-foreground">
-                  Webhooks are their own gateway platform. Enable them here to
-                  accept incoming HTTP events; chat channels are only needed
-                  when a subscription delivers to Telegram, Discord, Slack, or
-                  another channel.
+                  {t.webhooks?.receiverDisabledHint ??
+                    "Webhooks are their own gateway platform. Enable them here to accept incoming HTTP events; chat channels are only needed when a subscription delivers to Telegram, Discord, Slack, or another channel."}
                 </span>
               </div>
             </div>
@@ -482,7 +509,9 @@ export default function WebhooksPage() {
               disabled={enabling}
               prefix={enabling ? <Spinner /> : <Webhook className="h-4 w-4" />}
             >
-              {enabling ? "Enabling…" : "Enable webhooks"}
+              {enabling
+                ? (t.webhooks?.enabling ?? "Enabling…")
+                : (t.webhooks?.enableWebhooks ?? "Enable webhooks")}
             </Button>
           </CardContent>
         </Card>
@@ -504,6 +533,7 @@ export default function WebhooksPage() {
               <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-warning" />
               <span>
                 {restartError ??
+                  t.webhooks?.restartNeeded ??
                   "Webhooks are enabled, but the gateway still needs a restart before the receiver can come online."}
               </span>
             </div>
@@ -514,7 +544,9 @@ export default function WebhooksPage() {
               disabled={restarting}
               prefix={restarting ? <Spinner /> : <RotateCw className="h-4 w-4" />}
             >
-              {restarting ? "Restarting…" : "Restart gateway"}
+              {restarting
+                ? (t.webhooks?.restarting ?? "Restarting…")
+                : (t.webhooks?.restartGateway ?? "Restart gateway")}
             </Button>
           </CardContent>
         </Card>
@@ -526,18 +558,21 @@ export default function WebhooksPage() {
           className="flex items-center gap-2 text-muted-foreground"
         >
           <Webhook className="h-4 w-4" />
-          Subscriptions ({subscriptions.length})
+          {(t.webhooks?.subscriptions ?? "Subscriptions ({count})").replace(
+            "{count}",
+            String(subscriptions.length),
+          )}
         </H2>
 
         <p className="text-xs text-muted-foreground -mt-1">
-          Subscription changes hot-reload once the webhook receiver is running.
-          Disabled subscriptions reject incoming events.
+          {t.webhooks?.subscriptionsHint ??
+            "Subscription changes hot-reload once the webhook receiver is running. Disabled subscriptions reject incoming events."}
         </p>
 
         {subscriptions.length === 0 && (
           <Card>
             <CardContent className="py-8 text-center text-sm text-muted-foreground">
-              No webhook subscriptions yet.
+              {t.webhooks?.noSubscriptions ?? "No webhook subscriptions yet."}
             </CardContent>
           </Card>
         )}
@@ -552,9 +587,11 @@ export default function WebhooksPage() {
                   </span>
                   <Badge tone="outline">{sub.deliver}</Badge>
                   {sub.deliver_only && (
-                    <Badge tone="secondary">deliver only</Badge>
+                    <Badge tone="secondary">
+                      {t.webhooks?.badgeDeliverOnly ?? "deliver only"}
+                    </Badge>
                   )}
-                  {!sub.enabled && <Badge tone="warning">disabled</Badge>}
+                  {!sub.enabled && <Badge tone="warning">{t.webhooks?.badgeDisabled ?? "disabled"}</Badge>}
                 </div>
 
                 {sub.description && (
@@ -565,7 +602,7 @@ export default function WebhooksPage() {
 
                 <div className="flex items-center gap-1 flex-wrap mb-2">
                   {sub.events.length === 0 ? (
-                    <Badge tone="secondary">(all)</Badge>
+                    <Badge tone="secondary">{t.webhooks?.badgeAllEvents ?? "(all)"}</Badge>
                   ) : (
                     sub.events.map((evt) => (
                       <Badge key={evt} tone="secondary">
@@ -591,14 +628,16 @@ export default function WebhooksPage() {
                   disabled={togglingName === sub.name}
                   onClick={() => handleToggleEnabled(sub.name, !sub.enabled)}
                 >
-                  {sub.enabled ? "Disable" : "Enable"}
+                  {sub.enabled
+                    ? (t.webhooks?.disable ?? "Disable")
+                    : (t.webhooks?.enable ?? "Enable")}
                 </Button>
                 <Button
                   ghost
                   destructive
                   size="icon"
-                  title="Delete"
-                  aria-label="Delete"
+                  title={t.common.delete}
+                  aria-label={t.common.delete}
                   onClick={() => webhookDelete.requestDelete(sub.name)}
                 >
                   <Trash2 />

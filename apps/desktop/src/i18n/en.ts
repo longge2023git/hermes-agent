@@ -2973,7 +2973,39 @@ export const en: Translations = {
       working: 'Working',
       done: 'Done'
     },
-    markAllRead: 'Mark all as read'
+    markAllRead: 'Mark all as read',
+    filterMenu: {
+      grouping: 'Grouping',
+      ordering: 'Ordering',
+      show: 'Show',
+      filters: 'Filters',
+      pullRequest: 'Pull request',
+      expandAll: 'Expand all',
+      collapseAll: 'Collapse all',
+      labels: {
+        archived: 'Archived',
+        closed: 'Closed',
+        cost: 'Cost',
+        created: 'Created',
+        draft: 'Draft',
+        idle: 'Idle',
+        inboxStyle: 'Inbox style',
+        manual: 'Manual',
+        merged: 'Merged',
+        needsInput: 'Needs input',
+        noPr: 'No PR',
+        open: 'Open',
+        pr: 'PR',
+        preview: 'Preview',
+        profile: 'Profile',
+        project: 'Project',
+        status: 'Status',
+        tokens: 'Tokens',
+        unread: 'Unread',
+        updated: 'Updated',
+        working: 'Working'
+      }
+    }
   },
 
   composer: {
@@ -3096,6 +3128,7 @@ export const en: Translations = {
     themeTryPre: 'Try ',
     themeTryPost: '.',
     attachLabel: 'Attach',
+    addContext: 'Add context',
     files: 'Files…',
     folder: 'Folder…',
     images: 'Images…',

@@ -1267,4 +1267,109 @@ export interface Translations {
     allowed?: string;
     notApproved?: string;
   };
+
+  // ── MCP page (web) ──
+  // Optional throughout (including the namespace itself) so every non-English
+  // locale keeps compiling while it lacks the translation; the component falls
+  // back to the English literal (`t.mcp?.x ?? "…"`).
+  mcp?: {
+    addServer?: string;
+    addServerTitle?: string;
+    removeServer?: string;
+    removeServerNamed?: string;
+    removeServerGeneric?: string;
+    name?: string;
+    namePlaceholder?: string;
+    transport?: string;
+    authentication?: string;
+    authNone?: string;
+    bearerToken?: string;
+    bearerTokenPlaceholder?: string;
+    bearerTokenNote?: string;
+    oauthNote?: string;
+    command?: string;
+    commandPlaceholder?: string;
+    args?: string;
+    argsPlaceholder?: string;
+    envLabel?: string;
+    add?: string;
+    adding?: string;
+    install?: string;
+    installing?: string;
+    installTitle?: string;
+    installRequiresValues?: string;
+    yourServers?: string;
+    emptyServers?: string;
+    restartNote?: string;
+    envVarCount?: string;
+    enable?: string;
+    disable?: string;
+    authenticate?: string;
+    authenticateOAuth?: string;
+    testConnection?: string;
+    connectedNoTools?: string;
+    toolsList?: string;
+    connectionFailed?: string;
+    browseCatalog?: string;
+    catalogHeading?: string;
+    catalogHint?: string;
+    catalogEmpty?: string;
+    badgeInstalled?: string;
+    badgeDisabled?: string;
+    endpoint?: string;
+    runs?: string;
+    installsFrom?: string;
+    bootstrapCommands?: string;
+    setupNotes?: string;
+    sourceLink?: string;
+  };
+
+  // ── Webhooks page (web) ──
+  webhooks?: {
+    copy?: string;
+    newSubscription?: string;
+    deleteTitle?: string;
+    deleteNamed?: string;
+    deleteGeneric?: string;
+    createdNote?: string;
+    webhookUrl?: string;
+    secretShownOnce?: string;
+    done?: string;
+    name?: string;
+    namePlaceholder?: string;
+    description?: string;
+    descriptionPlaceholder?: string;
+    events?: string;
+    eventsPlaceholder?: string;
+    deliverTo?: string;
+    deliverLog?: string;
+    deliverTelegram?: string;
+    deliverDiscord?: string;
+    deliverSlack?: string;
+    deliverEmail?: string;
+    deliverGithubComment?: string;
+    deliverOnly?: string;
+    deliverOnlyHint?: string;
+    prompt?: string;
+    promptPlaceholder?: string;
+    create?: string;
+    creating?: string;
+    receiverDisabled?: string;
+    receiverDisabledHint?: string;
+    enableWebhooks?: string;
+    enabling?: string;
+    restartNeeded?: string;
+    restartGateway?: string;
+    restarting?: string;
+    restartingNote?: string;
+    enabledRestartingNote?: string;
+    subscriptions?: string;
+    subscriptionsHint?: string;
+    noSubscriptions?: string;
+    badgeDeliverOnly?: string;
+    badgeDisabled?: string;
+    badgeAllEvents?: string;
+    enable?: string;
+    disable?: string;
+  };
 }

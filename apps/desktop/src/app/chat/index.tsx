@@ -711,7 +711,7 @@ const ChatViewContent = memo(function ChatViewContent({
       },
       tools: {
         enabled: true,
-        label: 'Add context',
+        label: t.composer.addContext ?? 'Add context',
         suggestions: contextSuggestions
       },
       voice: {
@@ -727,7 +727,9 @@ const ChatViewContent = memo(function ChatViewContent({
       modelMenuContent,
       quickModels,
       reasoningMenuContent,
-      supportsReasoning
+      supportsReasoning,
+      // The tools button's label is copy, so the locale has to invalidate the memo.
+      t
     ]
   )
 
