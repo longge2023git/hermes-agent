@@ -262,7 +262,10 @@ function EnvVarRow({
               size="icon"
               onClick={() => onReveal(varKey)}
               title={isRevealed ? t.env.hideValue : t.env.showValue}
-              aria-label={isRevealed ? `Hide ${varKey}` : `Reveal ${varKey}`}
+              aria-label={(isRevealed
+                ? (t.env.hideKey ?? "Hide {key}")
+                : (t.env.revealKey ?? "Reveal {key}")
+              ).replace("{key}", varKey)}
             >
               {isRevealed ? <EyeOff /> : <Eye />}
             </Button>
@@ -628,15 +631,16 @@ export default function EnvPage() {
   // Scroll-to sub-nav in the page header
   const sections = useMemo(() => {
     const items: { id: string; label: string }[] = [
+      // "OAuth" is a protocol name — kept Latin per the project keep-en convention.
       { id: "section-oauth", label: "OAuth" },
-      { id: "section-providers", label: "Providers" },
+      { id: "section-providers", label: t.env.sectionProviders ?? "Providers" },
     ];
     if (vars) {
       const categories = ["tool", "messaging", "setting"];
       const CATEGORY_LABELS: Record<string, string> = {
-        tool: "Tools",
+        tool: t.env.sectionTools ?? "Tools",
         messaging: t.common.gateway ?? "Gateway",
-        setting: "Settings",
+        setting: t.env.sectionSettings ?? "Settings",
       };
       for (const cat of categories) {
         const hasEntries = Object.values(vars).some(
@@ -663,7 +667,7 @@ export default function EnvPage() {
     setAfterTitle(
       <nav
         className="flex shrink-0 flex-nowrap items-center gap-1"
-        aria-label="Jump to section"
+        aria-label={t.env.jumpToSection ?? "Jump to section"}
       >
         {sections.map((s) => (
           <button
@@ -710,7 +714,9 @@ export default function EnvPage() {
         delete n[key];
         return n;
       });
-      showToast(`${key} ${t.common.save.toLowerCase()}d`, "success");
+      // "{key} saved" — a dedicated key instead of appending an English "d" to
+      // the translated verb (`t.common.save` + "d" only works in English).
+      showToast((t.env.savedKey ?? "{key} saved").replace("{key}", key), "success");
     } catch (e) {
       showToast(`${t.config.failedToSave} ${key}: ${errorMessage(e)}`, "error");
     } finally {

@@ -246,6 +246,43 @@ export interface Translations {
     newChat: string;
     previousPage: string;
     nextPage: string;
+    // Optional — added by the fa fork for strings that bypassed i18n.
+    renameSession?: string;
+    exportSession?: string;
+    exportSessionJson?: string;
+    saveTitle?: string;
+    cancelRename?: string;
+    sessionTitlePlaceholder?: string;
+    contextHandoff?: string;
+    anyChatSource?: string;
+    anyAutomationSource?: string;
+    chatSources?: string;
+    automationSources?: string;
+    noSources?: string;
+    /** "{count}" = number of selected source filters. */
+    sourcesCount?: string;
+    /** Label shown for a session that has no source at all. */
+    localSource?: string;
+    pruneOldSessions?: string;
+    pruneDescription?: string;
+    olderThanDays?: string;
+    prune?: string;
+    statTotal?: string;
+    statActiveInStore?: string;
+    statArchived?: string;
+    statMessages?: string;
+    statSources?: string;
+    importSessions?: string;
+    importSessionsAria?: string;
+    importSessionsTitle?: string;
+    /** "{summary}" = result of lib/session-import importSummary(). */
+    importComplete?: string;
+    importFailed?: string;
+    sessionRenamed?: string;
+    failedToRename?: string;
+    failedToExport?: string;
+    invalidDays?: string;
+    failedToPrune?: string;
     roles: {
       user: string;
       assistant: string;
@@ -598,6 +635,15 @@ export interface Translations {
     customKeyNamePlaceholder: string;
     add: string;
     invalidKeyName: string;
+    // Optional — added by the fa fork for strings that bypassed i18n.
+    /** aria-label for the reveal toggle; "{key}" = env var name. */
+    hideKey?: string;
+    revealKey?: string;
+    savedKey?: string;
+    sectionProviders?: string;
+    sectionTools?: string;
+    sectionSettings?: string;
+    jumpToSection?: string;
   };
 
   // ── OAuth ──
