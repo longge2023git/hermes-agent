@@ -548,7 +548,7 @@ export const fa = defineLocale({
     rawYaml: 'پیکربندی خام YAML',
     searchResults: 'نتایج جستجو',
     fields: 'فیلد{s}',
-    noFieldsMatch: 'هیچ فیلدی با \"{query}\" مطابقت ندارد',
+    noFieldsMatch: 'هیچ فیلدی با "{query}" مطابقت ندارد',
     configSaved: 'پیکربندی ذخیره شد',
     yamlConfigSaved: 'پیکربندی YAML ذخیره شد',
     failedToSave: 'ذخیره ناموفق بود',
@@ -766,7 +766,7 @@ export const fa = defineLocale({
       hint: 'اشتراکگذاری در X یک پست از پیش پر شده در تب جدید باز می‌کند. اگر میخواهید نشان 1200×630 ضمیمه شود، ابتدا روی «کپی تصویر» کلیک کنید — X به شما اجازه می‌دهد آن را مستقیماً در ویرایشگر توییت بچسبانید. «دانلود PNG» فایل را برای استفاده در هر جایی ذخیره می‌کند.',
       clipboard_unsupported:
         'کپی تصویر در کلیپبورد در این مرورگر پشتیبانی نمی‌شود — به جای آن از «دانلود» استفاده کنید.',
-      tweet_text: 'تازه {tier_part}\"{name}\" را در Hermes Agent ☤ باز کردم'
+      tweet_text: 'تازه {tier_part}"{name}" را در Hermes Agent ☤ باز کردم'
     }
   },
   kanban: {

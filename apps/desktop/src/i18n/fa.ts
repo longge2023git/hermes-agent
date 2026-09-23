@@ -2065,7 +2065,7 @@ export const fa = defineLocale({
       catalogBrowse: 'مرور',
       catalogHide: 'پنهان کردن مرورگر کاتالوگ',
       catalogHint:
-        'روی \"+ Add to this Agent\" در هر افزونه بزنید — ورودی‌های بررسی‌شده در commit ثابت خود به پروفایل انتخاب‌شده نصب می‌شوند. افزونه‌های عامل+دسکتاپ هر دو نیمه را ارائه می‌دهند.',
+        'روی "+ Add to this Agent" در هر افزونه بزنید — ورودی‌های بررسی‌شده در commit ثابت خود به پروفایل انتخاب‌شده نصب می‌شوند. افزونه‌های عامل+دسکتاپ هر دو نیمه را ارائه می‌دهند.',
       alreadyInstalled: name => `${name} از قبل در این پروفایل نصب شده است.`,
       catalogProvenance: sha => `نصب‌شده از کاتالوگ Hermes${sha ? ` روی پین ${sha}` : ''}.`,
       pinnedProvenance: sha =>
@@ -2146,7 +2146,7 @@ export const fa = defineLocale({
       pickerTitle: 'مرکز مهارت‌ها',
       pickerBrowse: 'مرور کل هاب',
       pickerHide: 'پنهان کردن مرورگر هاب',
-      pickerHint: 'روی هر مهارت \"+ Add to this Agent\" بزنید — نصب می‌شود و در فهرست بالا ظاهر می‌شود.',
+      pickerHint: 'روی هر مهارت "+ Add to this Agent" بزنید — نصب می‌شود و در فهرست بالا ظاهر می‌شود.',
       loadFailed: 'بارگذاری هاب مهارت ناموفق بود',
       previewFailed: 'پیش‌نمایش مهارت ناموفق بود',
       scanFailed: 'اسکن امنیتی ناموفق بود',
@@ -2861,7 +2861,7 @@ export const fa = defineLocale({
     renameDescSuffix: 'را به‌روز‌رسانی می‌کند.',
     displayNameTitle: 'نام این عامل را تعیین کنید',
     displayNameDesc:
-      'یک نام نمایشی تنظیم می‌کند که در سراسر برنامه نشان داده می‌شود. شناسه داخلی پروفایل \"default\" باقی می‌ماند.',
+      'یک نام نمایشی تنظیم می‌کند که در سراسر برنامه نشان داده می‌شود. شناسه داخلی پروفایل "default" باقی می‌ماند.',
     displayNameLabel: 'نام نمایشی',
     newNameLabel: 'نام جدید',
     renaming: 'در حال تغییر نام...',
