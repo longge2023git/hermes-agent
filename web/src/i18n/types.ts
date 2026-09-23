@@ -71,6 +71,36 @@ export interface Translations {
     gatewayHint?: string;
     pluginLoadFailed: string;
     pluginNotRegistered: string;
+    allAuxTasks?: string;
+    current?: string;
+    appliesToNewSessions?: string;
+    loadingChat?: string;
+    logOut?: string;
+  };
+
+  auxTasks?: {
+    vision?: string;
+    visionHint?: string;
+    compression?: string;
+    compressionHint?: string;
+    skills_hub?: string;
+    skills_hubHint?: string;
+    approval?: string;
+    approvalHint?: string;
+    mcp?: string;
+    mcpHint?: string;
+    title_generation?: string;
+    title_generationHint?: string;
+    review?: string;
+    reviewHint?: string;
+    triage_specifier?: string;
+    triage_specifierHint?: string;
+    kanban_decomposer?: string;
+    kanban_decomposerHint?: string;
+    profile_describer?: string;
+    profile_describerHint?: string;
+    curator?: string;
+    curatorHint?: string;
   };
 
   // ── App shell ──
@@ -106,6 +136,11 @@ export interface Translations {
       plugins: string;
       sessions: string;
       skills: string;
+      channels?: string;
+      files?: string;
+      webhooks?: string;
+      pairing?: string;
+      system?: string;
     };
     modelToolsSheetSubtitle: string;
     modelToolsSheetTitle: string;
@@ -257,6 +292,11 @@ export interface Translations {
     toolCalls: string;
     noModelsData: string;
     startSession: string;
+    settingsTitle?: string;
+    cacheRead?: string;
+    reasoning?: string;
+    input?: string;
+    output?: string;
   };
 
   // ── Logs page ──

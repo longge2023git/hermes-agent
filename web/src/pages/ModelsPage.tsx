@@ -103,6 +103,7 @@ function TokenBar({
   cacheRead: number;
   reasoning: number;
 }) {
+  const { t } = useI18n();
   const total = input + output + cacheRead + reasoning;
   if (total === 0) return null;
 
@@ -113,10 +114,10 @@ function TokenBar({
   // color-mix on the same value so themes don't need to ship two
   // separate hex literals.
   const segments: Array<{ color: string; label: string; value: number }> = [
-    { value: cacheRead, color: "#60a5fa", label: t.models.cacheRead }, // tailwind blue-400
-    { value: reasoning, color: "#c084fc", label: t.models.reasoning }, // tailwind purple-400
-    { value: input, color: "var(--series-input-token)", label: t.models.input },
-    { value: output, color: "var(--series-output-token)", label: t.models.output },
+    { value: cacheRead, color: "#60a5fa", label: t.models.cacheRead ?? "Cache Read" }, // tailwind blue-400
+    { value: reasoning, color: "#c084fc", label: t.models.reasoning ?? "Reasoning" }, // tailwind purple-400
+    { value: input, color: "var(--series-input-token)", label: t.models.input ?? "Input" },
+    { value: output, color: "var(--series-output-token)", label: t.models.output ?? "Output" },
   ].filter((s) => s.value > 0);
 
   return (
@@ -217,6 +218,7 @@ function UseAsMenu({
   mainAuxTask: string | null;
   onAssigned(): void;
 }) {
+  const { t } = useI18n();
   const [open, setOpen] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -327,7 +329,7 @@ function UseAsMenu({
               disabled={busy}
               className="flex w-full items-center justify-between px-3 py-1.5 text-xs uppercase hover:bg-muted/50 disabled:opacity-40"
             >
-              <span>{t.auxTasks[task]}</span>
+              <span>{t.auxTasks?.[task] ?? task}</span>
               {mainAuxTask === task && (
                 <span className="text-display text-xs tracking-wider text-primary">
                   {t.common.current}
@@ -559,6 +561,7 @@ function AuxiliaryTasksModal({
   onSaved(): void;
   onClose(): void;
 }) {
+  const { t } = useI18n();
   const [picker, setPicker] = useState<PickerTarget | null>(null);
   const [resetBusy, setResetBusy] = useState(false);
   const [confirmReset, setConfirmReset] = useState(false);
@@ -639,9 +642,9 @@ function AuxiliaryTasksModal({
               >
                 <div className="min-w-0 flex-1">
                   <div className="flex items-baseline gap-2">
-                    <span className="text-xs font-medium">{t.auxTasks[task]}</span>
+                    <span className="text-xs font-medium">{t.auxTasks?.[task] ?? task}</span>
                     <span className="text-xs text-text-tertiary">
-                      {t.auxTasks[`${task}Hint`]}
+                      {t.auxTasks?.[`${task}Hint`] ?? ""}
                     </span>
                   </div>
                   <div className="text-xs font-mono text-text-secondary truncate">
@@ -653,7 +656,7 @@ function AuxiliaryTasksModal({
                 <Button
                   size="sm"
                   outlined
-                  onClick={() => setPicker({ kind: "aux", task: t.key })}
+                  onClick={() => setPicker({ kind: "aux", task })}
                   className="h-6 text-xs uppercase"
                 >
                   Change
@@ -669,7 +672,7 @@ function AuxiliaryTasksModal({
             loader={api.getModelOptions}
             alwaysGlobal
             title={`Set Auxiliary: ${
-              t.auxTasks[picker.task] ??
+              (t.auxTasks as Record<string, string> | undefined)?.[picker.task] ??
               picker.task
             }`}
             onApply={async ({ provider, model, confirmExpensiveModel }) => {
@@ -937,6 +940,7 @@ function ModelSettingsPanel({
   refreshKey: number;
   onSaved(): void;
 }) {
+  const { t } = useI18n();
   const [auxModalOpen, setAuxModalOpen] = useState(false);
   const [moaModalOpen, setMoaModalOpen] = useState(false);
   const [moa, setMoa] = useState<MoaConfigResponse | null>(null);
