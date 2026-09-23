@@ -302,6 +302,10 @@ export const fa = defineLocale({
   },
   models: {
     settingsTitle: 'تنظیمات مدل',
+    tokenAnalyticsPrefix:
+      'تجزیه‌وتحلیل توکن و هزینه پنهان است، زیرا شمارش‌های محلی، فراخوانی‌های کمکی (فشرده‌سازی، بینایی، استخراج وب، …) و تلاش‌های مجدد ارائه‌دهنده را شامل نمی‌شوند و با صورت‌حساب ارائه‌دهندهٔ شما تفاوت دارند. برای نمایش تخمین اشکال‌زدایی محلی، ',
+    tokenAnalyticsMid: ' را در ',
+    tokenAnalyticsSuffix: ' فعال کنید.',
     expensiveModelWarning: 'هشدار مدل گران',
     auxSummaryTitle: 'کارهای کمکی',
     auxSummaryAllAuto: n => `${n} کار · همه خودکار`,

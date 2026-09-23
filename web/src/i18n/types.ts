@@ -330,6 +330,9 @@ export interface Translations {
     noModelsData: string;
     startSession: string;
     settingsTitle?: string;
+    tokenAnalyticsPrefix?: string;
+    tokenAnalyticsMid?: string;
+    tokenAnalyticsSuffix?: string;
     expensiveModelWarning?: string;
     auxSummaryTitle?: string;
     auxSummaryAllAuto?: (n: number) => string;

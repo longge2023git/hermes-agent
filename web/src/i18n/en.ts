@@ -300,6 +300,9 @@ export const en: Translations = {
 
   models: {
     settingsTitle: "Model Settings",
+    tokenAnalyticsPrefix: "Token & cost analytics are hidden because the local counts exclude auxiliary calls (compression, vision, web extract, …) and provider retries, so they diverge from your provider bill. Enable ",
+    tokenAnalyticsMid: " in ",
+    tokenAnalyticsSuffix: " to show the local debug estimate anyway.",
     expensiveModelWarning: "Expensive Model Warning",
     auxSummaryTitle: "Auxiliary tasks",
     auxSummaryAllAuto: (n: number) => `${n} tasks · all auto`,

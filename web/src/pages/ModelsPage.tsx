@@ -1306,13 +1306,11 @@ export default function ModelsPage() {
               </div>
               {!showTokens && (
                 <p className="mt-4 text-xs text-text-tertiary leading-relaxed">
-                  Token & cost analytics are hidden because the local counts
-                  exclude auxiliary calls (compression, vision, web extract,
-                  …) and provider retries, so they diverge from your provider
-                  bill. Enable{" "}
-                  <span className="font-mono">dashboard.show_token_analytics</span>{" "}
-                  in <a href="/config" className="underline">Config</a> to
-                  show the local debug estimate anyway.
+                  {t.models.tokenAnalyticsPrefix ?? "Token & cost analytics are hidden because the local counts exclude auxiliary calls (compression, vision, web extract, …) and provider retries, so they diverge from your provider bill. Enable "}
+                  <span className="font-mono">dashboard.show_token_analytics</span>
+                  {t.models.tokenAnalyticsMid ?? " in "}
+                  <a href="/config" className="underline">{t.app.nav.config ?? "Config"}</a>
+                  {t.models.tokenAnalyticsSuffix ?? " to show the local debug estimate anyway."}
                 </p>
               )}
             </CardContent>
