@@ -208,7 +208,7 @@ export const fa = defineLocale({
       signInIncompleteMessage: 'پنجرهٔ ورود پیش از پایان احراز هویت بسته شد.',
       signInFailed: 'ورود ناموفق بود',
       signInToRemoteGateway: 'ورود به گیتوی راه دور',
-      signInWithProvider: provider => `\u0648\u0631\u0648\u062F \u0628\u0627 ${provider}`,
+      signInWithProvider: provider => `ورود با ${provider}`,
       identityProvider: 'ارائهدهندهٔ هویت شما'
     }
   },
@@ -315,7 +315,7 @@ export const fa = defineLocale({
   },
   billingBlock: {
     titleNous: 'اعتبار Nous تمام شده',
-    titleProvider: provider => `اعتبار تمام شده — ${provider}`,
+    titleProvider: provider => `اعتبار تمام شد — ${provider}`,
     fallbackMessage: 'اعتبار حساب شما تمام شده. برای ادامه، اعتبار اضافه کنید.',
     openBilling: 'باز کردن صورتحساب',
     addCredits: 'افزودن اعتبار',
