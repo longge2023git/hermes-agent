@@ -2,6 +2,7 @@ import type { Translations } from "./types";
 
 export const en: Translations = {
   common: {
+    appliesToNewSessions: "applies to new sessions",
     save: "Save",
     saving: "Saving...",
     cancel: "Cancel",
@@ -238,6 +239,7 @@ export const en: Translations = {
   },
 
   models: {
+    settingsTitle: "Model Settings",
     modelsUsed: "Models Used",
     estimatedCost: "Est. Cost",
     tokens: "tokens",

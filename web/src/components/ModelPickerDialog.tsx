@@ -15,6 +15,7 @@ import { cn, themedBody } from "@/lib/utils";
 import { queryMatchesProviderOnly } from "@/lib/model-picker-filter";
 import { fuzzyRank, modelSearchText } from "@hermes/shared";
 import { errorMessage } from "@/lib/api-error";
+import { useI18n } from "@/i18n";
 
 /**
  * Two-stage model picker modal.
@@ -78,6 +79,7 @@ interface Props {
 }
 
 export function ModelPickerDialog(props: Props) {
+  const { t } = useI18n();
   const {
     gw,
     sessionId,
@@ -419,7 +421,7 @@ export function ModelPickerDialog(props: Props) {
         <footer className="border-t border-border p-3 flex items-center justify-between gap-3 flex-wrap">
           {alwaysGlobal ? (
             <span className="text-xs text-muted-foreground">
-              Saves to config.yaml — applies to new sessions.
+              Saves to config.yaml — {t.common.appliesToNewSessions}.
             </span>
           ) : (
             <div className="flex items-center gap-2">

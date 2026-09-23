@@ -12,6 +12,7 @@ import { defineLocale } from './define-locale'
 
 export const fa = defineLocale({
   common: {
+    appliesToNewSessions: 'روی نشست‌های جدید اعمال می‌شود',
     save: 'ذخیره',
     saving: 'در حال ذخیره...',
     cancel: 'انصراف',
@@ -240,6 +241,7 @@ export const fa = defineLocale({
     inOut: '{input} ورودی / {output} خروجی'
   },
   models: {
+    settingsTitle: 'تنظیمات مدل',
     modelsUsed: 'مدل‌های استفاده‌شده',
     estimatedCost: 'هزینه تخمینی',
     tokens: 'توکن‌ها',
