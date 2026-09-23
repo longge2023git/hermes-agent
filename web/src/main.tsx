@@ -2,6 +2,7 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router";
 import "./index.css";
 import App from "./App";
+import { ErrorBoundary } from "./components/ErrorBoundary";
 import { SystemActionsProvider } from "./contexts/SystemActions";
 import { I18nProvider } from "./i18n";
 import { exposePluginSDK } from "./plugins";
@@ -13,6 +14,8 @@ import { HERMES_BASE_PATH } from "./lib/api";
 exposePluginSDK();
 
 createRoot(document.getElementById("root")!).render(
+  // Outermost on purpose: a crash inside a provider must not blank the page.
+  <ErrorBoundary>
   <BrowserRouter basename={HERMES_BASE_PATH || undefined}>
     <I18nProvider>
       <ThemeProvider>
@@ -21,5 +24,6 @@ createRoot(document.getElementById("root")!).render(
         </SystemActionsProvider>
       </ThemeProvider>
     </I18nProvider>
-  </BrowserRouter>,
+  </BrowserRouter>
+  </ErrorBoundary>,
 );
