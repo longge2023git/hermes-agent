@@ -230,7 +230,7 @@ export const fa = defineLocale({
     updateReadyTitle: 'آماده به‌روز‌رسانی',
     updateReadyMessage: count => `${count} تغییر جدید موجود است.`,
     updateReadyMessageUnknown: 'یک به‌روز‌رسانی جدید موجود است.',
-    seeWhatsNew: 'مشاهده تازهها',
+    seeWhatsNew: 'مشاهده تازه‌ها',
     mcp: {
       needsAuthTitle: 'نیاز به احراز هویت مجدد سرور MCP',
       needsAuthMessage: name => `${name} MCP نیاز به احراز هویت مجدد دارد.`,
@@ -501,7 +501,7 @@ export const fa = defineLocale({
       modelFallbacks: 'مدل‌های جایگزین',
       chatBehavior: 'رفتار',
       chatAttachments: 'پیوستها',
-      workspaceProjects: 'پروژهها و کشف',
+      workspaceProjects: 'پروژه‌ها و کشف',
       workspaceShell: 'محیط شل',
       workspaceFiles: 'فایل‌ها و اجرا',
       safetyApprovals: 'تأییدها',
@@ -547,7 +547,7 @@ export const fa = defineLocale({
     exportFailed: 'خروجی ناموفق بود',
     resetFailed: 'بازنشانی ناموفق بود',
     nav: {
-      providers: 'ارائهدهندهها',
+      providers: 'ارائهدهنده‌ها',
       providerAccounts: 'حسابها',
       providerApiKeys: 'کلیدهای API',
       providerCustomEndpoints: 'نقاط پایانی سفارشی',
@@ -562,14 +562,14 @@ export const fa = defineLocale({
       about: 'درباره',
       billing: 'صورتحساب',
       notifications: 'اعلان‌ها',
-      vault: 'گذرواژهها و ورودها'
+      vault: 'گذرواژه‌ها و ورودها'
     },
     plugins: {
       title: 'افزونه‌های دسکتاپ',
       blurb:
         'این برنامه را گسترش دهید، نه یک عامل — یکبار برای کل برنامه نصب می‌شود، به هر پروفایل، گیتوی یا ماشینی که متصل شوید. همراه یا در پوشه desktop-plugins قرار می‌گیرد؛ تغییرات بهصورت زنده اعمال میشوند.',
       count: n => `${n} نصبشده`,
-      openFolder: 'باز کردن پوشه افزونهها',
+      openFolder: 'باز کردن پوشه افزونه‌ها',
       rescan: 'بازبینی',
       reveal: 'نمایش در مدیریت فایل',
       enable: 'فعالسازی',
@@ -623,7 +623,7 @@ export const fa = defineLocale({
         pinToCommitPlaceholder: 'SHA کامل ۴۰ کاراکتری کامیت',
         pinToCommitHint:
           'هر کسی که این SHA را نصب کند کد یکسان دریافت می‌کند؛ افزونه تا زمان پین مجدد از به‌روز‌رسانی خودداری می‌کند. برای آخرین کامیت خالی بگذارید.',
-        pinToCommitInvalid: 'باید SHA کامل ۴۰ کاراکتری کامیت باشد (شاخهها و تگها پذیرفته نمیشوند).',
+        pinToCommitInvalid: 'باید SHA کامل ۴۰ کاراکتری کامیت باشد (شاخه‌ها و تگها پذیرفته نمیشوند).',
         install: 'نصب',
         installing: 'در حال نصب…',
         probing: 'در حال بررسی مخزن…',
@@ -823,7 +823,7 @@ export const fa = defineLocale({
       sessionDensityDetailed: 'جزئی',
       tabStripTitle: 'نوار برگه',
       tabStripDesc:
-        'نمایش برگهها بالای یک ناحیه. به صورت خودکار برای یک پنل تنها پنهان می‌شود مگر اینکه گفتگو یا ناحیه کاشی دیگری باز باشد.',
+        'نمایش برگه‌ها بالای یک ناحیه. به صورت خودکار برای یک پنل تنها پنهان می‌شود مگر اینکه گفتگو یا ناحیه کاشی دیگری باز باشد.',
       tabStripAuto: 'خودکار',
       tabStripAlways: 'همیشه',
       tabStripNever: 'هرگز',
@@ -901,7 +901,7 @@ export const fa = defineLocale({
       technicalDesc: 'شامل آرگومانها/نتایج خام ابزار و جزئیات سطح پایین.',
       themeTitle: 'پوسته',
       themeDesc: 'فقط پالتهای دسکتاپ. حالت انتخابشده روی آن اعمال می‌شود.',
-      themeSearchPlaceholder: 'جستجوی پوستهها یا VS Code Marketplace…',
+      themeSearchPlaceholder: 'جستجوی پوسته‌ها یا VS Code Marketplace…',
       themeProfileNote: profile => `برای پروفایل ${profile} ذخیره شد — هر پروفایل پوسته خودش را دارد.`,
       installTitle: 'نصب از VS Code',
       installDesc:
@@ -1065,7 +1065,7 @@ export const fa = defineLocale({
       fallbackProviders: 'ورودیهای provider:model پشتیبان برای تلاش در صورت شکست مدل پیشفرض.',
       'display.personality': 'سبک پیشفرض دستیار برای نشست‌های جدید.',
       'display.showReasoning': 'بخشهای استدلال را وقتی backend ارائه می‌دهد، نشان بده.',
-      'desktop.repoScanEnabled': 'پوشه‌های محلی را برای مخازن Git برای نمایش در پروژهها اسکن کن.',
+      'desktop.repoScanEnabled': 'پوشه‌های محلی را برای مخازن Git برای نمایش در پروژه‌ها اسکن کن.',
       'desktop.repoScanRoots': 'پوشه‌هایی که اسکن شوند. برای اسکن پوشه خانه، خالی بگذار.',
       'desktop.repoScanExcludePaths': 'پوشه‌ها و زیرشاخه‌های آنها که در کشف مخزن نادیده گرفته شوند.',
       timezone: 'شناسه منطقه زمانی IANA. خالی به معنای استفاده از منطقه زمانی سیستم است.',
@@ -1153,7 +1153,7 @@ export const fa = defineLocale({
       updates: 'به‌روز‌رسانیها',
       checkNow: 'بررسی کن',
       checking: 'در حال بررسی…',
-      seeWhatsNew: 'مشاهده تازهها',
+      seeWhatsNew: 'مشاهده تازه‌ها',
       updateNow: 'به‌روز‌رسانی کن',
       releaseNotes: 'یادداشتهای انتشار',
       onLatest: 'شما آخرین نسخه را دارید.',
@@ -1204,7 +1204,7 @@ export const fa = defineLocale({
         'حداکثر حجم فایل محلی که Desktop برای پیشنمایش و پیوست تصویر بارگذاری می‌کند، به مگابایت. پیشفرض 16 است. پیوست غیرتصویری از راه دور سقف جداگانهای 256 مگابایتی دارد. تنظیم این مقدار بسیار بالا کل فایل را در حافظه بارگذاری می‌کند و ممکن است برنامه را منجمد یا خراب کند.',
       attachmentSizeUnit: 'MB',
       attachmentSizeLabel: 'حداکثر اندازه پیشنمایش / بارگذاری تصویر به مگابایت',
-      showOptions: 'نمایش گزینهها'
+      showOptions: 'نمایش گزینه‌ها'
     },
     screenshot: {
       enabledTitle: 'میانبر اسکرینشات',
@@ -1285,8 +1285,8 @@ export const fa = defineLocale({
       testFailed: 'آزمایش اتصال ناموفق بود',
       saveFailed: 'ذخیره اتصال ممکن نشد',
       removeFailed: 'حذف اتصال ممکن نشد',
-      updateAll: 'به‌روز‌رسانی همه نمونهها',
-      updateAllRunning: 'در حال به‌روز‌رسانی همه نمونهها…',
+      updateAll: 'به‌روز‌رسانی همه نمونه‌ها',
+      updateAllRunning: 'در حال به‌روز‌رسانی همه نمونه‌ها…',
       updateAllDone: 'به‌روز‌رسانیها ارسال شد',
       updateAllFailed: 'گسترش به‌روز‌رسانی ناموفق بود',
       updateSkippedCloud: 'مدیریتشده توسط Hermes Cloud',
@@ -1381,7 +1381,7 @@ export const fa = defineLocale({
       cloudConnect: 'اتصال',
       cloudSavedTitle: 'گیتویهای ابری ذخیرهشده',
       cloudSavedDesc:
-        'بدون تغییر پیشفرض، از گیتوی ذخیرهشده استفاده کنید. برای افزودن نمونهها، زیر وارد شوید. نامها و ورود را در فهرست اتصالات ذخیرهشده مدیریت کنید.',
+        'بدون تغییر پیشفرض، از گیتوی ذخیرهشده استفاده کنید. برای افزودن نمونه‌ها، زیر وارد شوید. نامها و ورود را در فهرست اتصالات ذخیرهشده مدیریت کنید.',
       cloudUseSaved: 'استفاده از گیتوی',
       cloudActive: 'فعال در این پنجره',
       cloudConnecting: 'در حال اتصال…',
@@ -1493,7 +1493,7 @@ export const fa = defineLocale({
       sshErrUnknown: 'اتصال SSH ناموفق بود.'
     },
     keys: {
-      loading: 'در حال بارگذاری کلیدهای API و اعتبارنامهها...',
+      loading: 'در حال بارگذاری کلیدهای API و اعتبارنامه‌ها...',
       failedLoad: 'کلیدهای API بارگذاری نشدند',
       empty: 'هنوز چیزی در این دسته پیکربندی نشده است.'
     },
@@ -2229,8 +2229,8 @@ export const fa = defineLocale({
     searchPlaceholder: 'جستجوی نشست‌ها، نماها و اقدامات',
     goTo: 'رفتن به',
     goToSession: 'رفتن به نشست',
-    branches: 'شاخهها',
-    projects: 'پروژهها',
+    branches: 'شاخه‌ها',
+    projects: 'پروژه‌ها',
     openFolder: 'باز کردن پوشه به عنوان پروژه…',
     openFolderAt: path => `باز کردن پوشه به عنوان پروژه — ${path}`,
     newSessionInProject: project => `نشست جدید در ${project}`,
@@ -2324,7 +2324,7 @@ export const fa = defineLocale({
       },
       capabilities: {
         title: 'قابلیتها',
-        detail: 'مهارت‌ها، ابزار‌ها، سرورهای MCP و افزونهها'
+        detail: 'مهارت‌ها، ابزار‌ها، سرورهای MCP و افزونه‌ها'
       },
       messaging: {
         title: 'پیامرسانی',
@@ -2402,7 +2402,7 @@ export const fa = defineLocale({
     maintenance: {
       runOps: 'تشخیص',
       doctor: 'اجرای doctor',
-      doctorDesc: 'بررسی سلامت نصب، تنظیمات و ارائهدهندهها',
+      doctorDesc: 'بررسی سلامت نصب، تنظیمات و ارائهدهنده‌ها',
       securityAudit: 'بازبینی امنیتی',
       securityAuditDesc: 'اسکن تنظیمات و مهارت‌ها برای تنظیمات پرخطر',
       backup: 'ایجاد پشتیبان',
@@ -3114,7 +3114,7 @@ export const fa = defineLocale({
     cronJobs: 'وظایف cron',
     groupAriaGrouped: 'نمایش نشست‌ها بهصورت فهرست واحد',
     groupAriaUngrouped: 'گروهبندی نشست‌ها بر اساس فضای کاری',
-    showProjects: 'نمایش پروژهها',
+    showProjects: 'نمایش پروژه‌ها',
     showSessions: 'نمایش نشست‌ها',
     groupTitleGrouped: 'لغو گروهبندی نشست‌ها',
     groupTitleUngrouped: 'گروهبندی بر اساس فضای کاری',
@@ -3127,7 +3127,7 @@ export const fa = defineLocale({
     noFilterMatches: 'هیچ نشستی با این فیلترها مطابقت ندارد',
     projects: {
       showAllSessions: 'نمایش همه نشست‌ها',
-      sectionLabel: 'پروژهها',
+      sectionLabel: 'پروژه‌ها',
       home: 'خانه',
       autoDiscovered: 'شناسایی خودکار',
       newButton: 'پروژه جدید',
@@ -3171,24 +3171,24 @@ export const fa = defineLocale({
       newWorktreeDesc: 'نام شاخه را برای این worktree وارد کنید.',
       branchPlaceholder: 'مثلاً my-feature',
       branchOff: () => ({ after: '', before: 'انشعاب از ' }),
-      baseBranchPlaceholder: 'جستجوی شاخهها…',
+      baseBranchPlaceholder: 'جستجوی شاخه‌ها…',
       baseBranchNone: 'شاخهای یافت نشد',
       startWorkFailed: 'ایجاد worktree ممکن نشد',
       worktreeStaleBackend:
         'برای ایجاد worktree از طریق این اتصال راه دور، backend هرمس را به‌روز‌رسانی کنید — این اتصال قبل از API worktree گیت است.',
       worktreeProjectLabel: 'پروژه',
-      worktreeProjectPlaceholder: 'جستجوی پروژهها…',
+      worktreeProjectPlaceholder: 'جستجوی پروژه‌ها…',
       worktreeProjectNone: 'پروژهای با پوشه وجود ندارد',
       convertBranch: 'تبدیل یک شاخه…',
       convertBranchTitle: 'تبدیل یک شاخه',
       convertBranchDesc: 'شاخه‌های checkout شده را باز کنید، یا برای یک شاخه آزاد worktree بسازید.',
-      convertBranchPlaceholder: 'جستجوی شاخهها…',
+      convertBranchPlaceholder: 'جستجوی شاخه‌ها…',
       convertBranchInstead: 'تبدیل یک شاخه موجود',
       branchOpenExisting: 'باز کردن',
       branchSwitchHome: 'تغییر خانه',
       branchCreateWorktree: 'worktree جدید',
       branchTrackRemote: 'ردیابی remote',
-      branchesLoading: 'در حال بارگذاری شاخهها…',
+      branchesLoading: 'در حال بارگذاری شاخه‌ها…',
       noBranches: 'شاخهای یافت نشد',
       removeWorktree: 'حذف worktree',
       removeWorktreeFailed: 'حذف worktree ممکن نشد (تغییرات commit نشده؟)',
@@ -3201,7 +3201,7 @@ export const fa = defineLocale({
       reorder: label => `مرتبسازی ${label}`,
       toggle: (label, open) => `${open ? 'نمایش' : 'پنهان'} ${label} نشست`,
       showAllCount: count => `نمایش همه ${count} نشست`,
-      back: 'همه پروژهها'
+      back: 'همه پروژه‌ها'
     },
     newSessionIn: label => `نشست جدید در ${label}`,
     showMoreIn: (count, label) => `نمایش ${count} بیشتر در ${label}`,
@@ -3678,7 +3678,7 @@ export const fa = defineLocale({
     everythingDispatched: 'به‌روز‌رسانی ارسال شد',
     everythingSkipped: 'رد شد',
     everythingRowFailed: 'به‌روز‌رسانی ناموفق بود',
-    everythingFanoutFailedTitle: 'به‌روز‌رسانی سایر نمونهها ممکن نشد',
+    everythingFanoutFailedTitle: 'به‌روز‌رسانی سایر نمونه‌ها ممکن نشد',
     applyStatus: {
       preparing: 'در حال به‌روز‌رسانی بکاند…',
       pulling: 'در حال به‌روز‌رسانی بکاند…',
@@ -3781,10 +3781,10 @@ export const fa = defineLocale({
   },
   onboarding: {
     headerTitle: 'بیایید Hermes Agent را برای شما راهاندازی کنیم',
-    headerDesc: 'برای شروع گفت‌وگو یک ارائهدهندهٔ مدل وصل کنید. بیشتر گزینهها با یک کلیک انجام میشوند.',
+    headerDesc: 'برای شروع گفت‌وگو یک ارائهدهندهٔ مدل وصل کنید. بیشتر گزینه‌ها با یک کلیک انجام میشوند.',
     preparingInstall: 'Hermes در حال پایان نصب است. در اجرای اول معمولاً کمتر از یک دقیقه طول میکشد.',
     starting: 'در حال راهاندازی Hermes…',
-    lookingUpProviders: 'در حال جستوجوی ارائهدهندهها…',
+    lookingUpProviders: 'در حال جستوجوی ارائهدهنده‌ها…',
     collapse: 'جمع کردن',
     otherProviders: 'ارائهدهنده‌های دیگر',
     haveApiKey: 'کلید API دارم',
@@ -3946,7 +3946,7 @@ export const fa = defineLocale({
     title: 'تغییر مدل',
     current: 'فعلی:',
     unknown: '(ناشناس)',
-    search: 'فیلتر ارائهدهندهها و مدل‌ها…',
+    search: 'فیلتر ارائهدهنده‌ها و مدل‌ها…',
     noModels: 'مدلی پیدا نشد.',
     addProvider: 'افزودن ارائهدهنده',
     loadFailed: 'بارگذاری مدل‌ها ناموفق بود',
@@ -4848,7 +4848,7 @@ export const fa = defineLocale({
       `${site} یک کد یکبارمصرف (پیامک، ایمیل یا اپ احراز هویت) می‌خواهد. آن را اینجا وارد کنید و Hermes آن را در صفحه تایپ می‌کند؛ مدل هرگز آن را نمیبیند.`,
     vaultCodeLabel: 'کد',
     vaultCodeFootnote:
-      'نکته: کلید احراز هویت را با این ورود در تنظیمات ← گذرواژهها و ورودها ذخیره کنید و Hermes کدها را برای شما وارد می‌کند.',
+      'نکته: کلید احراز هویت را با این ورود در تنظیمات ← گذرواژه‌ها و ورودها ذخیره کنید و Hermes کدها را برای شما وارد می‌کند.',
     vaultCodeSkip: 'رد شدن',
     vaultCodeConfirm: 'وارد کردن کد'
   },
