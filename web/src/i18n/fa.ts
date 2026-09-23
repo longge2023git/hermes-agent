@@ -951,5 +951,110 @@ export const fa = defineLocale({
       confirmTitle: 'حذف وظیفه؟',
       confirmManyTitle: 'حذف {n} وظیفه؟'
     }
+  },
+  channels: {
+    stateBadge: {
+      connected: 'متصل',
+      pending_restart: 'برای اعمال، راه‌اندازی مجدد کنید',
+      gateway_stopped: 'گیتوی متوقف است',
+      startup_failed: 'راه‌اندازی ناموفق بود',
+      disconnected: 'قطع شد',
+      not_configured: 'پیکربندی نشده',
+      disabled: 'غیرفعال',
+      fatal: 'خطا'
+    },
+    restarting: 'در حال راه‌اندازی مجدد…',
+    restartGateway: 'راه‌اندازی مجدد گیتوی',
+    restartNow: 'هم‌اکنون راه‌اندازی مجدد کن',
+    restartBanner: 'تغییرات ذخیره شد. برای اعمال، گیتوی را راه‌اندازی مجدد کنید.',
+    configuredCount: '{configured} از {total} کانال پیکربندی شده است. اعتبارنامه‌ها در اینجا نوشته می‌شوند: ',
+    configuredCountSuffix: '؛ گیتوی هر کانال فعال را در راه‌اندازی مجدد بعدی وصل می‌کند.',
+    gatewayNotRunningPrefix:
+      'گیتوی در حال اجرا نیست. کانال‌ها را اینجا پیکربندی کنید، سپس گیتوی را با این دستور اجرا کنید: ',
+    gatewayNotRunningSuffix: ' (یا دکمهٔ راه‌اندازی مجدد در بالا).',
+    test: 'آزمایش',
+    configure: 'پیکربندی',
+    configureNamed: 'پیکربندی {name}',
+    enableNamed: 'فعال‌کردن {name}',
+    useYourOwnTelegramBot: 'از ربات تلگرام خودتان استفاده کنید',
+    botFatherGuide: 'راهنمای BotFather',
+    setupGuide: 'راهنمای راه‌اندازی',
+    telegramIntro: 'رباتی که از قبل دارید را وصل کنید، یا پیش از پر کردن این فرم یکی در تلگرام بسازید.',
+    telegramStep1Prefix: 'باز کنید ',
+    telegramStep1Mid: '، بفرستید ',
+    telegramStep1Suffix: '، و دستورهایش را دنبال کنید.',
+    telegramStep2: 'توکن کامل رباتی که BotFather می‌دهد را کپی کنید.',
+    telegramStep3Prefix: 'به ',
+    telegramStep3Suffix:
+      ' پیام بدهید تا شناسهٔ عددی کاربری تلگرامتان را بیابید، سپس آن را در پایین برای دسترسی فوری اضافه کنید.',
+    openBotFather: 'باز کردن @BotFather',
+    findMyUserId: 'یافتن شناسهٔ کاربری من',
+    telegramAllowedUsersHint:
+      'می‌توانید فهرست کاربران مجاز را خالی بگذارید. سپس Hermes به کاربران ناشناس کدی می‌فرستد که از صفحهٔ جفت‌سازی تأیید می‌کنید.',
+    redactedValue: '•••••• (تنظیم شده — برای حفظ، خالی بگذارید)',
+    saveAndEnable: 'ذخیره و فعال‌سازی',
+    saving: 'در حال ذخیره…',
+    callbackUrlShared: 'نشانی بازگشت (شنوندهٔ مشترک):',
+    pairWithQr: 'جفت‌سازی با QR',
+    starting: 'در حال شروع…',
+    existingSettingsConfigured: 'تنظیمات واتساپ موجود از قبل پیکربندی شده است.',
+    mode: 'حالت',
+    bot: 'ربات',
+    selfChat: 'گفت‌وگو با خود',
+    allowedNumbers: 'شماره‌های مجاز واتساپ',
+    linked: 'متصل شده',
+    linkedAs: 'متصل به‌عنوان {account}',
+    deviceLinked: 'دستگاه واتساپ متصل شد',
+    existingSession: 'نشست واتساپ موجود پیدا شد',
+    waitingForQr: 'در انتظار ارائهٔ کد QR از سوی واتساپ…',
+    scanLinkedDevices: 'با «دستگاه‌های متصل» واتساپ اسکن کنید، نه با برنامهٔ دوربین.',
+    sharedNumbersNote:
+      'پس از ذخیره، پیام‌های ناشناس از کدهای جفت‌سازی Hermes استفاده می‌کنند مگر اینکه شماره‌شان از قبل مجاز باشد.',
+    saveAndRestart: 'ذخیره و راه‌اندازی مجدد',
+    saveAndRestartGateway: 'ذخیره و راه‌اندازی مجدد گیتوی.',
+    openChatLink: 'باز کردن پیوند گفت‌وگو',
+    whatsappQrAlt: 'کد QR راه‌اندازی واتساپ',
+    statusPreparing: 'در حال آماده‌سازی',
+    statusStarting: 'در حال شروع',
+    waiting: 'در انتظار',
+    setupHelpReady:
+      'واتساپ متصل شده اما Hermes هنوز دریافت نمی‌کند. برای پایان راه‌اندازی، گیتوی را ذخیره و راه‌اندازی مجدد کنید.',
+    setupHelpInstalling: 'در حال آماده‌سازی پل واتساپ. کد QR وقتی آماده شد اینجا ظاهر می‌شود.',
+    setupHelpStarting: 'در حال شروع پل جفت‌سازی واتساپ. کد QR وقتی آماده شد اینجا ظاهر می‌شود.',
+    setupHelpScan:
+      'واتساپ را روی گوشی باز کنید، به «دستگاه‌های متصل» بروید و از آنجا اسکن کنید. این کد QR یک نشانی مرورگر نیست.',
+    linkedAccountDetailNumber: 'این همان حساب واتساپی است که Hermes اکنون وارد آن شده است.',
+    linkedAccountDetail: 'Hermes وارد حساب واتساپی شده است که کد QR را اسکن کرد.',
+    messageInstructionSelfChat:
+      'پس از راه‌اندازی مجدد، روی حساب متصل «پیام به خود» را باز کنید و به Hermes پیام بفرستید.',
+    messageInstruction:
+      'پس از راه‌اندازی مجدد، از یک حساب واتساپ دیگر با حساب متصل گفت‌وگو را شروع کنید و به Hermes پیام بفرستید.',
+    keepAllowlist: 'Hermes فهرست مجاز واتساپ ذخیره‌شده را نگه می‌دارد.',
+    selfChatAllow: 'حالت گفت‌وگو با خود، حساب متصل را هنگام ذخیره به‌طور خودکار مجاز می‌کند.',
+    pairingCodeNote:
+      'اگر شمارهٔ مجازی وارد نشده باشد، Hermes با یک کد جفت‌سازی پاسخ می‌دهد. آن را از صفحهٔ «جفت‌سازی» داشبورد تأیید کنید.',
+    chooseTelegramMethod: 'شیوهٔ اتصال ربات تلگرامتان را انتخاب کنید',
+    telegramBothOptions:
+      'هر دو گزینه یک ربات تحت کنترل شما را وصل می‌کنند و اعتبارنامهٔ آن را فقط در همین نصب Hermes ذخیره می‌کنند.',
+    quickSetup: 'راه‌اندازی سریع',
+    recommended: 'پیشنهادشده',
+    quickSetupHint:
+      'یک کد QR اسکن کنید و در تلگرام تأیید کنید. Hermes ربات را می‌سازد و شناسهٔ کاربری تلگرام شما را خودکار تشخیص می‌دهد.',
+    createWithQr: 'ساخت با QR',
+    useYourOwnBot: 'استفاده از ربات خودتان',
+    manualSetupHint:
+      'با @BotFather یک ربات بسازید، یا یکی از ربات‌های موجودتان را با وارد کردن توکن و انتخاب کاربران مجاز وصل کنید.',
+    manualSetup: 'راه‌اندازی دستی',
+    telegramConfiguredNote:
+      'اعتبارنامهٔ تلگرام از قبل پیکربندی شده است. راه‌اندازی QR جدید یا توکن ربات، هنگام ذخیره جایگزین ربات فعلی می‌شود.',
+    finishOrCancel: 'پیش از تغییر روش، راه‌اندازی QR جاری را تمام یا لغو کنید.',
+    ready: 'آماده',
+    allowedUsers: 'کاربران مجاز',
+    ownerDetected: 'مالک شناسایی شد',
+    addAtLeastOneId: 'حداقل یک شناسهٔ کاربری تلگرام اضافه کنید.',
+    telegramUserId: 'شناسهٔ کاربری تلگرام',
+    add: 'افزودن',
+    telegramQrAlt: 'کد QR راه‌اندازی تلگرام',
+    openTelegram: 'باز کردن تلگرام'
   }
 })

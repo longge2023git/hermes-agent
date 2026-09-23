@@ -987,4 +987,108 @@ export interface Translations {
       confirmManyTitle?: string;
     };
   };
+
+  // ── Channels (dashboard) ──
+  // Optional namespace added by the fa fork for ChannelsPage strings that had
+  // bypassed i18n. The whole namespace and every member is optional: locales
+  // that haven't translated this section yet fall back to the English literal
+  // in the component (`t.channels?.x ?? "English"`), and optional keeps the
+  // other 17 locale files from needing a churn commit.
+  channels?: {
+    /** State vocabulary from the backend → badge label. */
+    stateBadge?: {
+      connected?: string;
+      pending_restart?: string;
+      gateway_stopped?: string;
+      startup_failed?: string;
+      disconnected?: string;
+      not_configured?: string;
+      disabled?: string;
+      fatal?: string;
+    };
+    restarting?: string;
+    restartGateway?: string;
+    restartNow?: string;
+    restartBanner?: string;
+    /** "{configured}"/"{total}" = channel counts. */
+    configuredCount?: string;
+    configuredCountSuffix?: string;
+    /** Trails the start command, which is rendered as <code>. */
+    gatewayNotRunningPrefix?: string;
+    gatewayNotRunningSuffix?: string;
+    test?: string;
+    configure?: string;
+    /** "{name}" = platform display name. */
+    configureNamed?: string;
+    enableNamed?: string;
+    useYourOwnTelegramBot?: string;
+    botFatherGuide?: string;
+    setupGuide?: string;
+    telegramIntro?: string;
+    telegramStep1Prefix?: string;
+    telegramStep1Mid?: string;
+    telegramStep1Suffix?: string;
+    telegramStep2?: string;
+    telegramStep3Prefix?: string;
+    telegramStep3Suffix?: string;
+    openBotFather?: string;
+    findMyUserId?: string;
+    telegramAllowedUsersHint?: string;
+    redactedValue?: string;
+    saveAndEnable?: string;
+    saving?: string;
+    callbackUrlShared?: string;
+    pairWithQr?: string;
+    starting?: string;
+    existingSettingsConfigured?: string;
+    mode?: string;
+    bot?: string;
+    selfChat?: string;
+    allowedNumbers?: string;
+    linked?: string;
+    /** "{account}" = phone number or account name. */
+    linkedAs?: string;
+    deviceLinked?: string;
+    existingSession?: string;
+    waitingForQr?: string;
+    scanLinkedDevices?: string;
+    sharedNumbersNote?: string;
+    saveAndRestart?: string;
+    saveAndRestartGateway?: string;
+    openChatLink?: string;
+    whatsappQrAlt?: string;
+    statusPreparing?: string;
+    statusStarting?: string;
+    waiting?: string;
+    setupHelpReady?: string;
+    setupHelpInstalling?: string;
+    setupHelpStarting?: string;
+    setupHelpScan?: string;
+    linkedAccountDetailNumber?: string;
+    linkedAccountDetail?: string;
+    messageInstructionSelfChat?: string;
+    messageInstruction?: string;
+    keepAllowlist?: string;
+    selfChatAllow?: string;
+    pairingCodeNote?: string;
+    chooseTelegramMethod?: string;
+    telegramBothOptions?: string;
+    quickSetup?: string;
+    recommended?: string;
+    quickSetupHint?: string;
+    createWithQr?: string;
+    useYourOwnBot?: string;
+    manualSetupHint?: string;
+    manualSetup?: string;
+    telegramConfiguredNote?: string;
+    finishOrCancel?: string;
+    ready?: string;
+    allowedUsers?: string;
+    ownerDetected?: string;
+    addAtLeastOneId?: string;
+    telegramUserId?: string;
+    add?: string;
+    telegramQrAlt?: string;
+    openTelegram?: string;
+  };
 }

@@ -988,4 +988,122 @@ export const en: Translations = {
       confirmManyTitle: "Delete {n} tasks?",
     },
   },
+
+  // Channels page (dashboard). Persian translations land here via the pipeline;
+  // until then every string falls back to these English literals.
+  channels: {
+    stateBadge: {
+      connected: "Connected",
+      pending_restart: "Restart to apply",
+      gateway_stopped: "Gateway stopped",
+      startup_failed: "Start failed",
+      disconnected: "Disconnected",
+      not_configured: "Not configured",
+      disabled: "Disabled",
+      fatal: "Error",
+    },
+    restarting: "Restarting…",
+    restartGateway: "Restart gateway",
+    restartNow: "Restart now",
+    restartBanner:
+      "Changes are saved. Restart the gateway for them to take effect.",
+    configuredCount:
+      "{configured} of {total} channels configured. Credentials are written to ",
+    configuredCountSuffix:
+      "; the gateway connects each enabled channel on its next restart.",
+    gatewayNotRunningPrefix:
+      "The gateway is not running. Configure channels here, then start the gateway with ",
+    gatewayNotRunningSuffix: " (or the Restart button above).",
+    test: "Test",
+    configure: "Configure",
+    configureNamed: "Configure {name}",
+    enableNamed: "Enable {name}",
+    useYourOwnTelegramBot: "Use your own Telegram bot",
+    botFatherGuide: "BotFather guide",
+    setupGuide: "Setup guide",
+    telegramIntro:
+      "Connect a bot you already own, or create one in Telegram before filling in this form.",
+    telegramStep1Prefix: "Open ",
+    telegramStep1Mid: ", send ",
+    telegramStep1Suffix: ", and follow its prompts.",
+    telegramStep2: "Copy the complete bot token BotFather gives you.",
+    telegramStep3Prefix: "Message ",
+    telegramStep3Suffix:
+      " to find your numeric Telegram user ID, then add it below for immediate access.",
+    openBotFather: "Open @BotFather",
+    findMyUserId: "Find my user ID",
+    telegramAllowedUsersHint:
+      "You can leave allowed users blank. Hermes will then send new DM users a code that you approve from the Pairing page.",
+    redactedValue: "•••••• (set — leave blank to keep)",
+    saveAndEnable: "Save & enable",
+    saving: "Saving…",
+    callbackUrlShared: "Callback URL (shared listener):",
+    pairWithQr: "Pair with QR",
+    starting: "Starting…",
+    existingSettingsConfigured: "Existing WhatsApp settings are configured.",
+    mode: "Mode",
+    bot: "Bot",
+    selfChat: "Self-chat",
+    allowedNumbers: "Allowed WhatsApp numbers",
+    linked: "Linked",
+    linkedAs: "Linked as {account}",
+    deviceLinked: "WhatsApp device linked",
+    existingSession: "Existing WhatsApp session found",
+    waitingForQr: "Waiting for WhatsApp to provide a QR code…",
+    scanLinkedDevices: "Scan with WhatsApp Linked Devices, not the camera app.",
+    sharedNumbersNote:
+      "After saving, unknown DMs use Hermes pairing codes unless their number is already allowed.",
+    saveAndRestart: "Save and restart",
+    saveAndRestartGateway: "Save and restart the gateway.",
+    openChatLink: "Open chat link",
+    whatsappQrAlt: "WhatsApp setup QR code",
+    statusPreparing: "preparing",
+    statusStarting: "starting",
+    waiting: "waiting",
+    setupHelpReady:
+      "WhatsApp is linked but Hermes is not listening yet. Save and restart the gateway to finish setup.",
+    setupHelpInstalling:
+      "Preparing the WhatsApp bridge. The QR code will appear here when it is ready.",
+    setupHelpStarting:
+      "Starting the WhatsApp pairing bridge. The QR code will appear here when it is ready.",
+    setupHelpScan:
+      "Open WhatsApp on your phone, then go to Linked Devices and scan from there. This QR is not a browser URL.",
+    linkedAccountDetailNumber:
+      "This is the WhatsApp account Hermes is now logged into.",
+    linkedAccountDetail:
+      "Hermes is logged into the WhatsApp account that scanned the QR code.",
+    messageInstructionSelfChat:
+      "After the restart, open Message Yourself on the linked account and send Hermes a message.",
+    messageInstruction:
+      "After the restart, start a chat from another WhatsApp account with the linked account and send Hermes a message.",
+    keepAllowlist: "Hermes will keep the saved WhatsApp allowlist.",
+    selfChatAllow:
+      "Self-chat mode will allow the linked account automatically when you save.",
+    pairingCodeNote:
+      "If no allowed numbers were entered, Hermes replies with a pairing code. Approve it from the dashboard Pairing page.",
+    chooseTelegramMethod: "Choose how to connect your Telegram bot",
+    telegramBothOptions:
+      "Both options connect a bot you control and save its credentials only to this Hermes installation.",
+    quickSetup: "Quick setup",
+    recommended: "recommended",
+    quickSetupHint:
+      "Scan a QR code and confirm in Telegram. Hermes creates the bot and detects your Telegram user ID automatically.",
+    createWithQr: "Create with QR",
+    useYourOwnBot: "Use your own bot",
+    manualSetupHint:
+      "Create a bot with @BotFather, or connect one you already have, by entering its token and choosing who can use it.",
+    manualSetup: "Manual setup",
+    telegramConfiguredNote:
+      "Telegram credentials are already configured. A new QR setup or bot token will replace the current bot when you save.",
+    finishOrCancel:
+      "Finish or cancel the current QR setup before switching methods.",
+    ready: "Ready",
+    allowedUsers: "Allowed users",
+    ownerDetected: "owner detected",
+    addAtLeastOneId: "Add at least one Telegram user ID.",
+    telegramUserId: "Telegram user ID",
+    add: "Add",
+    telegramQrAlt: "Telegram setup QR code",
+    openTelegram: "Open Telegram",
+  },
 };
