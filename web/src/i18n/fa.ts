@@ -89,7 +89,10 @@ export const fa = defineLocale({
       'پلتفرمهای پیامرسانی، سرور API و webhookها در صفحه Channels پیکربندی میشوند. اینها تنظیمات سراسری گیتوی هستند (حالت proxy/relay و لیست سفید جهانی).',
     pluginLoadFailed:
       'اسکریپت این افزونه بارگذاری نشد. تب Network (dashboard-plugins/…) و مسیر افزونه سرور را بررسی کنید.',
-    pluginNotRegistered: 'اسکریپت افزونه register() را فراخوانی نکرد یا خطا داد. برای جزئیات، کنسول مرورگر را باز کنید.'
+    pluginNotRegistered:
+      'اسکریپت افزونه register() را فراخوانی نکرد یا خطا داد. برای جزئیات، کنسول مرورگر را باز کنید.',
+    change: 'تغییر',
+    remove: 'حذف'
   },
   app: {
     brand: 'Hermes Agent',
@@ -325,7 +328,25 @@ export const fa = defineLocale({
     apiCalls: 'فراخوانی API',
     toolCalls: 'فراخوانی ابزار',
     noModelsData: 'داده‌ای از مصرف مدل برای این بازه وجود ندارد',
-    startSession: 'برای مشاهده داده مدل، یک نشست شروع کنید'
+    startSession: 'برای مشاهده داده مدل، یک نشست شروع کنید',
+    moaConfigureTitle: 'پیکربندی پیش‌تنظیم‌های ترکیب عوامل',
+    moaConfigureDescription:
+      'پیش‌تنظیم‌ها به‌صورت مدل‌هایی زیر ارائه‌دهندهٔ ترکیب عوامل نمایان می‌شوند. ارجاع‌ها دیدگاه می‌سازند؛ عامل تجمیع‌کننده مدلی است که پاسخ می‌دهد و ابزارها را صدا می‌زند.',
+    moaSetDefault: 'تعیین به‌عنوان پیش‌فرض',
+    moaPresetNamePlaceholder: 'نام پیش‌تنظیم جدید',
+    moaAddPreset: 'افزودن پیش‌تنظیم',
+    moaDefaultLabel: 'پیش‌فرض:',
+    moaReferenceModels: 'مدل‌های ارجاع',
+    moaAggregator: 'تجمیع‌کننده',
+    moaAddReferenceModel: 'افزودن مدل ارجاع',
+    moaRecursiveError:
+      'پیش‌تنظیم‌های MoA نمی‌توانند به ارائه‌دهندهٔ ترکیب عوامل ارجاع دهند یا آن را تجمیع کنند (MoA بازگشتی مجاز نیست).',
+    moaSelectModelTitle: 'انتخاب مدل MoA',
+    resetAuxTitle: 'بازنشانی مدل‌های کمکی',
+    resetAuxDescription: 'همهٔ کارهای کمکی به «خودکار» بازنشانی شوند؟ این کار هر بازنویسی هر-کار را بی‌اثر می‌کند.',
+    resetAll: 'بازنشانی همه',
+    switchModel: 'تغییر مدل',
+    filterProvidersModels: 'پالایش ارائه‌دهنده‌ها و مدل‌ها…'
   },
   logs: {
     title: 'گزارش‌ها',

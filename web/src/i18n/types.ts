@@ -76,6 +76,9 @@ export interface Translations {
     appliesToNewSessions?: string;
     loadingChat?: string;
     logOut?: string;
+    /** Generic action labels — optional, English fallback until translated. */
+    change?: string;
+    remove?: string;
   };
 
   auxTasks?: {
@@ -344,6 +347,25 @@ export interface Translations {
     reasoning?: string;
     input?: string;
     output?: string;
+    /** MoA (Mixture of Agents) preset modal — optional, English fallback until translated. */
+    moaConfigureTitle?: string;
+    moaConfigureDescription?: string;
+    moaSetDefault?: string;
+    moaPresetNamePlaceholder?: string;
+    moaAddPreset?: string;
+    moaDefaultLabel?: string;
+    moaReferenceModels?: string;
+    moaAggregator?: string;
+    moaAddReferenceModel?: string;
+    moaRecursiveError?: string;
+    moaSelectModelTitle?: string;
+    /** Auxiliary-model reset confirmation. */
+    resetAuxTitle?: string;
+    resetAuxDescription?: string;
+    resetAll?: string;
+    /** Model picker dialog. */
+    switchModel?: string;
+    filterProvidersModels?: string;
   };
 
   // ── Logs page ──

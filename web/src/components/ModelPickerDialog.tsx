@@ -87,7 +87,7 @@ export function ModelPickerDialog(props: Props) {
     loader,
     onApply,
     onClose,
-    title = "Switch Model",
+    title,
     alwaysGlobal = false,
   } = props;
   const standalone = !!loader && !!onApply;
@@ -352,7 +352,7 @@ export function ModelPickerDialog(props: Props) {
           size="icon"
           onClick={onClose}
           className="absolute right-2 top-2 text-muted-foreground hover:text-foreground"
-          aria-label="Close"
+          aria-label={t.common.close}
         >
           <X />
         </Button>
@@ -362,7 +362,7 @@ export function ModelPickerDialog(props: Props) {
             id="model-picker-title"
             className="font-mondwest text-display text-base tracking-wider"
           >
-            {title}
+            {title ?? t.models.switchModel ?? "Switch Model"}
           </h2>
           <p className="text-xs text-muted-foreground mt-1 font-mono">
             current: {currentModel || "(unknown)"}
@@ -375,7 +375,7 @@ export function ModelPickerDialog(props: Props) {
             <Search className="absolute left-2 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground" />
             <Input
               autoFocus
-              placeholder="Filter providers and models…"
+              placeholder={t.models.filterProvidersModels ?? "Filter providers and models…"}
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               className="pl-7 h-8 text-sm"
@@ -462,7 +462,7 @@ export function ModelPickerDialog(props: Props) {
       </div>
       <ConfirmDialog
         open={!!pendingConfirm}
-        title="Expensive Model Warning"
+        title={t.models.expensiveModelWarning ?? "Expensive Model Warning"}
         description={pendingConfirm?.message}
         destructive
         confirmLabel="Switch anyway"

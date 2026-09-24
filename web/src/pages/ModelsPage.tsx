@@ -693,10 +693,13 @@ function AuxiliaryTasksModal({
           open={confirmReset}
           onCancel={() => setConfirmReset(false)}
           onConfirm={() => void resetAllAux()}
-          title="Reset auxiliary models"
-          description="Reset every auxiliary task to 'auto'? This overrides any per-task overrides you've set."
+          title={t.models.resetAuxTitle ?? "Reset auxiliary models"}
+          description={
+            t.models.resetAuxDescription ??
+            "Reset every auxiliary task to 'auto'? This overrides any per-task overrides you've set."
+          }
           destructive
-          confirmLabel="Reset all"
+          confirmLabel={t.models.resetAll ?? "Reset all"}
           loading={resetBusy}
         />
       </div>
@@ -715,6 +718,7 @@ function MoaModelsModal({
   onClose(): void;
   onSaved(next: MoaConfigResponse): void;
 }) {
+  const { t } = useI18n();
   const [draft, setDraft] = useState<MoaConfigResponse>(config);
   const [selected, setSelected] = useState(config.default_preset || Object.keys(config.presets)[0] || "default");
   const [newName, setNewName] = useState("");
@@ -828,12 +832,13 @@ function MoaModelsModal({
             id="moa-modal-title"
             className="font-mondwest text-display text-base tracking-wider"
           >
-            Configure Mixture of Agents presets
+            {t.models.moaConfigureTitle ?? "Configure Mixture of Agents presets"}
           </h2>
         </header>
         <div className="space-y-4 p-5">
           <p className="text-xs text-text-secondary">
-            Presets appear as models under the Mixture of Agents provider. References produce perspectives; the aggregator is the acting model that answers and calls tools.
+            {t.models.moaConfigureDescription ??
+              "Presets appear as models under the Mixture of Agents provider. References produce perspectives; the aggregator is the acting model that answers and calls tools."}
           </p>
 
           <div className="flex flex-wrap items-center gap-2">
@@ -844,23 +849,24 @@ function MoaModelsModal({
             >
               {presetNames.map((name) => <option key={name} value={name}>{name}</option>)}
             </select>
-            <Button size="sm" outlined onClick={() => setDraft((prev) => ({ ...prev, default_preset: selected }))}>Set default</Button>
-            <Button size="sm" ghost disabled={presetNames.length <= 1} onClick={deletePreset}>Delete</Button>
+            <Button size="sm" outlined onClick={() => setDraft((prev) => ({ ...prev, default_preset: selected }))}>{t.models.moaSetDefault ?? "Set default"}</Button>
+            <Button size="sm" ghost disabled={presetNames.length <= 1} onClick={deletePreset}>{t.common.delete}</Button>
             <input
               className="border border-border bg-background px-2 py-1 text-xs"
-              placeholder="new preset name"
+              placeholder={t.models.moaPresetNamePlaceholder ?? "new preset name"}
               value={newName}
               onChange={(event) => setNewName(event.target.value)}
             />
-            <Button size="sm" outlined disabled={!newName.trim() || !!draft.presets[newName.trim()]} onClick={addPreset}>Add preset</Button>
+            <Button size="sm" outlined disabled={!newName.trim() || !!draft.presets[newName.trim()]} onClick={addPreset}>{t.models.moaAddPreset ?? "Add preset"}</Button>
           </div>
 
           <div className="text-xs text-text-secondary">
-            Default: <span className="font-mono">{draft.default_preset}</span>
+            {t.models.moaDefaultLabel ?? "Default:"}{" "}
+            <span className="font-mono">{draft.default_preset}</span>
           </div>
 
           <div className="space-y-2">
-            <div className="text-display text-xs font-medium tracking-wider">Reference models</div>
+            <div className="text-display text-xs font-medium tracking-wider">{t.models.moaReferenceModels ?? "Reference models"}</div>
             {preset.reference_models.map((slot, index) => (
               <div
                 key={`${selected}-${slot.provider}-${slot.model}-${index}`}
@@ -881,25 +887,25 @@ function MoaModelsModal({
                   }
                 />
                 <div className="min-w-0 flex-1 truncate font-mono text-xs text-text-secondary">{slotLabel(slot)}</div>
-                <Button size="sm" outlined onClick={() => setPicker({ kind: "reference", index })}>Change</Button>
-                <Button size="sm" ghost disabled={preset.reference_models.length <= 1} onClick={() => updateSelectedPreset((prev) => ({ ...prev, reference_models: prev.reference_models.filter((_, i) => i !== index) }))}>Remove</Button>
+                <Button size="sm" outlined onClick={() => setPicker({ kind: "reference", index })}>{t.common.change ?? "Change"}</Button>
+                <Button size="sm" ghost disabled={preset.reference_models.length <= 1} onClick={() => updateSelectedPreset((prev) => ({ ...prev, reference_models: prev.reference_models.filter((_, i) => i !== index) }))}>{t.common.remove ?? "Remove"}</Button>
               </div>
             ))}
-            <Button size="sm" outlined onClick={() => updateSelectedPreset((prev) => ({ ...prev, reference_models: [...prev.reference_models, { ...prev.aggregator, enabled: true }] }))}>Add reference model</Button>
+            <Button size="sm" outlined onClick={() => updateSelectedPreset((prev) => ({ ...prev, reference_models: [...prev.reference_models, { ...prev.aggregator, enabled: true }] }))}>{t.models.moaAddReferenceModel ?? "Add reference model"}</Button>
           </div>
 
           <div className="space-y-2">
-            <div className="text-display text-xs font-medium tracking-wider">Aggregator</div>
+            <div className="text-display text-xs font-medium tracking-wider">{t.models.moaAggregator ?? "Aggregator"}</div>
             <div className="flex items-center gap-2 border border-border/50 bg-muted/20 px-3 py-2">
               <div className="min-w-0 flex-1 truncate font-mono text-xs text-text-secondary">{slotLabel(preset.aggregator)}</div>
-              <Button size="sm" outlined onClick={() => setPicker({ kind: "aggregator" })}>Change</Button>
+              <Button size="sm" outlined onClick={() => setPicker({ kind: "aggregator" })}>{t.common.change ?? "Change"}</Button>
             </div>
           </div>
 
           {error && <div className="text-xs text-destructive">{error}</div>}
           <div className="flex justify-end gap-2 pt-2">
-            <Button ghost onClick={onClose} disabled={busy}>Cancel</Button>
-            <Button onClick={() => void save()} disabled={busy}>{busy ? "Saving…" : "Save"}</Button>
+            <Button ghost onClick={onClose} disabled={busy}>{t.common.cancel}</Button>
+            <Button onClick={() => void save()} disabled={busy}>{busy ? t.common.saving : t.common.save}</Button>
           </div>
         </div>
       </div>
@@ -908,10 +914,10 @@ function MoaModelsModal({
           key={`moa-picker-${refreshKey}-${selected}-${picker.kind}-${picker.kind === "reference" ? picker.index : "agg"}`}
           loader={api.getModelOptions}
           alwaysGlobal
-          title="Select MoA Model"
+          title={t.models.moaSelectModelTitle ?? "Select MoA Model"}
           onApply={async ({ provider, model }) => {
             if ((provider || "").toLowerCase() === "moa") {
-              setError("MoA presets can't reference or aggregate the Mixture of Agents provider (no recursive MoA).");
+              setError(t.models.moaRecursiveError ?? "MoA presets can't reference or aggregate the Mixture of Agents provider (no recursive MoA).");
               return;
             }
             setError(null);

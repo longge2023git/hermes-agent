@@ -81,6 +81,8 @@ export const en: Translations = {
       "Could not load this plugin’s script. Check the Network tab (dashboard-plugins/…) and the server’s plugin path.",
     pluginNotRegistered:
       "The plugin’s script did not call register(), or the script errored. Open the browser console for details.",
+    change: "Change",
+    remove: "Remove",
   },
 
   app: {
@@ -323,6 +325,25 @@ export const en: Translations = {
     toolCalls: "tool calls",
     noModelsData: "No model usage data for this period",
     startSession: "Start a session to see model data here",
+    moaConfigureTitle: "Configure Mixture of Agents presets",
+    moaConfigureDescription:
+      "Presets appear as models under the Mixture of Agents provider. References produce perspectives; the aggregator is the acting model that answers and calls tools.",
+    moaSetDefault: "Set default",
+    moaPresetNamePlaceholder: "new preset name",
+    moaAddPreset: "Add preset",
+    moaDefaultLabel: "Default:",
+    moaReferenceModels: "Reference models",
+    moaAggregator: "Aggregator",
+    moaAddReferenceModel: "Add reference model",
+    moaRecursiveError:
+      "MoA presets can't reference or aggregate the Mixture of Agents provider (no recursive MoA).",
+    moaSelectModelTitle: "Select MoA Model",
+    resetAuxTitle: "Reset auxiliary models",
+    resetAuxDescription:
+      "Reset every auxiliary task to 'auto'? This overrides any per-task overrides you've set.",
+    resetAll: "Reset all",
+    switchModel: "Switch Model",
+    filterProvidersModels: "Filter providers and models…",
   },
 
   logs: {
