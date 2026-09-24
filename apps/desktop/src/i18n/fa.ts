@@ -533,6 +533,7 @@ export const fa = defineLocale({
       'session.archive': 'بایگانی نشست فعلی',
       'workspace.newWorktree': 'worktree جدید',
       'workspace.openFolder': 'باز کردن پوشه به عنوان پروژه',
+      'layout.editMode': 'تغییر حالت ویرایش چیدمان',
       'composer.focus': 'تمرکز بر کامپوزر',
       'composer.modelPicker': 'باز کردن انتخابگر مدل',
       'composer.voice': 'شروع/توقف گفت‌وگوی صوتی',
@@ -2349,6 +2350,30 @@ export const fa = defineLocale({
   commandCenter: {
     close: 'بستن مرکز فرمان',
     paletteTitle: 'پالت فرمان',
+    palette: {
+      plugins: {
+        reload: 'بارگذاری دوبارهٔ افزونه‌های دسکتاپ'
+      },
+      layout: {
+        reset: 'بازنشانی چیدمان'
+      },
+      keybinds: {
+        panel: 'میان‌برهای صفحه‌کلید'
+      },
+      profile: {
+        export: 'برون‌بری نمایه…',
+        import: 'درون‌ریزی نمایه…'
+      },
+      view: {
+        showTerminal: 'تغییر وضعیت ترمینال'
+      },
+      logs: {
+        toggle: 'تغییر وضعیت گزارش‌ها'
+      },
+      session: {
+        yolo: 'تغییر وضعیت yolo'
+      }
+    },
     back: 'بازگشت',
     searchPlaceholder: 'جستجوی نشست‌ها، نماها و اقدامات',
     goTo: 'رفتن به',
@@ -4446,6 +4471,13 @@ export const fa = defineLocale({
     }
   },
   zones: {
+    presets: {
+      default: 'پیش‌فرض',
+      basic: 'پایه',
+      focus: 'تمرکز',
+      'terminal-deck': 'چیدمان ترمینال',
+      quad: 'چهارتایی'
+    },
     showTabStrip: 'نمایش تبها',
     hideTabStrip: 'پنهان کردن تبها',
     showStripTab: title => `نمایش ${title}`,
@@ -4518,6 +4550,13 @@ export const fa = defineLocale({
     }
   },
   assistant: {
+    alert: {
+      caution: 'احتیاط',
+      important: 'مهم',
+      note: 'یادداشت',
+      tip: 'نکته',
+      warning: 'هشدار'
+    },
     thread: {
       loadingSession: 'در حال بارگذاری نشست',
       showEarlier: 'نمایش پیام‌های قبلی',

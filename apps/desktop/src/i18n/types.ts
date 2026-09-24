@@ -1891,6 +1891,17 @@ export interface Translations {
   commandCenter: {
     close: string
     paletteTitle: string
+    /** ⌘K rows whose label lives under the contribution's dotted id
+     *  (`commandCenter.palette.plugins.reload`). */
+    palette?: {
+      plugins?: { reload?: string }
+      layout?: { reset?: string }
+      keybinds?: { panel?: string }
+      profile?: { export?: string; import?: string }
+      view?: { showTerminal?: string }
+      logs?: { toggle?: string }
+      session?: { yolo?: string }
+    }
     back: string
     searchPlaceholder: string
     goTo: string
@@ -3621,6 +3632,14 @@ export interface Translations {
   }
 
   zones: {
+    /** Bundled layout preset titles, keyed by preset id. */
+    presets?: {
+      default?: string
+      basic?: string
+      focus?: string
+      'terminal-deck'?: string
+      quad?: string
+    }
     showTabStrip: string
     hideTabStrip: string
     showStripTab: (title: string) => string
@@ -3693,6 +3712,14 @@ export interface Translations {
   }
 
   assistant: {
+    /** GitHub-style alert blockquote headers. */
+    alert?: {
+      caution?: string
+      important?: string
+      note?: string
+      tip?: string
+      warning?: string
+    }
     thread: {
       loadingSession: string
       showEarlier: string

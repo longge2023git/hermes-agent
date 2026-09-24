@@ -540,6 +540,7 @@ export const en: Translations = {
       'session.archive': 'Archive current session',
       'workspace.newWorktree': 'New worktree',
       'workspace.openFolder': 'Open folder as project',
+      'layout.editMode': 'Toggle layout edit mode',
       'composer.focus': 'Focus composer',
       'composer.modelPicker': 'Open model picker',
       'composer.voice': 'Start / stop voice conversation',
@@ -2140,6 +2141,18 @@ export const en: Translations = {
   commandCenter: {
     close: 'Close command center',
     paletteTitle: 'Command palette',
+    // ⌘K rows contributed with a dotted id ('plugins.reload', 'view.showTerminal').
+    // The nested shape mirrors that id so `translateNow('commandCenter.palette.<id>')`
+    // (a dot-path walk) resolves it.
+    palette: {
+      plugins: { reload: 'Reload desktop plugins' },
+      layout: { reset: 'Reset layout' },
+      keybinds: { panel: 'Keyboard shortcuts' },
+      profile: { export: 'Export profile…', import: 'Import profile…' },
+      view: { showTerminal: 'Toggle terminal' },
+      logs: { toggle: 'Toggle logs' },
+      session: { yolo: 'Toggle yolo' }
+    },
     back: 'Back',
     searchPlaceholder: 'Search sessions, views, and actions',
     goTo: 'Go to',
@@ -4167,6 +4180,14 @@ export const en: Translations = {
   },
 
   zones: {
+    // Bundled layout presets (app/contrib/layout-presets.ts), keyed by preset id.
+    presets: {
+      default: 'Default',
+      basic: 'Basic',
+      focus: 'Focus',
+      'terminal-deck': 'Terminal deck',
+      quad: 'Quad'
+    },
     showTabStrip: 'Show tabs',
     hideTabStrip: 'Hide tabs',
     showStripTab: title => `Show ${title}`,
@@ -4240,6 +4261,14 @@ export const en: Translations = {
   },
 
   assistant: {
+    // GitHub-style alert blockquote headers (components/assistant-ui/embeds/alert.tsx).
+    alert: {
+      caution: 'Caution',
+      important: 'Important',
+      note: 'Note',
+      tip: 'Tip',
+      warning: 'Warning'
+    },
     thread: {
       loadingSession: 'Loading session',
       showEarlier: 'Show earlier messages',

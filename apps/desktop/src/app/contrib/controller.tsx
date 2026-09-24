@@ -43,6 +43,8 @@ import { Slot } from '@/contrib/react/slot'
 import { registry } from '@/contrib/registry'
 import { discoverRuntimePlugins } from '@/contrib/runtime-loader'
 import { LocalizedTabTitle, translateNow } from '@/i18n'
+import { TRANSLATIONS } from '@/i18n/catalog'
+import { getRuntimeI18nLocale } from '@/i18n/runtime'
 import { NEW_SESSION_TITLE, sessionTitle as storedSessionTitle } from '@/lib/chat-runtime'
 import { Download, FileText, LayoutDashboard, PanelBottom, PanelTop, Terminal, Upload, Users, Zap } from '@/lib/icons'
 import { type KeybindContribution, KEYBINDS_AREA } from '@/lib/keybinds/actions'
@@ -98,6 +100,16 @@ import { $workspaceIsPage, WORKSPACE_PAGE_HEADER_AREA } from '../routes'
 import { DEFAULT_TREE, registerLayoutPresets } from './layout-presets'
 import { FilesPane, LogsPane, ReviewPaneContent } from './panes'
 import { ContribWiring, WiredPane } from './wiring'
+
+/**
+ * Label for a keybind action whose id IS a dotted key (`keybinds.actions['view.toggleStatusbar']`).
+ * `translateNow` walks a dot-path, so it cannot address a leaf whose own name contains
+ * dots — and the palette/keybind rows here register at module scope, before any hook can
+ * run. Index the active catalog's record directly (the shape onboarding-chat/assembly.ts
+ * uses too), keeping the English literal as the contribution's own fallback.
+ */
+const keybindActionLabel = (id: string, fallback: string): string =>
+  TRANSLATIONS[getRuntimeI18nLocale()].keybinds.actions[id] ?? fallback
 
 /**
  * Stripped-down app root (bb/contrib-areas) on the layout TREE model, mounting
@@ -281,14 +293,14 @@ registry.registerMany([
     area: KEYBINDS_AREA,
     data: {
       id: 'layout.editMode',
-      label: 'Toggle layout edit mode',
+      label: keybindActionLabel('layout.editMode', 'Toggle layout edit mode'),
       defaults: ['mod+shift+\\'],
       run: toggleLayoutEditMode
     } satisfies KeybindContribution
   },
   paletteToggle({
     id: 'layout.editMode',
-    label: 'Toggle layout edit mode',
+    label: keybindActionLabel('layout.editMode', 'Toggle layout edit mode'),
     action: 'layout.editMode',
     icon: LayoutDashboard,
     keywords: ['layout', 'zones', 'panes', 'edit', 'rearrange'],
@@ -302,7 +314,7 @@ registry.registerMany([
     area: PALETTE_AREA,
     data: {
       id: 'plugins.reload',
-      label: 'Reload desktop plugins',
+      label: translateNow('commandCenter.palette.plugins.reload') ?? 'Reload desktop plugins',
       keywords: ['plugins', 'reload', 'refresh', 'desktop'],
       run: () => void discoverRuntimePlugins()
     } satisfies PaletteContribution
@@ -347,7 +359,7 @@ registry.registerMany([
     area: PALETTE_AREA,
     data: {
       id: 'layout.reset',
-      label: 'Reset layout',
+      label: translateNow('commandCenter.palette.layout.reset') ?? 'Reset layout',
       icon: LayoutDashboard,
       keywords: ['layout', 'reset', 'default', 'panes'],
       run: resetLayoutTree
@@ -357,7 +369,7 @@ registry.registerMany([
   // ⌘K is the guaranteed door in (alongside the rebindable ⌘⇧S).
   paletteToggle({
     id: 'view.toggleStatusbar',
-    label: 'Toggle status bar',
+    label: keybindActionLabel('view.toggleStatusbar', 'Toggle status bar'),
     action: 'view.toggleStatusbar',
     icon: PanelBottom,
     keywords: ['status bar', 'statusbar', 'bottom bar', 'hide', 'show', 'chrome'],
@@ -366,7 +378,7 @@ registry.registerMany([
   }),
   paletteToggle({
     id: 'view.toggleProfileRail',
-    label: 'Toggle profile rail',
+    label: keybindActionLabel('view.toggleProfileRail', 'Toggle profile rail'),
     action: 'view.toggleProfileRail',
     icon: Users,
     keywords: ['profile rail', 'profile bar', 'profile strip', 'profiles', 'sidebar', 'hide', 'show', 'chrome'],
@@ -375,7 +387,7 @@ registry.registerMany([
   }),
   paletteToggle({
     id: 'view.toggleTabStrip',
-    label: 'Toggle tabs',
+    label: keybindActionLabel('view.toggleTabStrip', 'Toggle tabs'),
     action: 'view.toggleTabStrip',
     icon: PanelTop,
     keywords: ['tab strip', 'tab bar', 'tabs', 'header', 'zone', 'hide', 'show', 'chrome'],
@@ -391,7 +403,7 @@ registry.registerMany([
     area: PALETTE_AREA,
     data: {
       id: 'keybinds.panel',
-      label: 'Keyboard shortcuts',
+      label: translateNow('commandCenter.palette.keybinds.panel') ?? 'Keyboard shortcuts',
       keywords: ['keybinds', 'shortcuts', 'hotkeys', 'keyboard'],
       run: () => window.dispatchEvent(new CustomEvent('hermes:open-keybinds'))
     } satisfies PaletteContribution
@@ -404,7 +416,7 @@ registry.registerMany([
     area: PALETTE_AREA,
     data: {
       id: 'profile.export',
-      label: 'Export profile…',
+      label: translateNow('commandCenter.palette.profile.export') ?? 'Export profile…',
       icon: Upload,
       keywords: ['profile', 'export', 'share', 'bundle', 'theme', 'settings', 'backup'],
       run: () => void runExportProfileFlow()
@@ -415,7 +427,7 @@ registry.registerMany([
     area: PALETTE_AREA,
     data: {
       id: 'profile.import',
-      label: 'Import profile…',
+      label: translateNow('commandCenter.palette.profile.import') ?? 'Import profile…',
       icon: Download,
       keywords: ['profile', 'import', 'share', 'bundle', 'archive', 'restore'],
       run: () => void runImportProfileFlow()
@@ -616,7 +628,7 @@ bindToolPaneCollapse(
 registry.register(
   paletteToggle({
     id: 'view.showTerminal',
-    label: 'Toggle terminal',
+    label: translateNow('commandCenter.palette.view.showTerminal') ?? 'Toggle terminal',
     action: 'view.showTerminal',
     icon: Terminal,
     keywords: ['terminal', 'shell', 'console', 'pty'],
@@ -685,7 +697,7 @@ $logsOpen.listen(syncLogsPane)
 registry.register(
   paletteToggle({
     id: 'logs.toggle',
-    label: 'Toggle logs',
+    label: translateNow('commandCenter.palette.logs.toggle') ?? 'Toggle logs',
     icon: FileText,
     keywords: ['logs', 'agent log', 'tail', 'debug'],
     // On-screen, not the store's boolean. Summon-only keeps the two in step
@@ -762,7 +774,7 @@ registry.register(
 registry.register(
   paletteToggle({
     id: 'session.yolo',
-    label: 'Toggle yolo',
+    label: translateNow('commandCenter.palette.session.yolo') ?? 'Toggle yolo',
     icon: Zap,
     keywords: ['yolo', 'approvals', 'auto-approve', 'bypass', 'dangerous', 'commands'],
     get: () => $yoloActive.get(),

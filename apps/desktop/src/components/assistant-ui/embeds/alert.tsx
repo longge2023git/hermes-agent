@@ -1,5 +1,6 @@
 import { cloneElement, isValidElement, type ReactNode } from 'react'
 
+import { translateNow } from '@/i18n'
 import { AlertCircle, AlertTriangle, type IconComponent, Info, Zap } from '@/lib/icons'
 import { cn } from '@/lib/utils'
 
@@ -13,11 +14,11 @@ interface AlertStyle {
 
 // GitHub's five alert kinds, mapped to our icon set + a tinted accent.
 const ALERT_STYLES: Record<AlertType, AlertStyle> = {
-  caution: { accent: 'text-rose-600 dark:text-rose-400', icon: AlertTriangle, label: 'Caution' },
-  important: { accent: 'text-violet-600 dark:text-violet-400', icon: AlertCircle, label: 'Important' },
-  note: { accent: 'text-blue-600 dark:text-blue-400', icon: Info, label: 'Note' },
-  tip: { accent: 'text-emerald-600 dark:text-emerald-400', icon: Zap, label: 'Tip' },
-  warning: { accent: 'text-amber-600 dark:text-amber-400', icon: AlertTriangle, label: 'Warning' }
+  caution: { accent: 'text-rose-600 dark:text-rose-400', icon: AlertTriangle, label: translateNow('assistant.alert.caution') ?? 'Caution' },
+  important: { accent: 'text-violet-600 dark:text-violet-400', icon: AlertCircle, label: translateNow('assistant.alert.important') ?? 'Important' },
+  note: { accent: 'text-blue-600 dark:text-blue-400', icon: Info, label: translateNow('assistant.alert.note') ?? 'Note' },
+  tip: { accent: 'text-emerald-600 dark:text-emerald-400', icon: Zap, label: translateNow('assistant.alert.tip') ?? 'Tip' },
+  warning: { accent: 'text-amber-600 dark:text-amber-400', icon: AlertTriangle, label: translateNow('assistant.alert.warning') ?? 'Warning' }
 }
 
 const MARKER_RE = /^\s*\[!(note|tip|important|warning|caution)\]\s*\n?/i
