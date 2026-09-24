@@ -704,3 +704,20 @@ nous_feature:
     label: "خودکارسازی مرورگر"
   modal:
     label: "اجرای Modal"
+
+# ── envvar.* （后端配置说明）─────────────────────────────────────
+envvar.BRAVE_SEARCH_API_KEY.description: 'توکن اشتراک API جست‌وجوی Brave (طرح رایگان: 2,000 پرس‌وجو در ماه)'
+envvar.AGENT_BROWSER_ENGINE.description: 'موتور مرورگر محلی: auto (پیش‌فرض Chrome)، lightpanda (سریع‌تر، بدون اسکرین‌شات؛ حالت Browser Use فرآیند lightpanda serve را اجرا می‌کند)، chrome'
+envvar.HINDSIGHT_API_URL.description: 'نشانی پایهٔ API ‏Hindsight (پیش‌فرض: https://api.hindsight.vectorize.io)'
+envvar.RETAINDB_BASE_URL.description: 'نشانی پایهٔ نمونه‌های RetainDB با میزبانی خودتان (پیش‌فرض: https://api.retaindb.com)'
+envvar.OPENVIKING_ENDPOINT.description: 'نشانی سرور OpenViking (پیش‌فرض: http://127.0.0.1:1933)'
+envvar.HERMES_LANGFUSE_BASE_URL.description: 'نشانی سرور Langfuse (پیش‌فرض: https://cloud.langfuse.com)'
+envvar.DISCORD_REPLY_TO_MODE.description: 'حالت رشتهٔ پاسخ Discord: ''off'' (بدون ارجاع پاسخ)، ''first'' (پاسخ فقط به اولین پیام، پیش‌فرض)، ''all'' (پاسخ به هر بخش)'
+envvar.MATTERMOST_REQUIRE_MENTION.description: 'الزام @mention در کانال‌های Mattermost (پیش‌فرض: true). برای پاسخ به همهٔ پیام‌ها false بگذارید.'
+envvar.MATRIX_REQUIRE_MENTION.description: 'الزام @mention در اتاق‌های Matrix (پیش‌فرض: true). برای پاسخ به همهٔ پیام‌ها false بگذارید.'
+envvar.MATRIX_AUTO_THREAD.description: 'ساخت خودکار رشته برای پیام‌های اتاق‌های Matrix (پیش‌فرض: true)'
+envvar.MATRIX_DM_AUTO_THREAD.description: 'ساخت خودکار رشته برای پیام‌های خصوصی Matrix (پیش‌فرض: false)'
+envvar.GATEWAY_ALLOW_ALL_USERS.description: 'اجازه به همهٔ کاربران برای تعامل با ربات‌های پیام‌رسان (true/false). پیش‌فرض: false.'
+envvar.HERMES_SIMPLEX_TEXT_BATCH_DELAY.description: 'ثانیه‌های دورهٔ سکوت (پیش‌فرض: 0.8) برای ادغام پیام‌های متنی پشت‌سرهم ورودی در یک MessageEvent — همان الگوی دسته‌بندی متن تلگرام.'
+envvar.MATTERMOST_REPLY_MODE.description: 'شیوهٔ ارسال پاسخ‌ها: ''thread'' (تودرتو) یا ''off'' (تخت). پیش‌فرض: off.'
+envvar.PHOTON_HOME_CHANNEL.description: 'مقصد پیش‌فرض Photon برای cron و تحویل اعلان: شناسهٔ فضای Spectrum، GUID پیام خصوصی، یا شمارهٔ خام E.164'

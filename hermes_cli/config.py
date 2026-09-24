@@ -31,6 +31,7 @@ from pathlib import Path
 from typing import Dict, Any, Optional, List, Tuple, Set
 
 import yaml
+from agent.i18n import t_or  # noqa: E402
 
 from hermes_cli.cli_output import line_input
 from hermes_cli.colors import Colors, color
@@ -672,16 +673,26 @@ ENV_VARS_BY_VERSION: Dict[int, List[str]] = {
 REQUIRED_ENV_VARS = {}
 
 
+def _localize_env_rows(rows):
+    for row in rows:
+        for field in ("description", "prompt"):
+            value = row.get(field)
+            if isinstance(value, str) and value:
+                row[field] = t_or("envvar." + row["name"] + "." + field, value)
+    return rows
+
+
 def get_missing_env_vars(required_only: bool = False) -> List[Dict[str, Any]]:
     """Check which environment variables are missing."""
     groups = [(REQUIRED_ENV_VARS, True)]
     if not required_only:
         groups.append((OPTIONAL_ENV_VARS, False))
-    return [
+    rows = [
         {"name": var_name, **info, "is_required": is_required}
         for table, is_required in groups
         for var_name, info in table.items()
         if not get_env_value(var_name)]
+    return _localize_env_rows(rows)
 
 
 def _split_key_path(key: str) -> list[str]:

@@ -484,3 +484,20 @@ nous_feature:
     label: "Browser automation"
   modal:
     label: "Modal execution"
+
+# ── envvar.* （后端配置说明）─────────────────────────────────────
+envvar.BRAVE_SEARCH_API_KEY.description: 'Brave Search API subscription token (free tier: 2,000 queries/mo)'
+envvar.AGENT_BROWSER_ENGINE.description: 'Local browser engine: auto (default Chrome), lightpanda (faster, no screenshots; Browser Use mode spawns lightpanda serve), chrome'
+envvar.HINDSIGHT_API_URL.description: 'Base URL for the Hindsight API (default: https://api.hindsight.vectorize.io)'
+envvar.RETAINDB_BASE_URL.description: 'Base URL for self-hosted RetainDB instances (default: https://api.retaindb.com)'
+envvar.OPENVIKING_ENDPOINT.description: 'OpenViking server URL (default: http://127.0.0.1:1933)'
+envvar.HERMES_LANGFUSE_BASE_URL.description: 'Langfuse server URL (default: https://cloud.langfuse.com)'
+envvar.DISCORD_REPLY_TO_MODE.description: 'Discord reply threading mode: ''off'' (no reply references), ''first'' (reply on first message only, default), ''all'' (reply on every chunk)'
+envvar.MATTERMOST_REQUIRE_MENTION.description: 'Require @mention in Mattermost channels (default: true). Set to false to respond to all messages.'
+envvar.MATRIX_REQUIRE_MENTION.description: 'Require @mention in Matrix rooms (default: true). Set to false to respond to all messages.'
+envvar.MATRIX_AUTO_THREAD.description: 'Auto-create threads for messages in Matrix rooms (default: true)'
+envvar.MATRIX_DM_AUTO_THREAD.description: 'Auto-create threads for DM messages in Matrix (default: false)'
+envvar.GATEWAY_ALLOW_ALL_USERS.description: 'Allow all users to interact with messaging bots (true/false). Default: false.'
+envvar.HERMES_SIMPLEX_TEXT_BATCH_DELAY.description: 'Quiet-period seconds (default: 0.8) used to concatenate rapid-fire inbound text messages into a single MessageEvent -- same pattern as Telegram''s text batching.'
+envvar.MATTERMOST_REPLY_MODE.description: 'How replies are sent: ''thread'' (nested) or ''off'' (flat). Default: off.'
+envvar.PHOTON_HOME_CHANNEL.description: 'Default Photon target for cron / notification delivery: Spectrum space id, DM GUID, or bare E.164 phone number'
