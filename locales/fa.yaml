@@ -746,3 +746,29 @@ platform:
     description: "Hermes را از پیام‌خصوصی، گروه‌ها و موضوع‌های Telegram اجرا کنید."
   whatsapp:
     description: "Hermes را از طریق پل همراه WhatsApp با احراز هویت مبتنی بر QR استفاده کنید."
+
+envvar:
+  ANTHROPIC_API_KEY:
+    description: "کلید API Anthropic"
+  BRAVE_SEARCH_API_KEY:
+    description: "توکن اشتراک API جست‌وجوی Brave (طرح رایگان: 2,000 پرس‌وجو در ماه)"
+  DEEPSEEK_API_KEY:
+    description: "کلید API DeepSeek برای دسترسی مستقیم"
+  ELEVENLABS_API_KEY:
+    description: "کلید API ElevenLabs برای صداهای ممتاز TTS و رونویسی Scribe"
+  EXA_API_KEY:
+    description: "کلید API Exa برای جست‌وجو و محتوای وب ویژهٔ هوش مصنوعی"
+  FIRECRAWL_API_KEY:
+    description: "کلید API Firecrawl برای جست‌وجو و واکشی وب"
+  GEMINI_API_KEY:
+    description: "کلید API استودیوی Google AI (نام دیگر GOOGLE_API_KEY)"
+  GITHUB_TOKEN:
+    description: "توکن GitHub برای Skills Hub (محدودیت نرخ بالاتر، انتشار مهارت)"
+  MISTRAL_API_KEY:
+    description: "کلید API Mistral برای Voxtral TTS و رونویسی (STT)"
+  OPENROUTER_API_KEY:
+    description: "کلید API OpenRouter (برای بینایی، ابزارهای واکشی وب و MoA)"
+  TAVILY_API_KEY:
+    description: "کلید API Tavily برای جست‌وجو و استخراج وب ویژهٔ هوش مصنوعی"
+  XAI_API_KEY:
+    description: "کلید API xAI"

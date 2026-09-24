@@ -526,3 +526,29 @@ platform:
     description: "Hermes را از پیام‌خصوصی، گروه‌ها و موضوع‌های Telegram اجرا کنید."
   whatsapp:
     description: "Hermes را از طریق پل همراه WhatsApp با احراز هویت مبتنی بر QR استفاده کنید."
+
+envvar:
+  ANTHROPIC_API_KEY:
+    description: ""
+  BRAVE_SEARCH_API_KEY:
+    description: ""
+  DEEPSEEK_API_KEY:
+    description: ""
+  ELEVENLABS_API_KEY:
+    description: ""
+  EXA_API_KEY:
+    description: ""
+  FIRECRAWL_API_KEY:
+    description: ""
+  GEMINI_API_KEY:
+    description: ""
+  GITHUB_TOKEN:
+    description: ""
+  MISTRAL_API_KEY:
+    description: ""
+  OPENROUTER_API_KEY:
+    description: ""
+  TAVILY_API_KEY:
+    description: ""
+  XAI_API_KEY:
+    description: ""
