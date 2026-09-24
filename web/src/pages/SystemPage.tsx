@@ -605,7 +605,7 @@ export default function SystemPage() {
               "success",
             );
           } else if (info.behind === 0) {
-            showToast("You're on the latest version", "success");
+            showToast(t.system?.upToDate ?? "You're on the latest version", "success");
           } else if (info.message) {
             showToast(info.message, "error");
           }
@@ -989,7 +989,7 @@ export default function SystemPage() {
                   <Cpu className="h-3 w-3" /> CPU
                 </div>
                 <div>
-                  {stats?.cpu_count ?? "—"} cores
+                  {stats?.cpu_count ?? "—"} {t.system?.cores ?? "cores"}
                   {typeof stats?.cpu_percent === "number"
                     ? ` · ${stats.cpu_percent.toFixed(0)}%`
                     : ""}
@@ -1098,7 +1098,7 @@ export default function SystemPage() {
               </Badge>
               {portal?.provider && (
                 <span className="text-sm text-muted-foreground">
-                  inference provider: {portal.provider}
+                  {t.system?.inferenceProviderPrefix ?? "inference provider: "}{portal.provider}
                 </span>
               )}
               <a

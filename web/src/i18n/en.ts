@@ -521,6 +521,10 @@ export const en: Translations = {
     providersHeading: "Runtime provider plugins",
     providersHint:
       "Writes memory.provider (empty = built-in) and context.engine to config.yaml. Takes effect next session.",
+    providersIntro: "Configure memory providers and runtime context engine selection.",
+    memoryBuiltinHint: "Hermes will use the built-in MEMORY.md and USER.md files.",
+    saveMemoryProvider: "Save memory provider",
+    saveContextEngine: "Save context engine",
     refreshDashboard: "Rescan dashboard extensions",
     removeConfirm: "Remove this plugin from ~/.hermes/plugins/?",
     removeHint: "Only user-installed plugins under ~/.hermes/plugins can be removed.",
@@ -565,6 +569,7 @@ export const en: Translations = {
     /** Sidebar tab — distinct from the page's "Browse skills hub" CTA. */
     browseHubTab: "Browse hub",
     learnSkill: "Learn a skill",
+    newSkill: "New skill",
     editSkillFile: "Edit SKILL.md",
     /** "{name}" = the skill's name. */
     editSkillNamed: "Edit {name}",
@@ -615,6 +620,7 @@ export const en: Translations = {
     failedToLoadRaw: "Failed to load raw config",
     configImported: "Config imported — review and save",
     invalidJson: "Invalid JSON file",
+    confirmResetDescription: "This will reset {count} field(s) to their default values.",
     categories: {
       general: "General",
       agent: "Agent",
@@ -1231,6 +1237,9 @@ export const en: Translations = {
     updateBehind: "{count} behind",
     updateAvailable: "update available",
     latest: "latest",
+    upToDate: "You're on the latest version",
+    inferenceProviderPrefix: "inference provider:",
+    cores: "cores",
     loggedIn: "logged in",
     notLoggedIn: "not logged in",
     manageSubscription: "Manage subscription",

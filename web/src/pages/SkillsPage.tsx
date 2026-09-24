@@ -222,7 +222,7 @@ export default function SkillsPage() {
     setEditorSkill(null);
     setEditorOpen(true);
   }, []);
-  // ── "Learn a skill" panel ──────────────────────────────────────────────
+  // ── "{t.skills.learnSkill ?? "Learn a skill"}" panel ──────────────────────────────────────────────
   // Open-ended: dir + URL + free-text inputs are composed into a single-line
   // /learn command and handed to the chat. /learn resolves to a normal agent
   // turn (command.dispatch → send), so the live agent gathers the sources
@@ -558,7 +558,7 @@ export default function SkillsPage() {
                       onClick={openCreateEditor}
                       prefix={<Plus />}
                     >
-                      New skill
+                      {t.skills.newSkill ?? "New skill"}
                     </Button>
                   </div>
                 </div>

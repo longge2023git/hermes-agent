@@ -588,7 +588,7 @@ export default function PluginsPage() {
             <CardHeader>
               <CardTitle>{t.pluginsPage.providersHeading}</CardTitle>
               <p className="text-xs tracking-[0.08em] text-text-tertiary">
-                Configure memory providers and runtime context engine selection.
+                {t.pluginsPage.providersIntro ?? "Configure memory providers and runtime context engine selection."}
               </p>
             </CardHeader>
 
@@ -604,10 +604,10 @@ export default function PluginsPage() {
                         </Badge>
                       )}
                       {selectedMemoryName && selectedMemoryName === providers.memory_provider && (
-                        <Badge tone="outline">active</Badge>
+                        <Badge tone="outline">{t.common.active ?? "active"}</Badge>
                       )}
                       {!selectedMemoryName && !providers.memory_provider && (
-                        <Badge tone="success">active</Badge>
+                        <Badge tone="success">{t.common.active ?? "active"}</Badge>
                       )}
                     </div>
 
@@ -631,7 +631,7 @@ export default function PluginsPage() {
 
                   {!selectedMemoryName && (
                     <p className="text-xs text-muted-foreground">
-                      Hermes will use the built-in MEMORY.md and USER.md files.
+                      {t.pluginsPage.memoryBuiltinHint ?? "Hermes will use the built-in MEMORY.md and USER.md files."}
                     </p>
                   )}
 
@@ -788,7 +788,7 @@ export default function PluginsPage() {
                     onClick={() => void onSaveMemoryProvider()}
                     prefix={memoryBusy ? <Spinner /> : undefined}
                   >
-                    Save memory provider
+                    {t.pluginsPage.saveMemoryProvider ?? "Save memory provider"}
                   </Button>
                 </div>
 
@@ -819,7 +819,7 @@ export default function PluginsPage() {
                     onClick={() => void onSaveContextEngine()}
                     prefix={contextBusy ? <Spinner /> : undefined}
                   >
-                    Save context engine
+                    {t.pluginsPage.saveContextEngine ?? "Save context engine"}
                   </Button>
                 </div>
               </div>

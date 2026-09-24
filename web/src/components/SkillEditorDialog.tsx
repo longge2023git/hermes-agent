@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useI18n } from "@/i18n";
 import { api } from "@/lib/api";
 import { Button } from "@nous-research/ui/ui/components/button";
 import { Input } from "@nous-research/ui/ui/components/input";
@@ -79,6 +80,7 @@ function EditorBody({
   onClose,
   onSaved,
 }: Omit<SkillEditorDialogProps, "open">) {
+  const { t } = useI18n();
   const isEdit = editName !== null;
   const [name, setName] = useState("");
   const [category, setCategory] = useState("");
@@ -139,7 +141,7 @@ function EditorBody({
     <>
       <DialogHeader>
         <DialogTitle>
-          {isEdit ? `Edit skill: ${editName}` : "New skill"}
+          {isEdit ? `Edit skill: ${editName}` : (t.skills.newSkill ?? "New skill")}
         </DialogTitle>
         <DialogDescription>
           {isEdit

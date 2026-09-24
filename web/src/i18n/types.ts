@@ -471,6 +471,12 @@ export interface Translations {
     providerDefaults: string;
     providersHeading: string;
     providersHint: string;
+    /** /plugins — memory/context-engine card intro sentence. */
+    providersIntro?: string;
+    /** /plugins — shown when the built-in MEMORY.md/USER.md files are in use. */
+    memoryBuiltinHint?: string;
+    saveMemoryProvider?: string;
+    saveContextEngine?: string;
     refreshDashboard: string;
     removeConfirm: string;
     removeHint: string;
@@ -583,6 +589,8 @@ export interface Translations {
     /** Sidebar tab ("Browse hub") — distinct from the page's `browseHub` CTA. */
     browseHubTab?: string;
     learnSkill?: string;
+    /** /skills — the "New skill" CTA + the create-dialog title. */
+    newSkill?: string;
     editSkillFile?: string;
     /** "{name}" = the skill's name. */
     editSkillNamed?: string;
@@ -634,6 +642,11 @@ export interface Translations {
     failedToLoadRaw: string;
     configImported: string;
     invalidJson: string;
+    /** /config — confirm dialog body before a scoped reset; "{count}" = field count. */
+    confirmResetDescription?: string;
+    /** /config — nested list editor item label; "{index}" = 1-based position. */
+    /** /config — empty select option, e.g. the text type field. */
+    /** /config — placeholder for list-type config fields. */
     categories: {
       general: string;
       agent: string;
@@ -1208,6 +1221,12 @@ export interface Translations {
     updateBehind?: string;
     updateAvailable?: string;
     latest?: string;
+    /** /system — toast after a manual update check finds nothing new. */
+    upToDate?: string;
+    /** /system — portal row prefix, e.g. "inference provider: openrouter". */
+    inferenceProviderPrefix?: string;
+    /** /system — hardware stat unit ("15 cores · 12%"). */
+    cores?: string;
     loggedIn?: string;
     notLoggedIn?: string;
     manageSubscription?: string;
