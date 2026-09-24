@@ -3843,6 +3843,9 @@ export const fa = defineLocale({
     right: 'راست',
     up: 'بالا'
   },
+  petOverlayApp: {
+    message: 'پیام…'
+  },
   updates: {
     stages: {
       idle: 'در حال آمادهسازی…',
@@ -5214,6 +5217,7 @@ export const fa = defineLocale({
     restartToUseSaveImage: 'برای استفاده از ذخیره تصویر، Hermes Desktop را مجدداً راه‌اندازی کنید.',
     restartToSaveImages: 'برای ذخیره تصاویر، Hermes Desktop را مجدداً راه‌اندازی کنید',
     imageDownloadFailed: 'دانلود تصویر ناموفق بود',
+    generatedImage: 'تصویر تولیدشده',
     openImage: 'باز کردن تصویر',
     downloadImage: 'دانلود تصویر',
     savingImage: 'در حال ذخیره تصویر',

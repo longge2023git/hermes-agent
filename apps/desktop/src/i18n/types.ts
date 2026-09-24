@@ -3075,6 +3075,16 @@ export interface Translations {
     up: string
   }
 
+  /** hermes-fa additions (desktop audit wiring): the popped-out pet overlay
+   *  window's mini composer. OPTIONAL like the namespaces above — `en` is the
+   *  English floor and the call site keeps an English literal in its `??
+   *  fallback. NOTE: that window mounts no `I18nProvider` (it is a gateway-less
+   *  puppet of the main renderer), so this resolves through the context default
+   *  (English) until a provider is added there. */
+  petOverlayApp?: {
+    message: string
+  }
+
   updates: {
     stages: Record<string, string>
     checking: string
@@ -4146,6 +4156,8 @@ export interface Translations {
     restartToUseSaveImage: string
     restartToSaveImages: string
     imageDownloadFailed: string
+    /** Alt text for a generated image (chat transcript + lightbox). */
+    generatedImage: string
     openImage: string
     downloadImage: string
     savingImage: string

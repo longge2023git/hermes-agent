@@ -5,6 +5,7 @@ import { PetHeartField, playVibeHearts } from '@/components/chat/vibe-hearts'
 import { PetBubble } from '@/components/pet/pet-bubble'
 import { PetSprite } from '@/components/pet/pet-sprite'
 import { type PetZoomAnchor, usePetZoomGesture } from '@/components/pet/use-pet-zoom-gesture'
+import { useI18n } from '@/i18n'
 import { Mail } from '@/lib/icons'
 import { isSubmitEnter } from '@/lib/ime'
 import { $petActivity, $petInfo, setPetInfo } from '@/store/pet'
@@ -62,6 +63,7 @@ interface DragState {
 }
 
 export function PetOverlayApp() {
+  const { t } = useI18n()
   const info = useStore($petInfo)
   const [composerOpen, setComposerOpen] = useState(false)
   const [draft, setDraft] = useState('')
@@ -398,7 +400,7 @@ export function PetOverlayApp() {
               setComposerOpen(false)
             }
           }}
-          placeholder="Message…"
+          placeholder={t.petOverlayApp?.message ?? 'Message…'}
           ref={inputRef}
           style={{
             background: 'var(--ui-bg-elevated)',
@@ -445,10 +447,14 @@ export function PetOverlayApp() {
           {/* Mail icon: only when a finish landed while you were away. Jumps to
               the app's most recent thread. Anchored to the sprite (kept inside
               its box so the overlay's click-through hit-test still catches it);
-              stopPropagation keeps a click from starting a window drag. */}
+              stopPropagation keeps a click from starting a window drag.
+
+              hermes-fa: reuses `sessionImport.open` — the identical English
+              string already ships with a Persian translation, whereas a new
+              prose-shaped key would land in `fa` as untranslated English. */}
           {unread && (
             <button
-              aria-label="Open in Hermes"
+              aria-label={t.sessionImport.open}
               onClick={openApp}
               onPointerDown={e => e.stopPropagation()}
               onPointerUp={e => e.stopPropagation()}

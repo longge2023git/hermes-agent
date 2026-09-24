@@ -3564,6 +3564,9 @@ export const en: Translations = {
     right: 'Right',
     up: 'Up'
   },
+  petOverlayApp: {
+    message: 'Message…'
+  },
 
   updates: {
     stages: {
@@ -4861,6 +4864,7 @@ export const en: Translations = {
     restartToUseSaveImage: 'Restart Hermes Desktop to use Save Image.',
     restartToSaveImages: 'Restart Hermes Desktop to save images',
     imageDownloadFailed: 'Image download failed',
+    generatedImage: 'Generated image',
     openImage: 'Open image',
     downloadImage: 'Download image',
     savingImage: 'Saving image',
