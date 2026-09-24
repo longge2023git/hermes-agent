@@ -516,6 +516,10 @@ export const en: Translations = {
     modelSaved: "Model updated",
     modelSelect: "Select a model",
     actions: "Actions",
+    /** Profiles page header button — opens the full profile builder (wizard). */
+    build: "Build",
+    modelNotSaved:
+      "Profile created, but the model could not be saved — set it from the profile editor.",
   },
 
   pluginsPage: {
@@ -1602,6 +1606,34 @@ export const en: Translations = {
     revokeAccessTitle: "Revoke access",
     /** Confirm-button label and the revoke icon button's title/aria-label. */
     revoke: "Revoke",
+    /** Section heading over the pending list. "{count}" = number of requests. */
+    pendingTitle: "Pending requests ({count})",
+    noPending: "No pending pairing requests",
+    /** Section heading over the approved list. "{count}" = number of users. */
+    approvedTitle: "Approved users ({count})",
+    noApproved: "No approved users",
+    /** Approve button on a pending-request card. */
+    approve: "Approve",
+    /** Page-header button that clears the pending queue. */
+    clearPending: "Clear pending",
+    /** Request age. "{count}" = minutes since the request arrived. */
+    ageMinutes: "{count}m ago",
+    loadFailed: "Failed to load pairing requests",
+    missingRequest: "Missing pairing request",
+    /** Success toast. "{name}" = the approved user's display name. */
+    approved: "Approved: \"{name}\"",
+    /** "{detail}" = the underlying error message. */
+    approveFailed: "Could not approve the pairing request: {detail}",
+    clearConfirm: "Clear all pending pairing requests?",
+    /** Success toast. "{count}" = number of requests cleared. */
+    cleared: "Cleared {count} pending request(s)",
+    clearFailed: "Could not clear pending requests: {detail}",
+    /** Success toast. "{name}" = the revoked user's display/ID label. */
+    revoked: "Revoked: \"{name}\"",
+    revokeFailed: "Could not revoke access: {detail}",
+    /** Revoke-dialog body when the user is known. "{name}" = display name. */
+    revokeDescriptionNamed: "\"{name}\" will lose access. This cannot be undone.",
+    revokeDescription: "This user will lose access. This cannot be undone.",
   },
 
   // ── Model info card (web) ──

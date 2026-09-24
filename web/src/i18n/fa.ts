@@ -503,7 +503,9 @@ export const fa = defineLocale({
     editModel: 'تغییر مدل',
     modelSaved: 'مدل به‌روز‌رسانی شد',
     modelSelect: 'انتخاب مدل',
-    actions: 'عملیات'
+    actions: 'عملیات',
+    build: 'ساختن',
+    modelNotSaved: 'نمایه ساخته شد، اما مدل ذخیره نشد — آن را از ویرایشگر نمایه تعیین کنید.'
   },
   pluginsPage: {
     contextEngineLabel: 'موتور زمینه',
@@ -1489,7 +1491,25 @@ export const fa = defineLocale({
   },
   pairing: {
     revokeAccessTitle: 'لغو دسترسی',
-    revoke: 'لغو'
+    revoke: 'لغو',
+    pendingTitle: 'درخواست‌های در انتظار ({count})',
+    noPending: 'درخواست جفت‌سازی در انتظاری وجود ندارد',
+    approvedTitle: 'کاربران تأییدشده ({count})',
+    noApproved: 'کاربر تأییدشده‌ای وجود ندارد',
+    approve: 'تأیید',
+    clearPending: 'پاک‌کردن در انتظارها',
+    ageMinutes: '{count} دقیقه پیش',
+    loadFailed: 'بارگذاری درخواست‌های جفت‌سازی ناموفق بود',
+    missingRequest: 'درخواست جفت‌سازی یافت نشد',
+    approved: 'تأیید شد: «{name}»',
+    approveFailed: 'تأیید درخواست جفت‌سازی ممکن نشد: {detail}',
+    clearConfirm: 'همهٔ درخواست‌های جفت‌سازی در انتظار پاک شوند؟',
+    cleared: '{count} درخواست در انتظار پاک شد',
+    clearFailed: 'پاک‌کردن درخواست‌های در انتظار ممکن نشد: {detail}',
+    revoked: 'لغو شد: «{name}»',
+    revokeFailed: 'لغو دسترسی ممکن نشد: {detail}',
+    revokeDescriptionNamed: '«{name}» دسترسی‌اش را از دست می‌دهد. این کار بازگشت‌پذیر نیست.',
+    revokeDescription: 'این کاربر دسترسی‌اش را از دست می‌دهد. این کار بازگشت‌پذیر نیست.'
   },
   modelInfo: {
     contextWindow: 'پنجرهٔ کانتکست',

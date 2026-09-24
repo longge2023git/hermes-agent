@@ -599,6 +599,10 @@ export interface Translations {
     actions?: string;
     manageSkills?: string;
     activeSetHint?: string;
+    /** Header button that opens the full profile builder (wizard). */
+    build?: string;
+    /** Toast when a profile was created but its model could not be saved. */
+    modelNotSaved?: string;
   };
 
   // ── Skills page ──
@@ -1524,10 +1528,39 @@ export interface Translations {
   };
 
   // ── Pairing page (web) ──
+  // Optional throughout (including the nested namespace) so that every
+  // non-English locale keeps compiling while it lacks the translation; the
+  // component renders the English literal until then.
   pairing?: {
     revokeAccessTitle?: string;
     /** Confirm-button label and the revoke icon button's title/aria-label. */
     revoke?: string;
+    /** Section heading over the pending list. "{count}" = number of requests. */
+    pendingTitle?: string;
+    noPending?: string;
+    /** Section heading over the approved list. "{count}" = number of users. */
+    approvedTitle?: string;
+    noApproved?: string;
+    approve?: string;
+    clearPending?: string;
+    /** Request age. "{count}" = minutes since the request arrived. */
+    ageMinutes?: string;
+    loadFailed?: string;
+    missingRequest?: string;
+    /** Success toast. "{name}" = the approved user's display name. */
+    approved?: string;
+    /** "{detail}" = the underlying error message. */
+    approveFailed?: string;
+    clearConfirm?: string;
+    /** Success toast. "{count}" = number of requests cleared. */
+    cleared?: string;
+    clearFailed?: string;
+    /** Success toast. "{name}" = the revoked user's display name. */
+    revoked?: string;
+    revokeFailed?: string;
+    /** Revoke-dialog body when the user is known. "{name}" = display name. */
+    revokeDescriptionNamed?: string;
+    revokeDescription?: string;
   };
 
   // ── Model info card (web) ──
