@@ -470,3 +470,17 @@ feature_state:
   via_nous_portal: via Nous Portal
   active: active
   not_configured: not configured
+
+nous_feature:
+  web:
+    label: "Web tools"
+  image_gen:
+    label: "Image generation"
+  video_gen:
+    label: "Video generation"
+  stt:
+    label: "Speech-to-text"
+  browser:
+    label: "Browser automation"
+  modal:
+    label: "Modal execution"

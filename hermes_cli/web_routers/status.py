@@ -724,7 +724,7 @@ def _get_portal_status_sync():
         from hermes_cli.nous_subscription import get_nous_subscription_features
         feats = get_nous_subscription_features(cfg)
         if feats is not None:
-            features = [{"label": getattr(feat, "label", ""), "state": _feature_state(feat)}
+            features = [{"label": t_or(f"nous_feature.{getattr(feat, 'key', '')}.label", getattr(feat, "label", "")), "state": _feature_state(feat)}
                         for feat in feats.items()]
     except Exception:
         _log.exception("portal features failed")

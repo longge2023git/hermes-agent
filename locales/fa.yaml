@@ -690,3 +690,17 @@ feature_state:
   via_nous_portal: از طریق Nous Portal
   active: فعال
   not_configured: پیکربندی نشده
+
+nous_feature:
+  web:
+    label: "ابزارهای وب"
+  image_gen:
+    label: "تولید تصویر"
+  video_gen:
+    label: "تولید ویدیو"
+  stt:
+    label: "تبدیل گفتار به متن"
+  browser:
+    label: "خودکارسازی مرورگر"
+  modal:
+    label: "اجرای Modal"
