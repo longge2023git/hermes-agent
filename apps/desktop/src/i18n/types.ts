@@ -3019,6 +3019,28 @@ export interface Translations {
     }
   }
 
+  /** hermes-fa additions: Bot Mode's create-dialog copy and the update
+   *  changelog's group headings. OPTIONAL on purpose — `en` is the only locale
+   *  required to fill them; a locale that has no entry yet falls back through
+   *  the resolution chain, and the call sites keep the English literal in a
+   *  `??` fallback (`t.botCreateDialog?.titlePlaceholder ?? 'Inbox Triage'`). */
+  botCreateDialog?: {
+    advancedTabCapabilities: string
+    advancedTabGeneral: string
+    advancedTabSkills: string
+    advancedTabTools: string
+    titlePlaceholder: string
+  }
+  changelogGroups?: {
+    fallbackItems: string
+    fallbackTitle: string
+    faster: string
+    fixed: string
+    improved: string
+    other: string
+    whatsNew: string
+  }
+
   updates: {
     stages: Record<string, string>
     checking: string

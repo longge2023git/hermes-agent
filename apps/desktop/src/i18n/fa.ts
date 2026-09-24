@@ -3804,6 +3804,22 @@ export const fa = defineLocale({
       worktrees: 'درختهای کاری'
     }
   },
+  botCreateDialog: {
+    advancedTabCapabilities: 'توانایی‌ها',
+    advancedTabGeneral: 'عمومی',
+    advancedTabSkills: 'مهارت‌ها',
+    advancedTabTools: 'ابزارها',
+    titlePlaceholder: 'دسته‌بندی صندوق ورودی'
+  },
+  changelogGroups: {
+    fallbackItems: 'بهبودها و رفع‌ها',
+    fallbackTitle: 'در این به‌روزرسانی',
+    faster: 'سریع‌تر',
+    fixed: 'رفع‌شده',
+    improved: 'بهبودیافته',
+    other: 'سایر بهبودها',
+    whatsNew: 'تازه‌ها'
+  },
   updates: {
     stages: {
       idle: 'در حال آمادهسازی…',

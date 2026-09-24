@@ -4,12 +4,17 @@
  * filters internal noise (chore/ci/docs/...), and groups the rest into
  * friendly buckets for end users (What's new, Fixed, Faster, Improved).
  *
+ * Group headings are i18n keys resolved at CALL time (`translateNow`), never
+ * at import time: `buildCommitChangelog` runs inside a render, so a language
+ * switch re-labels the overlay on the next paint.
+ *
  * Inlined (rather than depending on `conventional-commits-parser`) because
  * that package's index re-exports a Node `stream` helper which won't load
  * in the sandboxed Electron renderer, and its actual parse logic for the
  * header is a small regex.
  */
 
+import { translateNow } from '@/i18n'
 import { capitalize } from '@/lib/text'
 
 export type CommitGroupId = 'new' | 'fixed' | 'faster' | 'improved' | 'other'
@@ -37,12 +42,12 @@ interface BuildOptions {
   maxTotal?: number
 }
 
-const GROUP_META: Record<CommitGroupId, { label: string; order: number }> = {
-  new: { label: "What's new", order: 0 },
-  fixed: { label: 'Fixed', order: 1 },
-  faster: { label: 'Faster', order: 2 },
-  improved: { label: 'Improved', order: 3 },
-  other: { label: 'Other improvements', order: 4 }
+const GROUP_META: Record<CommitGroupId, { labelKey: string; order: number }> = {
+  new: { labelKey: 'changelogGroups.whatsNew', order: 0 },
+  fixed: { labelKey: 'changelogGroups.fixed', order: 1 },
+  faster: { labelKey: 'changelogGroups.faster', order: 2 },
+  improved: { labelKey: 'changelogGroups.improved', order: 3 },
+  other: { labelKey: 'changelogGroups.other', order: 4 }
 }
 
 const TYPE_TO_GROUP: Record<string, CommitGroupId> = {
@@ -75,8 +80,6 @@ const HIDDEN_TYPES = new Set([
   'tests',
   'wip'
 ])
-
-const FALLBACK_GROUP: CommitGroup = { id: 'other', items: ['Improvements and fixes'], label: 'In this update' }
 
 const CONVENTIONAL_HEADER = /^(?<type>[a-zA-Z][a-zA-Z0-9_-]*)(?:\((?<scope>[^)]+)\))?(?<bang>!)?:\s+(?<subject>.+)$/
 
@@ -166,13 +169,26 @@ export function buildCommitChangelog(
   }
 
   const result = Array.from(groups.entries())
-    .map(([id, items]) => ({ id, items, label: GROUP_META[id].label, order: GROUP_META[id].order }))
+    .map(([id, items]) => ({
+      id,
+      items,
+      label: translateNow(GROUP_META[id].labelKey),
+      order: GROUP_META[id].order
+    }))
     .sort((a, b) => a.order - b.order)
     .slice(0, maxGroups)
     .map(({ id, items, label }): CommitGroup => ({ id, items, label }))
 
   if (result.length === 0) {
-    return [FALLBACK_GROUP]
+    // Everything was filtered or unparseable: one neutral placeholder card,
+    // with its heading and its single line translated like any other.
+    return [
+      {
+        id: 'other',
+        items: [translateNow('changelogGroups.fallbackItems')],
+        label: translateNow('changelogGroups.fallbackTitle')
+      }
+    ]
   }
 
   return result

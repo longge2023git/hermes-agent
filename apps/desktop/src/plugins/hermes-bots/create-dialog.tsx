@@ -677,7 +677,11 @@ export function CreateAgentDialog({ open, onClose, roster }: CreateAgentDialogPr
           ) : null}
           {labeled(
             'Title',
-            <Input onChange={event => setTitle(event.target.value)} placeholder="Inbox Triage" value={title} />
+            <Input
+              onChange={event => setTitle(event.target.value)}
+              placeholder={t.botCreateDialog?.titlePlaceholder ?? 'Inbox Triage'}
+              value={title}
+            />
           )}
           {labeled(
             'Description',
@@ -726,13 +730,16 @@ export function CreateAgentDialog({ open, onClose, roster }: CreateAgentDialogPr
                 options={
                   CapabilitiesView && (!remoteTarget || capabilitiesViewRoutesConnections)
                     ? [
-                        { id: 'general', label: 'General' },
-                        { id: 'capabilities', label: 'Capabilities' }
+                        { id: 'general', label: t.botCreateDialog?.advancedTabGeneral ?? 'General' },
+                        {
+                          id: 'capabilities',
+                          label: t.botCreateDialog?.advancedTabCapabilities ?? 'Capabilities'
+                        }
                       ]
                     : [
-                        { id: 'general', label: 'General' },
-                        { id: 'skills', label: 'Skills' },
-                        { id: 'toolsets', label: 'Tools' },
+                        { id: 'general', label: t.botCreateDialog?.advancedTabGeneral ?? 'General' },
+                        { id: 'skills', label: t.botCreateDialog?.advancedTabSkills ?? 'Skills' },
+                        { id: 'toolsets', label: t.botCreateDialog?.advancedTabTools ?? 'Tools' },
                         { id: 'mcp', label: 'MCP' }
                       ]
                 }

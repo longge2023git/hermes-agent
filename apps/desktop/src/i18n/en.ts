@@ -3518,6 +3518,28 @@ export const en: Translations = {
     }
   },
 
+  // hermes-fa additions: Bot Mode's create-dialog copy and the update
+  // changelog's group headings. Both namespaces are OPTIONAL in types.ts, so
+  // they live here as the English floor and every other locale inherits them
+  // through defineLocale() until a real translation lands (the call sites keep
+  // an English literal as their `??` fallback).
+  botCreateDialog: {
+    advancedTabCapabilities: 'Capabilities',
+    advancedTabGeneral: 'General',
+    advancedTabSkills: 'Skills',
+    advancedTabTools: 'Tools',
+    titlePlaceholder: 'Inbox Triage'
+  },
+  changelogGroups: {
+    fallbackItems: 'Improvements and fixes',
+    fallbackTitle: 'In this update',
+    faster: 'Faster',
+    fixed: 'Fixed',
+    improved: 'Improved',
+    other: 'Other improvements',
+    whatsNew: "What's new"
+  },
+
   updates: {
     stages: {
       idle: 'Getting ready…',
