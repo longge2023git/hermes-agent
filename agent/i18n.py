@@ -181,4 +181,14 @@ def t(key: str, lang: str | None = None, **format_kwargs: Any) -> str:
         return value
 
 
-__all__ = ["SUPPORTED_LANGUAGES", "DEFAULT_LANGUAGE", "t", "get_language", "reset_language_cache"]
+
+def t_or(key: str, fallback: str, lang: str | None = None) -> str:
+    """Translate ``key``; when the catalog has no entry, return ``fallback`` verbatim.
+
+    Use this at serialization boundaries that ship literal English to the UI: pass the
+    English literal as ``fallback`` so a missing translation degrades to today's behavior.
+    """
+    value = t(key, lang=lang)
+    return fallback if value == key else value
+
+__all__ = ["SUPPORTED_LANGUAGES", "DEFAULT_LANGUAGE", "t", "t_or", "get_language", "reset_language_cache"]

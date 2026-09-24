@@ -476,3 +476,8 @@ gateway:
     session_db_unavailable_prefix: "Session database not available"
     session_not_found:           "Session not found in database."
     warn_passthrough:            "⚠️ {error}"
+
+feature_state:
+  via_nous_portal: via Nous Portal
+  active: active
+  not_configured: not configured

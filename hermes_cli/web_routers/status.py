@@ -701,11 +701,12 @@ async def get_portal_status():
 
 
 def _feature_state(feat) -> str:
+    from agent.i18n import t_or
     if getattr(feat, "managed_by_nous", False):
-        return "via Nous Portal"
+        return t_or("feature_state.via_nous_portal", "via Nous Portal")
     if getattr(feat, "active", False):
-        return getattr(feat, "current_provider", None) or "active"
-    return "not configured"
+        return getattr(feat, "current_provider", None) or t_or("feature_state.active", "active")
+    return t_or("feature_state.not_configured", "not configured")
 
 
 def _get_portal_status_sync():

@@ -463,3 +463,8 @@ Future messages in this room will use that transcript until `/reset` or another 
     session_db_unavailable_prefix: "Sessie-databasis is nie beskikbaar"
     session_not_found:           "Sessie nie in databasis gevind nie."
     warn_passthrough:            "⚠️ {error}"
+
+feature_state:
+  via_nous_portal: via Nous Portal
+  active: active
+  not_configured: not configured

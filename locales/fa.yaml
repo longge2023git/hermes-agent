@@ -685,3 +685,8 @@ gateway:
     session_db_unavailable_prefix: پایگاهداده نشست در دسترس نیست
     session_not_found: نشست در پایگاهداده یافت نشد.
     warn_passthrough: ⚠️ {error}
+
+feature_state:
+  via_nous_portal: از طریق Nous Portal
+  active: فعال
+  not_configured: پیکربندی نشده

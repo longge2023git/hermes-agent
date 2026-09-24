@@ -463,3 +463,8 @@ Future messages in this room will use that transcript until `/reset` or another 
     session_db_unavailable_prefix: "세션 데이터베이스를 사용할 수 없습니다"
     session_not_found:           "데이터베이스에서 세션을 찾을 수 없습니다."
     warn_passthrough:            "⚠️ {error}"
+
+feature_state:
+  via_nous_portal: via Nous Portal
+  active: active
+  not_configured: not configured

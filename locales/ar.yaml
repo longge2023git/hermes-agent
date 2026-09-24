@@ -465,3 +465,8 @@ gateway:
     session_db_unavailable_prefix: "قاعدة بيانات الجلسات غير متاحة"
     session_not_found:           "لم يُعثر على الجلسة في قاعدة البيانات."
     warn_passthrough:            "⚠️ {error}"
+
+feature_state:
+  via_nous_portal: via Nous Portal
+  active: active
+  not_configured: not configured
