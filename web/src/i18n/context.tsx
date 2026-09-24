@@ -55,12 +55,23 @@ function isLocale(value: string): value is Locale {
   return (SUPPORTED_LOCALES as string[]).includes(value);
 }
 
-function getInitialLocale(): Locale {
+export function getInitialLocale(): Locale {
   try {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored && isLocale(stored)) return stored;
   } catch {
     // SSR or privacy mode
+  }
+  // 回退到浏览器语言：波斯语用户首次打开即得波斯语（用户显式选择仍优先）。
+  // 否则 dist 安装后默认英文，与"面向波斯语用户"的定位相悖。
+  try {
+    const tags = navigator.languages?.length ? navigator.languages : [navigator.language];
+    for (const tag of tags) {
+      const base = String(tag ?? "").toLowerCase().split("-")[0];
+      if (base && isLocale(base)) return base;
+    }
+  } catch {
+    // navigator 不可用（测试环境等）
   }
   return "en";
 }

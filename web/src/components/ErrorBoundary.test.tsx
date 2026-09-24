@@ -1,4 +1,5 @@
 // @vitest-environment jsdom
+// @vitest-environment-options {"url": "http://localhost/"}
 // Regression guard for the outermost ErrorBoundary.
 //
 // Motivating incident: when the backend is unreachable every /api/* call 502s
@@ -37,6 +38,24 @@ afterEach(() => {
   window.localStorage.clear();
   document.documentElement.removeAttribute("dir");
   document.documentElement.removeAttribute("lang");
+});
+
+// jsdom 在 about:blank（不透明源）下不提供 localStorage，Node 的实验性 localStorage
+// 在无 --localstorage-file 时也是 undefined → 这里显式定义一个内存实现供组件读取。
+const store = new Map<string, string>();
+Object.defineProperty(globalThis, "localStorage", {
+  configurable: true,
+  writable: true,
+  value: {
+    getItem: (k: string) => (store.has(k) ? String(store.get(k)) : null),
+    setItem: (k: string, v: string) => void store.set(k, String(v)),
+    removeItem: (k: string) => void store.delete(k),
+    clear: () => void store.clear(),
+    key: (i: number) => [...store.keys()][i] ?? null,
+    get length() {
+      return store.size;
+    },
+  },
 });
 
 describe("ErrorBoundary", () => {
