@@ -345,6 +345,7 @@ export const fa = defineLocale({
     resetAuxTitle: 'بازنشانی مدل‌های کمکی',
     resetAuxDescription: 'همهٔ کارهای کمکی به «خودکار» بازنشانی شوند؟ این کار هر بازنویسی هر-کار را بی‌اثر می‌کند.',
     resetAll: 'بازنشانی همه',
+    switchModelConfirmTitle: 'تغییر مدل؟',
     switchModel: 'تغییر مدل',
     filterProvidersModels: 'پالایش ارائه‌دهنده‌ها و مدل‌ها…'
   },
@@ -576,6 +577,7 @@ export const fa = defineLocale({
     browseHub: 'مرور مرکز مهارت‌ها',
     browseHubTab: 'مرور مرکز',
     learnSkill: 'یادگیری یک مهارت',
+    nameLabel: 'نام',
     newSkill: 'مهارت جدید',
     editSkillFile: 'ویرایش SKILL.md',
     editSkillNamed: 'ویرایش {name}‌',

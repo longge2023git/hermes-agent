@@ -342,6 +342,7 @@ export const en: Translations = {
     resetAuxDescription:
       "Reset every auxiliary task to 'auto'? This overrides any per-task overrides you've set.",
     resetAll: "Reset all",
+    switchModelConfirmTitle: "Switch model?",
     switchModel: "Switch Model",
     filterProvidersModels: "Filter providers and models…",
   },
@@ -594,6 +595,7 @@ export const en: Translations = {
     /** Sidebar tab — distinct from the page's "Browse skills hub" CTA. */
     browseHubTab: "Browse hub",
     learnSkill: "Learn a skill",
+    nameLabel: "Name",
     newSkill: "New skill",
     editSkillFile: "Edit SKILL.md",
     /** "{name}" = the skill's name. */

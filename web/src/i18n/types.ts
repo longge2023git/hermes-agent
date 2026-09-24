@@ -364,6 +364,7 @@ export interface Translations {
     resetAuxDescription?: string;
     resetAll?: string;
     /** Model picker dialog. */
+    switchModelConfirmTitle?: string;
     switchModel?: string;
     filterProvidersModels?: string;
   };
@@ -616,6 +617,7 @@ export interface Translations {
     browseHubTab?: string;
     learnSkill?: string;
     /** /skills — the "New skill" CTA + the create-dialog title. */
+    nameLabel?: string;
     newSkill?: string;
     editSkillFile?: string;
     /** "{name}" = the skill's name. */

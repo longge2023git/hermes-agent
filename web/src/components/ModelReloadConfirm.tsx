@@ -1,3 +1,4 @@
+import { useI18n } from '@/i18n'
 import { ConfirmDialog } from "@/components/ConfirmDialog";
 
 /**
@@ -24,10 +25,11 @@ export function ModelReloadConfirm({
   description?: string;
   onCancel: () => void;
 }) {
+  const { t } = useI18n();
   return (
     <ConfirmDialog
       open={model !== null}
-      title="Switch model?"
+      title={t.models.switchModelConfirmTitle ?? "Switch model?"}
       description={
         description ??
         `Switching to ${model ?? ""} starts a fresh chat. Your current chat stays in your Sessions list and the agent's memory is kept. Reload now to apply it?`

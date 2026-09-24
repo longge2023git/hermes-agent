@@ -154,7 +154,7 @@ function EditorBody({
         {!isEdit && (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div className="grid gap-1.5">
-              <Label htmlFor="skill-editor-name">Name</Label>
+              <Label htmlFor="skill-editor-name">{t.skills.nameLabel ?? "Name"}</Label>
               <Input
                 id="skill-editor-name"
                 autoFocus
