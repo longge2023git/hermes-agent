@@ -27,6 +27,14 @@ const BUILTIN_LITERAL: Record<string, string> = {
   // /mcp has no app.nav key (the sidebar renders "MCP" as a literal); keep it here
   // so the page title matches the sidebar exactly.
   "/mcp": "MCP",
+  // Fallbacks for routes whose nav key a locale may lack — without these the
+  // title would degrade to the raw lowercase segment ("system" instead of
+  // "System"). The nav key still wins when the locale defines it.
+  "/files": "Files",
+  "/channels": "Channels",
+  "/webhooks": "Webhooks",
+  "/pairing": "Pairing",
+  "/system": "System",
 };
 
 export function resolvePageTitle(
@@ -44,7 +52,7 @@ export function resolvePageTitle(
   }
   const key = BUILTIN[normalized];
   if (key) {
-    return t.app.nav[key] ?? key;
+    return t.app.nav[key] ?? BUILTIN_LITERAL[normalized] ?? key;
   }
   const literal = BUILTIN_LITERAL[normalized];
   if (literal) {
