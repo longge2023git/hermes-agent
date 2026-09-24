@@ -10,6 +10,7 @@ import re
 import asyncio
 import time
 import urllib.parse
+from agent.i18n import t_or
 from fastapi import APIRouter
 from hermes_cli.web_routers._common import http_failure, scoped_to_thread
 from hermes_cli.web_deps import LateState, late
@@ -244,7 +245,10 @@ def _get_env_vars_sync(profile: Optional[str] = None):
         return {
             "is_set": bool(value),
             "redacted_value": redact_key(value) if value else None,
-            "description": info.get("description") or cat_meta.get("description", ""),
+            "description": t_or(
+                f"envvar.{var_name}.description",
+                info.get("description") or cat_meta.get("description", ""),
+            ),
             "url": info.get("url") if info.get("url") is not None else cat_meta.get("url"),
             "category": info.get("category") or cat_meta.get("category", ""),
             "is_password": info.get("password", cat_meta.get("is_password", False)),
