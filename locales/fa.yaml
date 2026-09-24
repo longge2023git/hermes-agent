@@ -702,7 +702,7 @@ nous_feature:
     label: اتوماسیون مرورگر
   modal:
     label: اجرای Modal
-envvar.BRAVE_SEARCH_API_KEY.description: 'Brave Search API subscription token (free tier: 2,000 queries/mo)'
+envvar.BRAVE_SEARCH_API_KEY.description: 'توکن اشتراک API جست‌وجوی Brave (طرح رایگان: 2,000 پرس‌وجو در ماه)'
 envvar.AGENT_BROWSER_ENGINE.description: 'موتور مرورگر محلی: auto (پیش‌فرض Chrome)، lightpanda (سریع‌تر، بدون اسکرین‌شات؛ حالت Browser Use سرویس lightpanda را اجرا می‌کند)، chrome'
 envvar.HINDSIGHT_API_URL.description: 'آدرس پایه برای API Hindsight (پیش‌فرض: https://api.hindsight.vectorize.io)'
 envvar.RETAINDB_BASE_URL.description: 'آدرس پایه برای نمونه‌های RetainDB خودمیزبان (پیش‌فرض: https://api.retaindb.com)'
