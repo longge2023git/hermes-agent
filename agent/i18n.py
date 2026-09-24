@@ -189,6 +189,7 @@ def t_or(key: str, fallback: str, lang: str | None = None) -> str:
     English literal as ``fallback`` so a missing translation degrades to today's behavior.
     """
     value = t(key, lang=lang)
-    return fallback if value == key else value
+    # 空串也算缺失：locale 里存在但未填的槽位应回退到调用方给的原文
+    return fallback if (not value or value == key) else value
 
 __all__ = ["SUPPORTED_LANGUAGES", "DEFAULT_LANGUAGE", "t", "t_or", "get_language", "reset_language_cache"]

@@ -685,68 +685,63 @@ gateway:
     session_db_unavailable_prefix: پایگاهداده نشست در دسترس نیست
     session_not_found: نشست در پایگاهداده یافت نشد.
     warn_passthrough: ⚠️ {error}
-
 feature_state:
-  via_nous_portal: از طریق Nous Portal
+  via_nous_portal: از طریق پورتال Nous
   active: فعال
   not_configured: پیکربندی نشده
-
 nous_feature:
   web:
-    label: "ابزارهای وب"
+    label: ابزارهای وب
   image_gen:
-    label: "تولید تصویر"
+    label: تولید تصویر
   video_gen:
-    label: "تولید ویدیو"
+    label: تولید ویدیو
   stt:
-    label: "تبدیل گفتار به متن"
+    label: تبدیل گفتار به متن
   browser:
-    label: "خودکارسازی مرورگر"
+    label: اتوماسیون مرورگر
   modal:
-    label: "اجرای Modal"
-
-# ── envvar.* （后端配置说明）─────────────────────────────────────
-envvar.BRAVE_SEARCH_API_KEY.description: 'توکن اشتراک API جست‌وجوی Brave (طرح رایگان: 2,000 پرس‌وجو در ماه)'
-envvar.AGENT_BROWSER_ENGINE.description: 'موتور مرورگر محلی: auto (پیش‌فرض Chrome)، lightpanda (سریع‌تر، بدون اسکرین‌شات؛ حالت Browser Use فرآیند lightpanda serve را اجرا می‌کند)، chrome'
-envvar.HINDSIGHT_API_URL.description: 'نشانی پایهٔ API ‏Hindsight (پیش‌فرض: https://api.hindsight.vectorize.io)'
-envvar.RETAINDB_BASE_URL.description: 'نشانی پایهٔ نمونه‌های RetainDB با میزبانی خودتان (پیش‌فرض: https://api.retaindb.com)'
-envvar.OPENVIKING_ENDPOINT.description: 'نشانی سرور OpenViking (پیش‌فرض: http://127.0.0.1:1933)'
-envvar.HERMES_LANGFUSE_BASE_URL.description: 'نشانی سرور Langfuse (پیش‌فرض: https://cloud.langfuse.com)'
-envvar.DISCORD_REPLY_TO_MODE.description: 'حالت رشتهٔ پاسخ Discord: ''off'' (بدون ارجاع پاسخ)، ''first'' (پاسخ فقط به اولین پیام، پیش‌فرض)، ''all'' (پاسخ به هر بخش)'
-envvar.MATTERMOST_REQUIRE_MENTION.description: 'الزام @mention در کانال‌های Mattermost (پیش‌فرض: true). برای پاسخ به همهٔ پیام‌ها false بگذارید.'
-envvar.MATRIX_REQUIRE_MENTION.description: 'الزام @mention در اتاق‌های Matrix (پیش‌فرض: true). برای پاسخ به همهٔ پیام‌ها false بگذارید.'
-envvar.MATRIX_AUTO_THREAD.description: 'ساخت خودکار رشته برای پیام‌های اتاق‌های Matrix (پیش‌فرض: true)'
-envvar.MATRIX_DM_AUTO_THREAD.description: 'ساخت خودکار رشته برای پیام‌های خصوصی Matrix (پیش‌فرض: false)'
-envvar.GATEWAY_ALLOW_ALL_USERS.description: 'اجازه به همهٔ کاربران برای تعامل با ربات‌های پیام‌رسان (true/false). پیش‌فرض: false.'
-envvar.HERMES_SIMPLEX_TEXT_BATCH_DELAY.description: 'ثانیه‌های دورهٔ سکوت (پیش‌فرض: 0.8) برای ادغام پیام‌های متنی پشت‌سرهم ورودی در یک MessageEvent — همان الگوی دسته‌بندی متن تلگرام.'
-envvar.MATTERMOST_REPLY_MODE.description: 'شیوهٔ ارسال پاسخ‌ها: ''thread'' (تودرتو) یا ''off'' (تخت). پیش‌فرض: off.'
-envvar.PHOTON_HOME_CHANNEL.description: 'مقصد پیش‌فرض Photon برای cron و تحویل اعلان: شناسهٔ فضای Spectrum، GUID پیام خصوصی، یا شمارهٔ خام E.164'
+    label: اجرای Modal
+envvar.BRAVE_SEARCH_API_KEY.description: 'Brave Search API subscription token (free tier: 2,000 queries/mo)'
+envvar.AGENT_BROWSER_ENGINE.description: 'موتور مرورگر محلی: auto (پیش‌فرض Chrome)، lightpanda (سریع‌تر، بدون اسکرین‌شات؛ حالت Browser Use سرویس lightpanda را اجرا می‌کند)، chrome'
+envvar.HINDSIGHT_API_URL.description: 'آدرس پایه برای API Hindsight (پیش‌فرض: https://api.hindsight.vectorize.io)'
+envvar.RETAINDB_BASE_URL.description: 'آدرس پایه برای نمونه‌های RetainDB خودمیزبان (پیش‌فرض: https://api.retaindb.com)'
+envvar.OPENVIKING_ENDPOINT.description: 'آدرس سرور OpenViking (پیش‌فرض: http://127.0.0.1:1933)'
+envvar.HERMES_LANGFUSE_BASE_URL.description: 'آدرس سرور Langfuse (پیش‌فرض: https://cloud.langfuse.com)'
+envvar.DISCORD_REPLY_TO_MODE.description: 'حالت پاسخ‌دهی در Discord: ''off'' (بدون ارجاع به پاسخ)، ''first'' (فقط به پیام اول پاسخ بده، پیش‌فرض)، ''all'' (به هر بخش پاسخ بده)'
+envvar.MATTERMOST_REQUIRE_MENTION.description: 'نیاز به @mention در کانال‌های Mattermost (پیش‌فرض: true). برای پاسخ به همه پیام‌ها false تنظیم کنید.'
+envvar.MATRIX_REQUIRE_MENTION.description: 'نیاز به @mention در اتاق‌های Matrix (پیش‌فرض: true). برای پاسخ به همه پیام‌ها false تنظیم کنید.'
+envvar.MATRIX_AUTO_THREAD.description: 'ایجاد خودکار رشته‌ها برای پیام‌ها در اتاق‌های Matrix (پیش‌فرض: true)'
+envvar.MATRIX_DM_AUTO_THREAD.description: 'ایجاد خودکار رشته‌ها برای پیام‌های خصوصی در Matrix (پیش‌فرض: false)'
+envvar.GATEWAY_ALLOW_ALL_USERS.description: 'به همه کاربران اجازه تعامل با ربات‌های پیام‌رسان را بده (true/false). پیش‌فرض: false.'
+envvar.HERMES_SIMPLEX_TEXT_BATCH_DELAY.description: 'مدت زمان سکوت (پیش‌فرض: 0.8) برای ترکیب پیام‌های متنی سریع در یک رویداد پیام واحد — همان الگوی دسته‌بندی متن Telegram.'
+envvar.MATTERMOST_REPLY_MODE.description: 'نحوه ارسال پاسخ‌ها: ''thread'' (تو در تو) یا ''off'' (مسطح). پیش‌فرض: off.'
+envvar.PHOTON_HOME_CHANNEL.description: 'مقصد پیش‌فرض Photon برای تحویل cron/اعلان: شناسه فضای Spectrum، GUID پیام خصوصی، یا شماره تلفن E.164'
 platform:
   bluebubbles:
-    description: "Hermes را از طریق iMessage و با یک سرور BlueBubbles به کار ببرید."
+    description: Hermes را از طریق iMessage و با یک سرور BlueBubbles به کار ببرید.
   dingtalk:
-    description: "Hermes را به گروه‌های DingTalk (钉钉) متصل کنید."
+    description: Hermes را به گروه‌های DingTalk (钉钉) متصل کنید.
   discord:
-    description: "Hermes را به پیام‌خصوصی، کانال‌ها و رشته‌های Discord متصل کنید."
+    description: Hermes را به پیام‌خصوصی، کانال‌ها و رشته‌های Discord متصل کنید.
   email:
-    description: "از طریق یک صندوق IMAP/SMTP با Hermes گفت‌وگو کنید."
+    description: از طریق یک صندوق IMAP/SMTP با Hermes گفت‌وگو کنید.
   homeassistant:
-    description: "خانهٔ هوشمند خود را از Hermes و از طریق Home Assistant کنترل کنید."
+    description: خانهٔ هوشمند خود را از Hermes و از طریق Home Assistant کنترل کنید.
   matrix:
-    description: "Hermes را در اتاق‌ها و پیام‌های خصوصی Matrix به کار ببرید."
+    description: Hermes را در اتاق‌ها و پیام‌های خصوصی Matrix به کار ببرید.
   mattermost:
-    description: "Hermes را به کانال‌ها و پیام‌های خصوصی Mattermost متصل کنید."
+    description: Hermes را به کانال‌ها و پیام‌های خصوصی Mattermost متصل کنید.
   signal:
-    description: "اتصال از طریق پل REST در signal-cli."
+    description: اتصال از طریق پل REST در signal-cli.
   slack:
-    description: "Hermes را از Slack با Socket Mode استفاده کنید. شناسهٔ اعضای مجاز Slack را اضافه کنید تا ربات‌های متصل بتوانند پاسخ دهند."
+    description: Hermes را از Slack با Socket Mode استفاده کنید. شناسهٔ اعضای مجاز Slack را اضافه کنید تا ربات‌های متصل بتوانند پاسخ دهند.
   sms:
-    description: "ارسال و دریافت پیامک از طریق Twilio."
+    description: ارسال و دریافت پیامک از طریق Twilio.
   telegram:
-    description: "Hermes را از پیام‌خصوصی، گروه‌ها و موضوع‌های Telegram اجرا کنید."
+    description: Hermes را از پیام‌خصوصی، گروه‌ها و موضوع‌های Telegram اجرا کنید.
   whatsapp:
-    description: "Hermes را از طریق پل همراه WhatsApp با احراز هویت مبتنی بر QR استفاده کنید."
-
+    description: Hermes را از طریق پل همراه WhatsApp با احراز هویت مبتنی بر QR استفاده کنید.
 envvar:
   ANTHROPIC_API_KEY:
     description: "کلید API Anthropic"
