@@ -13,6 +13,7 @@ from typing import Any, Optional
 from hermes_cli import __version__
 from hermes_cli.config import OPTIONAL_ENV_VARS, write_platform_config_field
 from hermes_cli.setup_hidden_env import is_setup_hidden_env as _is_setup_hidden_env
+from agent.i18n import t_or
 
 # Same logger the code used before extraction (record parity).
 _log = logging.getLogger("hermes_cli.web_server")
@@ -261,6 +262,10 @@ def _messaging_platform_catalog() -> tuple[dict[str, Any], ...]:
 
     order = {pid: idx for idx, pid in enumerate(_PLATFORM_ORDER)}
     entries.sort(key=lambda e: (order.get(e["id"], len(_PLATFORM_ORDER)), e["name"].lower()))
+    for entry in entries:
+        desc = entry.get("description")
+        if isinstance(desc, str) and desc:
+            entry["description"] = t_or(f"platform.{entry['id']}.description", desc)
     return tuple(entries)
 
 

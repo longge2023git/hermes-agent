@@ -721,3 +721,28 @@ envvar.GATEWAY_ALLOW_ALL_USERS.description: 'اجازه به همهٔ کاربر
 envvar.HERMES_SIMPLEX_TEXT_BATCH_DELAY.description: 'ثانیه‌های دورهٔ سکوت (پیش‌فرض: 0.8) برای ادغام پیام‌های متنی پشت‌سرهم ورودی در یک MessageEvent — همان الگوی دسته‌بندی متن تلگرام.'
 envvar.MATTERMOST_REPLY_MODE.description: 'شیوهٔ ارسال پاسخ‌ها: ''thread'' (تودرتو) یا ''off'' (تخت). پیش‌فرض: off.'
 envvar.PHOTON_HOME_CHANNEL.description: 'مقصد پیش‌فرض Photon برای cron و تحویل اعلان: شناسهٔ فضای Spectrum، GUID پیام خصوصی، یا شمارهٔ خام E.164'
+platform:
+  bluebubbles:
+    description: "Hermes را از طریق iMessage و با یک سرور BlueBubbles به کار ببرید."
+  dingtalk:
+    description: "Hermes را به گروه‌های DingTalk (钉钉) متصل کنید."
+  discord:
+    description: "Hermes را به پیام‌خصوصی، کانال‌ها و رشته‌های Discord متصل کنید."
+  email:
+    description: "از طریق یک صندوق IMAP/SMTP با Hermes گفت‌وگو کنید."
+  homeassistant:
+    description: "خانهٔ هوشمند خود را از Hermes و از طریق Home Assistant کنترل کنید."
+  matrix:
+    description: "Hermes را در اتاق‌ها و پیام‌های خصوصی Matrix به کار ببرید."
+  mattermost:
+    description: "Hermes را به کانال‌ها و پیام‌های خصوصی Mattermost متصل کنید."
+  signal:
+    description: "اتصال از طریق پل REST در signal-cli."
+  slack:
+    description: "Hermes را از Slack با Socket Mode استفاده کنید. شناسهٔ اعضای مجاز Slack را اضافه کنید تا ربات‌های متصل بتوانند پاسخ دهند."
+  sms:
+    description: "ارسال و دریافت پیامک از طریق Twilio."
+  telegram:
+    description: "Hermes را از پیام‌خصوصی، گروه‌ها و موضوع‌های Telegram اجرا کنید."
+  whatsapp:
+    description: "Hermes را از طریق پل همراه WhatsApp با احراز هویت مبتنی بر QR استفاده کنید."
