@@ -3827,6 +3827,19 @@ export const fa = defineLocale({
     other: 'سایر بهبودها',
     whatsNew: 'تازه‌ها'
   },
+  quickEntryApp: {
+    inputLabel: 'ورود سریع',
+    sendTo: 'ارسال به',
+    targetCurrent: 'گفت‌وگوی کنونی',
+    targetLabel: 'نشست مقصد',
+    targetNew: 'نشست جدید'
+  },
+  splitMenu: {
+    down: 'پایین',
+    left: 'چپ',
+    right: 'راست',
+    up: 'بالا'
+  },
   updates: {
     stages: {
       idle: 'در حال آمادهسازی…',

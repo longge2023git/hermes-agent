@@ -3053,6 +3053,25 @@ export interface Translations {
     whatsNew: string
   }
 
+  /** hermes-fa additions (desktop audit wiring): the Quick Entry window's
+   *  composer labels and the split-direction submenu rows. OPTIONAL like the
+   *  two namespaces above — `en` is the English floor, a locale without an entry
+   *  falls back through the resolution chain, and each call site keeps an
+   *  English literal in its `??` fallback. */
+  quickEntryApp?: {
+    inputLabel: string
+    sendTo: string
+    targetCurrent: string
+    targetLabel: string
+    targetNew: string
+  }
+  splitMenu?: {
+    down: string
+    left: string
+    right: string
+    up: string
+  }
+
   updates: {
     stages: Record<string, string>
     checking: string

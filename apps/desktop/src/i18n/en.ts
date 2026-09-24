@@ -3526,11 +3526,12 @@ export const en: Translations = {
     }
   },
 
-  // hermes-fa additions: Bot Mode's create-dialog copy and the update
-  // changelog's group headings. Both namespaces are OPTIONAL in types.ts, so
-  // they live here as the English floor and every other locale inherits them
-  // through defineLocale() until a real translation lands (the call sites keep
-  // an English literal as their `??` fallback).
+  // hermes-fa additions: Bot Mode's create-dialog copy, the update changelog's
+  // group headings, the Quick Entry window's composer labels, and the
+  // split-direction submenu. Every one of these namespaces is OPTIONAL in
+  // types.ts, so they live here as the English floor and every other locale
+  // inherits them through defineLocale() until a real translation lands (the
+  // call sites keep an English literal as their `??` fallback).
   botCreateDialog: {
     advancedTabCapabilities: 'Capabilities',
     advancedTabGeneral: 'General',
@@ -3546,6 +3547,19 @@ export const en: Translations = {
     improved: 'Improved',
     other: 'Other improvements',
     whatsNew: "What's new"
+  },
+  quickEntryApp: {
+    inputLabel: 'Quick Entry',
+    sendTo: 'Send to',
+    targetCurrent: 'Current chat',
+    targetLabel: 'Target session',
+    targetNew: 'New session'
+  },
+  splitMenu: {
+    down: 'Down',
+    left: 'Left',
+    right: 'Right',
+    up: 'Up'
   },
 
   updates: {

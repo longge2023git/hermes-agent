@@ -11,6 +11,7 @@ import { lazy, type ReactNode, Suspense } from 'react'
 
 import { ContribBoundary, ContribRender } from '@/contrib/react/boundary'
 import { useContributions } from '@/contrib/react/use-contributions'
+import { translateNow } from '@/i18n'
 import { $routeTiles, closeRouteTile, type RouteTile } from '@/store/route-tiles'
 
 import { $routesVersion, ARTIFACTS_ROUTE, CAPABILITIES_ROUTE, contributedRoutes, MESSAGING_ROUTE, ROUTES_AREA } from '../routes'
@@ -21,11 +22,24 @@ const CapabilitiesView = lazy(async () => ({ default: (await import('../capabili
 const MessagingView = lazy(async () => ({ default: (await import('../messaging')).MessagingView }))
 const ArtifactsView = lazy(async () => ({ default: (await import('../artifacts')).ArtifactsView }))
 
-// Built-in page views + their pane titles, keyed by route.
-const BUILTIN_PAGES: Record<string, { render: () => ReactNode; title: string }> = {
-  [ARTIFACTS_ROUTE]: { render: () => <ArtifactsView />, title: 'Artifacts' },
-  [MESSAGING_ROUTE]: { render: () => <MessagingView />, title: 'Messaging' },
-  [CAPABILITIES_ROUTE]: { render: () => <CapabilitiesView />, title: 'Capabilities' }
+// Built-in page views + their pane titles, keyed by route. The title reuses the
+// `sidebar.nav.*` label the sidebar row for the same page shows, so a pane and
+// its nav row can never drift apart; the English literal is the fallback only.
+const BUILTIN_PAGES: Record<string, { labelKey: string; render: () => ReactNode; title: string }> = {
+  [ARTIFACTS_ROUTE]: { labelKey: 'sidebar.nav.artifacts', render: () => <ArtifactsView />, title: 'Artifacts' },
+  [MESSAGING_ROUTE]: { labelKey: 'sidebar.nav.messaging', render: () => <MessagingView />, title: 'Messaging' },
+  [CAPABILITIES_ROUTE]: { labelKey: 'sidebar.nav.capabilities', render: () => <CapabilitiesView />, title: 'Capabilities' }
+}
+
+/** `translateNow` echoes the key itself when neither the active locale nor the
+ *  English catalog has it, so comparing against the key is how we know to use
+ *  the English literal. Resolved per call, never at module load: the runtime
+ *  locale is only set once the renderer mounts, so a module-level lookup would
+ *  freeze whatever locale was active when this module was first imported. */
+function translatedLabel(key: string, fallback: string): string {
+  const translated = translateNow(key)
+
+  return translated === key ? fallback : translated
 }
 
 /** Humanize a route path into a tab title: `/my-atlas` → `My Atlas`. */
@@ -40,8 +54,10 @@ const humanizePath = (path: string): string =>
 /** Title for a route tile: the built-in name, the contribution's own `title`,
  *  else a humanized path — never the internal `${source}:${id}` key. */
 function routeTitle(path: string): string {
-  if (BUILTIN_PAGES[path]) {
-    return BUILTIN_PAGES[path].title
+  const builtin = BUILTIN_PAGES[path]
+
+  if (builtin) {
+    return translatedLabel(builtin.labelKey, builtin.title)
   }
 
   return contributedRoutes().find(r => r.path === path)?.title ?? humanizePath(path)

@@ -11,6 +11,7 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger
 } from '@/components/ui/dropdown-menu'
+import { translateNow } from '@/i18n'
 import { triggerHaptic } from '@/lib/haptics'
 import type { SplitDir } from '@/store/session-states'
 
@@ -37,13 +38,33 @@ export const CONTEXT_SPLIT_KIT: SplitMenuKit = {
   SubTrigger: ContextMenuSubTrigger
 }
 
-// Ordered so the default (right) sits first, one hop away.
-const SPLIT_DIRS: { dir: SplitDir; icon: string; label: string }[] = [
-  { dir: 'right', icon: 'arrow-right', label: 'Right' },
-  { dir: 'bottom', icon: 'arrow-down', label: 'Down' },
-  { dir: 'left', icon: 'arrow-left', label: 'Left' },
-  { dir: 'top', icon: 'arrow-up', label: 'Up' }
+interface SplitDirection {
+  dir: SplitDir
+  icon: string
+  /** English fallback — the rendered label comes from `labelKey`. */
+  label: string
+  labelKey: string
+}
+
+// Ordered so the default (right) sits first, one hop away. The English text is
+// only the fallback: each row is labelled through `splitMenu.*` so it follows
+// the active locale, and `translateNow` is called at render time (see
+// `dirLabel`) because the runtime locale is set after this module loads.
+const SPLIT_DIRS: SplitDirection[] = [
+  { dir: 'right', icon: 'arrow-right', label: 'Right', labelKey: 'splitMenu.right' },
+  { dir: 'bottom', icon: 'arrow-down', label: 'Down', labelKey: 'splitMenu.down' },
+  { dir: 'left', icon: 'arrow-left', label: 'Left', labelKey: 'splitMenu.left' },
+  { dir: 'top', icon: 'arrow-up', label: 'Up', labelKey: 'splitMenu.up' }
 ]
+
+/** `translateNow` echoes the key itself when neither the active locale nor the
+ *  English catalog has it, so comparing against the key is how we know to use
+ *  the English literal. */
+const dirLabel = ({ label, labelKey }: SplitDirection): string => {
+  const translated = translateNow(labelKey)
+
+  return translated === labelKey ? label : translated
+}
 
 interface SplitSubmenuProps {
   kit: SplitMenuKit
@@ -80,10 +101,10 @@ export function SplitSubmenu({ close, disabled, kit, label, onSplit }: SplitSubm
         <span>{label}</span>
       </SubTrigger>
       <SubContent>
-        {SPLIT_DIRS.map(({ dir, icon, label: dirLabel }) => (
-          <Item key={dir} onSelect={() => split(dir)}>
-            <Codicon name={icon} size="0.875rem" />
-            <span>{dirLabel}</span>
+        {SPLIT_DIRS.map(item => (
+          <Item key={item.dir} onSelect={() => split(item.dir)}>
+            <Codicon name={item.icon} size="0.875rem" />
+            <span>{dirLabel(item)}</span>
           </Item>
         ))}
       </SubContent>
