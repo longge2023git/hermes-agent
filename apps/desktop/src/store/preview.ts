@@ -1,5 +1,6 @@
 import { atom, computed } from 'nanostores'
 
+import { translateNow } from '@/i18n'
 import { readJson, readKey, writeKey } from '@/lib/storage'
 import { normalize } from '@/lib/text'
 
@@ -533,7 +534,12 @@ export function openPreview(target: PreviewTarget, source: PreviewRecordSource =
   selectRightRailTab(id)
 }
 
-const blankPage = (): PreviewTarget => ({ kind: 'url', label: 'Browser', source: 'about:blank', url: 'about:blank' })
+const blankPage = (): PreviewTarget => ({
+  kind: 'url',
+  label: translateNow('store.previewBrowserTab'),
+  source: 'about:blank',
+  url: 'about:blank'
+})
 
 /** Show the Browser — the surface, not a page. Keeps whatever it was last
  *  showing so the hotkey re-fronts your page instead of wiping it; with no

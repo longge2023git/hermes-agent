@@ -1,5 +1,6 @@
 import { atom } from 'nanostores'
 
+import { translateNow } from '@/i18n'
 import { sessionTitle } from '@/lib/chat-runtime'
 import type { PreviewServerRestart } from '@/store/preview'
 import type { ActionStatusResponse, SessionInfo } from '@/types/hermes'
@@ -52,7 +53,7 @@ export function buildRailTasks(
     ? [
         {
           id: `preview:${previewRestart.taskId}`,
-          label: 'Preview restart',
+          label: translateNow('store.activityPreviewRestart'),
           detail: previewRestart.message || previewRestart.url,
           status:
             previewRestart.status === 'error' ? 'error' : previewRestart.status === 'running' ? 'running' : 'success',

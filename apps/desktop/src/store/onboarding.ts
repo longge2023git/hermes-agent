@@ -238,7 +238,7 @@ function shouldPreserveConfiguredOnFallback(runtime: RuntimeReadinessResult, sta
 }
 
 function notifyReady(provider: string) {
-  notify({ kind: 'success', title: 'Hermes is ready', message: `${provider} connected.` })
+  notify({ kind: 'success', title: translateNow('store.onboardingReadyTitle'), message: `${provider} connected.` })
 }
 
 // Human-friendly labels for tools auto-routed through the Nous Tool Gateway,
@@ -267,7 +267,7 @@ function notifyGatewayTools(tools: string[] | undefined) {
     durationMs: 8000,
     kind: 'info',
     message: `${list} now run through your Nous subscription — no separate API keys needed.`,
-    title: 'Tool Gateway enabled'
+    title: translateNow('store.onboardingGatewayEnabledTitle')
   })
 }
 
@@ -712,7 +712,7 @@ export async function refreshOnboarding(ctx: OnboardingContext, stillWanted?: ()
     notify({
       id: 'runtime-not-ready',
       kind: 'error',
-      title: 'Runtime not ready',
+      title: translateNow('store.onboardingRuntimeNotReadyTitle'),
       message:
         'Hermes Desktop could not verify the running backend on startup. Some features may be unavailable until the gateway is reachable.'
     })

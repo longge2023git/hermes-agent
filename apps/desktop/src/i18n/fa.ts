@@ -309,6 +309,13 @@ export const fa = defineLocale({
       creditsTitle: 'اعتبار'
     }
   },
+  store: {
+    activityPreviewRestart: 'راه‌اندازی دوبارهٔ پیش‌نمایش',
+    onboardingGatewayEnabledTitle: 'گیت‌وی ابزار فعال شد',
+    onboardingReadyTitle: 'Hermes آماده است',
+    onboardingRuntimeNotReadyTitle: 'زمان اجرا آماده نیست',
+    previewBrowserTab: 'مرورگر'
+  },
   remoteDisplayBanner: {
     message: reason =>
       `رندر نرمافزاری فعال است — نمایشگر راه دور شناسایی شد (${reason}). شتاب GPU برای جلوگیری از سوسو زدن غیرفعال شده است.`

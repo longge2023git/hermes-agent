@@ -307,6 +307,14 @@ export const en: Translations = {
     }
   },
 
+  store: {
+    activityPreviewRestart: 'Preview restart',
+    onboardingGatewayEnabledTitle: 'Tool Gateway enabled',
+    onboardingReadyTitle: 'Hermes is ready',
+    onboardingRuntimeNotReadyTitle: 'Runtime not ready',
+    previewBrowserTab: 'Browser'
+  },
+
   remoteDisplayBanner: {
     message: reason =>
       `Software rendering active — remote display detected (${reason}). GPU acceleration is disabled to prevent flickering.`

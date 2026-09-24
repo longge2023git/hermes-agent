@@ -378,6 +378,18 @@ export interface Translations {
     }
   }
 
+  /** Copy emitted from module-level stores (`src/store/*`), which have no React
+   *  context to read `useI18n()` from — they resolve through `translateNow()`.
+   *  Optional as a whole: a locale that has not translated these yet falls back
+   *  to English rather than failing the type contract. */
+  store?: {
+    activityPreviewRestart: string
+    onboardingGatewayEnabledTitle: string
+    onboardingReadyTitle: string
+    onboardingRuntimeNotReadyTitle: string
+    previewBrowserTab: string
+  }
+
   remoteDisplayBanner: {
     message: (reason: string) => string
   }
