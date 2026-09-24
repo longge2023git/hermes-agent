@@ -5229,6 +5229,12 @@ export const fa = defineLocale({
       title: 'نوار کنار',
       description: 'نوار کنار در حالت موبایل را نشان می‌دهد.',
       toggle: open => `نوار کنار ${open ? 'نمایش' : 'پنهان'}`
+    },
+    zoom: {
+      openFullView: 'باز کردن نمای کامل',
+      zoomOut: 'کوچک‌نمایی',
+      reset: 'بازنشانی',
+      zoomIn: 'بزرگ‌نمایی'
     }
   }
 })

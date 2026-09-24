@@ -4102,6 +4102,12 @@ export interface Translations {
   }
 
   ui: {
+    zoom?: {
+      openFullView?: string;
+      zoomOut?: string;
+      reset?: string;
+      zoomIn?: string;
+    };
     search: {
       clear: string
     }
