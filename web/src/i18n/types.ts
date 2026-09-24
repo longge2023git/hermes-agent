@@ -622,6 +622,7 @@ export interface Translations {
 
   // ── Config page ──
   config: {
+    fieldLabels?: Record<string, string>;
     configPath: string;
     filters: string;
     sections: string;
