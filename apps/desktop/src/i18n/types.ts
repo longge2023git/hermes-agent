@@ -931,6 +931,9 @@ export interface Translations {
       dangerZone: string
       confirmUninstall: string
       uninstallHermes: string
+      optionGuiTitle?: string
+      optionLiteTitle?: string
+      optionFullTitle?: string
     }
     poolLimits: {
       warmBotBackendsAria: string
@@ -3153,6 +3156,11 @@ export interface Translations {
     stayTitle: string
     stayText: string
   }
+  /** First-build handoff notifications (optional: locales fall back to English). */
+  firstBuild?: {
+    needsAttentionTitle?: string
+    retryAction?: string
+  }
   guidedGreeting: {
     line: string
     nameSuggestion: (name: string) => string
@@ -3386,6 +3394,8 @@ export interface Translations {
     windowControls: string
     paneControls: string
     appControls: string
+    minimizeWindow?: string
+    closeWindow?: string
     modelMenu: {
       search: string
       noModels: string

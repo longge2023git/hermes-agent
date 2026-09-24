@@ -21,6 +21,7 @@ import {
 import { showHandoffTour } from '@/components/onboarding-chat/signpost'
 import { findGroupOfPane } from '@/components/pane-shell/tree/model'
 import { $layoutTree, activateTreePane } from '@/components/pane-shell/tree/store'
+import { useI18n } from '@/i18n'
 import { toChatMessages } from '@/lib/chat-messages'
 import { connectorTitle } from '@/lib/connector-tools'
 import { isOnboardingEnabled } from '@/lib/onboarding-enabled'
@@ -63,6 +64,8 @@ export function useOnboardingHandoff({
   requestGateway,
   runCreatePinnedTo
 }: OnboardingHandoffOptions) {
+  const { t } = useI18n()
+
   // The saved receipt survives a failed handoff and a relaunch. Onboarding completes only after the build
   // session confirms its start.
   const setupHandoff = useStore($setupHandoff)
@@ -112,10 +115,12 @@ export function useOnboardingHandoff({
     } catch (error) {
       notify({
         kind: 'error',
-        title: 'First build needs attention',
+        title: t.firstBuild?.needsAttentionTitle ?? 'First build needs attention',
         message: error instanceof Error ? error.message : 'The first-build receipt could not be read.'
       })
     }
+  // The title is read at failure time; a locale change must not re-run this effect.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedStoredId])
 
   // Rebind the runtime pointer after session.resume; this is not an atom-to-ref mirror.
@@ -317,12 +322,14 @@ export function useOnboardingHandoff({
         notify({
           id: 'onboarding-handoff',
           kind: 'error',
-          title: 'First build needs attention',
+          title: t.firstBuild?.needsAttentionTitle ?? 'First build needs attention',
           message,
-          action: { label: 'Retry first build', onClick: retrySetupHandoff }
+          action: { label: t.firstBuild?.retryAction ?? 'Retry first build', onClick: retrySetupHandoff }
         })
       }
     })()
+  // Same as above: the notify copy is built when the handoff fails.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     activeSessionIdRef,
     createBackendSessionForSend,

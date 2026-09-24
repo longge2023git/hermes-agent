@@ -1074,7 +1074,10 @@ export const en: Translations = {
     uninstallSection: {
       dangerZone: 'Danger zone',
       confirmUninstall: 'Confirm uninstall',
-      uninstallHermes: 'Uninstall Hermes'
+      uninstallHermes: 'Uninstall Hermes',
+      optionGuiTitle: 'Uninstall Chat GUI only',
+      optionLiteTitle: 'Uninstall GUI + agent, keep my data',
+      optionFullTitle: 'Uninstall everything'
     },
     poolLimits: {
       warmBotBackendsAria: 'Warm bot backends',
@@ -3657,6 +3660,11 @@ export const en: Translations = {
     stayTitle: 'Hermes is one click away',
     stayText: 'Switch to the setup profile and open Welcome to Hermes whenever you want a hand. It stays there.'
   },
+  /** First-build handoff notifications (app/contrib/onboarding-handoff.ts). */
+  firstBuild: {
+    needsAttentionTitle: 'First build needs attention',
+    retryAction: 'Retry first build'
+  },
   guidedGreeting: {
     line: "Hey, come on in. I'm Hermes. Give me two minutes to set the place up around you, then we'll put me to work on something you actually want done.\n\nFirst though, what should I call you?",
     nameSuggestion: (name: string) => `(I can also just call you ${name}, if you prefer.)`
@@ -3922,6 +3930,8 @@ export const en: Translations = {
     windowControls: 'Window controls',
     paneControls: 'Pane controls',
     appControls: 'App controls',
+    minimizeWindow: 'Minimize window',
+    closeWindow: 'Close window',
     modelMenu: {
       search: 'Search models',
       noModels: 'No models found',

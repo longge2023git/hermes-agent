@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react'
 
 import { Button } from '@/components/ui/button'
 import type { DesktopUninstallMode, DesktopUninstallSummary } from '@/global'
-import { useI18n } from '@/i18n'
+import { type Translations, useI18n } from '@/i18n'
 import { AlertTriangle, Loader2, Trash2 } from '@/lib/icons'
 import { cn } from '@/lib/utils'
 
@@ -18,24 +18,27 @@ interface ModeOption {
   needsAgent: boolean
 }
 
-const OPTIONS: ModeOption[] = [
+/** Built per render from the active locale: the module-level list can't reach
+ *  the i18n hook, and a `translateNow` snapshot at import time would freeze the
+ *  titles in the boot locale. English stays as the inline fallback. */
+const buildOptions = (t: Translations): ModeOption[] => [
   {
     mode: 'gui',
-    title: 'Uninstall Chat GUI only',
+    title: t.settings.uninstallSection.optionGuiTitle ?? 'Uninstall Chat GUI only',
     description: 'Remove this desktop app. The Hermes agent, your config, and chats all stay.',
     consequence: 'the desktop Chat GUI (this app and its data)',
     needsAgent: false
   },
   {
     mode: 'lite',
-    title: 'Uninstall GUI + agent, keep my data',
+    title: t.settings.uninstallSection.optionLiteTitle ?? 'Uninstall GUI + agent, keep my data',
     description: 'Remove the app and the Hermes agent, but keep config, chats, and secrets for a future reinstall.',
     consequence: 'the Chat GUI and the Hermes agent (config, chats, and secrets are kept)',
     needsAgent: true
   },
   {
     mode: 'full',
-    title: 'Uninstall everything',
+    title: t.settings.uninstallSection.optionFullTitle ?? 'Uninstall everything',
     description: 'Remove the app, the agent, and all user data — config, chats, scheduled jobs, secrets, logs.',
     consequence: 'EVERYTHING — the Chat GUI, the Hermes agent, and all of your config, chats, secrets, and logs',
     // full removes the agent (and user data), so it's an agent-removing option:
@@ -94,8 +97,9 @@ export function UninstallSection() {
 
   // Gate the agent-removing options on whether an agent is actually present.
   // A future lite client that ships without the bundled agent shows GUI-only.
+  const options = buildOptions(t)
   const agentInstalled = summary?.agent_installed ?? false
-  const visibleOptions = OPTIONS.filter(opt => agentInstalled || !opt.needsAgent)
+  const visibleOptions = options.filter(opt => agentInstalled || !opt.needsAgent)
 
   const handleConfirm = async () => {
     if (!pending) {
@@ -121,7 +125,7 @@ export function UninstallSection() {
     }
   }
 
-  const pendingOption = OPTIONS.find(opt => opt.mode === pending) ?? null
+  const pendingOption = options.find(opt => opt.mode === pending) ?? null
 
   return (
     <div className={cn('mx-auto w-full max-w-2xl', !hasBreadcrumb && 'mt-8')}>

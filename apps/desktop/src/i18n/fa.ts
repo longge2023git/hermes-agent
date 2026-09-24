@@ -1249,7 +1249,10 @@ export const fa = defineLocale({
     uninstallSection: {
       dangerZone: 'منطقه خطر',
       confirmUninstall: 'تأیید حذف',
-      uninstallHermes: 'حذف Hermes'
+      uninstallHermes: 'حذف Hermes',
+      optionGuiTitle: 'حذف فقط رابط گرافیکی گپ',
+      optionLiteTitle: 'حذف رابط و عامل، نگه‌داشتن داده‌ها',
+      optionFullTitle: 'حذف همه‌چیز'
     },
     poolLimits: {
       warmBotBackendsAria: 'پشتیبانهای ربات فعال',
@@ -2333,7 +2336,7 @@ export const fa = defineLocale({
     waitingActivity: 'در انتظار فعالیت',
     steer: 'هدایت',
     steerPlaceholder: 'دستورالعمل برای این زیرعامل',
-    steerQueued: 'در صف برای نقطه بازرسی بعدی',
+    steerQueued: 'در صف برای نقطهٔ بررسی بعدی',
     stopRequested: 'توقف درخواست شد',
     requestRejected: 'زیرعامل درخواست را نپذیرفت',
     delegation: index => `واگذاری ${index}`,
@@ -3935,6 +3938,10 @@ export const fa = defineLocale({
     stayTitle: 'Hermes یک کلیک فاصله دارد',
     stayText: 'هر وقت کمک خواستید، به پروفایل راه‌اندازی بروید و Welcome to Hermes را باز کنید. همان‌جا می‌ماند.'
   },
+  firstBuild: {
+    needsAttentionTitle: 'نخستین ساخت نیازمند بررسی است',
+    retryAction: 'تلاش دوباره برای ساخت نخست'
+  },
   guidedGreeting: {
     line: 'سلام، بیا تو. من Hermes هستم. دو دقیقه به من فرصت بده تا محیط را برایت آماده کنم، بعد بیا بریم سراغ کاری که واقعاً میخواهی انجام شود.\n\nاول بگو، چه صدايت کنم؟',
     nameSuggestion: name => `(اگر ترجیح میدهی، می‌توانم فقط ${name} صدایت کنم.)`
@@ -4208,6 +4215,8 @@ export const fa = defineLocale({
     windowControls: 'کنترل‌های پنجره',
     paneControls: 'کنترل‌های پنل',
     appControls: 'کنترل‌های برنامه',
+    minimizeWindow: 'کوچک‌کردن پنجره',
+    closeWindow: 'بستن پنجره',
     modelMenu: {
       search: 'جستجوی مدل‌ها',
       noModels: 'مدلی یافت نشد',

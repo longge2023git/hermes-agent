@@ -547,7 +547,7 @@ export const fa = defineLocale({
     sourceBadge: 'منبع',
     authRequired: 'احراز هویت لازم است',
     authRequiredHint: 'برای احراز هویت این دستور را اجرا کنید:',
-    updateGit: 'گیت پول',
+    updateGit: 'Pull',
     versionBadge: 'نسخه',
     showInSidebar: 'نمایش در نوار کنار',
     hideFromSidebar: 'پنهان از نوار کنار',
